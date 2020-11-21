@@ -65,5 +65,35 @@ At the time of setting this up I was using
 
    **NOTE:** Installed `npm install --save-dev cross-env` for any environment settings, only needed for windows
 
-5. TODO: Configure Nodemon
+5. Automatically recompiling code when changes are made
+
+   ```json
+   // package.json
+   ...
+   "nodemonConfig": { 
+     "exec": "npm run dev",
+     "watch": ["server/*", "public/*"],
+     "ignore": ["**/__tests__/**", "*.test.js", "*.spec.js"]
+   },
+   "scripts": { 
+     // ... other scripts
+     "watch:dev": "nodemon"
+   }
+   ```
+
+6. Configuring *Jest Tests*
+
+   ```json
+   / package.json
+   ...
+   "jest": { 
+     "testEnvironment": "node"
+   },
+   "scripts": {
+     // ..other scripts 
+     "test": "jest"
+   }
+   ```
+
+7. **Jest documentation** can be found [here](https://jestjs.io/docs/en/getting-started)
 
