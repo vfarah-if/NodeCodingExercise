@@ -5,19 +5,19 @@ This is a template to get up and running for interview tests or just setting up 
 
 This will archive a few things that help understand what was setup at the time. Projects go out of date pretty quickly so this will help understand what is still applicable.
 
-At the time of setting this up I am using
+At the time of setting this up I was using
 
 1. *Node* version **v14.15.1** and *NPM* **6.14.8**
 
-2. I am using *Windows OS* with an *Ubuntu* developer kit installed on windows 10 - [See Ubuntu on Windows for more information](https://ubuntu.com/tutorials/ubuntu-on-windows#1-overview) which can be alternatively be done using Docker or other types of Virtual Machines. **NOTE**: Node is best served not on Windows when going to Production
+2. Using *Windows OS* with an *Ubuntu* developer kit installed on windows 10 - [See Ubuntu on Windows for more information](https://ubuntu.com/tutorials/ubuntu-on-windows#1-overview) which can be alternatively be done using Docker or other types of Virtual Machines. **NOTE**: Node is best served not on Windows when going to Production
 
-3. I use *Visual Studio Code* as an editor and like it as I use Visual Studio and other Microsoft Products that I find enrich developers experience. It is free and so that comes at a price. Webstorm and some other paid products tend to give a richer more reliable experience, in my honest opinion, but as VSCode matures, so does the experience
+3. Developing with *Visual Studio Code* as an editor and like it as I use Visual Studio and other Microsoft Products that I find enrich developers experience. It is free and so that comes at a price. Webstorm and some other paid products tend to give a richer more reliable experience, in my honest opinion, but as VSCode matures, so does the experience
    
    3.1. Basic tutorials can be found [here](https://code.visualstudio.com/docs/nodejs/nodejs-tutorial) which can help you to get express up and running in no time
 
    3.2. *VSCode* offers lots of plugins to speed up development
    
-   3.3. Typescript and typescript dev plugins really enrich the experience for code completion as well as finding 10 to 15 percent of bugs at compile time, which is always a bonus. If *Google* and *Microsoft* make it part of their suit, you know its something polished and enriching and *Anders Heilberg* has been enriching my life since when i used to develop using *Borland* technology
+   3.3. *Typescript* and typescript dev plugins really enrich the experience for code completion as well as finding 10 to 15 percent of bugs at compile time, which is always a bonus. If *Google* and *Microsoft* make it part of their suit, you know its something polished and enriching and *Anders Heilberg* has been enriching my life since when i used to develop using *Borland* technology
 
    3.4. Linters and Test Frameworks really keep the quality standardised
    
