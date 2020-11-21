@@ -1,59 +1,33 @@
-// bin/www.js
-
-/**
- * Module dependencies.
- */
 
 import app from '../app';
 import debugLib from 'debug';
 import { createServer } from 'http';
 
 const debug = debugLib('test-express:server');
+const port = getPortAndConfigureIISExpress();
+const server = generateServer();
 
-/**
- * Get port from environment and store in Express.
- */
+function generateServer() {
+  const result = createServer(app);
+  result.listen(port);
+  result.on('error', onError);
+  result.on('listening', onListening);
+  return result;
+}
 
-var port = normalizePort(process.env.PORT || '3000');
-app.set('port', port);
-
-/**
- * Create HTTP server.
- */
-
-var server = createServer(app);
-
-/**
- * Listen on provided port, on all network interfaces.
- */
-
-server.listen(port);
-server.on('error', onError);
-server.on('listening', onListening);
-
-/**
- * Normalize a port into a number, string, or false.
- */
+function getPortAndConfigureIISExpress() {
+  var port = normalizePort(process.env.PORT || '3000');
+  app.set('port', port);
+  return port;
+}
 
 function normalizePort(val) {
   var port = parseInt(val, 10);
 
-  if (isNaN(port)) {
-    // named pipe
-    return val;
-  }
-
-  if (port >= 0) {
-    // port number
-    return port;
-  }
-
+  if (isNaN(port)) return val;
+  if (port >= 0) return port;
   return false;
 }
-
-/**
- * Event listener for HTTP server "error" event.
- */
 
 function onError(error) {
   if (error.syscall !== 'listen') {
@@ -64,24 +38,23 @@ function onError(error) {
     ? 'Pipe ' + port
     : 'Port ' + port;
 
-  // handle specific listen errors with friendly messages
-  switch (error.code) {
-    case 'EACCES':
-      console.error(bind + ' requires elevated privileges');
-      process.exit(1);
-      break;
-    case 'EADDRINUSE':
-      console.error(bind + ' is already in use');
-      process.exit(1);
-      break;
-    default:
-      throw error;
+  makeErrorsMoreInformative();
+
+  function makeErrorsMoreInformative() {
+    switch (error.code) {
+      case 'EACCES':
+        console.error(bind + ' requires elevated privileges');
+        process.exit(1);
+        break;
+      case 'EADDRINUSE':
+        console.error(bind + ' is already in use');
+        process.exit(1);
+        break;
+      default:
+        throw error;
+    }
   }
 }
-
-/**
- * Event listener for HTTP server "listening" event.
- */
 
 function onListening() {
   var addr = server.address();

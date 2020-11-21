@@ -1,9 +1,37 @@
 import { Router } from 'express';
 const router = Router();
+const userResponse =
+  [
+    {
+      user: {
+        name: 'Jane',
+        lastname: 'Doe'
+      }
+    },
+    {
+      user: {
+        name: 'Jon',
+        lastname: 'Doe'
+      }
+    },
+    {
+      user: {
+        name: 'Michael',
+        lastname: 'Caine'
+      }
+    },
+    {
+      user: {
+        name: 'James',
+        lastname: 'Bond'
+      }
+    },
+  ];
 
 /* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+router.get('/', function (req, res, next) {
+  console.debug(req, next);
+  res.json(userResponse);
 });
 
 export default router;
