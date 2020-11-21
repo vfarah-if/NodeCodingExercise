@@ -26,11 +26,23 @@ const userResponse =
         lastname: 'Bond'
       }
     },
+    {
+      user: {
+        name: 'Robert',
+        lastname: 'Plant'
+      }
+    },
+    {
+      user: {
+        name: 'Jordan',
+        lastname: 'Peterson'
+      }
+    },
   ];
 
 /* GET users listing. */
 router.get('/', function (req, res, next) {
-  console.debug(req, next);
+  // console.debug(req, next);
   res.json(userResponse);
 });
 

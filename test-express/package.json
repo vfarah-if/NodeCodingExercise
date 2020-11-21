@@ -10,7 +10,8 @@
     "transpile": "babel ./server --out-dir dist-server",
     "clean": "rimraf dist-server",
     "dev": "cross-env NODE_ENV=development npm-run-all build server",
-    "prod": "cross-env NODE_ENV=production npm-run-all build server"
+    "prod": "cross-env NODE_ENV=production npm-run-all build server",
+    "watch:dev": "nodemon"
   },
   "dependencies": {
     "@babel/cli": "^7.12.7",
@@ -31,5 +32,17 @@
   },
   "devDependencies": {
     "cross-env": "^7.0.2"
+  },
+  "nodemonConfig": {
+    "exec": "npm run dev",
+    "watch": [
+      "server/*",
+      "public/*"
+    ],
+    "ignore": [
+      "**/__tests__/**",
+      "*.test.js",
+      "*.spec.js"
+    ]
   }
 }
