@@ -13,8 +13,11 @@ At the time of setting this up I am using
 
 3. I use *Visual Studio Code* as an editor and like it as I use Visual Studio and other Microsoft Products that I find enrich developers experience. It is free and so that comes at a price. Webstorm and some other paid products tend to give a richer more reliable experience, in my honest opinion, but as VSCode matures, so does the experience
    3.1. Basic tutorials can be found [here](https://code.visualstudio.com/docs/nodejs/nodejs-tutorial) which can help you to get express up and running in no time
+
    3.2. *VSCode* offers lots of plugins to speed up development
+   
    3.3. Typescript and typescript dev plugins really enrich the experience for code completion as well as finding 10 to 15 percent of bugs at compile time, which is always a bonus. If *Google* and *Microsoft* make it part of their suit, you know its something polished and enriching and *Anders Heilberg* has been enriching my life since when i used to develop using *Borland* technology
+   
    3.4. Linters and Test Frameworks really keep the quality standardised
    
 4. Generating an express application with ES6 can be done very easily [here](https://www.freecodecamp.org/news/how-to-enable-es6-and-beyond-syntax-with-node-and-express-68d3e11fe1ab/)
