@@ -17,12 +17,18 @@ At the time of setting this up I was using
 
    3.2. *VSCode* offers lots of plugins to speed up development
    
-   3.3. *Typescript* and typescript dev plugins really enrich the experience for code completion as well as finding 10 to 15 percent of bugs at compile time, which is always a bonus. If *Google* and *Microsoft* make it part of their suit, you know its something polished and enriching and *Anders Heilberg* has been enriching my life since when i used to develop using *Borland* technology
+   3.3. *Typescript* and typescript dev plugins really enrich the experience for code completion as well as finding 10% to 15% of bugs at compile time, which is always a bonus in this time driven game. If *Google* and *Microsoft* make it part of their suit, you know its something polished and enriching and [Anders Hejlsberg](https://en.wikipedia.org/wiki/Anders_Hejlsberg) has been enriching my life since developing with *Borland* technology, if any of you are old enough to remember *Turbo Pascal* or *Delphi* 
 
    3.4. Linters and Test Frameworks really keep the quality standardised
    
 4. Generating an express application with ES6 can be done very easily [here](https://www.freecodecamp.org/news/how-to-enable-es6-and-beyond-syntax-with-node-and-express-68d3e11fe1ab/)
 
    `npx express-generator your-project-name --no-view`
+
+   `Refactor some of the generated code into server folder`
+
+   `Start removing the require to imports`
+
+   
 
 5. 
