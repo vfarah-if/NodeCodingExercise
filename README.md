@@ -11,7 +11,7 @@ At the time of setting this up I was using
 
 2. Using *Windows OS* with an *Ubuntu* developer kit installed on windows 10 - [See Ubuntu on Windows for more information](https://ubuntu.com/tutorials/ubuntu-on-windows#1-overview) which can be alternatively be done using Docker or other types of Virtual Machines. **NOTE**: Node is best served not on Windows when going to Production
 
-3. Developing with *Visual Studio Code* as an editor and like it as I use Visual Studio and other Microsoft Products that I find enrich developers experience. It is free and so that comes at a price. Webstorm and some other paid products tend to give a richer more reliable experience, in my honest opinion, but as VSCode matures, so does the experience
+3. Developing with *Visual Studio Code* as an editor and like it as I use Visual Studio and other Microsoft Products that I find enrich developers experience. It is free and so that comes at a price. *Webstorm* and some other paid products tend to give a richer more reliable experience, in my honest opinion, but as *VSCode* matures, so does the experience
    
    3.1. Basic tutorials can be found [here](https://code.visualstudio.com/docs/nodejs/nodejs-tutorial) which can help you to get express up and running in no time
 
@@ -21,14 +21,49 @@ At the time of setting this up I was using
 
    3.4. Linters and Test Frameworks really keep the quality standardised
    
-4. Generating an express application with ES6 can be done very easily [here](https://www.freecodecamp.org/news/how-to-enable-es6-and-beyond-syntax-with-node-and-express-68d3e11fe1ab/)
+4. Generating an express application with ES6 can be done very easily [following these instructions using babel](https://www.freecodecamp.org/news/how-to-enable-es6-and-beyond-syntax-with-node-and-express-68d3e11fe1ab/)
 
    `npx express-generator your-project-name --no-view`
 
    `Refactor some of the generated code into server folder`
 
-   `Start removing the require to imports`
+   `Start removing the require to imports out of all units under generated folder`
 
+   `npm install --save npm-run-all`
+
+   `npm install --save @babel/core @babel/cli @babel/preset-env nodemon rimraf`
+
+   Configure babel *package json*
+
+   ```json
+   // package.json
+   {  
+     // .. contents above
+     "babel": {
+       "presets": ["@babel/preset-env"]
+     },
+   }
+   ```
+
+   Configure scripts to *transpile*
+
+   ```json
+   // package.json
+   "scripts": {
+       "start": "node ./server/bin/www",
+       "transpile": "babel ./server --out-dir dist-server"
+   }
    
+   ```
 
-5. 
+   Finally run `npm run transpile`
+
+   ```json
+   // package.json
+   "build": "npm-run-all clean transpile"
+   ```
+
+   **NOTE:** Installed `npm install --save-dev cross-env` for any environment settings, only needed for windows
+
+5. TODO: Configure Nodemon
+
