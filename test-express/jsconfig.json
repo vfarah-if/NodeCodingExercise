@@ -1,0 +1,2 @@
+// NOTE: To Help code completion for tests and this solved my problem, even though I added Typescript for jest
+{ "typeAcquisition": { "include": [ "jest" ] } }
