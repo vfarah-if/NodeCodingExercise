@@ -1,0 +1,22 @@
+{
+  "name": "package-name",
+  "version": "1.0.0",
+  "description": "Test Initialising a baseic node utilising nmp init",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vfarah-if/NodeCodingExercise.git"
+  },
+  "keywords": [
+    "Node"
+  ],
+  "author": "Vincent Farah",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vfarah-if/NodeCodingExercise/issues"
+  },
+  "homepage": "https://github.com/vfarah-if/NodeCodingExercise#readme"
+}
