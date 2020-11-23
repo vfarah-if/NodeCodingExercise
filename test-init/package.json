@@ -4,7 +4,8 @@
   "description": "Test Initialising a baseic node utilising nmp init",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -18,5 +19,9 @@
   "bugs": {
     "url": "https://github.com/vfarah-if/NodeCodingExercise/issues"
   },
-  "homepage": "https://github.com/vfarah-if/NodeCodingExercise#readme"
+  "homepage": "https://github.com/vfarah-if/NodeCodingExercise#readme",
+  "devDependencies": {
+    "@types/jest": "^26.0.15",
+    "jest": "^26.6.3"
+  }
 }
