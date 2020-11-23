@@ -7,9 +7,10 @@ TODO:
 ✔ Setup EC6 and Babel @done(20-11-21 09:15)
 ✔ Setup JEST @done(20-11-22 09:16)
 ✔ Setup JEST code completion to work with VSCode @done(20-11-22 12:30)
+
+☐ Finish adding some *sample tests* for express @high 
 Setup Jest Code Completion
 ☐ Setup *Configuration* or .ENV @today
-☐ Finish adding some *sample tests* for express @high 
 ☐ Setup _Webpack Analyser_ @low
 ☐ Setup `Code Coverage` @critical 
 ☐ Setup Tests to keep running and rerun when modified automatically @today 
