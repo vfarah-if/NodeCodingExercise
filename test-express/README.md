@@ -1,4 +1,4 @@
-# `Introduction
+# Introduction
 
 This is a skeleton Node Application generated basically for testing express API ideas. I find myself doing similar things over and over and this will be good for coding exercises and other types of base Express Ideas. I try to incorporate some testing ideas that can make testing easier or something I can learn and then incorporate onto my quick express application.
 
@@ -20,19 +20,19 @@ This document is to help map out some of my thoughts when I generated this and h
 
    `npm install --save @babel/core @babel/cli @babel/preset-env nodemon rimraf`
 
-   Configure babel *package json*
+   Configure babel _package json_
 
    ```json
    // package.json
-   {  
+   {
      // .. contents above
      "babel": {
        "presets": ["@babel/preset-env"]
-     },
+     }
    }
    ```
 
-   Configure scripts to *transpile*
+   Configure scripts to _transpile_
 
    ```json
    // package.json
@@ -40,7 +40,7 @@ This document is to help map out some of my thoughts when I generated this and h
        "start": "node ./server/bin/www",
        "transpile": "babel ./server --out-dir dist-server"
    }
-   
+
    ```
 
    Finally run `npm run transpile`
@@ -57,27 +57,27 @@ This document is to help map out some of my thoughts when I generated this and h
    ```json
    // package.json
    ...
-   "nodemonConfig": { 
+   "nodemonConfig": {
      "exec": "npm run dev",
      "watch": ["server/*", "public/*"],
      "ignore": ["**/__tests__/**", "*.test.js", "*.spec.js"]
    },
-   "scripts": { 
+   "scripts": {
      // ... other scripts
      "watch:dev": "nodemon"
    }
    ```
 
-4. Configuring *Jest Tests*
+4. Configuring _Jest Tests_
 
    ```json
    // package.json
    ...
-   "jest": { 
+   "jest": {
      "testEnvironment": "node"
    },
    "scripts": {
-     // ..other scripts 
+     // ..other scripts
      "test": "jest"
    }
    ```
@@ -88,9 +88,7 @@ This document is to help map out some of my thoughts when I generated this and h
 
    ```json
    // jsconfig.json
-   { "typeAcquisition": { "include": [ "jest" ] } }		
+   { "typeAcquisition": { "include": ["jest"] } }
    ```
 
 7. After looking at some latest testing patterns for Jest with Express, came across a technique I personally never used this and thought I would give it a go. The details can be found [here](https://www.codementor.io/@knownasilya/testing-express-apis-with-supertest-du107mcv2)
-
-8. 
