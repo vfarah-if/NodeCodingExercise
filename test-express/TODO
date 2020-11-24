@@ -7,7 +7,7 @@ TODO:
 ✔ Setup EC6 and Babel @done(20-11-21 09:15)
 ✔ Setup JEST @done(20-11-22 09:16)
 ✔ Setup JEST code completion to work with VSCode @done(20-11-22 12:30)
-
+✔ Setup JEST test watch with Jest watch @done(20-11-24 18:01)
 ☐ Finish adding some *sample tests* for express @high 
 Setup Jest Code Completion
 ☐ Setup *Configuration* or .ENV @today
