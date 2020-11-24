@@ -90,5 +90,3 @@ This document is to help map out some of my thoughts when I generated this and h
    // jsconfig.json
    { "typeAcquisition": { "include": ["jest"] } }
    ```
-
-7. After looking at some latest testing patterns for Jest with Express, came across a technique I personally never used this and thought I would give it a go. The details can be found [here](https://www.codementor.io/@knownasilya/testing-express-apis-with-supertest-du107mcv2)
