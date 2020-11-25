@@ -40,7 +40,7 @@ const userResponse =
     },
   ];
 
-/* GET users listing. */
+
 router.get('/', function (req, res, next) {
   // console.debug(req, next);
   res.json(userResponse);

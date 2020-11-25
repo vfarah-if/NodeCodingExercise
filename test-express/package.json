@@ -23,7 +23,14 @@
   },
   "babel": {
     "presets": [
-      "@babel/preset-env"
+      [
+        "@babel/preset-env",
+        {
+          "targets": {
+            "node": "current"
+          }
+        }
+      ]
     ]
   },
   "devDependencies": {
@@ -37,6 +44,7 @@
     "nodemon": "^2.0.6",
     "npm-run-all": "^4.1.5",
     "rimraf": "^3.0.2",
+    "supertest": "^6.0.1",
     "ts-jest": "^26.4.4"
   },
   "nodemonConfig": {

@@ -90,3 +90,6 @@ This document is to help map out some of my thoughts when I generated this and h
    // jsconfig.json
    { "typeAcquisition": { "include": ["jest"] } }
    ```
+
+7. Tried endpoint testing based on a new framework, [supertest](https://zellwk.com/blog/endpoint-testing/) to try something new
+

@@ -8,11 +8,12 @@ TODO:
 ✔ Setup JEST @done(20-11-22 09:16)
 ✔ Setup JEST code completion to work with VSCode @done(20-11-22 12:30)
 ✔ Setup JEST test watch with Jest watch @done(20-11-24 18:01)
-☐ Finish adding some *sample tests* for express @high 
+✔ Finish adding some *sample tests* for express @done(20-11-25 07:53)
+✔ Setup Tests to keep running and rerun when modified automatically @done(20-11-25 07:56)
 Setup Jest Code Completion
-☐ Setup *Configuration* or .ENV @today
+☐ Setup *Configuration* or .ENV @high
 ☐ Setup _Webpack Analyser_ @low
+☐ Setup SWAGGER to expose Open API mechanism
 ☐ Setup `Code Coverage` @critical 
-☐ Setup Tests to keep running and rerun when modified automatically @today 
 ☐ Setup get, post, delete example @today
 ☐ Migrate *README* that is specific to this project from the root README @low 
