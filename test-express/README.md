@@ -1,6 +1,8 @@
 # Introduction
 
-This is a skeleton Node Application generated basically for testing express API ideas. I find myself doing similar things over and over and this will be good for coding exercises and other types of base Express Ideas. I try to incorporate some testing ideas that can make testing easier or something I can learn and then incorporate onto my quick express application.
+This is a skeleton Node Application generated basically for testing express API ideas. Do you find plumbing work usually gets done over and over again?This will be good for coding exercises and other types of base Express Ideas but also allowing myself time to focus on the business problem in an ideal environment. Tried to incorporate some testing ideas that can make testing easier and succeeded with a new framework, details below,  or something new I can incorporate into my learning process and the bonus is I can generate express applications rapidly now with all the expected plumbing I need. 
+
+Finally [clean architecture principles](https://medium.com/@danielkao/summary-of-clean-architecture-i-910d1ebdc60b) should be the basis for all development going forward.
 
 This document is to help map out some of my thoughts when I generated this and hopefully it wont go out of date too soon.
 
@@ -25,7 +27,7 @@ This document is to help map out some of my thoughts when I generated this and h
    ```json
    // package.json
    {
-     // .. contents above
+     // ... contents above
      "babel": {
        "presets": ["@babel/preset-env"]
      }
@@ -68,7 +70,7 @@ This document is to help map out some of my thoughts when I generated this and h
    }
    ```
 
-4. Configuring _Jest Tests_
+4. Configuring _Jest Tests_ to run once or to watch while you develop the tests
 
    ```json
    // package.json
@@ -77,8 +79,9 @@ This document is to help map out some of my thoughts when I generated this and h
      "testEnvironment": "node"
    },
    "scripts": {
-     // ..other scripts
-     "test": "jest"
+     // ... other scripts
+     "test": "jest",
+     "test:watch": "jest --watch"
    }
    ```
 
@@ -91,5 +94,5 @@ This document is to help map out some of my thoughts when I generated this and h
    { "typeAcquisition": { "include": ["jest"] } }
    ```
 
-7. Tried endpoint testing based on a new framework, [supertest](https://zellwk.com/blog/endpoint-testing/) to try something new
+7. Tried endpoint testing based on a new framework, [supertest](https://zellwk.com/blog/endpoint-testing/) to try something new, and had a very good result., That mixed with Jest snapshots, makes a perfect simple golden master test. I kept it simple for the moment, a production setup would need a lot more thought but this give you a good taste for it and the rest is up to your imagination
 
