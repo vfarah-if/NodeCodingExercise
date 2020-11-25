@@ -108,7 +108,7 @@ This document is to help map out some of my thoughts when I generated this and h
 
     ![Coverage](readme-images/codecoverage-sample.png)
 
-11. HTML outputs get generated for all types of coverage reports required to analyse what is covered example **lcov report below**.
+11. HTML outputs get generated for all types of coverage reports required to analyse the code examples e.g. the **lcov report** below.
 
     ![LCOV Report](readme-images/lcov-report-sample.png)
 
