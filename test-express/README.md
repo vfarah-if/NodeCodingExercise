@@ -94,7 +94,7 @@ This document is to help map out some of my thoughts when I generated this and h
    { "typeAcquisition": { "include": ["jest"] } }
    ```
 
-7. Tried endpoint testing based on a new framework, [supertest](https://zellwk.com/blog/endpoint-testing/), to try something new and was pleasantly surprised at how easy this to use. That mixed with Jest snapshots, easy to generate simple [characterisation test](https://en.wikipedia.org/wiki/Characterization_test) and then make sure the edge cases and underlying libraries are nicely unit tested.  Kept it simple for the moment, a production setup would need a lot more thought but this give you a good taste for it and the rest is up to your imagination
+7. Tried endpoint testing based on a new framework, [supertest](https://zellwk.com/blog/endpoint-testing/), to try something new and was pleasantly surprised at how easy this to use. That mixed with Jest snapshots, easy to generate simple [characterisation test](https://en.wikipedia.org/wiki/Characterization_test) and then make sure the edge cases and underlying libraries are nicely unit tested.  Kept it simple for the moment, a production setup would need a lot more thought but this should give you a good taste for it and the rest is up to your imagination
 
    <img src="./readme-images/supertest-sample.png" alt="Test output" style="zoom:80%;" />
 
