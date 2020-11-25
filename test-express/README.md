@@ -54,7 +54,7 @@ This document is to help map out some of my thoughts when I generated this and h
 
    **NOTE:** Installed `npm install --save-dev cross-env` for any environment settings, only needed for windows
 
-3. Automatically recompiling code when changes are made
+3. Automatically recompiling code when changes are made using [nodemon](https://github.com/remy/nodemon)
 
    ```json
    // package.json
@@ -101,4 +101,8 @@ This document is to help map out some of my thoughts when I generated this and h
 8. Programmers without things [TODO](https://github.com/fabiospampinato/vscode-todo-plus), become aimless and goalless, which is why TDD is good, helps to focus what needs to be done. Busy existence means we cant get everything done, so it makes sense to prioritise and state what has been done and what needs to be done with a priority order. You can then lift and shift this into a Jira ticket as a *dev tasks list* to help communicate thoughts and intentions in resolving any outstanding tasks. The art of software engineering is about **communication** and breaking problems up into little easy to conquer problems. Install within *VSCode* the TODO extension and you can learn the shortcuts [here](https://github.com/fabiospampinato/vscode-todo-plus/blob/master/resources/readme.todo)
 
    <img src="./readme-images/todo-sample.png" alt="TODO example" style="zoom: 67%;" />
+
+9. **Environment setting** are defined using [.env](https://medium.com/the-node-js-collection/making-your-node-js-work-everywhere-with-environment-variables-2da8cdf6e786) for setting up a configuration in the root of the project to work with environment variables, which in turn can be setup to receive variables and settings from deployment pipelines
+
+10. SWAGGER TODO
 
