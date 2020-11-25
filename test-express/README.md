@@ -96,3 +96,9 @@ This document is to help map out some of my thoughts when I generated this and h
 
 7. Tried endpoint testing based on a new framework, [supertest](https://zellwk.com/blog/endpoint-testing/) to try something new, and had a very good result., That mixed with Jest snapshots, makes a perfect simple golden master test. I kept it simple for the moment, a production setup would need a lot more thought but this give you a good taste for it and the rest is up to your imagination
 
+   <img src="./readme-images/supertest-sample.png" alt="Test output" style="zoom:80%;" />
+
+8. Programmers without things [TODO](https://github.com/fabiospampinato/vscode-todo-plus), become aimless and goalless, which is why TDD is good, helps to focus what needs to be done. In our busy lives we cant get everything done, so it makes sense to prioritise and state what has been done and what needs to be done with a priority order. You can then lift and shift this into a Jira as a *dev tasks list* to help communicate thoughts and intentions in resolving any outstanding tasks. The art of software engineering is about **communication** and breaking problems up into little easy to conquer problems. Install within *vscode* the TODO extension and you can learn the shortcuts [here](https://github.com/fabiospampinato/vscode-todo-plus/blob/master/resources/readme.todo)
+
+   <img src="./readme-images/todo-sample.png" alt="TODO example" style="zoom: 67%;" />
+
