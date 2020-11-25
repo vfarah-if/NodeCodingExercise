@@ -1,6 +1,6 @@
 # Introduction
 
-This is a skeleton Node Application generated basically for testing express API ideas. Do you find plumbing work usually gets done over and over again?This will be good for coding exercises and other types of base Express Ideas but also allowing myself time to focus on the business problem in an ideal environment. Tried to incorporate some testing ideas that can make testing easier and succeeded with a new framework, details below,  or something new I can incorporate into my learning process and the bonus is I can generate express applications rapidly now with all the expected plumbing I need. 
+This is a skeleton Node Application generated basically for testing [Express API](https://expressjs.com/en/api.html) ideas. Do you find plumbing work usually gets done over and over again?This will be good for coding exercises and other types of base Express Ideas but also allowing myself time to focus on the business problem in an ideal environment. Tried to incorporate some testing ideas that can make testing easier and succeeded with a new framework, details below,  or something new I can incorporate into my learning process and the bonus is I can generate express applications rapidly now with all the expected plumbing I need. 
 
 Finally [Clean Architecture Principles](https://medium.com/@danielkao/summary-of-clean-architecture-i-910d1ebdc60b) should be the basis for all development going forward.
 

@@ -4,12 +4,12 @@ exports[`index or home page should get the route 1`] = `
 "<html>
 
 <head>
-  <title>Express</title>
+  <title>Express Test API Test</title>
   <link rel=\\"stylesheet\\" href=\\"/stylesheets/style.css\\">
 </head>
 
 <body>
-  <h1>Express</h1>
+  <h1>Express Test API's</h1>
   <p>Welcome to Express</p>
 </body>
 
