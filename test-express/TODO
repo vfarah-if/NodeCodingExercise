@@ -10,10 +10,10 @@ TODO:
 ✔ Setup JEST test watch with Jest watch @done(20-11-24 18:01)
 ✔ Finish adding some *sample tests* for express @done(20-11-25 07:53)
 ✔ Setup Tests to keep running and rerun when modified automatically @done(20-11-25 07:56)
+✔ Setup `Code Coverage` @done(20-11-25 12:40)
 Setup Jest Code Completion
 ☐ Setup *Configuration* or .ENV @high
 ☐ Setup _Webpack Analyser_ @low
-☐ Setup SWAGGER to expose Open API mechanism
-☐ Setup `Code Coverage` @critical 
+☐ Setup SWAGGER to expose Open API mechanism @low 
 ☐ Setup get, post, delete example @today
 ☐ Migrate *README* that is specific to this project from the root README @low 

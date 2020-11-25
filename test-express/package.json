@@ -9,6 +9,7 @@
     "server": "node ./dist-server/bin/www",
     "transpile": "babel ./server --out-dir dist-server",
     "clean": "rimraf dist-server",
+    "coverage": "npm test -- --coverage --watchAll=false",
     "dev": "cross-env NODE_ENV=development npm-run-all build server",
     "prod": "cross-env NODE_ENV=production npm-run-all build server",
     "watch:dev": "nodemon",
