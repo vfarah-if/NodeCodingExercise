@@ -87,18 +87,18 @@ This document is to help map out some of my thoughts when I generated this and h
 
 5. **Jest documentation** can be found [here](https://jestjs.io/docs/en/getting-started)
 
-6. Struggled with Jest Test VSCode code completion and so decided to install the Typescript Types to help improve matters. On doing so nothing improved. Then googled and found adding jsconfig.json with this value improved things massively.
+6. Struggled with Jest Test *VSCode* code completion and so decided to install the Typescript Types to help improve matters. On doing so nothing improved. Then googled and found adding *jsconfig.json* with this value improved things massively
 
    ```json
    // jsconfig.json
    { "typeAcquisition": { "include": ["jest"] } }
    ```
 
-7. Tried endpoint testing based on a new framework, [supertest](https://zellwk.com/blog/endpoint-testing/) to try something new, and had a very good result., That mixed with Jest snapshots, makes a perfect simple golden master test. I kept it simple for the moment, a production setup would need a lot more thought but this give you a good taste for it and the rest is up to your imagination
+7. Tried endpoint testing based on a new framework, [supertest](https://zellwk.com/blog/endpoint-testing/), to try something new and was pleasantly surprised at how easy this to use. That mixed with Jest snapshots, easy to generate simple [characterisation test](https://en.wikipedia.org/wiki/Characterization_test) and then make sure the edge cases and underlying libraries are nicely unit tested.  Kept it simple for the moment, a production setup would need a lot more thought but this give you a good taste for it and the rest is up to your imagination
 
    <img src="./readme-images/supertest-sample.png" alt="Test output" style="zoom:80%;" />
 
-8. Programmers without things [TODO](https://github.com/fabiospampinato/vscode-todo-plus), become aimless and goalless, which is why TDD is good, helps to focus what needs to be done. In our busy lives we cant get everything done, so it makes sense to prioritise and state what has been done and what needs to be done with a priority order. You can then lift and shift this into a Jira as a *dev tasks list* to help communicate thoughts and intentions in resolving any outstanding tasks. The art of software engineering is about **communication** and breaking problems up into little easy to conquer problems. Install within *vscode* the TODO extension and you can learn the shortcuts [here](https://github.com/fabiospampinato/vscode-todo-plus/blob/master/resources/readme.todo)
+8. Programmers without things [TODO](https://github.com/fabiospampinato/vscode-todo-plus), become aimless and goalless, which is why TDD is good, helps to focus what needs to be done. Busy existance means we cant get everything done, so it makes sense to prioritise and state what has been done and what needs to be done with a priority order. You can then lift and shift this into a Jira ticket as a *dev tasks list* to help communicate thoughts and intentions in resolving any outstanding tasks. The art of software engineering is about **communication** and breaking problems up into little easy to conquer problems. Install within *VScode* the TODO extension and you can learn the shortcuts [here](https://github.com/fabiospampinato/vscode-todo-plus/blob/master/resources/readme.todo)
 
    <img src="./readme-images/todo-sample.png" alt="TODO example" style="zoom: 67%;" />
 
