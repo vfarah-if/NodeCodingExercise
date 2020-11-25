@@ -104,5 +104,13 @@ This document is to help map out some of my thoughts when I generated this and h
 
 9. **Environment setting** are defined using [.env](https://medium.com/the-node-js-collection/making-your-node-js-work-everywhere-with-environment-variables-2da8cdf6e786) for setting up a configuration in the root of the project to work with environment variables, which in turn can be setup to receive variables and settings from deployment pipelines
 
-10. SWAGGER TODO
+10. Configured **code coverage** to make the coverage visual, and to report any violations below a configured standard  of coverage set for test scenario
+
+    ![Coverage](readme-images/codecoverage-sample.png)
+
+11. HTML outputs get generated for all types of coverage reports required to analyse what is covered example **lcov report below**.
+
+    ![LCOV Report](readme-images/lcov-report-sample.png)
+
+12. SWAGGER TODO
 
