@@ -3,6 +3,7 @@ import app from '../app';
 import debugLib from 'debug';
 import { createServer } from 'http';
 import config from "../config";
+import listEndpoints from 'express-list-endpoints';
 
 const debug = debugLib('test-express:server');
 const { port } = config;
@@ -62,5 +63,6 @@ function onListening() {
     ? 'pipe ' + addr
     : 'port ' + addr.port;
   debug('Listening on ' + bind);
+  console.debug(listEndpoints(app));
   console.debug(`http://localhost:${app.get("port")} is ready`);
 }

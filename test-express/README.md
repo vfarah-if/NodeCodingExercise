@@ -112,5 +112,7 @@ This document is to help map out some of my thoughts when I generated this and h
 
     ![LCOV Report](readme-images/lcov-report-sample.png)
 
-12. SWAGGER TODO
+12. Investigated a simple option of outputting a lost of endpoints using an express library called [expressListendpoints](https://github.com/AlbertoFdzM/express-list-endpoints)
+
+13. SWAGGER TODO
 
