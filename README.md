@@ -13,8 +13,8 @@ The service interface it defined in the form of a **swagger**.
 - *Stats* are posted based on the **completion of a learning session**.
 - Stats can be fetched via an *aggregated call* which **aggregates a users stat history** for a course they are studying.
 - Stats should also be fetchable for a **single learning session**.
-- The service must be easily runnable/startable & deployable on the
-  AWS ecosystem by the reviewer of the task. Other than node.js being the main language, any technology can be
+- The service must be easily **runnable/startable** & **deployable** on the
+  *AWS* *ecosystem* by the reviewer of the task. Other than node.js being the main language, any technology can be
   used.
 - The project should be submitted in the form of a **code repository**.
 - Please state any assumptions or deviations from the specification in the repository readme.
@@ -43,3 +43,4 @@ Basic instructions to start build and get this API up and running
 | `npm run build`      | **Builds the project**, cleaning the project, transpiling it and then cleaning the *transpiled* tests |
 | `npm run test`       | Runs all the **tests once**                                  |
 | `npm run test:watch` | Runs test in **test-development** mode while the developer creates tests giving the ability to automatically run when changes made |
+| `npm run coverage`   | Runs all the tests to calculate the test coverage and to vet if it succeeds against the expected size |

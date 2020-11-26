@@ -1,6 +1,6 @@
 ✔ Setup basic `express` application @critical @done(20-11-26 15:48)
 ✔ Clean up and prepare the application so that it is ready for `Senaca requirments` @high @done(20-11-26 15:50)
-✔ Add the SWAGGER into the definition so the swagger UI can test the endpoint @high @done(20-11-26 15:50)
+✔ Add the `SWAGGER` into the definition so the swagger UI can test the endpoint @high @done(20-11-26 15:50)
 ☐ Start developing endpoints so they get values @high
 ☐ Start developing by domain an using an In-memory mongo database @high
 ☐ Start configuring a serverless.yaml for AWS deployment script @high
