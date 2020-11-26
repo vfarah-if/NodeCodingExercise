@@ -64,5 +64,5 @@ function onListening() {
     : 'port ' + addr.port;
   debug('Listening on ' + bind);
   console.debug(listEndpoints(app));
-  console.debug(`http://localhost:${app.get("port")} is ready`);
+  console.debug(`http://localhost:${app.get("port")} is ready`);  
 }

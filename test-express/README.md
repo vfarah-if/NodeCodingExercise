@@ -112,7 +112,12 @@ This document is to help map out some of my thoughts when I generated this and h
 
     ![LCOV Report](readme-images/lcov-report-sample.png)
 
-12. Investigated a simple option of outputting a lost of endpoints using an express library called [expressListendpoints](https://github.com/AlbertoFdzM/express-list-endpoints)
+12. Investigated a simple option of outputting a **express endpoints** using an express library called [expressListendpoints](https://github.com/AlbertoFdzM/express-list-endpoints)
 
-13. SWAGGER TODO
+13. Added **Swagger** to the project using  a really good [blog](https://medium.com/@kirtikau/how-to-add-swagger-ui-to-existing-node-js-and-express-js-project-2c8bad9364ce) using UI express which helped me to express a really simple scenario as in the image below. This was very useful in allowing me to test my endpoints quickly using a ui as well as documenting my assumptions. This can be misleading if the swagger is incorrectly formatted but is a great way to confirm any documents assigned
 
+    ![Swagger executor](./readme-images/swagger-execute-sample.png)
+    
+    Below is a summary of the API's formatted to expose models and the executor you can see above.
+    
+    ![Swagger summary](./readme-images/swagger-api-summary-sample.png)

@@ -16,5 +16,5 @@ TODO:
 ✔ Migrate *README* that is specific to this project from the root README @low @done(20-11-25 19:09)
 ✔ Fix issue with tests being outputted to the dist-server folder as ignore makes test fail @done(20-11-26 09:47)
 ✔ Setup list express endpoints  to investigate if this is a simple way of outputting some concise info to developers for usage @done(20-11-26 10:49)
-☐ Setup SWAGGER to expose Open API mechanism @low npm run test
+✔ Setup SWAGGER to expose Open API mechanism @low npm run test @done(20-11-26 13:04)
 ☐ Setup _Webpack Analyser_ @high

@@ -9,8 +9,10 @@ exports[`index or home page should get the route 1`] = `
 </head>
 
 <body>
-  <h1>Express Test API's</h1>
+  <h1>Express Test API's</h1>  
   <p>This is a space to document information about test scenarios. If not used, remove from the project.</p>  
+  <p>Takle a look at the API exposed using <a href=\\"http://localhost:3000/api-docs/\\">Swagger</a>
+  </p>
 </body>
 
 </html>
