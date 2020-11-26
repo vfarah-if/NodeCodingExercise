@@ -15,7 +15,7 @@
     "prod": "cross-env NODE_ENV=production npm-run-all build server",
     "watch:dev": "nodemon -e *.*",
     "test": "jest",
-    "test:watch": "jest --watch"    
+    "test:watch": "jest --watch"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",

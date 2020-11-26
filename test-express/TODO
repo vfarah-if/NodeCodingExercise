@@ -11,10 +11,9 @@ TODO:
 ✔ Finish adding some *sample tests* for express @done(20-11-25 07:53)
 ✔ Setup Tests to keep running and rerun when modified automatically @done(20-11-25 07:56)
 ✔ Setup `Code Coverage` @done(20-11-25 12:40)
-Setup Jest Code Completion
+✔ Setup Jest Code Completion @done(20-11-26 09:54)
 ✔ Setup *Configuration* or .ENV @done(20-11-25 19:08)
 ✔ Migrate *README* that is specific to this project from the root README @low @done(20-11-25 19:09)
 ✔ Fix issue with tests being outputted to the dist-server folder as ignore makes test fail @done(20-11-26 09:47)
 ☐ Setup SWAGGER to expose Open API mechanism @low 
 ☐ Setup _Webpack Analyser_ @high
-☐ Setup get, post, delete example @low 
