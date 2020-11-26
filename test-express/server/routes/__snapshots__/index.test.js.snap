@@ -10,7 +10,7 @@ exports[`index or home page should get the route 1`] = `
 
 <body>
   <h1>Express Test API's</h1>
-  <p>Welcome to Express</p>
+  <p>This is a space to document information about test scenarios. If not used, remove from the project.</p>  
 </body>
 
 </html>
