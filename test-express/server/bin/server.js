@@ -2,23 +2,25 @@
 import app from '../app';
 import debugLib from 'debug';
 import { createServer } from 'http';
+import config from "../config";
 
 const debug = debugLib('test-express:server');
-const port = getPortAndConfigureIISExpress();
+const { port } = config;
+const iisPort = getPortAndConfigureIISExpress();
 const server = generateServer();
 
 function generateServer() {
   const result = createServer(app);
-  result.listen(port);
+  result.listen(iisPort);
   result.on('error', onError);
   result.on('listening', onListening);
   return result;
 }
 
 function getPortAndConfigureIISExpress() {
-  var port = normalizePort(process.env.PORT || '3000');
-  app.set('port', port);
-  return port;
+  const result = normalizePort(port);
+  app.set('port', result);
+  return result;
 }
 
 function normalizePort(val) {
@@ -34,9 +36,9 @@ function onError(error) {
     throw error;
   }
 
-  var bind = typeof port === 'string'
-    ? 'Pipe ' + port
-    : 'Port ' + port;
+  var bind = typeof iisPort === 'string'
+    ? 'Pipe ' + iisPort
+    : 'Port ' + iisPort;
 
   makeErrorsMoreInformative();
 
@@ -45,11 +47,9 @@ function onError(error) {
       case 'EACCES':
         console.error(bind + ' requires elevated privileges');
         process.exit(1);
-        break;
       case 'EADDRINUSE':
         console.error(bind + ' is already in use');
         process.exit(1);
-        break;
       default:
         throw error;
     }
@@ -62,4 +62,5 @@ function onListening() {
     ? 'pipe ' + addr
     : 'port ' + addr.port;
   debug('Listening on ' + bind);
+  console.debug(`http://localhost:${app.get("port")} is ready`);
 }

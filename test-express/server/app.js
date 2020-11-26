@@ -10,7 +10,7 @@ import config from "./config";
 const { isDev, port } = config;
 
 console.debug(
-  `This is a ${isDev ? "Development" : "Production"} release on port '${port}'`
+  `This is a ${isDev ? "Development" : "Production"} release preparing API on port '${port}'`
 );
 
 const app = express();
@@ -23,7 +23,5 @@ app.use(express.static(join(__dirname, "../public")));
 
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
-app.set("port", port);
-console.debug(`http://localhost:${app.get("port")} is ready`);
 
 export default app;

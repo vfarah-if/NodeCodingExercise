@@ -39,7 +39,7 @@ This document is to help map out some of my thoughts when I generated this and h
    ```json
    // package.json
    "scripts": {
-       "start": "node ./server/bin/www",
+       "start": "node ./server/bin/server",
        "transpile": "babel ./server --out-dir dist-server"
    }
 
