@@ -7,14 +7,15 @@ TODO:
 ✔ Setup EC6 and Babel @done(20-11-21 09:15)
 ✔ Setup JEST @done(20-11-22 09:16)
 ✔ Setup JEST code completion to work with VSCode @done(20-11-22 12:30)
-✔ Setup JEST test watch with Jest watch @done(20-11-24 18:01)
+✔ Setup `JEST test` watch with Jest watch @done(20-11-24 18:01)
 ✔ Finish adding some *sample tests* for express @done(20-11-25 07:53)
 ✔ Setup Tests to keep running and rerun when modified automatically @done(20-11-25 07:56)
 ✔ Setup `Code Coverage` @done(20-11-25 12:40)
 ✔ Setup Jest Code Completion @done(20-11-26 09:54)
 ✔ Setup *Configuration* or .ENV @done(20-11-25 19:08)
-✔ Migrate *README* that is specific to this project from the root README @low @done(20-11-25 19:09)
-✔ Fix issue with tests being outputted to the dist-server folder as ignore makes test fail @done(20-11-26 09:47)
-✔ Setup list express endpoints  to investigate if this is a simple way of outputting some concise info to developers for usage @done(20-11-26 10:49)
-✔ Setup SWAGGER to expose Open API mechanism @low npm run test @done(20-11-26 13:04)
-☐ Setup _Webpack Analyser_ @high
+✔ Migrate *README* that is specific to this project from the root README @done(20-11-25 19:09)
+✔ Fix `issue` with tests being outputted to the dist-server folder as ignore makes test fail @done(20-11-26 09:47)
+✔ Setup `list express` endpoints  to investigate if this is a simple way of outputting some concise info to developers for usage @done(20-11-26 10:49)
+✔ Setup `SWAGGER` to expose Open API mechanism npm run test @done(20-11-26 13:04)
+☐ Setup `Webpack`   @low
+☐ Setup linter @low

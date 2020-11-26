@@ -1,3 +1,17 @@
+# Environment
+
+Basic instructions to start build and get this API up and running
+
+| package command      | description                                                  |
+| :------------------- | :----------------------------------------------------------- |
+| `npm i`              | **Install** all the packages                                 |
+| `npm start`          | Runs and builds the application with **production** configuration |
+| `npm run start:dev`  | Runs and builds the application with **development** configuration |
+| `npm run watch:dev`  | Runs **dev** with ability to rebuild the application when any files change |
+| `npm run build`      | **Builds the project**, cleaning the project, transpiling it and then cleaning the *transpiled* tests |
+| `npm run test`       | Runs all the **tests once**                                  |
+| `npm run test:watch` | Runs test in **test-development** mode while the developer creates tests giving the ability to automatically run when changes made |
+
 # Introduction
 
 This is a skeleton Node Application generated basically for testing [Express API](https://expressjs.com/en/api.html) ideas. Do you find plumbing work usually gets done over and over again?This will be good for coding exercises and other types of base Express Ideas but also allowing myself time to focus on the business problem in an ideal environment. Tried to incorporate some testing ideas that can make testing easier and succeeded with a new framework, details below,  or something new I can incorporate into my learning process and the bonus is I can generate express applications rapidly now with all the expected plumbing I need. 
