@@ -1,1 +1,0 @@
-console.log('Say Hello to my tester!');

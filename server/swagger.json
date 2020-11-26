@@ -1,0 +1,174 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "0.0.0",
+    "title": "Stats Service",
+    "description": "Provides persistence of stats"
+  },
+  "host": "localhost:3000",
+  "basePath": "/",
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/courses/{courseId}": {
+      "post": {
+        "description": "Persists a session study event",
+        "parameters": [
+          {
+            "in": "header",
+            "description": "Identifies the user",
+            "name": "X-User-Id",
+            "type": "string",
+            "format": "uuid",
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "courseId",
+            "required": true,
+            "type": "string",
+            "format": "uuid",
+            "description": "Identifies the course"
+          },
+          {
+            "in": "body",
+            "name": "stats diff",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "sessionId": {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                "totalModulesStudied": {
+                  "type": "number"
+                },
+                "averageScore": {
+                  "type": "number"
+                },
+                "timeStudied": {
+                  "type": "number",
+                  "description": "Type in milliseconds"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "OK"
+          }
+        }
+      },
+      "get": {
+        "description": "Fetches course lifetime statistics",
+        "parameters": [
+          {
+            "in": "header",
+            "description": "Identifies the user",
+            "name": "X-User-Id",
+            "type": "string",
+            "format": "uuid",
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "courseId",
+            "required": true,
+            "type": "string",
+            "format": "uuid",
+            "description": "Identifies the course"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Course lifetime stats",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "totalModulesStudied": {
+                  "type": "number",
+                  "description": "The number of modules studied in the course"
+                },
+                "averageScore": {
+                  "type": "number",
+                  "description": "The users average score of modules across the course"
+                },
+                "timeStudied": {
+                  "type": "number",
+                  "description": "The total time spent studying a course"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/courses/{courseId}/sessions/{sessionId}": {
+      "get": {
+        "description": "Fetches a single study session",
+        "parameters": [
+          {
+            "in": "header",
+            "description": "Identifies the user",
+            "name": "X-User-Id",
+            "type": "string",
+            "format": "uuid",
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "courseId",
+            "required": true,
+            "type": "string",
+            "format": "uuid",
+            "description": "Identifies the course"
+          },
+          {
+            "in": "path",
+            "name": "sessionId",
+            "required": true,
+            "type": "string",
+            "format": "uuid",
+            "description": "Identifies the study session"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Study session stats",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "sessionId": {
+                  "description": "Identifies the session",
+                  "type": "string",
+                  "format": "uuid"
+                },
+                "totalModulesStudied": {
+                  "type": "number",
+                  "description": "The number of modules studied in the session"
+                },
+                "averageScore": {
+                  "type": "number",
+                  "description": "The users average score of modules in session"
+                },
+                "timeStudied": {
+                  "type": "number",
+                  "description": "The total time spent in session"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,29 +1,45 @@
-# Node Coding Exercise Template
+# Stats Service
 
-This is a template to get up and running for interview tests or just setting up node plumbing for just prototyping ideas with Node. This makes the exercise of what you do more efficient. This has the possibility of getting out of date pretty quick so check references to make sure this is still current.
+## Problem
 
-## References
+Our learning platform needs to track a **user's stats** for a particular **course**. We do this using a stats service.
 
-This will archive a few things that help understand what was setup at the time. Projects go out of date pretty quickly so this will help understand what is still applicable.
+The task is to create a simplified version of this service. Your stats service needs to provide the capability to create new stats as well as updating stats. The stats managed by the service are created and updated via HTTP calls. Stats are posted on the completion of a *learning session* and reflect how the *user did* on the learning session.
 
-At the time of setting this up I was using
+The service interface it defined in the form of a **swagger**.
 
-1. _Node_ version **v14.15.1** and _NPM_ **6.14.8**
+## Requirements
 
-2. Using _Windows OS_ with an _Ubuntu_ developer kit installed on windows 10 - [See Ubuntu on Windows for more information](https://ubuntu.com/tutorials/ubuntu-on-windows#1-overview) which can be alternatively be done using Docker or other types of Virtual Machines. **NOTE**: Node is best served not on Windows when going to Production
+- *Stats* are posted based on the **completion of a learning session**.
+- Stats can be fetched via an *aggregated call* which **aggregates a users stat history** for a course they are studying.
+- Stats should also be fetchable for a **single learning session**.
+- The service must be easily runnable/startable & deployable on the
+  AWS ecosystem by the reviewer of the task. Other than node.js being the main language, any technology can be
+  used.
+- The project should be submitted in the form of a **code repository**.
+- Please state any assumptions or deviations from the specification in the repository readme.
+- Stats should be persisted using a **database** of your choosing
+- Your service should have some level of **tests**
 
-3. Developing with _Visual Studio Code_ as an editor and like it as I use Visual Studio and other Microsoft Products that I find enrich developers experience. It is free and so that comes at a price. _Webstorm_ and some other paid products tend to give a richer more reliable experience, in my honest opinion, but as _VSCode_ matures, so does the experience
+## A little elaboration of the terminology we use to garner a bit more context:
 
-   3.1. Basic tutorials can be found [here](https://code.visualstudio.com/docs/nodejs/nodejs-tutorial) which can help you to get express up and running in no time
+**Course** - refers to a course on a particular subject that a user is learning. A course is made up of learning sessions.
 
-   3.2. _VSCode_ offers lots of plugins to speed up development
+**Session** - refers to a learning session that a user studies. Sessions are made up of modules that display content.
 
-   3.3. _Typescript_ and typescript dev plugins really enrich the experience for code completion as well as finding 10% to 15% of bugs at compile time, which is always a bonus in this time driven game. If _Google_ and _Microsoft_ make it part of their suit, you know its something polished and enriching and [Anders Hejlsberg](https://en.wikipedia.org/wiki/Anders_Hejlsberg) has been enriching my life since developing with _Borland_ technology, if any of you are old enough to remember _Turbo Pascal_ or _Delphi_
+**Modules** - display content to the user. There are *15 module types* and these are
+used depending on the type of content that is being displayed.
 
-   3.4. Linters and Test Frameworks really keep the quality standardised, however they can be a little overwhelming and distracting with all the syntax highlighting distracting the though process. I love the outcome and the reason it exists but I struggle a bit with the noise it generates
+# Environment
 
-   3.5 Install **Prettier** to make style more consistent with other team members
+Basic instructions to start build and get this API up and running
 
-4. **Test-express** starter can be found in the root and check this [README](test-express/README.md) for more details
-
-5. **Test-init** is all about having a clean slate to just do simple stuff, test or POC anything that does not need any prerequisite. Test express needed *Express* and a bunch of things in place before I could even begin to develop. Check [README](test-init/README.md) for a small amount of details
+| package command      | description                                                  |
+| :------------------- | :----------------------------------------------------------- |
+| `npm i`              | **Install** all the packages                                 |
+| `npm start`          | Runs and builds the application with **production** configuration |
+| `npm run start:dev`  | Runs and builds the application with **development** configuration |
+| `npm run watch:dev`  | Runs **dev** with ability to rebuild the application when any files change |
+| `npm run build`      | **Builds the project**, cleaning the project, transpiling it and then cleaning the *transpiled* tests |
+| `npm run test`       | Runs all the **tests once**                                  |
+| `npm run test:watch` | Runs test in **test-development** mode while the developer creates tests giving the ability to automatically run when changes made |
