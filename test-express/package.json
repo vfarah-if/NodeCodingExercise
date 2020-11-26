@@ -29,17 +29,26 @@
       [
         "@babel/preset-env",
         {
-          "targets": {
-            "node": "current"
-          }
+          "useBuiltIns": "usage",
+          "corejs": 2
         }
       ]
+    ],
+    "plugins": [
+      "@babel/plugin-transform-runtime",
+      "@babel/plugin-proposal-optional-chaining",
+      "@babel/plugin-proposal-class-properties"
     ]
   },
   "devDependencies": {
     "@babel/cli": "^7.12.7",
     "@babel/core": "^7.12.8",
+    "@babel/plugin-proposal-class-properties": "^7.12.1",
+    "@babel/plugin-proposal-optional-chaining": "^7.12.7",
+    "@babel/plugin-transform-runtime": "^7.12.1",
+    "@babel/polyfill": "^7.12.1",
     "@babel/preset-env": "^7.12.7",
+    "@babel/register": "^7.12.1",
     "@types/jest": "^26.0.15",
     "cross-env": "^7.0.2",
     "jest": "^26.6.3",

@@ -10,7 +10,7 @@ This document is to help map out some of my thoughts when I generated this and h
 
 1. I generated a base express application using `npx express-generator your-project-name --no-view`
 
-2. Generating an express application with [ES6](https://www.greycampus.com/blog/programming/java-script-versions) can be done very easily [following these instructions using babel](https://www.freecodecamp.org/news/how-to-enable-es6-and-beyond-syntax-with-node-and-express-68d3e11fe1ab/)
+2. Generating an express application using [ES6+](https://www.greycampus.com/blog/programming/java-script-versions) can be done very easily [following these instructions using babel](https://www.freecodecamp.org/news/how-to-enable-es6-and-beyond-syntax-with-node-and-express-68d3e11fe1ab/)
 
    `npx express-generator your-project-name --no-view`
 

@@ -15,5 +15,6 @@ TODO:
 ✔ Setup *Configuration* or .ENV @done(20-11-25 19:08)
 ✔ Migrate *README* that is specific to this project from the root README @low @done(20-11-25 19:09)
 ✔ Fix issue with tests being outputted to the dist-server folder as ignore makes test fail @done(20-11-26 09:47)
+☐ Setup list express endpoints to investigate if this is better than swagger
 ☐ Setup SWAGGER to expose Open API mechanism @low 
 ☐ Setup _Webpack Analyser_ @high
