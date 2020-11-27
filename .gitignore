@@ -102,3 +102,4 @@ dist
 
 # Distributed files generated
 dist-server/
+.vscode/launch.json
