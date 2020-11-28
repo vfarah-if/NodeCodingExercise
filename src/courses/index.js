@@ -5,9 +5,7 @@ import sessionModel from "../models/session";
 
 export const createOrUpdate = (course) => {
   return new Promise(async (resolve, reject) => {
-    if (!course) {
-      return reject(new Error("Course is required"));
-    }
+    if (!course) reject(new Error("Course is required"));
 
     try {
       const { courseId, sessionId, userId } = course;
