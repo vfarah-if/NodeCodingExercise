@@ -10,7 +10,9 @@ export const createOrUpdate = (course) => {
     }
 
     try {
+      // TODO: Check if course already exists
       const courseResponse = await courseModel.create(course);
+      // TODO: Check if session already exists and Upsert
       const sessionResponse = await sessionModel.create(course);
       resolve({ courseResponse, sessionResponse });
     } catch (error) {
