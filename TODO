@@ -5,3 +5,4 @@
 ☐ Start developing by domain an using an In-memory mongo database @high
 ☐ Start configuring a serverless.yaml for AWS deployment script @high
 ☐ Start PUML Architecture decisions @low 
+✔ Issue Remove the snapshots being outputted @done(20-11-28 18:13)
