@@ -1,5 +1,3 @@
-import { uuid } from "uuidv4";
-
 import { postRequestTest } from "../../test-utilities/test-route";
 import { connect, disconnect, clearDatabase } from "../database";
 
@@ -18,10 +16,10 @@ describe("courses api", () => {
   });
 
   test("should post new courses when all data is valid", async (done) => {
-    const courseId = uuid();
-    const userId = uuid();
+    const courseId = "f4df274b-5fde-473c-a40d-7b5ffae9f8d4";
+    const userId = "jane.doe@someemail.com";
     const body = {
-      sessionId: uuid(),
+      sessionId: "ff61a6fa-753e-42b3-8eef-076b5484fd70",
       totalModulesStudied: 9,
       averageScore: 70,
       timeStudied: 123,
@@ -48,6 +46,4 @@ describe("courses api", () => {
     expect(actualResponse.text).toMatchSnapshot();
     done();
   });
-
-
 });
