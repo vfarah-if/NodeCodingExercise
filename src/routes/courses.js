@@ -30,13 +30,13 @@ router.post("/:courseId", async (req, res, next) => {
     await createOrUpdate(course);
     return res.status(201).send({
       success: "true",
-      message: "Course added successfully",
+      message: "Course created successfully",
       course,
     });
   } catch (error) {
     return res.status(400).send({
       success: "false",
-      message: "Course failed to add",
+      message: "Course creation failed",
       error,
     });
   }

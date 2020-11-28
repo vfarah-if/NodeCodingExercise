@@ -10,6 +10,7 @@ describe("createOrUpdate a course", () => {
     timeStudied: 4,
     userId: "jane.doe@somemail.com",
   };
+  
   beforeAll(async () => {
     const isInMemory = true;
     await connect(isInMemory);

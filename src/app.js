@@ -6,7 +6,6 @@ import swaggerUi from "swagger-ui-express";
 import swaggerDocument from "./swagger.json";
 
 import indexRouter from "./routes/index";
-import usersRouter from "./routes/users";
 import coursesRouter from "./routes/courses";
 
 import config from "./config";
@@ -27,7 +26,6 @@ app.use(cookieParser());
 app.use(express.static(join(__dirname, "../public")));
 
 app.use("/", indexRouter);
-app.use("/users", usersRouter);
 app.use("/courses", coursesRouter);
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
