@@ -31,7 +31,7 @@ function getPortAndConfigureIISExpress() {
 }
 
 function normalizePort(val) {
-  var port = parseInt(val, 10);
+  const port = parseInt(val, 10);
 
   if (isNaN(port)) return val;
   if (port >= 0) return port;
@@ -63,9 +63,13 @@ function onError(error) {
 }
 
 function onListening() {
-  var addr = server.address();
-  var bind = typeof addr === "string" ? "pipe " + addr : "port " + addr.port;
+  const addr = server.address();
+  const bind = extractAddressInformation(addr);
   debug("Listening on " + bind);
   console.debug(listEndpoints(app));
   console.debug(`http://localhost:${app.get("port")} is ready`);
+}
+
+function extractAddressInformation(addr) {
+  return typeof addr === "string" ? "pipe " + addr : "port " + addr.port;
 }

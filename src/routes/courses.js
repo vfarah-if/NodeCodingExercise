@@ -27,8 +27,9 @@ router.post("/:courseId", async (req, res, next) => {
   };
 
   try {
-    await createOrUpdate(course);
-    return res.status(201).send({
+    const response = await createOrUpdate(course);
+    const { courseResponse } = response;
+    return res.status(courseResponse ? 201 : 200).send({
       success: "true",
       message: "Course created successfully",
       course,

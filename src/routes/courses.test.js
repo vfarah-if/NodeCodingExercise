@@ -37,7 +37,7 @@ describe("courses api", () => {
 
     test("should post http 400 when course id is invalid", async (done) => {
       const courseId = undefined;
-      const userId = uuid();
+      const userId = "jane.doe@someemail.com";
       const actualResponse = await postRequestTest(
         `/courses/${courseId}`,
         userId,

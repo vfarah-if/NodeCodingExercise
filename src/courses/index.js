@@ -10,10 +10,24 @@ export const createOrUpdate = (course) => {
     }
 
     try {
-      // TODO: Check if course already exists
-      const courseResponse = await courseModel.create(course);
-      // TODO: Check if session already exists and Upsert
-      const sessionResponse = await sessionModel.create(course);
+      const { courseId, sessionId, userId } = course;
+      let courseResponse;
+      const courseExists = await courseModel.exists({ courseId });
+      if (!courseExists) {
+        courseResponse = await courseModel.create(course);
+        console.debug(courseResponse);
+      }
+
+      const sessionExists = await sessionModel.exists({
+        userId,
+        sessionId,
+        userId,
+      });
+      // NOTE: upsert not used here because validation does not work with findOneAndUpdate
+      const sessionResponse = !sessionExists
+        ? await sessionModel.create(course)
+        : await sessionModel.updateOne({ courseId, sessionId, userId }, course);
+      console.debug(sessionResponse);
       resolve({ courseResponse, sessionResponse });
     } catch (error) {
       reject(error);
