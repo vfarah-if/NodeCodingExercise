@@ -12,6 +12,7 @@ const server = generateServer();
 connectMongoDb();
 
 async function connectMongoDb() {
+  //TODO: Remember to change this back to true when final checkin is done
   const result = await connect(false);
   return result;
 }
