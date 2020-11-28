@@ -1,7 +1,8 @@
 import { Router } from "express";
+import { createOrUpdate } from "../courses";
 const router = Router();
 
-router.post("/:courseId", function (req, res, next) {
+router.post("/:courseId", async (req, res, next) => {
   const { body, params, headers } = req;
   console.debug("headers, params, body", headers, params, body);
   const { courseId } = params;
@@ -16,8 +17,6 @@ router.post("/:courseId", function (req, res, next) {
     userId
   );
 
-  // TODO: Validate all the values
-  // TODO: createOrUpdateCourse in MongoDb
   const course = {
     courseId,
     sessionId,
@@ -27,11 +26,20 @@ router.post("/:courseId", function (req, res, next) {
     userId,
   };
 
-  return res.status(201).send({
-    success: "true",
-    message: "Course added successfully",
-    course,
-  });
+  try {
+    await createOrUpdate(course);
+    return res.status(201).send({
+      success: "true",
+      message: "Course added successfully",
+      course,
+    });
+  } catch (error) {
+    return res.status(400).send({
+      success: "false",
+      message: "Course failed to add",
+      error,
+    });
+  }
 });
 
 router.get("/:courseId", function (req, res, next) {

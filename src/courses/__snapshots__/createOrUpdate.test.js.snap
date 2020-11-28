@@ -12,8 +12,8 @@ exports[`createOrUpdate a course should throw an error when an undefined timeStu
 
 exports[`createOrUpdate a course should throw an error when an undefined totalModulesStudied is added 1`] = `"session validation failed: totalModulesStudied: Path \`totalModulesStudied\` is required."`;
 
-exports[`createOrUpdate a course should throw an error when an undefined userId is added 1`] = `"course validation failed: userId: Path \`userId\` is required."`;
+exports[`createOrUpdate a course should throw an error when an undefined userId is added 1`] = `"session validation failed: userId: Path \`userId\` is required."`;
 
-exports[`createOrUpdate a course should throw an error when and empty course is added 1`] = `"course validation failed: userId: Path \`userId\` is required., courseId: Path \`courseId\` is required."`;
+exports[`createOrUpdate a course should throw an error when and empty course is added 1`] = `"course validation failed: courseId: Path \`courseId\` is required."`;
 
 exports[`createOrUpdate a course should throw an error when no course is added 1`] = `"Course is required"`;

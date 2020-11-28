@@ -7,7 +7,7 @@
     "start": "npm run prod",
     "start:dev": "npm run dev",
     "server": "node ./dist-server/bin/server",
-    "transpile": "babel ./server --out-dir dist-server --copy-files",
+    "transpile": "babel ./src --out-dir dist-server --copy-files",
     "clean": "rimraf dist-server",
     "clean:buildtests": "rimraf dist-server/**/*.test.js",
     "clean:buildsnapshots": "rimraf dist-server/**/__snapshots__/**",
@@ -70,7 +70,7 @@
   "nodemonConfig": {
     "exec": "npm run dev",
     "watch": [
-      "server/*",
+      "src/*",
       "public/*"
     ],
     "ignore": [
