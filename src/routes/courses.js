@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { createOrUpdate } from "../courses";
+import { createOrUpdate, getCourse, getSession } from "../courses";
 const router = Router();
 
 router.post("/:courseId", async (req, res, next) => {
@@ -20,10 +20,13 @@ router.post("/:courseId", async (req, res, next) => {
   const course = {
     courseId,
     sessionId,
-    totalModulesStudied,
-    averageScore,
-    timeStudied,
     userId,
+    stats: {
+      sessionCount: 1,
+      totalModulesStudied,
+      averageScore,
+      timeStudied,
+    }
   };
 
   try {
@@ -43,47 +46,49 @@ router.post("/:courseId", async (req, res, next) => {
   }
 });
 
-router.get("/:courseId", function (req, res, next) {
-  const { params, headers } = req;
-  console.debug("headers, params", headers, params);
-  const { courseId } = params;
-  const userId = headers["x-user-id"];
-  console.debug("userId", userId);
-
-  // TODO: Validate all the values
-  // TODO: getCourse in MongoDb
-  const course = {
-    courseId,
-    userId,
-  };
-
-  return res.status(200).send({
-    success: "true",
-    message: "Course retrieved successfully",
-    course,
-  });
+router.get("/:courseId", async (req, res, next) => {
+  try {
+    const { params, headers } = req;
+    console.debug("headers, params", headers, params);
+    const { courseId } = params;
+    const userId = headers["x-user-id"];
+    console.debug("userId", userId);
+    const courseResponse = await getCourse(courseId, userId);
+    return res.status(!courseResponse ? 404 : 200).send({
+      success: "true",
+      message: "User Course retrieved successfully",
+      course: courseResponse,
+    });
+  } catch (error) {
+    return res.status(400).send({
+      success: "fail",
+      message: "Failed to get course",
+      error,
+    });
+  }
 });
 
-router.get("/:courseId/sessions/:sessionsId", function (req, res, next) {
+router.get("/:courseId/sessions/:sessionId", async (req, res, next) => {
   const { params, headers } = req;
   console.debug("headers, params", headers, params);
-  const { courseId, sessionsId } = params;
+  const { courseId, sessionId } = params;
   const userId = headers["x-user-id"];
-  console.debug("userId, sessionsId", userId, sessionsId);
+  console.debug("courseId, sessionId, userId", courseId, sessionId, userId);
 
-  // TODO: Validate all the values
-  // TODO: getSessionFromCourse in MongoDb
-  const course = {
-    courseId,
-    userId,
-    sessionsId,
-  };
-
-  return res.status(200).send({
-    success: "true",
-    message: "Course and Session retrieved successfully",
-    course,
-  });
+  try {
+    const session = await getSession(courseId, sessionId, userId );
+    return res.status(!session?404:200).send({
+      success: "true",
+      message: "Course and Session retrieved successfully",
+      session,
+    });
+  } catch (error) {
+    return res.status(400).send({
+      success: "false",
+      message: "Failed to retrieve Course and Session",
+      error,
+    });
+  }  
 });
 
 export default router;
