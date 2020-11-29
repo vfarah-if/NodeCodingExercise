@@ -126,7 +126,7 @@ Basic instructions to start build and get this API up and running
 
 - The databases documents that get generated automatically create **indexes** and **optimise** the efficiency of how this stored for reading and writing and verifying the integrity of the data
 
-  ![document-indexes-sample](F:\Dev\Git\NodeCodingExercise\readme-images\document-indexes-sample.png)
+  ![document-indexes-sample](./readme-images/document-indexes-sample.png)
 
 - Toggling between an *in-memory* database and a *durable* database can be done by configuring the **server.js** file if you want to see the values generated in a visible database, but for the ease of deployment and running this without configuring a docker file or cloudformation script to prepare a *MongoDB environment*. This could simplify things and guarantee this will work. At the same time it also made testing database integration very easy, which is why I wanted an excuse to use this library and implementation.
 
