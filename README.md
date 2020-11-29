@@ -163,6 +163,8 @@ Basic instructions to start build and get this API up and running
 
 - The API has a static page that can be enhanced to add wiki like documentation on the usage of the API and any other information that may help people consuming this API. Communication is fundamental at all levels
 
-  # Summary
+  ![web-api-home-sample](./readme-images/web-api-home-sample.png)
 
+  # Summary
+  
   *Mongoose* was new to me, as well as *SuperTest* and doing Node as an ES6+ application, usually convert to Typescript or leave Node as a default Node App and I was pleasantly surprised on how nice all of the libraries where to put a Node application together. Working with React r Next CLI frameworks do a lot of this manual plumbing and creating my own template  too a little time and helped me to reuse some concepts for next time means things can get developed really quickly. 
