@@ -1,15 +1,15 @@
-import { connect, disconnect } from "./index";
+import { connect, disconnectAndDropDatabase } from "./index";
 import mongoose from "mongoose"; 
 
 describe("mongo in-memory  database", () => {
-  describe("connect and disconnect memory mongo db integration test", () => {
+  describe("connect and disconnect memory mongo db and drop database integration test", () => {
     beforeAll(async() => {
       const isInMemory = true;
       await connect(isInMemory);
     });
 
     afterAll(async() => {
-      await disconnect();
+      await disconnectAndDropDatabase();
     });
 
     test("should have an active mongodb connection", (done) => {
