@@ -1,7 +1,11 @@
-import { connect, disconnectAndDropDatabase, clearDatabase } from "../database";
+import {
+  connectDatabase,
+  disconnectAndDropDatabase,
+  clearDatabase,
+} from "../database";
 import { createOrUpdate } from "./index";
 import courseModel from "../models/course";
-import { cloneCourse } from '../../test-utilities';
+import { cloneCourse } from "../../test-utilities";
 
 describe("createOrUpdate a course", () => {
   const validCourse = {
@@ -30,7 +34,7 @@ describe("createOrUpdate a course", () => {
 
   beforeAll(async () => {
     const isInMemory = true;
-    await connect(isInMemory);
+    await connectDatabase(isInMemory);
   });
 
   afterEach(async () => {
@@ -160,18 +164,21 @@ describe("createOrUpdate a course", () => {
     await createOrUpdate(courseOther);
 
     const { courseId, userId } = course;
-    
+
     expect(courseId).toBe(courseOther.courseId);
-    expect(userId).toBe(courseOther.userId);    
-    const existingCourseInDb = await courseModel.findOne({ courseId, userId });    
+    expect(userId).toBe(courseOther.userId);
+    const existingCourseInDb = await courseModel.findOne({ courseId, userId });
     expect(existingCourseInDb).toBeDefined();
-    const {sessionCount, totalModulesStudied, timeStudied, averageScore} = existingCourseInDb.stats;
+    const {
+      sessionCount,
+      totalModulesStudied,
+      timeStudied,
+      averageScore,
+    } = existingCourseInDb.stats;
     expect(sessionCount).toBe(2);
     expect(totalModulesStudied).toBe(10 + 5);
     expect(timeStudied).toBe(4 + 6);
-    expect(averageScore).toBe((70 + 8)/2);
+    expect(averageScore).toBe((70 + 8) / 2);
     done();
   });
 });
-
-

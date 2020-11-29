@@ -3,16 +3,20 @@ import debugLib from "debug";
 import { createServer } from "http";
 import config from "../config";
 import listEndpoints from "express-list-endpoints";
-import { connect } from "../database";
+import { connectDatabase, disconnectDatabase } from "../database";
 
 const debug = debugLib("test-express:server");
 const { port } = config;
 const iisPort = getPortAndConfigureIISExpress();
 const server = generateServer();
 connectMongoDb();
+process.on('exit', async() => {
+  console.debug('Disconnecting from database.');
+  await disconnectDatabase();
+});
 
 async function connectMongoDb() {
-  const result = await connect(true);
+  const result = await connectDatabase(true);
   return result;
 }
 

@@ -1,6 +1,6 @@
 import { cloneCourse } from "../../test-utilities";
 import { createOrUpdate, getCourse } from "./index";
-import { connect, disconnectAndDropDatabase } from "../database";
+import { connectDatabase, disconnectAndDropDatabase } from "../database";
 
 describe("getCourse", () => {
   const validCourse = {
@@ -17,7 +17,7 @@ describe("getCourse", () => {
 
   beforeAll(async () => {
     const isInMemory = true;
-    await connect(isInMemory);
+    await connectDatabase(isInMemory);
     const course = cloneCourse(validCourse);
     await createOrUpdate(course);
   });
@@ -26,18 +26,21 @@ describe("getCourse", () => {
     await disconnectAndDropDatabase();
   });
 
-  test("should get expected course from the database", async(done) => {
+  test("should get expected course from the database", async (done) => {
     const { courseId, userId } = validCourse;
-    
+
     const actual = await getCourse(courseId, userId);
-    
-    expect(actual).toMatchSnapshot();    
+
+    expect(actual).toMatchSnapshot();
     done();
   });
 
-  test("should get null when data does not exist", async(done) => {        
-    const actual = await getCourse('non-existent-client-id', 'non-existent-userid');
-    
+  test("should get null when data does not exist", async (done) => {
+    const actual = await getCourse(
+      "non-existent-client-id",
+      "non-existent-userid"
+    );
+
     expect(actual).toBeNull();
     done();
   });

@@ -5,7 +5,7 @@ import config from "../config";
 const { defaultMongoUri } = config;
 const mongod = new MongoMemoryServer();
 
-export const connect = async (isMemoryServer = true) => {
+export const connectDatabase = async (isMemoryServer = true) => {
   const uri = isMemoryServer ? await mongod.getUri() : defaultMongoUri;
   console.debug(`Connecting to MongoDB URI '${uri}'`);
 
@@ -21,11 +21,11 @@ export const connect = async (isMemoryServer = true) => {
 };
 
 export const disconnectAndDropDatabase = async () => {
-    await mongoose.connection.dropDatabase();
-    await disconnect();
-  };
+  await mongoose.connection.dropDatabase();
+  await disconnectDatabase();
+};
 
-export const disconnect = async () => {
+export const disconnectDatabase = async () => {
   await mongoose.connection.close();
   await mongod.stop();
 };
@@ -43,7 +43,7 @@ export const removeDatabaseProps = (data) => {
   const result = {
     ...Object.keys(data).reduce((newProperty, key) => {
       if (!key.startsWith("_")) {
-        return {...newProperty, [key]: data[key],};
+        return { ...newProperty, [key]: data[key] };
       }
       return newProperty;
     }, {}),

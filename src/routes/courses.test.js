@@ -2,12 +2,16 @@ import {
   postRequestTest,
   getRequestTest,
 } from "../../test-utilities/test-route";
-import { connect, disconnectAndDropDatabase, clearDatabase } from "../database";
+import {
+  connectDatabase,
+  disconnectAndDropDatabase,
+  clearDatabase,
+} from "../database";
 
 describe("courses api", () => {
   beforeAll(async () => {
     const isInMemory = true;
-    await connect(isInMemory);
+    await connectDatabase(isInMemory);
   });
 
   afterAll(async () => {
@@ -64,7 +68,7 @@ describe("courses api", () => {
       done();
     });
 
-    test("should get a posted record with 200 response", async(done) => {
+    test("should get a posted record with 200 response", async (done) => {
       const courseId = "f4df274b-5fde-473c-a40d-7b5ffae9f8d4";
       const userId = "jane.doe@someemail.com";
       const body = {
@@ -73,11 +77,7 @@ describe("courses api", () => {
         averageScore: 70,
         timeStudied: 123,
       };
-      await postRequestTest(
-        `/courses/${courseId}`,
-        userId,
-        body
-      );
+      await postRequestTest(`/courses/${courseId}`, userId, body);
 
       const actualResponse = await getRequestTest(
         `/courses/${courseId}`,
@@ -103,7 +103,7 @@ describe("courses api", () => {
       done();
     });
 
-    test("should get a posted record with 200 response", async(done) => {
+    test("should get a posted record with 200 response", async (done) => {
       const courseId = "f4df274b-5fde-473c-a40d-7b5ffae9f8d4";
       const userId = "jane.doe@someemail.com";
       const sessionId = "ff61a6fa-753e-42b3-8eef-076b5484fd70";
@@ -113,11 +113,7 @@ describe("courses api", () => {
         averageScore: 70,
         timeStudied: 123,
       };
-      await postRequestTest(
-        `/courses/${courseId}`,
-        userId,
-        body
-      );
+      await postRequestTest(`/courses/${courseId}`, userId, body);
 
       const actualResponse = await getRequestTest(
         `/courses/${courseId}/sessions/${sessionId}`,
