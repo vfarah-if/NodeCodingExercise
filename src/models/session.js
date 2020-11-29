@@ -12,20 +12,23 @@ const sessionSchema = new mongoose.Schema({
   courseId: {
     type: String,
     required: true,
-    unique: true,
+    unique: false,
     lowercase: false,
     validate: (value) => validator.isUUID(value),
   },
   userId: {
     type: String,
     required: true,
-    unique: true,
+    unique: false,
     lowercase: false,
     validate: (value) => !validator.isEmpty(value),
   },
-  averageScore: { type: Number, required: true },
-  totalModulesStudied: { type: Number, required: true },
-  timeStudied: { type: Number, required: true },
+  stats:{
+    averageScore: { type: Number, required: true },
+    totalModulesStudied: { type: Number, required: true },
+    timeStudied: { type: Number, required: true },
+  }
 });
+sessionSchema.index({ sessionId: 1, courseId: 1, userId: 1 }, { unique: true });
 
 export default mongoose.model("session", sessionSchema);
