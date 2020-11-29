@@ -4,5 +4,9 @@
 ☐ Start developing endpoints so they get values @high
 ☐ Start developing by domain an using an In-memory mongo database @high
 ☐ Start configuring a serverless.yaml for AWS deployment script @high
-☐ Start PUML Architecture decisions @low 
+☐ Start PUML Architecture design and descptions @low 
 ✔ Issue Remove the snapshots being outputted @done(20-11-28 18:13)
+☐ Disconnect and drop database when express closing @critical 
+☐ Seperate the disconnect from the drop @high 
+☐ Add database onto all the exported functions @low 
+✔ Remove the `private database properties` exposing too much internal information @high @done(20-11-29 12:17)
