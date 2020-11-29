@@ -10,3 +10,4 @@
 ✔ Seperate the disconnect from the drop @high @done(20-11-29 19:35)
 ✔ Add database onto all the exported functions @low @done(20-11-29 19:46)
 ✔ Remove the `private database properties` exposing too much internal information @high @done(20-11-29 12:17)
+✔ Increase Jest Test times for some tests that potentially can run longer than 5 seconds @high @done(20-11-29 20:14)
