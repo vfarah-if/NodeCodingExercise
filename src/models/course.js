@@ -14,7 +14,7 @@ const courseSchema = new mongoose.Schema({
     required: true,
     unique: false,
     lowercase: false,
-    validate: (value) => !validator.isEmpty(value),
+    validate: (value) => validator.isUUID(value),
   },
   stats: {
     sessionCount: { type: Number, required: true },

@@ -25,7 +25,7 @@ describe("courses api", () => {
 
     test("should post new courses when all data is valid", async (done) => {
       const courseId = "f4df274b-5fde-473c-a40d-7b5ffae9f8d4";
-      const userId = "jane.doe@someemail.com";
+      const userId = "915a54b7-8220-4c2b-ac03-cc6edda055a5";
       const body = {
         sessionId: "ff61a6fa-753e-42b3-8eef-076b5484fd70",
         totalModulesStudied: 9,
@@ -44,7 +44,7 @@ describe("courses api", () => {
 
     test("should post http 400 when course id is invalid", async (done) => {
       const courseId = undefined;
-      const userId = "jane.doe@someemail.com";
+      const userId = "915a54b7-8220-4c2b-ac03-cc6edda055a5";
       const actualResponse = await postRequestTest(
         `/courses/${courseId}`,
         userId,
@@ -59,7 +59,7 @@ describe("courses api", () => {
   describe("get course", () => {
     test("should get non-existent course with 404 notfound", async (done) => {
       const courseId = "3fa85f64-5717-4562-b3fc-2c963f66afa6";
-      const userId = "jane.doe@someemail.com";
+      const userId = "915a54b7-8220-4c2b-ac03-cc6edda055a5";
       const nonExistentCourseResponse = await getRequestTest(
         `/courses/${courseId}`,
         userId
@@ -70,7 +70,7 @@ describe("courses api", () => {
 
     test("should get a posted record with 200 response", async (done) => {
       const courseId = "f4df274b-5fde-473c-a40d-7b5ffae9f8d4";
-      const userId = "jane.doe@someemail.com";
+      const userId = "915a54b7-8220-4c2b-ac03-cc6edda055a5";
       const body = {
         sessionId: "ff61a6fa-753e-42b3-8eef-076b5484fd70",
         totalModulesStudied: 9,
@@ -93,7 +93,7 @@ describe("courses api", () => {
   describe("get course and session", () => {
     test("should get non-existent course with 404 notfound", async (done) => {
       const courseId = "3fa85f64-5717-4562-b3fc-2c963f66afa6";
-      const userId = "jane.doe@someemail.com";
+      const userId = "915a54b7-8220-4c2b-ac03-cc6edda055a5";
       const sessionId = "ff61a6fa-753e-42b3-8eef-076b5484fd70";
       const nonExistentCourseResponse = await getRequestTest(
         `/courses/${courseId}/sessions/${sessionId}`,
@@ -105,7 +105,7 @@ describe("courses api", () => {
 
     test("should get a posted record with 200 response", async (done) => {
       const courseId = "f4df274b-5fde-473c-a40d-7b5ffae9f8d4";
-      const userId = "jane.doe@someemail.com";
+      const userId = "915a54b7-8220-4c2b-ac03-cc6edda055a5";
       const sessionId = "ff61a6fa-753e-42b3-8eef-076b5484fd70";
       const body = {
         sessionId,

@@ -16,6 +16,7 @@ process.on('exit', async() => {
 });
 
 async function connectMongoDb() {
+  // REMARKS: Change the true to false if you want to connect to a durable database
   const result = await connectDatabase(true);
   return result;
 }

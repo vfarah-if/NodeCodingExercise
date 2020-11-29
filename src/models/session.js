@@ -21,7 +21,7 @@ const sessionSchema = new mongoose.Schema({
     required: true,
     unique: false,
     lowercase: false,
-    validate: (value) => !validator.isEmpty(value),
+    validate: (value) => validator.isUUID(value),
   },
   stats:{
     averageScore: { type: Number, required: true },

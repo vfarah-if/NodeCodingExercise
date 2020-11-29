@@ -1,0 +1,22 @@
+@startuml "Vincent Farah Test for Seneca"
+!includeurl https://raw.githubusercontent.com/RicardoNiepel/C4-PlantUML/master/C4_Container.puml
+' uncomment the following line and comment the first to use locally
+' !include C4_Container.puml
+
+' LAYOUT_TOP_DOWN()
+LAYOUT_LEFT_RIGHT()
+
+'LAYOUT_AS_SKETCH
+LAYOUT_WITH_LEGEND()
+
+Person(api_user, "Web Application User")
+
+Container_Boundary(c1, "stats services solution by Vincent Farah"){   
+    Container(web_app, "Web Application", "Node, AWS ApiGateway", "Allows stats to be generated for users related to courses and session statistics")    
+    ContainerDb(nosql, "NoSQL Data Store", "MongoDB In Memory-Database", "Stores courses and sessions data ephemerally")   
+}
+
+Rel(api_user, web_app, "Uses", "HTTPS")
+Rel(web_app, nosql, "Reads from and Writes to", "MongoDB wire protocol, port 27017")
+
+@enduml
