@@ -34,6 +34,21 @@ used depending on the type of content that is being displayed
 
 Basic instructions to start build and get this API up and running
 
+```powershell
+// Quick instructions to start application
+npm i
+npm start
+
+// Quick instructions for test
+npm run coverage
+
+// Quick instructions for running serverless offline
+serverless offline
+
+```
+
+
+
 | package command      | description                                                  |
 | :------------------- | :----------------------------------------------------------- |
 | `npm i`              | **Install** all the packages                                 |
@@ -44,6 +59,10 @@ Basic instructions to start build and get this API up and running
 | `npm run test`       | Runs all the **tests once**                                  |
 | `npm run test:watch` | Runs test in **test-development** mode while the developer creates tests giving the ability to automatically run when changes made |
 | `npm run coverage`   | Runs all the tests to calculate the test coverage and to vet if it succeeds against the expected size |
+
+serverless offline will work like the deploy except locally
+
+![serverless-offline-sample](./readme-images/serverless-offline-sample.png)
 
 ## Architecture
 
@@ -57,7 +76,7 @@ Basic instructions to start build and get this API up and running
 
   ![swagger-ui-sample](./readme-images/swagger-ui-sample.png)
 
-- Database model consists of two structures, **course** and **session**. When you post the first course with some session information this will generate some aggregated stats on the session data that is passed in for the course. The course data model has various data and validators built in to make sure the data is in the expected format, built into the model. **NOTE:**  I introduce ***SessionCount*** into the structure to help me understand some of the data I was aggregating. It make it easier, in my opinion to obviously see the generated data and what I was aggregating the data on
+- Database model consists of two structures, **course** and **session**. When you post the first course with some session information this will generate some aggregated stats on the session data that is passed in for the course. The course data model has various data and validators built in to make sure the data is in the expected format, built into the model. **NOTE:**  I introduced ***sessionCount*** into the structure to help me understand some of the data I was aggregating and to have an obvious and easy dimension to visualise. 
 
   ```javascript
   const courseSchema = new mongoose.Schema({
@@ -128,7 +147,54 @@ Basic instructions to start build and get this API up and running
 
   ![document-indexes-sample](./readme-images/document-indexes-sample.png)
 
-- Toggling between an *in-memory* database and a *durable* database can be done by configuring the **server.js** file if you want to see the values generated in a visible database, but for the ease of deployment and running this without configuring a docker file or cloudformation script to prepare a *MongoDB environment*. This could simplify things and guarantee this will work. At the same time it also made testing database integration very easy, which is why I wanted an excuse to use this library and implementation.
+- **Data samples** of tested data below show the summary data related to the users course and you can see how the individual sessions made up that aggregated data
+
+  ```json
+  {
+      "_id" : ObjectId("5fc4139d1c0fc5496431a89e"),
+      "courseId" : "04473bf9-6ec6-47e9-be92-77b2bba9b606",
+      "userId" : "915a54b7-8220-4c2b-ac03-cc6edda055a5",
+      "stats" : {
+          "sessionCount" : 2,
+          "totalModulesStudied" : 10,
+          "timeStudied" : 40,
+          "averageScore" : 75
+      },
+      "__v" : 0
+  }
+  ```
+  
+  ```json
+  /* 1 */
+  {
+      "_id" : ObjectId("5fc4139d1c0fc5496431a89f"),
+      "courseId" : "04473bf9-6ec6-47e9-be92-77b2bba9b606",
+      "sessionId" : "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+      "userId" : "915a54b7-8220-4c2b-ac03-cc6edda055a5",
+      "stats" : {
+          "totalModulesStudied" : 5,
+          "averageScore" : 70,
+          "timeStudied" : 20
+      },
+      "__v" : 0
+  }
+  
+  /* 2 */
+  {
+      "_id" : ObjectId("5fc413a61c0fc5496431a8a0"),
+      "courseId" : "04473bf9-6ec6-47e9-be92-77b2bba9b606",
+      "sessionId" : "cfca500b-0afd-4605-a1f4-772b58dd4cf5",
+      "userId" : "915a54b7-8220-4c2b-ac03-cc6edda055a5",
+      "stats" : {
+          "totalModulesStudied" : 5,
+          "averageScore" : 80,
+          "timeStudied" : 20
+      },
+      "__v" : 0
+  }
+  ```
+  
+- Toggling between an *in-memory* database and a *durable* database can be done by configuring the **server.js** file if you want to see the values generated in a visible database, but for the ease of deployment and running this without configuring a docker file or *CloudFormation* script to prepare a *MongoDB environment*. This could simplify things and guarantee this will work. At the same time it also made testing database integration very easy, which is why I wanted an excuse to use this library and implementation.
 
   ```javascript
   async function connectMongoDb() {
@@ -137,15 +203,15 @@ Basic instructions to start build and get this API up and running
     return result;
   }
   ```
-  
+
 - The **4 rules of Simple Design**, by Kent Beck states:
 
-  - Tests Pass
-  - Express Intent
-  - No Duplication (Logical ideas)
-  - KISS
+  - **Tests Pass**
+  - **Express Intent**
+  - **No Logical Duplication DRY**
+  - **Keep it simple (KISS)**
 
-- Elaborating on what *Kent* stated above as key values for a good design, and valuing my solution by each premise, I added tests to almost every part of the application. Most of them utilised the test framework or temp database so mimicked an integration test more than a unit test. Usually I mock all this using Jest mock frameworks, but the actual temp database provider really made it easy for me to generate a lot without needing to mock anything. The advantage is I could develop database stuff quickly using a the "real" database and control the state of the database. The disadvantage is it is probably slower than mocking and can have an impact on time taken with a big database. The honest truth is for 29 tests they were all under a second each so on a slow system it took 20 seconds to run all the tests, which I can live with as my dev machine is not the fastest. However production wise it makes more sense to adhere to a test pyramid more strictly, unit tests the biggest, integration second and e2e the smallest being the most expensive to run
+- Elaborating on what *Kent* stated a as his principles of good design, and valuing my solution with each rule, I added tests to almost every part of the system. Most of the tests utilised the temp database so mimicked an integration test more than a unit test. Usually I mock all this using Jest Mock frameworks, but the actual temp database provider really made it easy for me to generate a lot without needing to mock anything. The advantage is I could develop database stuff quickly using a the "real" database and control the state of the database at all times. The disadvantage is it is probably slower than mocking and can have an impact on time taken with a big database. The honest truth is for 29 tests they were all under a second so on a slow system it took 15 seconds on average to run all the tests, which I can live with as my dev machine is not the fastest. However production wise it makes more sense to adhere to a struct test pyramid, unit tests the biggest, integration second and e2e the smallest, being the most expensive to run. Usually I add *Cypress* tests and like *Artillery.js* for performance tests
 
   ![code-coverage-sample](./readme-images/code-coverage-sample.png)
 

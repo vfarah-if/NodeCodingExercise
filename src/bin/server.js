@@ -4,6 +4,7 @@ import { createServer } from "http";
 import config from "../config";
 import listEndpoints from "express-list-endpoints";
 import { connectDatabase, disconnectDatabase } from "../database";
+import serverless from "serverless-http";
 
 const debug = debugLib("test-express:server");
 const { port } = config;
@@ -14,6 +15,7 @@ process.on('exit', async() => {
   console.debug('Disconnecting from database.');
   await disconnectDatabase();
 });
+export const handler = serverless(app);
 
 async function connectMongoDb() {
   // REMARKS: Change the true to false if you want to connect to a durable database
