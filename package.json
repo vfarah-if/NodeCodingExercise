@@ -1,0 +1,85 @@
+{
+  "name": "stats-service",
+  "author": "Vincent Farah",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "npm-run-all clean transpile clean:buildtests clean:buildsnapshots",
+    "start": "npm run prod",
+    "start:dev": "npm run dev",
+    "server": "node ./dist-server/bin/server",
+    "transpile": "babel ./src --out-dir dist-server --copy-files",
+    "clean": "rimraf dist-server",
+    "clean:buildtests": "rimraf dist-server/**/*.test.js",
+    "clean:buildsnapshots": "rimraf dist-server/**/__snapshots__/**",
+    "coverage": "npm test -- --coverage --watchAll=false",
+    "dev": "cross-env NODE_ENV=development npm-run-all build server",
+    "prod": "cross-env NODE_ENV=production npm-run-all build server",
+    "watch:dev": "nodemon -e *.*",
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "dependencies": {
+    "bluebird": "^3.7.2",
+    "body-parser": "^1.19.0",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "dotenv": "^8.2.0",
+    "express": "^4.16.4",
+    "express-list-endpoints": "^5.0.0",
+    "mongodb-memory-server": "^6.9.2",
+    "mongoose": "^5.10.16",
+    "morgan": "~1.9.1",
+    "serverless-http": "^2.6.0",
+    "swagger-ui-express": "^4.1.5",
+    "validator": "^13.1.17"
+  },
+  "babel": {
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "useBuiltIns": "usage",
+          "corejs": 2
+        }
+      ]
+    ],
+    "plugins": [
+      "@babel/plugin-transform-runtime",
+      "@babel/plugin-proposal-optional-chaining",
+      "@babel/plugin-proposal-class-properties"
+    ]
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.7",
+    "@babel/core": "^7.12.8",
+    "@babel/plugin-proposal-class-properties": "^7.12.1",
+    "@babel/plugin-proposal-optional-chaining": "^7.12.7",
+    "@babel/plugin-transform-runtime": "^7.12.1",
+    "@babel/polyfill": "^7.12.1",
+    "@babel/preset-env": "^7.12.7",
+    "@babel/register": "^7.12.1",
+    "@types/jest": "^26.0.15",
+    "babel-loader": "^8.2.1",
+    "cross-env": "^7.0.2",
+    "jest": "^26.6.3",
+    "nodemon": "^2.0.6",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^3.0.2",
+    "serverless-offline": "^6.8.0",
+    "supertest": "^6.0.1",
+    "ts-jest": "^26.4.4"
+  },
+  "nodemonConfig": {
+    "exec": "npm run dev",
+    "watch": [
+      "src/*",
+      "public/*"
+    ],
+    "ignore": [
+      "**/__tests__/**",
+      "*.test.js",
+      "*.spec.js"
+    ]
+  }
+}
