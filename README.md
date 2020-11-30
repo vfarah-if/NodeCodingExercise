@@ -215,6 +215,14 @@ serverless offline will work like the deploy except locally
 
   ![code-coverage-sample](./readme-images/code-coverage-sample.png)
 
+- **Code coverage** details can be viewed through generated HTML files making it easier to understand what has been tested and what is outstanding
+
+  ![lcov-report-sample](F:\Dev\Git\NodeCodingExercise\readme-images\lcov-report-sample.png)
+
+  You can select the links and drill into what has been tested and how many time this has been covered - summarising information at the top. Navigate to the coverage folder to play with the code yourself.
+
+  ![lcov-report-details.sample](./readme-images/lcov-report-details.sample.png)
+
 - The code structure is simple, the business domain exposes function that reflect services by the domain. The *course* is the domain term used in the original requirement. The infrastructure layer is named database and is implemented within the domain layer as an internal object, so this could be replaced with another infrastructure as the web API calls the courses service without understanding the internals of the infrastructure. Everything within src is **transpiled** to a *dist-server* folder where this is run locally using Node. Everything outside of *src* is more to do with configuration and tests. So using DDD and Hexagonal Architecture helps with layering various bits, which is simplified within a Node structure
 
 - I added my .env file to source just for simplicity but usually the target builds should stich this by environment variables and builds
