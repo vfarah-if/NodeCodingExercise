@@ -3,7 +3,7 @@
 ✔ Add the `SWAGGER` into the definition so the swagger UI can test the endpoint @high @done(20-11-26 15:50)
 ✔ Start developing endpoints so they get values @high @done(20-11-29 19:47)
 ✔ Start developing by domain an using an In-memory mongo database @high @done(20-11-29 19:47)
-☐ Start configuring a `serverless.yaml` for AWS deployment script @high
+✔ Start configuring a `serverless.yaml` for AWS deployment script @high @done(20-11-30 08:34)
 ✔ Start `PUML Architecture` design and descptions @low @done(20-11-30 07:14)
 ✔ Issue Remove the snapshots being outputted @done(20-11-28 18:13)
 ✔ Disconnect and drop database when express closing @critical @done(20-11-29 19:46)
@@ -11,4 +11,4 @@
 ✔ Add database onto all the exported functions @low @done(20-11-29 19:46)
 ✔ Remove the `private database properties` exposing too much internal information @high @done(20-11-29 12:17)
 ✔ Increase Jest Test times for some tests that potentially can run longer than 5 seconds @high @done(20-11-29 20:14)
-☐ Refactor code to be cleaner - Clean engineering practises
+✔ Refactor code to be cleaner - Clean engineering practises @done(20-11-30 08:41)
