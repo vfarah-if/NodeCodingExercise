@@ -1,11 +1,4 @@
-export const OFF = "OFF";
-export const ON = "ON";
-export const BLINK = "BLINK";
-export const STATES_MAPPING = {
-	OFF: ON,
-	ON: BLINK,
-	BLINK: OFF,
-};
+import { OFF, LIGHT_TRANSITION_MAPPING } from "./constants";
 
 export class Flashlight {
 	constructor() {
@@ -13,7 +6,6 @@ export class Flashlight {
 	}
 
 	press() {
-        // TODO: Refactor mutating state
-		this.state = STATES_MAPPING[this.state];
+		this.state = LIGHT_TRANSITION_MAPPING[this.state];
 	}
 }

@@ -1,13 +1,9 @@
-import { Flashlight, ON, OFF, BLINK } from "./Flashlight";
+import { Flashlight } from "./Flashlight";
+import { ON, OFF, BLINK } from "./constants";
 import testData from "./Flashlight.test.json";
 
 describe("flashlight as a class that mutates state", () => {
 	const flashlight = new Flashlight();
-	const states = [
-		[OFF, ON],
-		[ON, BLINK],
-		[BLINK, OFF],
-	];
 
 	test("should default to an OFF state", () => {
 		expect(flashlight.state).toBe(OFF);
@@ -46,19 +42,20 @@ describe("flashlight as a class that mutates state", () => {
 	});
 
 	// Alternative to testing this with one test
-	test.each(states)(
-		`should go from '%p' to '%p'`,
-		(currentState, nextState) => {
-			expect(flashlight.state).toBe(currentState);
-			flashlight.press();
-			expect(flashlight.state).toBe(nextState);
-		}
-	);
+	test.each([
+		[OFF, ON],
+		[ON, BLINK],
+		[BLINK, OFF],
+	])(`should go from '%p' to '%p'`, (currentState, nextState) => {
+		expect(flashlight.state).toBe(currentState);
+		flashlight.press();
+		expect(flashlight.state).toBe(nextState);
+	});
 
 	// Alternative to testing this with one test
 	testData.forEach((iteration) => {
 		const { description, currentState, nextState } = iteration.scenario;
-		console.debug('TEST CASE: ', description);
+		console.debug("TEST CASE: ", description);
 		test(description, () => {
 			expect(flashlight.state).toBe(currentState);
 			flashlight.press();
