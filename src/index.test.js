@@ -1,16 +1,32 @@
-import { getUsers } from './index';
+import { flashlight } from "./index";
 
-describe('when using babel and tinkering with the settings', () => {
-    it('should pass to show jest working with good code completion', () => {
-        expect(true).toBeTruthy();
-    });
+describe("flashlight kata", () => {
+  test("should default to an OFF state", () => {
+    expect(flashlight.state).toBe("OFF");
+  });
 
-    it('should get the user repository verifying imports work, modules import of json file, functions work and Array modules exist', () => {
-        const actual = getUsers();
-        
-        expect(actual).toBeDefined();
-        expect(actual.users).toBeDefined();
-        expect(Array.isArray(actual.users)).toBeTruthy();
-        expect(actual.users.length).toBe(3);
-    });
+  test("should transition to an ON state with a press dispatch", () => {        
+    flashlight.dispatch("press");
+
+    expect(flashlight.state).toBe("ON");
+  });
+
+  test("should transition to a BLINKER next", () => {    
+    flashlight.dispatch("press");
+
+    expect(flashlight.state).toBe("BLINK");
+  });
+
+  test("should transition to an OFF next", () => {    
+    flashlight.dispatch("press");
+
+    expect(flashlight.state).toBe("OFF");
+  });
+
+  test("should stay on the current state when an incorrect dispatch sent", () => {    
+    flashlight.dispatch("notPress");
+
+    expect(flashlight.state).toBe("OFF");
+  });
+
 });
