@@ -1,0 +1,7 @@
+https://github.com/fabiospampinato/vscode-todo-plus/blob/master/resources/readme.todo
+
+✔ Setup jest and node simply @done(20-11-30 13:09)
+✔ Setup jest @today @done(20-12-01 17:46)
+✔ Move the correct file into the root and verify base state @today @done(20-12-01 17:52)
+☐ Define the readme with a really simple state machine Kata to practise short cuts and other code pairing details
+☐ Start defining the Kata priorities
