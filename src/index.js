@@ -1,32 +1,30 @@
 const stateMachine = {
-  state: "OFF",
-  transitions: {
-    OFF: {
-      press() {
-        this.state = "ON";
+   state: "OFF",
+   transitions: {
+      OFF: {
+         press() {
+            this.state = "ON";
+         },
       },
-    },
-    ON: {
-      press() {
-        this.state = "BLINK";
+      ON: {
+         press() {
+            this.state = "BLINK";
+         },
       },
-    },
-    BLINK: {
-      press() {
-        this.state = "OFF";
+      BLINK: {
+         press() {
+            this.state = "OFF";
+         },
       },
-    },
-  },
-  dispatch(actionName) {
-    console.debug(this.state);
-    const action = this.transitions[this.state][actionName];
-    console.debug(action);
-    if (action) {
-      action.call(this);
-    } else {
-        console.warn('Action is not valid');
-    }
-  },
+   },
+   dispatch(actionName) {
+      const action = this.transitions[this.state][actionName];
+      console.debug("STATE, ACTION", this.state, action);
+      if (action) {
+         return action.call(this);
+      }
+      console.warn("Action is not valid");
+   },
 };
 
-export const flashlight = stateMachine;
+export const flashlight = Object.create(stateMachine);
