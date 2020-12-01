@@ -1,4 +1,3 @@
-
 import app from '../app';
 import debugLib from 'debug';
 import { createServer } from 'http';
@@ -9,6 +8,10 @@ const debug = debugLib('test-express:server');
 const { port } = config;
 const iisPort = getPortAndConfigureIISExpress();
 const server = generateServer();
+
+process.on('exit', async() => {
+  console.debug('Shutting down');  
+});
 
 function generateServer() {
   const result = createServer(app);
