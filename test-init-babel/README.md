@@ -32,12 +32,11 @@ This is a really simple babel enhanced application that permits me to utilise ec
       "clean": "rimraf dist",
       "clean:tests": "rimraf dist/**/*.test.js",
       "clean:snapshots": "rimraf dist/**/__snapshots__/**",
-      "debug": "node --inspect ./dist/index.js",
       "run": "node ./dist/index.js",
       "transpile": "babel ./src --out-dir dist --copy-files",
       "test": "jest src/*",
       "test:watch": "jest --watch src/*"
     },
   ```
-
+  
 - Ready to start doing katas or testing ideas using EC6+ syntax
