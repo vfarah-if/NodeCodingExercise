@@ -5,5 +5,4 @@ export const getUsers = () => {
     return users;
 }
 
-
 console.debug("Test to see this outputted on run");
