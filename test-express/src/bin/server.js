@@ -1,34 +1,35 @@
-import app from '../app';
-import debugLib from 'debug';
-import { createServer } from 'http';
+  
+import app from "../app";
+import debugLib from "debug";
+import { createServer } from "http";
 import config from "../config";
-import listEndpoints from 'express-list-endpoints';
+import listEndpoints from "express-list-endpoints";
 
-const debug = debugLib('test-express:server');
+const debug = debugLib("test-express:server");
 const { port } = config;
 const iisPort = getPortAndConfigureIISExpress();
 const server = generateServer();
 
 process.on('exit', async() => {
-  console.debug('Shutting down');  
+  console.debug('Disconnecting from database.');
 });
 
 function generateServer() {
   const result = createServer(app);
   result.listen(iisPort);
-  result.on('error', onError);
-  result.on('listening', onListening);
+  result.on("error", onError);
+  result.on("listening", onListening);
   return result;
 }
 
 function getPortAndConfigureIISExpress() {
   const result = normalizePort(port);
-  app.set('port', result);
+  app.set("port", result);
   return result;
 }
 
 function normalizePort(val) {
-  var port = parseInt(val, 10);
+  const port = parseInt(val, 10);
 
   if (isNaN(port)) return val;
   if (port >= 0) return port;
@@ -36,23 +37,22 @@ function normalizePort(val) {
 }
 
 function onError(error) {
-  if (error.syscall !== 'listen') {
+  if (error.syscall !== "listen") {
     throw error;
   }
 
-  var bind = typeof iisPort === 'string'
-    ? 'Pipe ' + iisPort
-    : 'Port ' + iisPort;
+  const bind =
+    typeof iisPort === "string" ? "Pipe " + iisPort : "Port " + iisPort;
 
   makeErrorsMoreInformative();
 
   function makeErrorsMoreInformative() {
     switch (error.code) {
-      case 'EACCES':
-        console.error(bind + ' requires elevated privileges');
+      case "EACCES":
+        console.error(bind + " requires elevated privileges");
         process.exit(1);
-      case 'EADDRINUSE':
-        console.error(bind + ' is already in use');
+      case "EADDRINUSE":
+        console.error(bind + " is already in use");
         process.exit(1);
       default:
         throw error;
@@ -61,11 +61,13 @@ function onError(error) {
 }
 
 function onListening() {
-  var addr = server.address();
-  var bind = typeof addr === 'string'
-    ? 'pipe ' + addr
-    : 'port ' + addr.port;
-  debug('Listening on ' + bind);
+  const addr = server.address();
+  const bind = extractAddressInformation(addr);
+  debug("Listening on " + bind);
   console.debug(listEndpoints(app));
-  console.debug(`http://localhost:${app.get("port")} is ready`);  
+  console.debug(`http://localhost:${app.get("port")} is ready`);
+}
+
+function extractAddressInformation(addr) {
+  return typeof addr === "string" ? "pipe " + addr : "port " + addr.port;
 }

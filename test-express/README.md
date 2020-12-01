@@ -2,19 +2,57 @@
 
 Basic instructions to start build and get this API up and running
 
-| package command      | description                                                                                                                        |
-| :------------------- | :--------------------------------------------------------------------------------------------------------------------------------- |
-| `npm i`              | **Install** all the packages                                                                                                       |
-| `npm start`          | Runs and builds the application with **production** configuration                                                                  |
-| `npm run start:dev`  | Runs and builds the application with **development** configuration                                                                 |
-| `npm run watch:dev`  | Runs **dev** with ability to rebuild the application when any files change                                                         |
-| `npm run build`      | **Builds the project**, cleaning the project, transpiling it and then cleaning the _transpiled_ tests                              |
-| `npm run test`       | Runs all the **tests once**                                                                                                        |
+| package command      | description                                                  |
+| :------------------- | :----------------------------------------------------------- |
+| `npm i`              | **Install** all the packages                                 |
+| `npm start`          | Runs and builds the application with **production** configuration |
+| `npm run start:dev`  | Runs and builds the application with **development** configuration |
+| `npm run watch:dev`  | Runs **dev** with ability to rebuild the application when any files change |
+| `npm run build`      | **Builds the project**, cleaning the project, transpiling it and then cleaning the *transpiled* tests |
+| `npm run test`       | Runs all the **tests once**                                  |
 | `npm run test:watch` | Runs test in **test-development** mode while the developer creates tests giving the ability to automatically run when changes made |
+| `npm run coverage`   | Runs all the tests to calculate the test coverage and to vet if it succeeds against the expected size |
+
+# Architecture
+
+![puml-sample with C4 model](./readme-images/puml-sample.png)
+
+- **Architecture diagram** is included in code as a [C4 model](https://c4model.com/) Container Diagram of the proposed system done using [PUML](https://github.com/vfarah-if/C4-PlantUML#advanced-samples) within the project, so the architecture diagrams can live in the context of the code base and become living documentation that wont be lost in some Wiki, living documentation that will *communicate* what is here changing the context of who this is aimed for and what this needs to relay
+
+  ```javascript
+  ' EXAMPLE PUML code for generating the diagram
+  
+  @startuml "Vincent Farah Testing ..."
+  !includeurl https://raw.githubusercontent.com/RicardoNiepel/C4-PlantUML/master/C4_Container.puml
+  ' uncomment the following line and comment the first to use locally
+  ' !include C4_Container.puml
+  
+  ' LAYOUT_TOP_DOWN()
+  LAYOUT_LEFT_RIGHT()
+  
+  LAYOUT_AS_SKETCH()
+  'LAYOUT_WITH_LEGEND()
+  
+  Person(api_user, "Web Application User")
+  
+  Container_Boundary(c1, "stats services solution by Vincent Farah"){   
+      Container(web_app, "Web API", "Node Express", "Allows a simple user API")    
+      ContainerDb(nosql, "JS cached value", "Nothing at the moment", "Will work with users ephemerally until")   
+  }
+  
+  Rel(api_user, web_app, "Uses", "HTTPS")
+  Rel(web_app, nosql, "Reads from and Writes to", "Cache in JS")
+  
+  @enduml
+  ```
+
+  
+
+- Used **Express** as most node applications utilise *Express* as a default most popular, not the fastest but the most proven tested framework for *Node.JS*
 
 # Introduction
 
-This is a skeleton Node Application generated basically for testing [Express API](https://expressjs.com/en/api.html) ideas. Do you find plumbing work usually gets done over and over again?This will be good for coding exercises and other types of base Express Ideas but also allowing myself time to focus on the business problem in an ideal environment. Tried to incorporate some testing ideas that can make testing easier and succeeded with a new framework, details below, or something new I can incorporate into my learning process and the bonus is I can generate express applications rapidly now with all the expected plumbing I need.
+This is a skeleton Node Application generated basically for testing [Express API](https://expressjs.com/en/api.html) ideas. Do you find plumbing work usually gets done over and over again?This will be good for coding exercises and other types of base Express type Ideas but also allowing myself time to focus on the business problem in an ideal environment. Tried to incorporate some testing ideas that can make testing easier and succeeded with a new framework, details below, or something new I can incorporate into my learning process and the bonus is I can generate express applications rapidly now with all the expected plumbing I need.
 
 Finally [Clean Architecture Principles](https://medium.com/@danielkao/summary-of-clean-architecture-i-910d1ebdc60b) should be the basis for all development going forward.
 
