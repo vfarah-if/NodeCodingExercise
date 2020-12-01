@@ -27,3 +27,8 @@ At the time of setting this up I was using
 4. **Test-express** starter can be found in the root and check this [README](test-express/README.md) for more details
 
 5. **Test-init** is all about having a clean slate to just do simple stuff, test or POC anything that does not need any prerequisite. Test express needed *Express* and a bunch of things in place before I could even begin to develop. Check [README](test-init/README.md) for a small amount of details
+
+6. **[Test-init-babel](./test-init-babel)** is a simple node application for simply testing anything using the [EC6](https://medium.com/the-node-js-collection/an-update-on-es6-modules-in-node-js-42c958b890c)+ syntax. Check [README](test-init-babel/README.md) for more information
+
+
+
