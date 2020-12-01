@@ -1,0 +1,52 @@
+{
+  "name": "package-name",
+  "version": "1.0.0",
+  "description": "Test Initialising a baseic node utilising nmp init",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm-run-all build run",
+    "start:debug": "npm-run-all build debug",
+    "build": "npm-run-all clean transpile clean:tests clean:snapshots",
+    "clean": "rimraf dist",
+    "clean:tests": "rimraf dist/**/*.test.js",
+    "clean:snapshots": "rimraf dist/**/__snapshots__/**",
+    "run": "node ./dist/index.js",
+    "transpile": "babel ./src --out-dir dist --copy-files",
+    "test": "jest src/*",
+    "test:watch": "jest --watch src/*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vfarah-if/NodeCodingExercise.git"
+  },
+  "keywords": [
+    "Node"
+  ],
+  "author": "Vincent Farah",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vfarah-if/NodeCodingExercise/issues"
+  },
+  "homepage": "https://github.com/vfarah-if/NodeCodingExercise#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.12.8",
+    "@babel/core": "^7.12.9",
+    "@babel/polyfill": "^7.12.1",
+    "@babel/preset-env": "^7.12.7",
+    "@types/jest": "^26.0.15",
+    "jest": "^26.6.3",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^3.0.2"
+  },
+  "babel": {
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "useBuiltIns": "usage",
+          "corejs": 2
+        }
+      ]
+    ]
+  }
+}
