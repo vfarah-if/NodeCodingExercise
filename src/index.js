@@ -1,5 +1,5 @@
-const stateMachine = {
-   state: "OFF",
+const statemachine = {
+   state: "OFF",   
    transitions: {
       OFF: {
          press() {
@@ -23,8 +23,8 @@ const stateMachine = {
       if (action) {
          return action.call(this);
       }
-      console.warn("Action is not valid");
+      console.warn(`'${actionName}' is not valid. Use 'press' as a valid Action`);
    },
 };
 
-export const flashlight = Object.create(stateMachine);
+export const flashlight = statemachine;
