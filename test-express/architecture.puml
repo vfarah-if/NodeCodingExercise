@@ -1,4 +1,4 @@
-@startuml "Vincent Farah Test for Seneca"
+@startuml "Vincent Farah Test"
 !includeurl https://raw.githubusercontent.com/RicardoNiepel/C4-PlantUML/master/C4_Container.puml
 ' uncomment the following line and comment the first to use locally
 ' !include C4_Container.puml
