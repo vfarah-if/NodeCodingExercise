@@ -1,0 +1,6 @@
+# Introduction
+
+This is a really simple babel enhanced application that permits me to utilise ec6+ standards for ease of developing stuff using the latest JS patterns
+
+- Copied the standard node application ... 
+- Ready to upgrade ...
