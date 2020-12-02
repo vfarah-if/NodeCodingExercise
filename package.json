@@ -1,16 +1,12 @@
 {
-  "name": "package-name",
+  "name": "kata-practises",
   "version": "1.0.0",
-  "description": "Test Initialising a baseic node utilising nmp init",
-  "main": "index.js",
+  "description": "Do Katas for fun with simple babel ",
   "scripts": {
-    "start": "npm-run-all build run",
-    "start:debug": "npm-run-all build debug",
     "build": "npm-run-all clean transpile clean:tests clean:snapshots",
     "clean": "rimraf dist",
     "clean:tests": "rimraf dist/**/*.test.js",
     "clean:snapshots": "rimraf dist/**/__snapshots__/**",
-    "run": "node ./dist/index.js",
     "transpile": "babel ./src --out-dir dist --copy-files",
     "test": "jest src/*",
     "test:watch": "jest --watch src/*"
