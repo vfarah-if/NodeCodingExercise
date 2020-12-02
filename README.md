@@ -17,7 +17,22 @@ When running a state machine, the first things that happens is it is executed en
 3. By virtue of the transition "happening", **states** are *exited* and *entered* and the relevant actions are performed
 4. The machine is immediately in the **new state** and ready to process the *next event*
 
+# Flashlight Kata
+
 Super simple Kata - represent a **flashlight** as a finite state machine
+
+## Turnstile Kata
+
+Build a finite state machine from scratch, that replicates the following Finite State Machine for a turnstile. There are 2 states it can be in, locked or unlocked. The default state is locked
+
+- **locked** (default state)
+  - The light should on 
+  - The alarm should be on
+- **unlocked**
+
+Locked should transition into unlocked when the insertCoin action is dispatched and the event 
+
+
 
 ## Summary
 

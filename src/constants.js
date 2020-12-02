@@ -6,3 +6,6 @@ export const LIGHT_TRANSITION_MAPPING = {
 	ON: BLINK,
 	BLINK: OFF,
 };
+
+export const LOCKED = "LOCKED";
+export const UNLOCKED = "UNLOCKED";
