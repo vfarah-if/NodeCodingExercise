@@ -3,7 +3,7 @@ import { ON, OFF, BLINK } from "./constants";
 /*
 ** REMARKS: 
 **  This was based on an article that helped me understand some aspects of the finite machine pattern
-**  and what made me realise from the basic Flashlight.js example of what I innatly got wrong.
+**  and what made me realise from the basic Flashlight.js example of what I innately got wrong.
 **  However I still think this is not great and feel it lacks a good pattern and I found it hard 
 **  to TDD what I digested without overcomplicating things
 */
