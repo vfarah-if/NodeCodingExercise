@@ -26,13 +26,15 @@ Super simple Kata - represent a **flashlight** as a finite state machine
 Build a finite state machine from scratch, that replicates the following Finite State Machine for a turnstile. There are 2 states it can be in, locked or unlocked. The default state is locked
 
 - **locked** (default state)
-  - The light should on 
-  - The alarm should be on
+  - The **light** should on 
+  - The **alarm** should be on
 - **unlocked**
+  - The **light** should off 
+  - The **alarm** should be off
 
-Locked should transition into unlocked when the insertCoin action is dispatched and the event 
+The **locked** state should transition into unlocked when the *insertCoin* action is dispatched
 
-
+The **unlocked** state should transition back to locked when the  *noEntry* action is dispatched
 
 ## Summary
 
