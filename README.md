@@ -34,4 +34,4 @@ What did I do to improve my predicament. I took a very simple article and  got t
 
 1. Write down the problem
 2. Choose a style of driving the solution, classist or functional
-3. Role with 
+3. Role with changes as simple as possible when doing TDD
