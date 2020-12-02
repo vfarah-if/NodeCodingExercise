@@ -13,10 +13,10 @@ Super simple Kata - represent a **flashlight** as a finite state machine
 Build a finite state machine from scratch, that replicates the following Finite State Machine for a turnstile. There are 2 states it can be in, locked or unlocked. The default state is locked
 
 - **locked** (default state)
-  - The **light** should on 
+  - The **light** should be on 
   - The **alarm** should be on
 - **unlocked**
-  - The **light** should off 
+  - The **light** should be off 
   - The **alarm** should be off
 
 The **locked** state should transition into unlocked when the *insertCoin* action is dispatched
@@ -29,9 +29,9 @@ Solution can be found [here](src/turnstile.js)
 
 ## Bowling Kata
 
-Create a program, which, given a valid sequence of rolls for one line of American Ten-Pin Bowling, produces the total score for the game. Here are some things that the program will not do:
+Create a program, which, given a valid sequence of rolls for one line of **American Ten-Pin Bowling**, produces the total score for the game. Here are some things that the program will not do:
 
-- We will not check for valid rolls.
+- We will not check for **valid rolls**.
 - We will not check for correct number of rolls and frames.
 - We will not provide scores for intermediate frames.
 
