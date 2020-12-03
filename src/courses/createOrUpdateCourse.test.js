@@ -3,11 +3,11 @@ import {
   disconnectAndDropDatabase,
   clearDatabase,
 } from "../database";
-import { createOrUpdate } from "./index";
+import { createOrUpdateCourse } from "./index";
 import courseModel from "../models/course";
 import { cloneCourse } from "../../test-utilities";
 
-describe("createOrUpdate a course", () => {
+describe("createOrUpdateCourse a course", () => {
   const validCourse = {
     courseId: "04473bf9-6ec6-47e9-be92-77b2bba9b606",
     sessionId: "3fa85f64-5717-4562-b3fc-2c963f66afa6",
@@ -46,13 +46,13 @@ describe("createOrUpdate a course", () => {
   });
 
   test("should throw an error when no course is added", async (done) => {
-    await expect(() => createOrUpdate()).rejects.toThrowErrorMatchingSnapshot();
+    await expect(() => createOrUpdateCourse()).rejects.toThrowErrorMatchingSnapshot();
     done();
   });
 
   test("should throw an error when and empty course is added", async (done) => {
     await expect(() =>
-      createOrUpdate({})
+      createOrUpdateCourse({})
     ).rejects.toThrowErrorMatchingSnapshot();
     done();
   });
@@ -61,7 +61,7 @@ describe("createOrUpdate a course", () => {
     const invalidCourse = cloneCourse(validCourse);
     (invalidCourse.courseId = "NotValid"),
       await expect(() =>
-        createOrUpdate(invalidCourse)
+        createOrUpdateCourse(invalidCourse)
       ).rejects.toThrowErrorMatchingSnapshot();
     done();
   });
@@ -71,7 +71,7 @@ describe("createOrUpdate a course", () => {
     invalidCourse.sessionId = undefined;
 
     await expect(() =>
-      createOrUpdate(invalidCourse)
+      createOrUpdateCourse(invalidCourse)
     ).rejects.toThrowErrorMatchingSnapshot();
 
     done();
@@ -82,7 +82,7 @@ describe("createOrUpdate a course", () => {
     invalidCourse.sessionId = "NotUUID";
 
     await expect(() =>
-      createOrUpdate(invalidCourse)
+      createOrUpdateCourse(invalidCourse)
     ).rejects.toThrowErrorMatchingSnapshot();
 
     done();
@@ -93,7 +93,7 @@ describe("createOrUpdate a course", () => {
     invalidCourse.userId = undefined;
 
     await expect(() =>
-      createOrUpdate(invalidCourse)
+      createOrUpdateCourse(invalidCourse)
     ).rejects.toThrowErrorMatchingSnapshot();
     done();
   });
@@ -104,7 +104,7 @@ describe("createOrUpdate a course", () => {
     invalidCourse.stats.totalModulesStudied = undefined;
 
     await expect(() =>
-      createOrUpdate(invalidCourse)
+      createOrUpdateCourse(invalidCourse)
     ).rejects.toThrowErrorMatchingSnapshot();
 
     done();
@@ -115,7 +115,7 @@ describe("createOrUpdate a course", () => {
     invalidCourse.stats.averageScore = undefined;
 
     await expect(() =>
-      createOrUpdate(invalidCourse)
+      createOrUpdateCourse(invalidCourse)
     ).rejects.toThrowErrorMatchingSnapshot();
 
     done();
@@ -126,7 +126,7 @@ describe("createOrUpdate a course", () => {
     invalidCourse.stats.timeStudied = undefined;
 
     await expect(() =>
-      createOrUpdate(invalidCourse)
+      createOrUpdateCourse(invalidCourse)
     ).rejects.toThrowErrorMatchingSnapshot();
     done();
   });
@@ -135,15 +135,15 @@ describe("createOrUpdate a course", () => {
     const course = cloneCourse(validCourse);
     console.debug(course);
 
-    const actual = await createOrUpdate(course);
+    const actual = await createOrUpdateCourse(course);
 
     expect(actual).toBeDefined();
   });
 
   test("should be idempotent when postring the same course twice and should reflect it already exists", async (done) => {
     const course = cloneCourse(validCourse);
-    const actual = await createOrUpdate(course);
-    const actualAgain = await createOrUpdate(course);
+    const actual = await createOrUpdateCourse(course);
+    const actualAgain = await createOrUpdateCourse(course);
 
     expect(actual.courseResponse).toBeDefined();
     expect(actual.sessionResponse).toBeDefined();
@@ -159,9 +159,9 @@ describe("createOrUpdate a course", () => {
 
   test("should create one course with correct aggregate stats and two sessions", async (done) => {
     const course = cloneCourse(validCourse);
-    await createOrUpdate(course);
+    await createOrUpdateCourse(course);
     const courseOther = cloneCourse(validCourseWithNewSession);
-    await createOrUpdate(courseOther);
+    await createOrUpdateCourse(courseOther);
 
     const { courseId, userId } = course;
 

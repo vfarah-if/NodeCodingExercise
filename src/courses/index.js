@@ -4,7 +4,7 @@ import courseModel from "../models/course";
 import sessionModel from "../models/session";
 import { removeDatabaseProps } from "../database";
 
-export const createOrUpdate = (course) => {
+export const createOrUpdateCourse = (course) => {
   return new Promise(async (resolve, reject) => {
     if (!course) reject(new Error("Course is required"));
 

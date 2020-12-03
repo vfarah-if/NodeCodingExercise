@@ -1,5 +1,5 @@
 import { cloneCourse } from "../../test-utilities";
-import { createOrUpdate, getSession } from "./index";
+import { createOrUpdateCourse, getSession } from "./index";
 import { connectDatabase, disconnectAndDropDatabase } from "../database";
 
 describe("getSession", () => {
@@ -19,7 +19,7 @@ describe("getSession", () => {
     const isInMemory = true;
     await connectDatabase(isInMemory);
     const course = cloneCourse(validCourse);
-    await createOrUpdate(course);
+    await createOrUpdateCourse(course);
   });
 
   afterAll(async () => {

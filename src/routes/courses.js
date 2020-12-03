@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { createOrUpdate, getCourse, getSession } from "../courses";
+import { createOrUpdateCourse, getCourse, getSession } from "../courses";
 const router = Router();
 
 router.post("/:courseId", async (req, res, next) => {
@@ -30,7 +30,7 @@ router.post("/:courseId", async (req, res, next) => {
   };
 
   try {
-    const response = await createOrUpdate(course);
+    const response = await createOrUpdateCourse(course);
     const { courseResponse } = response;
     return res.status(courseResponse ? 201 : 200).send({
       success: "true",
