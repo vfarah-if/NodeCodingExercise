@@ -24,4 +24,12 @@ describe("removeDatabaseProps", () => {
     expect(cleanedObject.sessionId).toBeDefined();
     expect(cleanedObject.intList).toBeDefined();
   });
+
+  test('should be assigned a null or undefined object without changing the output', () => {
+    let actual = removeDatabaseProps(null);
+    expect(actual).toBe(null);
+
+    actual = removeDatabaseProps(undefined);
+    expect(actual).toBe(undefined);
+  });
 });

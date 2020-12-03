@@ -16,4 +16,4 @@ exports[`createOrUpdateCourse a course should throw an error when an undefined u
 
 exports[`createOrUpdateCourse a course should throw an error when and empty course is added 1`] = `"course validation failed: stats.timeStudied: Path \`stats.timeStudied\` is required., stats.totalModulesStudied: Path \`stats.totalModulesStudied\` is required., stats.averageScore: Path \`stats.averageScore\` is required., stats.sessionCount: Path \`stats.sessionCount\` is required., userId: Path \`userId\` is required., courseId: Path \`courseId\` is required."`;
 
-exports[`createOrUpdateCourse a course should throw an error when no course is added 1`] = `"Course is required"`;
+exports[`createOrUpdateCourse a course should throw an error when no course is added 1`] = `"Cannot read property 'courseId' of undefined"`;
