@@ -45,7 +45,7 @@ describe("kata", () => {
 		});
 	});
 
-	describe.only("convertRomanNumeralToArabicNumber", () => {
+	describe("convertRomanNumeralToArabicNumber", () => {
 		test("should convert I to 1", () => {
 			const actual = convertRomanNumeralToArabicNumber("I");
 			expect(actual).toBe(1);
