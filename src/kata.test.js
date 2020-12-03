@@ -1,11 +1,13 @@
 import { kata } from "./kata";
-import { isGreaterThanTen } from "./kata";
-import { convertArabicNumberToRomanNumeral } from "./kata";
+import {
+	isGreaterThanTen,
+	convertArabicNumberToRomanNumeral,
+	convertRomanNumeralToArabicNumber,
+} from "./kata";
 
 describe("kata", () => {
 	test("should verfy the basics of what has been setup", () => {
 		const actual = kata();
-		console.debug("Samuel was here to see", actual);
 		expect(actual).toBeTruthy();
 	});
 
@@ -39,6 +41,34 @@ describe("kata", () => {
 		])("should convert %d to %s", (number, expected) => {
 			console.debug("Converting", number, expected);
 			const actual = convertArabicNumberToRomanNumeral(number);
+			expect(actual).toBe(expected);
+		});
+	});
+
+	describe.only("convertRomanNumeralToArabicNumber", () => {
+		test("should convert I to 1", () => {
+			const actual = convertRomanNumeralToArabicNumber("I");
+			expect(actual).toBe(1);
+		});
+
+		test("should convert II to 2", () => {
+			const actual = convertRomanNumeralToArabicNumber("II");
+			expect(actual).toBe(2);
+		});
+
+		test.each([
+			["I", 1],
+			["II", 2],
+			["III", 3],
+			["IV", 4],
+			["V", 5],
+			["VI", 6],
+			["VII", 7],
+			["VIII", 8],
+
+		])(`should convert '%s' to '%d'`, (romanNumeral, expected) => {
+			console.debug(romanNumeral, expected);
+			const actual = convertRomanNumeralToArabicNumber(romanNumeral);
 			expect(actual).toBe(expected);
 		});
 	});
