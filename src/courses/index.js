@@ -35,9 +35,7 @@ export const getCourse = async (courseId, userId) => {
 	if (!courseId) new Error("courseId is required");
 	if (!userId) new Error("userId is required");
 	const response = await courseModel.findOne({ courseId, userId });
-  return !response
-    ? null 
-    : removeDatabaseProps(response._doc);
+	return !response ? null : removeDatabaseProps(response._doc);
 };
 
 export const getSession = async (courseId, sessionId, userId) => {
