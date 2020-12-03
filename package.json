@@ -9,7 +9,7 @@
     "clean:snapshots": "rimraf dist/**/__snapshots__/**",
     "transpile": "babel ./src --out-dir dist --copy-files",
     "test": "jest src/*",
-    "test:watch": "jest --watch src/kata"
+    "test:watch": "jest --watch src/roman"
   },
   "repository": {
     "type": "git",
