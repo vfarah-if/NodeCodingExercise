@@ -53,15 +53,15 @@ function getErrorResponse(error) {
 		if (isNotFoundError(error)) {
 			return notFound(error.message);
 		}
+		
+		if (isInvalidArgumentError(error)) {
+			return badRequest(error.message);
+		}
 
 		if (isValidationError(error)) {
 			const { message, errors } = error;
 			console.debug("For bad request", message, errors);
 			return badRequest(message, errors);
-		}
-
-		if (isInvalidArgumentError) {
-			return badRequest(error.message);
 		}
 	}
 	return internalServerError();
