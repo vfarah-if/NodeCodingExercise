@@ -13,3 +13,4 @@
 ✔ Increase Jest Test times for some tests that potentially can run longer than 5 seconds @high @done(20-11-29 20:14)
 ✔ Refactor code to be cleaner - Clean engineering practises @done(20-11-30 08:41)
 ✔ Refactor bad name createOrUpdate to createOrUpdateCourse @high @done(20-12-03 15:39)
+☐ Error Handling very primitive - https://www.joyent.com/node-js/production/design/errors
