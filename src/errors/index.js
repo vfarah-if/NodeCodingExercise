@@ -31,6 +31,8 @@ export const isInvalidArgumentError = (error) =>
 	error instanceof InvalidArgumentError;
 export const isNotFoundError = (error) => error instanceof NotFoundError;
 export const isApplicationError = (error) => error instanceof ApplicationError;
+export const isValidationError = (error) => error instanceof ValidationError;
+
 export const hasValidatorErrors = (error) => {
 	// TODO: Replace with a reducer as this will be more efficient
 	const regex = /"ValidatorError"/gms;
@@ -42,20 +44,24 @@ export const getValidationErrors = (error) => error.errors;
 
 export const mapErrorToHttpResponse = (error, res) => {
 	const errorResponse = getErrorResponse(error);
+	console.debug("errorResponse => ", errorResponse);
 	return res.status(errorResponse.status).send(errorResponse);
 };
+
 function getErrorResponse(error) {
 	if (isApplicationError(error)) {
-		if (isInvalidArgumentError) {
-			return badRequest(error.message);
-		}
-
 		if (isNotFoundError(error)) {
 			return notFound(error.message);
 		}
 
-		if (hasValidatorErrors(error)) {
-			return badRequest(error.message, error.errors);
+		if (isValidationError(error)) {
+			const { message, errors } = error;
+			console.debug("For bad request", message, errors);
+			return badRequest(message, errors);
+		}
+
+		if (isInvalidArgumentError) {
+			return badRequest(error.message);
 		}
 	}
 	return internalServerError();

@@ -1,45 +1,42 @@
 import { Router } from "express";
 import { createOrUpdateCourse, getCourse, getSession } from "../courses";
+import { success, created } from "./../responses";
+import { mapErrorToHttpResponse } from "../errors";
+
 const router = Router();
 
 router.post("/:courseId", async (req, res, next) => {
-	const {
-		courseId,
-		sessionId,
-		totalModulesStudied,
-		averageScore,
-		timeStudied,
-		userId,
-	} = extractCourseAndStatsDetails(req);
-
-	const course = {
-		courseId,
-		sessionId,
-		userId,
-		stats: {
-			sessionCount: 1,
+	try {
+		const {
+			courseId,
+			sessionId,
 			totalModulesStudied,
 			averageScore,
 			timeStudied,
-		},
-	};
+			userId,
+		} = extractCourseAndStatsDetails(req);
 
-	try {
+		const course = {
+			courseId,
+			sessionId,
+			userId,
+			stats: {
+				sessionCount: 1,
+				totalModulesStudied,
+				averageScore,
+				timeStudied,
+			},
+		};
+
 		const response = await createOrUpdateCourse(course);
 		const { courseResponse } = response;
-		return res.status(courseResponse ? 201 : 200).send({
-			success: "true",
-			message: "Course created successfully",
-			course,
-		});
+		const successResponse = courseResponse
+			? created("Course created successfully", course)
+			: success("Course updated successfully", course);
+		return res.status(successResponse.status).send(successResponse);
 	} catch (error) {
-		console.error(error);
-		// TODO: Better Error Handling
-		return res.status(400).send({
-			success: "false",
-			message: "Course creation failed",
-			error,
-		});
+		// next(error); // TODO: Check as a middleware
+		mapErrorToHttpResponse(error, res);
 	}
 });
 
@@ -47,43 +44,31 @@ router.get("/:courseId", async (req, res, next) => {
 	try {
 		const { courseId, userId } = extractCourseDetails(req);
 		const courseResponse = await getCourse(courseId, userId);
-		return res.status(!courseResponse ? 404 : 200).send({
-			success: "true",
-			message: "User Course retrieved successfully",
-			course: courseResponse,
-		});
+		const successResponse = success(
+			"User Course retrieved successfully",
+			courseResponse
+		);
+		return res.status(successResponse.status).send(successResponse);
 	} catch (error) {
-		console.error(error);
-		// TODO: Better Error Handling
-		return res.status(400).send({
-			success: "fail",
-			message: "Failed to get course",
-			error,
-		});
+		// next(error); // TODO: Check as a middleware
+		mapErrorToHttpResponse(error, res);
 	}
 });
 
 router.get("/:courseId/sessions/:sessionId", async (req, res, next) => {
 	try {
-		const { 
-			courseId, 
-			sessionId, 
-			userId 
-		} = extractCourseAndSessionDetails(req);
+		const { courseId, sessionId, userId } = extractCourseAndSessionDetails(
+			req
+		);
 		const session = await getSession(courseId, sessionId, userId);
-		return res.status(!session ? 404 : 200).send({
-			success: "true",
-			message: "Course and Session retrieved successfully",
-			session,
-		});
+		const successResponse = success(
+			"Course and Session retrieved successfully",
+			session
+		);
+		return res.status(successResponse.status).send(successResponse);
 	} catch (error) {
-		console.error(error);
-		// TODO: Better Error Handling
-		return res.status(400).send({
-			success: "false",
-			message: "Failed to retrieve Course and Session",
-			error,
-		});
+		// next(error);
+		return mapErrorToHttpResponse(error, res);
 	}
 });
 

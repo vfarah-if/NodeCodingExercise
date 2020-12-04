@@ -12,14 +12,12 @@ export const created = (message, data) => ({
     data,
 });
 
-export const badRequest = (message, errors) => ({
+export const badRequest = (message, data) => ({
 	status: 400,
 	name: "BadRequestError",
 	message: message || "Bad Request",
-	errors,
+	data
 });
-
-
 
 export const notFound = (message) => ({
 	status: 404,

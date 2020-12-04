@@ -35,14 +35,11 @@ describe("getSession", () => {
 		done();
 	});
 
-	test("should get null when data does not exist", async (done) => {
-		const actual = await getSession(
-			"non-existent-client-id",
-			"non-existent-session-id",
-			"non-existent-userid"
-		);
+	test("should get NotFoundError when data does not exist", async (done) => {
+		await expect(() =>
+			getSession("non-ex-client-id", "non-ex-session-id", "non-ex-userid")
+		).rejects.toMatchSnapshot();
 
-		expect(actual).toBeNull();
 		done();
 	});
 });

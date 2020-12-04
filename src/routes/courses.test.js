@@ -1,6 +1,6 @@
 import {
 	postRequestTest,
-	getRequestTest,
+	getRequestTest
 } from "../../test-utilities/test-route";
 import {
 	connectDatabase,

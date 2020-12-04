@@ -1,11 +1,16 @@
 import courseModel from "../models/course";
 import sessionModel from "../models/session";
 import { removeDatabaseProps } from "../database";
+import {
+	hasValidatorErrors,
+	InvalidArgumentError,
+	NotFoundError,
+	ValidationError,
+	getValidationErrors,
+} from "../errors";
 
 export const createOrUpdateCourse = async (course) => {
-	if (!course) {
-		new Error("Course is required");
-	}
+	if (!course) throw new InvalidArgumentError("Course is required");
 
 	const { courseId, sessionId, userId } = course;
 	let courseResponse;
@@ -32,22 +37,36 @@ export const createOrUpdateCourse = async (course) => {
 };
 
 export const getCourse = async (courseId, userId) => {
-	if (!courseId) new Error("courseId is required");
-	if (!userId) new Error("userId is required");
+	if (!courseId) throw new InvalidArgumentError("courseId is required");
+	if (!userId) throw new InvalidArgumentError("result is required");
+
 	const response = await courseModel.findOne({ courseId, userId });
-	return !response ? null : removeDatabaseProps(response._doc);
+	if (!response) {
+		throw new NotFoundError(
+			`User '${userId}' not found with '${courseId}'`
+		);
+	}
+	return removeDatabaseProps(response._doc);
 };
 
 export const getSession = async (courseId, sessionId, userId) => {
-	if (!courseId) new Error("courseId is required");
-	if (!sessionId) new Error("sessionId is required");
-	if (!userId) new Error("userId is required");
+	if (!courseId) throw new InvalidArgumentError("courseId is required");
+	if (!sessionId) throw new InvalidArgumentError("sessionId is required");
+	if (!userId) throw new InvalidArgumentError("userId is required");
+
 	const response = await sessionModel.findOne({
 		courseId,
 		sessionId,
 		userId,
 	});
-	return !response ? null : removeDatabaseProps(response._doc);
+
+	if (!response) {
+		throw new NotFoundError(
+			`User '${userId}'not found with course '${courseId} or session '${sessionId}'`
+		);
+	}
+
+	return removeDatabaseProps(response._doc);
 };
 
 async function updateCourseAggregates(courseId, userId, sessionId) {
@@ -78,19 +97,38 @@ async function createOrUpdateSession(userId, sessionId, course, courseId) {
 		sessionId,
 		userId,
 	});
-	// NOTE: upsert not used here because validation does not work with findOneAndUpdate
-	const sessionResponse = !sessionExists
-		? await sessionModel.create(course)
-		: await sessionModel.updateOne({ courseId, sessionId, userId }, course);
-	console.debug(sessionResponse);
-	return sessionResponse;
+	try {
+		// NOTE: upsert not used here because validation does not work with findOneAndUpdate
+		const sessionResponse = !sessionExists
+			? await sessionModel.create(course)
+			: await sessionModel.updateOne(
+					{ courseId, sessionId, userId },
+					course
+			  );
+		console.debug(sessionResponse);
+		return sessionResponse;
+	} catch (error) {
+		throwCustomError(error, "Unable to create or update session details");
+	}
 }
 
 async function createCourse(courseId, userId, courseResponse, course) {
 	const courseExists = await courseModel.exists({ courseId, userId });
 	if (!courseExists) {
-		courseResponse = await courseModel.create(course);
-		console.debug(courseResponse);
+		try {
+			courseResponse = await courseModel.create(course);
+			console.debug(courseResponse);
+		} catch (error) {
+			throwCustomError(error, "Unable to create course details");
+		}
 	}
 	return { courseExists, courseResponse };
+}
+
+function throwCustomError(error, errorMessage) {
+	if (hasValidatorErrors(error)) {
+		console.debug("Threw up a validation error");
+		throw new ValidationError(errorMessage, getValidationErrors(error));
+	}
+	throw error;
 }

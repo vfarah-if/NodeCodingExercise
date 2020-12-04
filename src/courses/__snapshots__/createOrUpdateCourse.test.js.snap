@@ -1,19 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`createOrUpdateCourse a course should throw an error when an invalid courseId is added 1`] = `"course validation failed: courseId: Validator failed for path \`courseId\` with value \`NotValid\`"`;
+exports[`createOrUpdateCourse a course should throw an error when an invalid courseId is added 1`] = `"Unable to create course details"`;
 
-exports[`createOrUpdateCourse a course should throw an error when an invalid sessionId is added 1`] = `"session validation failed: sessionId: Validator failed for path \`sessionId\` with value \`NotUUID\`"`;
+exports[`createOrUpdateCourse a course should throw an error when an invalid sessionId is added 1`] = `"Unable to create or update session details"`;
 
-exports[`createOrUpdateCourse a course should throw an error when an undefined averageScore is added 1`] = `"course validation failed: stats.averageScore: Path \`stats.averageScore\` is required."`;
+exports[`createOrUpdateCourse a course should throw an error when an undefined averageScore is added 1`] = `"Unable to create course details"`;
 
-exports[`createOrUpdateCourse a course should throw an error when an undefined sessionId is added 1`] = `"session validation failed: sessionId: Path \`sessionId\` is required."`;
+exports[`createOrUpdateCourse a course should throw an error when an undefined sessionId is added 1`] = `"Unable to create or update session details"`;
 
-exports[`createOrUpdateCourse a course should throw an error when an undefined timeStudied is added 1`] = `"course validation failed: stats.timeStudied: Path \`stats.timeStudied\` is required."`;
+exports[`createOrUpdateCourse a course should throw an error when an undefined timeStudied is added 1`] = `"Unable to create course details"`;
 
-exports[`createOrUpdateCourse a course should throw an error when an undefined totalModulesStudied is added 1`] = `"course validation failed: stats.totalModulesStudied: Path \`stats.totalModulesStudied\` is required."`;
+exports[`createOrUpdateCourse a course should throw an error when an undefined totalModulesStudied is added 1`] = `"Unable to create course details"`;
 
-exports[`createOrUpdateCourse a course should throw an error when an undefined userId is added 1`] = `"course validation failed: userId: Path \`userId\` is required."`;
+exports[`createOrUpdateCourse a course should throw an error when an undefined userId is added 1`] = `"Unable to create course details"`;
 
-exports[`createOrUpdateCourse a course should throw an error when and empty course is added 1`] = `"course validation failed: stats.timeStudied: Path \`stats.timeStudied\` is required., stats.totalModulesStudied: Path \`stats.totalModulesStudied\` is required., stats.averageScore: Path \`stats.averageScore\` is required., stats.sessionCount: Path \`stats.sessionCount\` is required., userId: Path \`userId\` is required., courseId: Path \`courseId\` is required."`;
+exports[`createOrUpdateCourse a course should throw an error when and empty course is added 1`] = `"Unable to create course details"`;
 
-exports[`createOrUpdateCourse a course should throw an error when no course is added 1`] = `"Cannot read property 'courseId' of undefined"`;
+exports[`createOrUpdateCourse a course should throw an error when no course is added 1`] = `"Course is required"`;

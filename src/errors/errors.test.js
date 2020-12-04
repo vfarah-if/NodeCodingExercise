@@ -34,17 +34,24 @@ describe("errors", () => {
 			}
 		});
 
-		test("should be able to serialize error into ValidationError object", async (done) => {
+		test("should create and serialize an application validation error as expected", async (done) => {
 			try {
 				await course.create({});
 			} catch (error) {
-				const actualError = new ValidationError("Test", error.errors);
-				console.debug("isValidationError", actualError);
-				expect(actualError).toBeTruthy();
-				expect(actualError.errors).toBeTruthy();
-				expect(isApplicationError(actualError)).toBeTruthy();
-				done();
+				const validationError = new ValidationError("Test", error.errors);
+				console.debug("isValidationError", validationError);
+				expect(validationError).toBeTruthy();
+				expect(validationError.errors).toBeTruthy();
+				expect(isApplicationError(validationError)).toBeTruthy();
+				try {
+					throw validationError;	
+				} catch (err) {
+					console.debug("serialized error", err);
+					expect(err.message).toBe("Test");
+					expect(err.errors).toBe(error.errors)
+				}				
 			}
+			done();
 		});
 	});
 });

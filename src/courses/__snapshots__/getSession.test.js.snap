@@ -1,5 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`getSession should get NotFoundError when data does not exist 1`] = `[NotFoundError: User 'non-ex-userid'not found with course 'non-ex-client-id or session 'non-ex-session-id']`;
+
 exports[`getSession should get expected session from the database 1`] = `
 Object {
   "courseId": "04473bf9-6ec6-47e9-be92-77b2bba9b606",
