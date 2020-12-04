@@ -5,7 +5,7 @@ export const success = (message) => ({
 });
 
 export const created = (message) => ({
-	status: 200,
+	status: 201,
 	name: "Created",
 	message: message || "Created",
 });
