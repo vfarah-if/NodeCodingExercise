@@ -4,7 +4,6 @@ import { NotFoundError } from "./NotFoundError";
 import { ValidationError } from "./ValidationError";
 
 export const hasValidatorErrors = (error) => {
-	// TODO: Replace with a reducer as this will be more efficient
 	const regex = /"ValidatorError"/gms;
 	const errorString = JSON.stringify(error);
 	const result = error && error.errors && regex.test(errorString);
@@ -31,6 +30,7 @@ function getErrorResponse(error) {
 		console.debug("For bad request", message, errors);
 		return badRequest(message, errors);
 	}
-	
+
+	console.error(error);
 	return internalServerError();
 }
