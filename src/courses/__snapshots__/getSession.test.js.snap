@@ -2,6 +2,8 @@
 
 exports[`getSession should get NotFoundError when data does not exist 1`] = `[Error: User 'non-ex-userid'not found with course 'non-ex-client-id or session 'non-ex-session-id']`;
 
+exports[`getSession should get course id validation error 1`] = `[Error: courseId is required]`;
+
 exports[`getSession should get expected session from the database 1`] = `
 Object {
   "courseId": "04473bf9-6ec6-47e9-be92-77b2bba9b606",
@@ -14,3 +16,7 @@ Object {
   "userId": "915a54b7-8220-4c2b-ac03-cc6edda055a5",
 }
 `;
+
+exports[`getSession should get session id validation error 1`] = `[Error: sessionId is required]`;
+
+exports[`getSession should get session id validation error 2`] = `[Error: userId is required]`;

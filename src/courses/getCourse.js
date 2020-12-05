@@ -5,7 +5,7 @@ import { InvalidArgumentError } from "../errors/InvalidArgumentError";
 
 export const getCourse = async (courseId, userId) => {
 	if (!courseId) throw new InvalidArgumentError("courseId is required");
-	if (!userId) throw new InvalidArgumentError("result is required");
+	if (!userId) throw new InvalidArgumentError("userId is required");
 
 	const response = await courseModel.findOne({ courseId, userId });
 	if (!response) {

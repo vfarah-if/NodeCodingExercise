@@ -11,12 +11,12 @@ export const hasValidatorErrors = (error) => {
 };
 
 export const mapErrorToHttpResponse = (error, res) => {
-	const errorResponse = getErrorResponse(error);
-	console.debug("errorResponse => ", errorResponse);
-	return res.status(errorResponse.status).send(errorResponse);
+	const errorHttpResponse = getErrorHttpResponse(error);
+	console.debug("errorResponse => ", errorHttpResponse);
+	res.status(errorHttpResponse.status).send(errorHttpResponse);
 };
 
-function getErrorResponse(error) {
+export const getErrorHttpResponse = (error) => {
 	if (error instanceof NotFoundError) {
 		return notFound(error.message);
 	}

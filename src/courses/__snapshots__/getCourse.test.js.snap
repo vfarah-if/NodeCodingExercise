@@ -2,6 +2,8 @@
 
 exports[`getCourse should get NotFoundError when data does not exist 1`] = `[Error: User 'non-ex-userid' not found with course 'non-ex-client-id']`;
 
+exports[`getCourse should get course id validation error if course id is not assigned 1`] = `[Error: courseId is required]`;
+
 exports[`getCourse should get expected course from the database 1`] = `
 Object {
   "courseId": "04473bf9-6ec6-47e9-be92-77b2bba9b606",
@@ -14,3 +16,5 @@ Object {
   "userId": "915a54b7-8220-4c2b-ac03-cc6edda055a5",
 }
 `;
+
+exports[`getCourse should get user validation error if userid is not assigned 1`] = `[Error: userId is required]`;

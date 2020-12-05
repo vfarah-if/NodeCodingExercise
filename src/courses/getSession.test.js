@@ -27,6 +27,36 @@ describe("getSession", () => {
 		await disconnectAndDropDatabase();
 	});
 
+	test("should get course id validation error", async (done) => {
+		const { userId, sessionId } = validCourse;
+
+		await expect(() =>
+			getSession(undefined, sessionId, userId)
+		).rejects.toMatchSnapshot();
+
+		done();
+	});
+
+	test("should get session id validation error", async (done) => {
+		const { courseId, userId } = validCourse;
+
+		await expect(() =>
+			getSession(courseId, undefined, userId)
+		).rejects.toMatchSnapshot();
+
+		done();
+	});
+
+	test("should get session id validation error", async (done) => {
+		const { courseId, sessionId } = validCourse;
+
+		await expect(() =>
+			getSession(courseId, sessionId, undefined)
+		).rejects.toMatchSnapshot();
+
+		done();
+	});
+
 	test("should get expected session from the database", async (done) => {
 		const { courseId, userId, sessionId } = validCourse;
 

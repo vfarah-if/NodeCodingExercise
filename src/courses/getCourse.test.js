@@ -27,6 +27,26 @@ describe("getCourse", () => {
 		await disconnectAndDropDatabase();
 	});
 
+	test("should get course id validation error if course id is not assigned", async (done) => {
+		const { userId } = validCourse;
+
+		await expect(() =>
+			getCourse(undefined, userId)
+		).rejects.toMatchSnapshot();
+
+		done();
+	});
+
+	test("should get user validation error if userid is not assigned", async (done) => {
+		const { courseId } = validCourse;
+
+		await expect(() =>
+			getCourse(courseId, undefined)
+		).rejects.toMatchSnapshot();
+
+		done();
+	});
+
 	test("should get expected course from the database", async (done) => {
 		const { courseId, userId } = validCourse;
 
