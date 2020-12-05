@@ -8,15 +8,15 @@ export const success = (message, data) => ({
 export const created = (message, data) => ({
 	status: 201,
 	name: "Created",
-    message: message || "Created",
-    data,
+	message: message || "Created",
+	data,
 });
 
 export const badRequest = (message, data) => ({
 	status: 400,
 	name: "BadRequestError",
 	message: message || "Bad Request",
-	data
+	data,
 });
 
 export const notFound = (message) => ({
