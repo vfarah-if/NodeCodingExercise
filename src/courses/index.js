@@ -127,7 +127,6 @@ async function createCourse(courseId, userId, courseResponse, course) {
 
 function throwCustomError(error, errorMessage) {
 	if (hasValidatorErrors(error)) {
-		console.debug("Threw up a validation error");
 		throw new ValidationError(errorMessage, getValidationErrors(error));
 	}
 	throw error;

@@ -25,7 +25,6 @@ export const notFound = (message) => ({
 	message: message || "Resource Not Found",
 });
 
-
 export const internalServerError = (message) => ({
 	status: 500,
 	name: "InternalServerError",

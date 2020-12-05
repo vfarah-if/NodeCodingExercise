@@ -1,37 +1,12 @@
 import { notFound, internalServerError, badRequest } from "../responses";
-
-class ApplicationError extends Error {
-	constructor(message) {
-		super(message);
-		this.name = this.constructor.name;
-		Error.captureStackTrace(this, this.constructor);
-	}
-}
-
-export class InvalidArgumentError extends ApplicationError {
-	constructor(message) {
-		super(message);
-	}
-}
-
-export class NotFoundError extends ApplicationError {
-	constructor(message) {
-		super(message);
-	}
-}
-
-export class ValidationError extends ApplicationError {
+export class InvalidArgumentError extends Error {}
+export class NotFoundError extends Error {}
+export class ValidationError extends Error {
 	constructor(message, errors) {
 		super(message);
 		this.errors = errors;
 	}
 }
-
-export const isInvalidArgumentError = (error) =>
-	error instanceof InvalidArgumentError;
-export const isNotFoundError = (error) => error instanceof NotFoundError;
-export const isApplicationError = (error) => error instanceof ApplicationError;
-export const isValidationError = (error) => error instanceof ValidationError;
 
 export const hasValidatorErrors = (error) => {
 	// TODO: Replace with a reducer as this will be more efficient
@@ -49,20 +24,18 @@ export const mapErrorToHttpResponse = (error, res) => {
 };
 
 function getErrorResponse(error) {
-	if (isApplicationError(error)) {
-		if (isNotFoundError(error)) {
-			return notFound(error.message);
-		}
-		
-		if (isInvalidArgumentError(error)) {
-			return badRequest(error.message);
-		}
+	if (error instanceof NotFoundError) {
+		return notFound(error.message);
+	}
 
-		if (isValidationError(error)) {
-			const { message, errors } = error;
-			console.debug("For bad request", message, errors);
-			return badRequest(message, errors);
-		}
+	if (error instanceof InvalidArgumentError) {
+		return badRequest(error.message);
+	}
+
+	if (error instanceof ValidationError) {
+		const { message, errors } = error;
+		console.debug("For bad request", message, errors);
+		return badRequest(message, errors);
 	}
 	return internalServerError();
 }

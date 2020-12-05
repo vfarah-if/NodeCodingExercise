@@ -3,25 +3,10 @@ import {
 	isInvalidArgumentError,
 	InvalidArgumentError,
 	hasValidatorErrors,
-	ValidationError,
-	isApplicationError,
+	ValidationError
 } from "./index";
 
 describe("errors", () => {
-	describe("InvalidArgumentError", () => {
-		test("should be true when using InvalidArgumentError", () => {
-			const error = new InvalidArgumentError("Field is not valid");
-			const actual = isInvalidArgumentError(error);
-			expect(actual).toBeTruthy();
-		});
-
-		test("should be false when using standard error", () => {
-			const error = new Error("Field is not valid");
-			const actual = isInvalidArgumentError(error);
-			expect(actual).toBeFalsy();
-		});
-	});
-
 	describe("hasValidationError", () => {
 		test("should be true when there is a validation error", async (done) => {
 			try {
@@ -42,7 +27,6 @@ describe("errors", () => {
 				console.debug("isValidationError", validationError);
 				expect(validationError).toBeTruthy();
 				expect(validationError.errors).toBeTruthy();
-				expect(isApplicationError(validationError)).toBeTruthy();
 				try {
 					throw validationError;	
 				} catch (err) {

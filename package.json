@@ -7,7 +7,7 @@
     "build": "npm-run-all clean transpile clean:buildtests clean:buildsnapshots",
     "start": "npm run prod",
     "start:dev": "npm run dev",
-    "server": "node ./dist-server/bin/server",
+    "server": "node --inspect ./dist-server/bin/server",
     "transpile": "babel ./src --out-dir dist-server --copy-files",
     "clean": "rimraf dist-server",
     "clean:buildtests": "rimraf dist-server/**/*.test.js",
