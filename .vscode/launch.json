@@ -19,8 +19,7 @@
             "name": "Jest All",
             "program": "${workspaceFolder}/node_modules/.bin/jest",
             "args": [
-                "--runInBand",
-                "errors"
+                "--runInBand"
             ],
             "console": "integratedTerminal",
             "internalConsoleOptions": "neverOpen",
