@@ -2,11 +2,10 @@ import courseModel from "../models/course";
 import sessionModel from "../models/session";
 import { removeDatabaseProps } from "../database";
 import {
-	hasValidatorErrors,
-	InvalidArgumentError,
-	ValidationError,
-	getValidationErrors,
+	hasValidatorErrors
 } from "../errors";
+import { ValidationError } from "../errors/ValidationError";
+import { InvalidArgumentError } from "../errors/InvalidArgumentError";
 
 export const createOrUpdateCourse = async (course) => {
 	if (!course) throw new InvalidArgumentError("Course is required");
@@ -94,7 +93,7 @@ async function createCourse(courseId, userId, courseResponse, course) {
 function generateValidationErrorOrThrow(error, errorMessage) {
 	if (hasValidatorErrors(error)) {
 		throw new ValidationError(errorMessage, {
-			errors: getValidationErrors(error),
+			errors: error.errors,
 		});
 	}
 	throw error;

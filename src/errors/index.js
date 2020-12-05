@@ -1,12 +1,7 @@
 import { notFound, internalServerError, badRequest } from "../responses";
-export class InvalidArgumentError extends Error {}
-export class NotFoundError extends Error {}
-export class ValidationError extends Error {
-	constructor(message, errors) {
-		super(message);
-		this.errors = errors;
-	}
-}
+import { InvalidArgumentError } from "./InvalidArgumentError";
+import { NotFoundError } from "./NotFoundError";
+import { ValidationError } from "./ValidationError";
 
 export const hasValidatorErrors = (error) => {
 	// TODO: Replace with a reducer as this will be more efficient
@@ -15,7 +10,6 @@ export const hasValidatorErrors = (error) => {
 	const result = error && error.errors && regex.test(errorString);
 	return result;
 };
-export const getValidationErrors = (error) => error.errors;
 
 export const mapErrorToHttpResponse = (error, res) => {
 	const errorResponse = getErrorResponse(error);
@@ -37,5 +31,6 @@ function getErrorResponse(error) {
 		console.debug("For bad request", message, errors);
 		return badRequest(message, errors);
 	}
+	
 	return internalServerError();
 }

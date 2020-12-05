@@ -1,5 +1,6 @@
 import course from "../models/course";
-import { hasValidatorErrors, ValidationError } from "./index";
+import { hasValidatorErrors } from "./index";
+import { ValidationError } from "./ValidationError";
 
 describe("errors", () => {
 	describe("hasValidationError", () => {

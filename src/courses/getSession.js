@@ -1,6 +1,7 @@
 import sessionModel from "../models/session";
 import { removeDatabaseProps } from "../database";
-import { InvalidArgumentError, NotFoundError } from "../errors";
+import { NotFoundError } from "../errors/NotFoundError";
+import { InvalidArgumentError } from "../errors/InvalidArgumentError";
 
 export const getSession = async (courseId, sessionId, userId) => {
 	if (!courseId) throw new InvalidArgumentError("courseId is required");
