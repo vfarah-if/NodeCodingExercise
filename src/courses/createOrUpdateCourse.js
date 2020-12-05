@@ -4,7 +4,6 @@ import { removeDatabaseProps } from "../database";
 import {
 	hasValidatorErrors,
 	InvalidArgumentError,
-	NotFoundError,
 	ValidationError,
 	getValidationErrors,
 } from "../errors";
@@ -34,39 +33,6 @@ export const createOrUpdateCourse = async (course) => {
 	}
 
 	return { courseResponse, sessionResponse };
-};
-
-export const getCourse = async (courseId, userId) => {
-	if (!courseId) throw new InvalidArgumentError("courseId is required");
-	if (!userId) throw new InvalidArgumentError("result is required");
-
-	const response = await courseModel.findOne({ courseId, userId });
-	if (!response) {
-		throw new NotFoundError(
-			`User '${userId}' not found with '${courseId}'`
-		);
-	}
-	return removeDatabaseProps(response._doc);
-};
-
-export const getSession = async (courseId, sessionId, userId) => {
-	if (!courseId) throw new InvalidArgumentError("courseId is required");
-	if (!sessionId) throw new InvalidArgumentError("sessionId is required");
-	if (!userId) throw new InvalidArgumentError("userId is required");
-
-	const response = await sessionModel.findOne({
-		courseId,
-		sessionId,
-		userId,
-	});
-
-	if (!response) {
-		throw new NotFoundError(
-			`User '${userId}'not found with course '${courseId} or session '${sessionId}'`
-		);
-	}
-
-	return removeDatabaseProps(response._doc);
 };
 
 async function updateCourseAggregates(courseId, userId, sessionId) {
@@ -108,7 +74,7 @@ async function createOrUpdateSession(userId, sessionId, course, courseId) {
 		console.debug(sessionResponse);
 		return sessionResponse;
 	} catch (error) {
-		throwCustomError(error, "Unable to create or update session details");
+		generateValidationErrorOrThrow(error, "Unable to create or update session details");
 	}
 }
 
@@ -119,15 +85,17 @@ async function createCourse(courseId, userId, courseResponse, course) {
 			courseResponse = await courseModel.create(course);
 			console.debug(courseResponse);
 		} catch (error) {
-			throwCustomError(error, "Unable to create course details");
+			generateValidationErrorOrThrow(error, "Unable to create course details");
 		}
 	}
 	return { courseExists, courseResponse };
 }
 
-function throwCustomError(error, errorMessage) {
+function generateValidationErrorOrThrow(error, errorMessage) {
 	if (hasValidatorErrors(error)) {
-		throw new ValidationError(errorMessage, getValidationErrors(error));
+		throw new ValidationError(errorMessage, {
+			errors: getValidationErrors(error),
+		});
 	}
 	throw error;
 }

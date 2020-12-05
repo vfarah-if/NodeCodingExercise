@@ -1,10 +1,5 @@
 import course from "../models/course";
-import {
-	isInvalidArgumentError,
-	InvalidArgumentError,
-	hasValidatorErrors,
-	ValidationError
-} from "./index";
+import { hasValidatorErrors, ValidationError } from "./index";
 
 describe("errors", () => {
 	describe("hasValidationError", () => {
@@ -23,19 +18,14 @@ describe("errors", () => {
 			try {
 				await course.create({});
 			} catch (error) {
-				const validationError = new ValidationError("Test", error.errors);
-				console.debug("isValidationError", validationError);
+				const validationError = new ValidationError(
+					"Test",
+					error.errors
+				);
 				expect(validationError).toBeTruthy();
 				expect(validationError.errors).toBeTruthy();
-				try {
-					throw validationError;	
-				} catch (err) {
-					console.debug("serialized error", err);
-					expect(err.message).toBe("Test");
-					expect(err.errors).toBe(error.errors)
-				}				
+				done();
 			}
-			done();
 		});
 	});
 });

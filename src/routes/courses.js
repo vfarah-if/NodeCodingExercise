@@ -1,6 +1,8 @@
 import { Router } from "express";
-import { createOrUpdateCourse, getCourse, getSession } from "../courses";
-import { success, created } from "./../responses";
+import { getCourse } from "../courses/getCourse";
+import { getSession } from "../courses/getSession";
+import { createOrUpdateCourse } from "../courses/createOrUpdateCourse";
+import { success, created } from "../responses";
 import { mapErrorToHttpResponse } from "../errors";
 
 const router = Router();

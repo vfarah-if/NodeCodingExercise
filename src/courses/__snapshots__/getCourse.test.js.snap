@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`getCourse should get NotFoundError when data does not exist 1`] = `[Error: User 'non-ex-userid' not found with 'non-ex-client-id']`;
+exports[`getCourse should get NotFoundError when data does not exist 1`] = `[Error: User 'non-ex-userid' not found with course 'non-ex-client-id']`;
 
 exports[`getCourse should get expected course from the database 1`] = `
 Object {

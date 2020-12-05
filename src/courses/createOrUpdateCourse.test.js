@@ -3,7 +3,7 @@ import {
 	disconnectAndDropDatabase,
 	clearDatabase,
 } from "../database";
-import { createOrUpdateCourse } from "./index";
+import { createOrUpdateCourse } from "./createOrUpdateCourse";
 import courseModel from "../models/course";
 import { cloneCourse } from "../../test-utilities";
 

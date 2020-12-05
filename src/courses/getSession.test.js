@@ -1,5 +1,6 @@
 import { cloneCourse } from "../../test-utilities";
-import { createOrUpdateCourse, getSession } from "./index";
+import { getSession } from "./getSession";
+import { createOrUpdateCourse } from "./createOrUpdateCourse";
 import { connectDatabase, disconnectAndDropDatabase } from "../database";
 
 describe("getSession", () => {

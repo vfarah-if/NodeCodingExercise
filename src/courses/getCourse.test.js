@@ -1,5 +1,6 @@
 import { cloneCourse } from "../../test-utilities";
-import { createOrUpdateCourse, getCourse } from "./index";
+import { getCourse } from "./getCourse";
+import { createOrUpdateCourse } from "./createOrUpdateCourse";
 import { connectDatabase, disconnectAndDropDatabase } from "../database";
 
 describe("getCourse", () => {
@@ -36,8 +37,8 @@ describe("getCourse", () => {
 	});
 
 	test("should get NotFoundError when data does not exist", async (done) => {
-		await expect(
-			() => getCourse("non-ex-client-id", "non-ex-userid")
+		await expect(() =>
+			getCourse("non-ex-client-id", "non-ex-userid")
 		).rejects.toMatchSnapshot();
 
 		done();
