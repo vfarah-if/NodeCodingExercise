@@ -101,4 +101,4 @@ dist
 .tern-port
 
 # Distributed files generated
-test-express/dist-server/
+dist-server/
