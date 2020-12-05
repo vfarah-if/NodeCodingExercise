@@ -14,8 +14,8 @@
 ✔ Refactor code to be cleaner - Clean engineering practises @done(20-11-30 08:41)
 ✔ Refactor bad name createOrUpdate to createOrUpdateCourse @high @done(20-12-03 15:39)
 ✔ Error Handling very primitive - https://www.joyent.com/node-js/production/design/errors @critical @done(20-12-05 14:54)
-☐ Refactor error handling to Middleware
-☐ Refactor use of index.js making it hard to debug or find stuff @high
+✔ Refactor error handling to Middleware @done(20-12-05 17:26)
+✔ Refactor use of index.js making it hard to debug or find stuff @high @done(20-12-05 16:49)
     ✔ Refactor course domain @done(20-12-05 14:56)
     ✔ Refactor Database @done(20-12-05 15:19)
     ✔ Refactor errors @done(20-12-05 15:20)

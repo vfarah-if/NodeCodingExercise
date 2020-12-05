@@ -3,7 +3,6 @@ import { getCourse } from "../courses/getCourse";
 import { getSession } from "../courses/getSession";
 import { createOrUpdateCourse } from "../courses/createOrUpdateCourse";
 import { success, created } from "../responses";
-import { mapErrorToHttpResponse } from "../errors";
 
 const router = Router();
 
@@ -37,8 +36,7 @@ router.post("/:courseId", async (req, res, next) => {
 			: success("Course updated successfully", course);
 		return res.status(successResponse.status).send(successResponse);
 	} catch (error) {
-		// next(error); // TODO: Check as a middleware
-		mapErrorToHttpResponse(error, res);
+		next(error);
 	}
 });
 
@@ -52,8 +50,7 @@ router.get("/:courseId", async (req, res, next) => {
 		);
 		return res.status(successResponse.status).send(successResponse);
 	} catch (error) {
-		// next(error); // TODO: Check as a middleware
-		mapErrorToHttpResponse(error, res);
+		next(error);
 	}
 });
 
@@ -69,8 +66,7 @@ router.get("/:courseId/sessions/:sessionId", async (req, res, next) => {
 		);
 		return res.status(successResponse.status).send(successResponse);
 	} catch (error) {
-		// next(error);
-		return mapErrorToHttpResponse(error, res);
+		next(error);
 	}
 });
 

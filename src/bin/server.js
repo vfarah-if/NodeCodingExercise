@@ -26,7 +26,6 @@ async function connectMongoDb() {
 function generateServer() {
   const result = createServer(app);
   result.listen(iisPort);
-  result.on("error", onError);
   result.on("listening", onListening);
   return result;
 }
@@ -43,30 +42,6 @@ function normalizePort(val) {
   if (isNaN(port)) return val;
   if (port >= 0) return port;
   return false;
-}
-
-function onError(error) {
-  if (error.syscall !== "listen") {
-    throw error;
-  }
-
-  const bind =
-    typeof iisPort === "string" ? "Pipe " + iisPort : "Port " + iisPort;
-
-  makeErrorsMoreInformative();
-
-  function makeErrorsMoreInformative() {
-    switch (error.code) {
-      case "EACCES":
-        console.error(bind + " requires elevated privileges");
-        process.exit(1);
-      case "EADDRINUSE":
-        console.error(bind + " is already in use");
-        process.exit(1);
-      default:
-        throw error;
-    }
-  }
 }
 
 function onListening() {

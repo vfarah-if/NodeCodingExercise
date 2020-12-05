@@ -7,14 +7,15 @@ import swaggerDocument from "./swagger.json";
 
 import indexRouter from "./routes/index";
 import coursesRouter from "./routes/courses";
+import { customErrorHandler } from "./errors";
 
 import config from "./config";
 const { isDev, port } = config;
 
 console.debug(
-  `This is a ${
-    isDev ? "Development" : "Production"
-  } release preparing API on port '${port}'`
+	`This is a ${
+		isDev ? "Development" : "Production"
+	} release preparing API on port '${port}'`
 );
 
 const app = express();
@@ -28,5 +29,6 @@ app.use(express.static(join(__dirname, "../public")));
 app.use("/", indexRouter);
 app.use("/courses", coursesRouter);
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+app.use(customErrorHandler);
 
 export default app;

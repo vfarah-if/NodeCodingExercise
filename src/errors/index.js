@@ -10,13 +10,17 @@ export const hasValidatorErrors = (error) => {
 	return result;
 };
 
-export const mapErrorToHttpResponse = (error, res) => {
+export const customErrorHandler = (error, req, res, next) => {
+	if (res.headersSent) {
+		return next(error);
+	}
+
 	const errorHttpResponse = getErrorHttpResponse(error);
 	console.debug("errorResponse => ", errorHttpResponse);
 	res.status(errorHttpResponse.status).send(errorHttpResponse);
 };
 
-export const getErrorHttpResponse = (error) => {
+const getErrorHttpResponse = (error) => {
 	if (error instanceof NotFoundError) {
 		return notFound(error.message);
 	}
@@ -33,4 +37,4 @@ export const getErrorHttpResponse = (error) => {
 
 	console.error(error);
 	return internalServerError();
-}
+};
