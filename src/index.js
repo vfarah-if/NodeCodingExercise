@@ -5,19 +5,20 @@
  * @param {String} message The comparison message passed by the user
  * @param {*} expected The expected item
  * @param {*} actual The actual item
+ * @param {*} parentKey The key of the parent if this is chained
  */
-function assertEquals(message, expected, actual) {
-	console.debug("+", actual);
-	console.debug("=", expected);
+function assertEquals(message, expected, actual, parentKey) {
+	console.debug(`${parentKey || ""}+`, actual);
+	console.debug(`${parentKey || ""}=`, expected);
 	if (
 		(isString(expected) && isString(actual)) ||
 		(isNumber(expected) && isNumber(actual))
 	) {
-		return assertStringsOrNumbersAreEqual(message, expected, actual);
+		return assertStringsOrNumbersAreEqual(message, expected, actual, parentKey);
 	}
 
 	if (isArray(expected) && isArray(actual)) {
-		return assertArraysAreEqual(message, expected, actual);
+		return assertArraysAreEqual(message, expected, actual, parentKey);
 	}
 
 	if (isArray(expected) && isObject(actual)) {
@@ -35,7 +36,7 @@ function assertEquals(message, expected, actual) {
 	}
 
 	if (isObject(expected) && isObject(actual)) {
-		return assertObjectsAreEqual(message, expected, actual);
+		return assertObjectsAreEqual(message, expected, actual, parentKey);
 	}
 
 	if (expected !== actual) {
@@ -45,45 +46,49 @@ function assertEquals(message, expected, actual) {
 	}
 }
 
-function assertStringsOrNumbersAreEqual(message, expected, actual) {
+function assertStringsOrNumbersAreEqual(message, expected, actual, parentKey) {
 	if (expected !== actual) {
 		throw new Error(
-			`${message}: Expected "${expected}" but found "${actual}"`
+			`${message}: Expected ${(parentKey || '').trim()} "${expected}" but found "${actual}"`
 		);
 	}
 }
 
-function assertArraysAreEqual(message, expected, actual) {
+function assertArraysAreEqual(message, expected, actual, parentKey) {
 	if (expected.length !== actual.length) {
 		throw new Error(
-			`${message}: Expected array length "${expected.length}" but found "${actual.length}"`
+			`${message}: Expected array length ${expected.length} but found ${actual.length}`
 		);
 	}
 	expected.sort();
 	actual.sort();
 	for (let index = 0; index < actual.length; index++) {
-		var firstExpected = expected[index];
-		var secondActual = actual[index];
-		assertEquals(message, firstExpected, secondActual);
+		const fullPath = parentKey
+			? `${parentKey}[${index}]`
+			: `[${index}]`;
+		const firstExpected = expected[index];
+		const secondActual = actual[index];
+		assertEquals(message, firstExpected, secondActual, fullPath);
 	}
 }
 
-function assertObjectsAreEqual(message, expected, actual) {
+function assertObjectsAreEqual(message, expected, actual, parentKey) {
 	for (const key in expected) {
-		console.debug(`[${key}] of `, expected, actual);
+		const fullPath = parentKey ? [parentKey, key].join(".") : key;
+		console.debug(`[${fullPath}] of `, expected, actual);
 		if (expected.hasOwnProperty(key) && actual.hasOwnProperty(key)) {
 			const expectedProperty = expected[key];
 			const actualProperty = actual[key];
-			assertEquals(message, expectedProperty, actualProperty);
+			assertEquals(message, expectedProperty, actualProperty, fullPath);
 		} else {
 			const actualValue = actual[key];
 			if (actualValue) {
 				throw new Error(
-					`${message}: Expected "${key}" but found "${actualValue}"`
+					`${message}: Expected "${fullPath}" but found "${actualValue}"`
 				);
-			} 
+			}
 			throw new Error(
-				`${message}: Expected "${key}" but was not found`
+				`${message}: Expected "${fullPath}" but was not found`
 			);
 		}
 	}
@@ -194,7 +199,7 @@ function runAll() {
 }
 
 function addToList(message) {
-	console.log(message);
+	console.warn(message);
 }
 
 runAll();
