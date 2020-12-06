@@ -7,9 +7,106 @@
  * @param {*} actual The actual item
  */
 function assertEquals(message, expected, actual) {
-	if (expected !== actual) {
-		throw new Error(message);
+	console.debug("+", actual);
+	console.debug("=", expected);
+	if (
+		(isString(expected) && isString(actual)) ||
+		(isNumber(expected) && isNumber(actual))
+	) {
+		return assertStringsOrNumbersAreEqual(message, expected, actual);
 	}
+
+	if (isArray(expected) && isArray(actual)) {
+		return assertArraysAreEqual(message, expected, actual);
+	}
+
+	if (isArray(expected) && isObject(actual)) {
+		throw new Error(
+			`${message}: Expected type Array but found type Object`
+		);
+	}
+
+	if (isObject(actual) && isNull(expected)) {
+		throw new Error(`${message}: Expected type Null but found type Object`);
+	}
+
+	if (isNull(actual) && isObject(expected)) {
+		throw new Error(`${message}: Expected type Object but found type Null`);
+	}
+
+	if (isObject(expected) && isObject(actual)) {
+		return assertObjectsAreEqual(message, expected, actual);
+	}
+
+	if (expected !== actual) {
+		throw new Error(
+			`${message}: Expected "${expected}" but found "${actual}"`
+		);
+	}
+}
+
+function assertStringsOrNumbersAreEqual(message, expected, actual) {
+	if (expected !== actual) {
+		throw new Error(
+			`${message}: Expected "${expected}" but found "${actual}"`
+		);
+	}
+}
+
+function assertArraysAreEqual(message, expected, actual) {
+	if (expected.length !== actual.length) {
+		throw new Error(
+			`${message}: Expected array length "${expected.length}" but found "${actual.length}"`
+		);
+	}
+	expected.sort();
+	actual.sort();
+	for (let index = 0; index < actual.length; index++) {
+		var firstExpected = expected[index];
+		var secondActual = actual[index];
+		assertEquals(message, firstExpected, secondActual);
+	}
+}
+
+function assertObjectsAreEqual(message, expected, actual) {
+	for (const key in expected) {
+		console.debug(`[${key}] of `, expected, actual);
+		if (expected.hasOwnProperty(key) && actual.hasOwnProperty(key)) {
+			const expectedProperty = expected[key];
+			const actualProperty = actual[key];
+			assertEquals(message, expectedProperty, actualProperty);
+		} else {
+			const actualValue = actual[key];
+			if (actualValue) {
+				throw new Error(
+					`${message}: Expected "${key}" but found "${actualValue}"`
+				);
+			} 
+			throw new Error(
+				`${message}: Expected "${key}" but was not found`
+			);
+		}
+	}
+}
+
+function isString(value) {
+	return Object.prototype.toString.call(value) === "[object String]";
+}
+
+function isArray(value) {
+	return Object.prototype.toString.call(value) === "[object Array]";
+}
+
+function isObject(value) {
+	return Object.prototype.toString.call(value) === "[object Object]";
+}
+
+function isNull(value) {
+	return Object.prototype.toString.call(value) === "[object Null]";
+}
+
+function isNumber(value) {
+	return Object.prototype.toString.call(value) === "[object Number]";
 }
 
 /* -- Test running code:  --- */
@@ -97,7 +194,7 @@ function runAll() {
 }
 
 function addToList(message) {
-	console.log(message);	
+	console.log(message);
 }
 
 runAll();

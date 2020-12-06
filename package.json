@@ -2,6 +2,7 @@
   "name": "kata-practises",
   "version": "1.0.0",
   "description": "Do Katas for fun with simple babel ",
+  "main": "./src/index.js",
   "scripts": {
     "debug": "node --inspect ./src/index.js",
     "build": "npm-run-all clean transpile clean:tests clean:snapshots",
