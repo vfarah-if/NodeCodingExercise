@@ -5,7 +5,7 @@
  * @param {String} message The comparison message passed by the user
  * @param {*} expected The expected item
  * @param {*} actual The actual item
- * @param {*} parentKey The key of the parent if this is chained
+ * @param {*} parentKey The key of the parent if this is in an object hierarchy
  */
 function assertEquals(message, expected, actual, parentKey) {
 	console.debug(`${parentKey || ""}+`, actual);
@@ -39,6 +39,10 @@ function assertEquals(message, expected, actual, parentKey) {
 		return assertObjectsAreEqual(message, expected, actual, parentKey);
 	}
 
+	assertStrictEqual(expected, actual, message);
+}
+
+function assertStrictEqual(expected, actual, message) {
 	if (expected !== actual) {
 		throw new Error(
 			`${message}: Expected "${expected}" but found "${actual}"`
@@ -60,8 +64,9 @@ function assertArraysAreEqual(message, expected, actual, parentKey) {
 			`${message}: Expected array length ${expected.length} but found ${actual.length}`
 		);
 	}
-	expected.sort();
-	actual.sort();
+	// NOTE : I think this is better but I removed this to get the same result
+	// expected.sort();
+	// actual.sort();
 	for (let index = 0; index < actual.length; index++) {
 		const fullPath = parentKey
 			? `${parentKey}[${index}]`
