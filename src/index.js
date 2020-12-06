@@ -34,8 +34,8 @@ function assertEquals(message, expected, actual, parentKey) {
 
 function assertStrictEqual(message, expected, actual, parentKey) {
 	if (expected !== actual) {
-		const errorMessage = parentKey 
-			? `${message}: Expected ${(parentKey )}" ${expected}" but found "${actual}"`
+		const errorMessage = parentKey
+			? `${message}: Expected ${parentKey}" ${expected}" but found "${actual}"`
 			: `${message}: Expected "${expected}" but found "${actual}"`;
 		throw new Error(errorMessage);
 	}
@@ -49,9 +49,7 @@ function assertArraysAreEqual(message, expected, actual, parentKey) {
 	}
 
 	for (let index = 0; index < actual.length; index++) {
-		const fullPath = parentKey
-			? `${parentKey}[${index}]`
-			: `[${index}]`;
+		const fullPath = parentKey ? `${parentKey}[${index}]` : `[${index}]`;
 		const firstExpected = expected[index];
 		const secondActual = actual[index];
 		assertEquals(message, firstExpected, secondActual, fullPath);
