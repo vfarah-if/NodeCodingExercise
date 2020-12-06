@@ -29,7 +29,7 @@ function assertEquals(message, expected, actual, parentKey) {
 		return assertObjectsAreEqual(message, expected, actual, parentKey);
 	}
 
-	assertStrictEqual(message, expected, actual);
+	assertStrictEqual(message, expected, actual, parentKey);
 }
 
 function assertStrictEqual(message, expected, actual, parentKey) {
