@@ -10,12 +10,6 @@
 function assertEquals(message, expected, actual, parentKey) {
 	console.debug(`${parentKey || ""}+`, actual);
 	console.debug(`${parentKey || ""}=`, expected);
-	if (
-		(isString(expected) && isString(actual)) ||
-		(isNumber(expected) && isNumber(actual))
-	) {
-		return assertStrictEqual(message, expected, actual, parentKey);
-	}
 
 	if (isArray(expected) && isArray(actual)) {
 		return assertArraysAreEqual(message, expected, actual, parentKey);
@@ -86,10 +80,6 @@ function assertObjectsAreEqual(message, expected, actual, parentKey) {
 	}
 }
 
-function isString(value) {
-	return Object.prototype.toString.call(value) === "[object String]";
-}
-
 function isArray(value) {
 	return Object.prototype.toString.call(value) === "[object Array]";
 }
@@ -100,10 +90,6 @@ function isObject(value) {
 
 function isNull(value) {
 	return Object.prototype.toString.call(value) === "[object Null]";
-}
-
-function isNumber(value) {
-	return Object.prototype.toString.call(value) === "[object Number]";
 }
 
 /* -- Test running code:  --- */
