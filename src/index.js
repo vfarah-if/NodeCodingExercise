@@ -14,7 +14,7 @@ function assertEquals(message, expected, actual, parentKey) {
 		(isString(expected) && isString(actual)) ||
 		(isNumber(expected) && isNumber(actual))
 	) {
-		return assertStringsOrNumbersAreEqual(message, expected, actual, parentKey);
+		return assertStrictEqual(message, expected, actual, parentKey);
 	}
 
 	if (isArray(expected) && isArray(actual)) {
@@ -31,30 +31,19 @@ function assertEquals(message, expected, actual, parentKey) {
 		throw new Error(`${message}: Expected type Null but found type Object`);
 	}
 
-	if (isNull(actual) && isObject(expected)) {
-		throw new Error(`${message}: Expected type Object but found type Null`);
-	}
-
 	if (isObject(expected) && isObject(actual)) {
 		return assertObjectsAreEqual(message, expected, actual, parentKey);
 	}
 
-	assertStrictEqual(expected, actual, message);
+	assertStrictEqual(message, expected, actual);
 }
 
-function assertStrictEqual(expected, actual, message) {
+function assertStrictEqual(message, expected, actual, parentKey) {
 	if (expected !== actual) {
-		throw new Error(
-			`${message}: Expected "${expected}" but found "${actual}"`
-		);
-	}
-}
-
-function assertStringsOrNumbersAreEqual(message, expected, actual, parentKey) {
-	if (expected !== actual) {
-		throw new Error(
-			`${message}: Expected ${(parentKey || '').trim()} "${expected}" but found "${actual}"`
-		);
+		const errorMessage = parentKey 
+			? `${message}: Expected ${(parentKey )}" ${expected}" but found "${actual}"`
+			: `${message}: Expected "${expected}" but found "${actual}"`;
+		throw new Error(errorMessage);
 	}
 }
 
@@ -64,9 +53,7 @@ function assertArraysAreEqual(message, expected, actual, parentKey) {
 			`${message}: Expected array length ${expected.length} but found ${actual.length}`
 		);
 	}
-	// NOTE : I think this is better but I removed this to get the same result
-	// expected.sort();
-	// actual.sort();
+
 	for (let index = 0; index < actual.length; index++) {
 		const fullPath = parentKey
 			? `${parentKey}[${index}]`
