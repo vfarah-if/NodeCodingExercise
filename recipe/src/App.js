@@ -4,7 +4,7 @@ import Button from './components/Button';
 import Header from './components/Header';
 
 function App() {
-	let user = {};
+	let user = undefined;
 	const loginHandler = () => alert('OnLogin ...');
 	const logoutHandler = () => alert('onLogout ...');
 	const createAccountHandler = () => alert('createAccountHandler ...');

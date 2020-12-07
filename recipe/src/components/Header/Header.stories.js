@@ -12,9 +12,15 @@ const HeaderTemplate = (args) => <Header {...args} />;
 export const LoggedInStory = HeaderTemplate.bind({});
 LoggedInStory.args = {
 	user: {},
+	onLogin: () => {},
+	onLogout: () => {},
+	onCreateAccount: () => {},
 };
 
 export const LoggedOutStory = HeaderTemplate.bind({});
 LoggedOutStory.args = {
-	user: undefined
+	user: undefined,
+	onLogin: () => {},
+	onLogout: () => {},
+	onCreateAccount: () => {},
 };
