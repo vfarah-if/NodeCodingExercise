@@ -4,12 +4,13 @@ The purpose of this Kata is to practise using the latest patterns to refresh ski
 
 ## Instructions
 
-1. Follow instructions using these  [testing environments](https://reactjs.org/docs/testing-environments.html).
-2. Follow these instructions using this [kata](https://reactjs.org/docs/testing-recipes.html).
-
-
+1. Follow instructions using these [testing environments](https://reactjs.org/docs/testing-environments.html)
+    - Make sure you have the latest version of [node](https://nodejs.org/en/) and [yarn](https://classic.yarnpkg.com/en/)
+    - `npx create-react-app recipe`
+    - `npm init react-app recipe-npm`
+    - `yarn create react-app recipe-yarn`
+2. Follow these instructions using this [kata](https://reactjs.org/docs/testing-recipes.html)
 
 ## Summary
 
 TODO: Summarise findings based on this experiment
-
