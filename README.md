@@ -14,6 +14,12 @@ The purpose of this Kata is to practise using the latest patterns to refresh ski
 
 3. Do the **typescript version** which is using a template which is `npx create-react-app recipe-ts --template cra-template-typescript`, [see other templates](https://www.npmjs.com/search?q=cra-template-*&page=0&perPage=20) for more examples
 
+    - Make sure the latest typescript is installed `npm install -g typescript`
+
+4. Optimise any routes with [code splitting](https://reactjs.org/docs/code-splitting.html#route-based-code-splitting)
+
+5. Always initiate project with [Storybooking](https://storybook.js.org/docs/react/get-started/install) to help with any development, style guides and UI in the future `npx sb init`
+
     
 
 ## Summary
