@@ -62,9 +62,9 @@ function assertObjectsAreEqual(message, expected, actual, parentKey) {
 	}
 }
 
-const isArray = (value) => isType(value, "Array");
-const isObject = (value) => isType(value, "Object");
-const isNull = (value) => isType(value, "Null");
+const isArray = value => isType(value, "Array");
+const isObject = value => isType(value, "Object");
+const isNull = value => isType(value, "Null");
 const isType = (value, type) => Object.prototype.toString.call(value) === `[object ${type}]`;
 
 /* -- Test running code:  --- */
