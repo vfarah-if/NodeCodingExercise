@@ -2,13 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './button.css';
 
-export const Button = ({
+export function Button({
 	primary,
 	backgroundColor,
 	size,
 	displayName,
 	...props
-}) => {
+}) {
 	const mode = primary
 		? 'storybook-button--primary'
 		: 'storybook-button--secondary';
@@ -26,7 +26,7 @@ export const Button = ({
 			{displayName}
 		</button>
 	);
-};
+}
 
 Button.propTypes = {
 	primary: PropTypes.bool,
@@ -37,8 +37,8 @@ Button.propTypes = {
 };
 
 Button.defaultProps = {
-    backgroundColor: null,
-    primary: false,
-    size: 'medium',
-    onClick: undefined
-}
+	backgroundColor: null,
+	primary: false,
+	size: 'medium',
+	onClick: undefined,	
+};

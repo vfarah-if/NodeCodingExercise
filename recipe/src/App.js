@@ -23,10 +23,12 @@ function App() {
 					from scratch
 				</p>
 				<Button
-					backgroundColor="blue"
-					size="large"
+					backgroundColor="green"
+					size="medium"
 					displayName="Big Button"
 					primary={true}
+					onClick={() => alert('Hello from big button')}
+					disabled={false}
 				></Button>
 			</header>
 		</div>

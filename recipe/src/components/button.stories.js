@@ -12,26 +12,33 @@ export default {
   
   const Template = (args) => <Button {...args} />;
   
-  export const Primary = Template.bind({});
-  Primary.args = {
+  export const StoryOne = Template.bind({});
+  StoryOne.args = {
     primary: true,
-    label: 'Button',
+    displayName: 'Button',
   };
   
-  export const Secondary = Template.bind({});
-  Secondary.args = {
-    label: 'Button',
+  export const StoryTwo = Template.bind({});
+  StoryTwo.args = {
+    displayName: 'Button',
   };
   
-  export const Large = Template.bind({});
-  Large.args = {
+  export const StoryThree = Template.bind({});
+  StoryThree.args = {
     size: 'large',
-    label: 'Button',
+    displayName: 'Button',
   };
   
-  export const Small = Template.bind({});
-  Small.args = {
+  export const StoryFour = Template.bind({});
+  StoryFour.args = {
     size: 'small',
-    label: 'Button',
+    displayName: 'Button',    
+  };
+
+  export const SmallWithClick = Template.bind({});
+  SmallWithClick.args = {
+    size: 'small',
+    displayName: 'Button',    
+    onClick: 'alert("test")'
   };
   
