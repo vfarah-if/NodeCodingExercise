@@ -1,5 +1,6 @@
-import logo from "./logo.svg";
-import "./App.css";
+import logo from './logo.svg';
+import './App.css';
+import { Button } from './components/Button';
 
 function App() {
 	return (
@@ -17,6 +18,16 @@ function App() {
 				>
 					Learn React
 				</a>
+				<p>
+					Button Component to help understand setting up storyboarding
+					from scratch
+				</p>
+				<Button
+					backgroundColor="blue"
+					size="large"
+					displayName="Big Button"
+					primary={true}
+				></Button>
 			</header>
 		</div>
 	);
