@@ -10,25 +10,16 @@
 function assertEquals(message, expected, actual, parentKey) {
 	console.debug(`${parentKey || ""}+`, actual);
 	console.debug(`${parentKey || ""}=`, expected);
-
-	if (isArray(expected) && isArray(actual)) {
+	if (isArray(expected) && isArray(actual))
 		return assertArraysAreEqual(message, expected, actual, parentKey);
-	}
-
-	if (isArray(expected) && isObject(actual)) {
+	if (isArray(expected) && isObject(actual))
 		throw new Error(
 			`${message}: Expected type Array but found type Object`
 		);
-	}
-
-	if (isObject(actual) && isNull(expected)) {
+	if (isObject(actual) && isNull(expected))
 		throw new Error(`${message}: Expected type Null but found type Object`);
-	}
-
-	if (isObject(expected) && isObject(actual)) {
+	if (isObject(expected) && isObject(actual))
 		return assertObjectsAreEqual(message, expected, actual, parentKey);
-	}
-
 	assertStrictEqual(message, expected, actual, parentKey);
 }
 
@@ -43,7 +34,6 @@ function assertStrictEqual(message, expected, actual, parentKey) {
 
 function assertArraysAreEqual(message, expected, actual, parentKey) {
 	assertArrayLength(message, actual, expected);
-
 	for (let index = 0; index < actual.length; index++) {
 		const fullPath = `${parentKey || ""}[${index}]`;
 		const firstExpected = expected[index];
@@ -64,9 +54,7 @@ function assertObjectsAreEqual(message, expected, actual, parentKey) {
 	for (const key in expected) {
 		const fullPath = parentKey ? [parentKey, key].join(".") : key;
 		console.debug(`[${fullPath}] of `, expected, actual);
-		const hasPropertyInBoth =
-			expected.hasOwnProperty(key) && actual.hasOwnProperty(key);
-		if (!hasPropertyInBoth) {
+		if (!(expected.hasOwnProperty(key) && actual.hasOwnProperty(key))) {
 			const actualValue = actual[key];
 			const errorMessage = actualValue
 				? `${message}: Expected ${fullPath} but found "${actualValue}"`
@@ -79,21 +67,10 @@ function assertObjectsAreEqual(message, expected, actual, parentKey) {
 	}
 }
 
-function isArray(value) {
-	return isType(value, "Array");
-}
-
-function isObject(value) {
-	return isType(value, "Object");
-}
-
-function isNull(value) {
-	return isType(value, "Null");
-}
-
-function isType(value, type) {
-	return Object.prototype.toString.call(value) === `[object ${type}]`;
-}
+const isArray = (value) => isType(value, "Array");
+const isObject = (value) => isType(value, "Object");
+const isNull = (value) => isType(value, "Null");
+const isType = (value, type) => Object.prototype.toString.call(value) === `[object ${type}]`;
 
 /* -- Test running code:  --- */
 
