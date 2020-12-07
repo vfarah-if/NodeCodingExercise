@@ -16,6 +16,8 @@ function assertEquals(message, expected, actual, parentKey) {
 		throw new Error(`${message}: Expected type Array but found type Object`);
 	if (isObject(actual) && isNull(expected))
 		throw new Error(`${message}: Expected type Null but found type Object`);
+	if (isNull(actual) && isObject(expected))
+		throw new Error(`${message}: Expected type Object but found type Null`);		
 	if (isObject(expected) && isObject(actual))
 		return assertObjectsAreEqual(message, expected, actual, parentKey);
 	assertStrictEqual(message, expected, actual, parentKey);
@@ -142,7 +144,8 @@ function runAll() {
 			expected: complexObject1,
 			actual: complexObject3,
 		},
-		{ message: "Test 09", expected: null, actual: {} },
+		{ message: "Test 09", expected: null, actual: {} },		
+		{ message: "Test 10", expected: {}, actual: null}
 	];
 
 	assertionFailures = testCases
