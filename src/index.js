@@ -13,13 +13,17 @@ function assertEquals(message, expected, actual, parentKey) {
 	if (isArray(expected) && isArray(actual))
 		return assertArraysAreEqual(message, expected, actual, parentKey);
 	if (isArray(expected) && isObject(actual))
-		throw new Error(`${message}: Expected type Array but found type Object`);
+		throw new Error(
+			`${message}: Expected type Array but found type Object`
+		);
 	if (isObject(expected) && isArray(actual))
-		throw new Error(`${message}: Expected type Object but found type Array`);		
+		throw new Error(
+			`${message}: Expected type Object but found type Array`
+		);
 	if (isObject(actual) && isNull(expected))
 		throw new Error(`${message}: Expected type Null but found type Object`);
 	if (isNull(actual) && isObject(expected))
-		throw new Error(`${message}: Expected type Object but found type Null`);		
+		throw new Error(`${message}: Expected type Object but found type Null`);
 	if (isObject(expected) && isObject(actual))
 		return assertObjectsAreEqual(message, expected, actual, parentKey);
 	assertStrictEqual(message, expected, actual, parentKey);
@@ -45,8 +49,10 @@ function assertArraysAreEqual(message, expected, actual, parentKey) {
 }
 
 function assertArrayLength(message, actual, expected) {
-	if (expected.length !== actual.length) 
-		throw new Error(`${message}: Expected array length ${expected.length} but found ${actual.length}`);
+	if (expected.length !== actual.length)
+		throw new Error(
+			`${message}: Expected array length ${expected.length} but found ${actual.length}`
+		);
 }
 
 function assertObjectsAreEqual(message, expected, actual, parentKey) {
@@ -66,10 +72,11 @@ function assertObjectsAreEqual(message, expected, actual, parentKey) {
 	}
 }
 
-const isArray = value => isType(value, "Array");
-const isObject = value => isType(value, "Object");
-const isNull = value => isType(value, "Null");
-const isType = (value, type) => Object.prototype.toString.call(value) === `[object ${type}]`;
+const isArray = (value) => isType(value, "Array");
+const isObject = (value) => isType(value, "Object");
+const isNull = (value) => isType(value, "Null");
+const isType = (value, type) =>
+	Object.prototype.toString.call(value) === `[object ${type}]`;
 
 /* -- Test running code:  --- */
 
@@ -146,9 +153,11 @@ function runAll() {
 			expected: complexObject1,
 			actual: complexObject3,
 		},
-		{ message: "Test 09", expected: null, actual: {} },		
-		{ message: "Test 10", expected: {}, actual: null},
-		{ message: "Test 11", expected: { 0: "a" }, actual: ["a"]},
+		{ message: "Test 09", expected: null, actual: {} },
+		{ message: "Test 10", expected: {}, actual: null },
+		{ message: "Test 11", expected: { 0: "a" }, actual: ["a"] },
+		{ message: "Test 12", expected: null, actual: null },
+		{ message: "Test 13", expected: null, actual: undefined },
 	];
 
 	assertionFailures = testCases
