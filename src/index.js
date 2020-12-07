@@ -13,9 +13,7 @@ function assertEquals(message, expected, actual, parentKey) {
 	if (isArray(expected) && isArray(actual))
 		return assertArraysAreEqual(message, expected, actual, parentKey);
 	if (isArray(expected) && isObject(actual))
-		throw new Error(
-			`${message}: Expected type Array but found type Object`
-		);
+		throw new Error(`${message}: Expected type Array but found type Object`);
 	if (isObject(actual) && isNull(expected))
 		throw new Error(`${message}: Expected type Null but found type Object`);
 	if (isObject(expected) && isObject(actual))
@@ -43,11 +41,8 @@ function assertArraysAreEqual(message, expected, actual, parentKey) {
 }
 
 function assertArrayLength(message, actual, expected) {
-	if (expected.length !== actual.length) {
-		throw new Error(
-			`${message}: Expected array length ${expected.length} but found ${actual.length}`
-		);
-	}
+	if (expected.length !== actual.length) 
+		throw new Error(`${message}: Expected array length ${expected.length} but found ${actual.length}`);
 }
 
 function assertObjectsAreEqual(message, expected, actual, parentKey) {
