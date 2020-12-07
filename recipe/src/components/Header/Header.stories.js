@@ -1,5 +1,5 @@
 import React from 'react';
-import Header  from './Header';
+import Header from './Header';
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
@@ -14,5 +14,7 @@ LoggedInStory.args = {
 	user: {},
 };
 
-export const LoggedOutStory = HeaderTemplate({});
-LoggedOutStory.args = {};
+export const LoggedOutStory = HeaderTemplate.bind({});
+LoggedOutStory.args = {
+	user: undefined
+};
