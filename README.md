@@ -43,9 +43,9 @@ The **locked** state should transition into unlocked when the _insertCoin_ actio
 
 The **unlocked** state should transition back to locked when the _noEntry_ action is dispatched
 
-# Assert Kata in Home
+## Assert Kata in index.js - assertion kata
 
-## Terms of the Exercise
+### Terms of the Exercise
 
 - Try and stay away from libraries if possible
 - You can take as long as you like to complete the exercise, but for an indicative timescale we expect a senior developer can accomplish this in an hour.
@@ -53,7 +53,7 @@ The **unlocked** state should transition back to locked when the _noEntry_ actio
 - Please don't share this exercise with any third party
 - To submit your completed test, save here in jsbin and send us the new Url
 
-## The Challenge
+### The Challenge
 
 The aim of the exercise is to demonstrate your problem solving and understanding of JavaScript by implementing something found in every unit testing tool - an "assertEquals" method.
 
@@ -63,7 +63,7 @@ The aim of the exercise is to demonstrate your problem solving and understanding
 - Credit will be given for approach, correctly identifying "failed" assertEquals, **clean, testable** code and coding style.
 - The set of tests provided isn't exhaustive - there are cases that they don't handle. We expect you to add more tests.
 
-## Expected Result
+### Expected Result
 
 The following tests should "fail": **02, 03, 04, 07, 08 and 09** - and the failures should be reported using the provided mechanism.
 We expect the following output for the lsit of tests we have provided, but we also expect you to add more tests:
@@ -74,8 +74,4 @@ We expect the following output for the lsit of tests we have provided, but we al
 - Test 07: Expected propB.propA[1].propB "b" but found "c"
 - Test 08: Expected propB.propC but was not found
 - Test 09: Expected type Null but found type Object
-
-## Output
-
-
 
