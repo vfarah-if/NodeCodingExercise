@@ -26,9 +26,8 @@ The purpose of this Kata is to practise using the latest patterns to refresh ski
       # .env file in root
       SKIP_PREFLIGHT_CHECK=true
       ```
-    - 
-
-
+    
+6. Extend my default testing to use [storybooking with unit tests](https://storybook.js.org/docs/react/workflows/testing-with-storybook), integration tests or any other tests that could be added
 
 ## Summary
 
