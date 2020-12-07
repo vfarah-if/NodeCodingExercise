@@ -35,18 +35,14 @@ function assertEquals(message, expected, actual, parentKey) {
 function assertStrictEqual(message, expected, actual, parentKey) {
 	if (expected !== actual) {
 		const errorMessage = parentKey
-			? `${message}: Expected ${parentKey}" ${expected}" but found "${actual}"`
+			? `${message}: Expected ${parentKey} "${expected}" but found "${actual}"`
 			: `${message}: Expected "${expected}" but found "${actual}"`;
 		throw new Error(errorMessage);
 	}
 }
 
 function assertArraysAreEqual(message, expected, actual, parentKey) {
-	if (expected.length !== actual.length) {
-		throw new Error(
-			`${message}: Expected array length ${expected.length} but found ${actual.length}`
-		);
-	}
+	assertArrayLength(message, actual, expected);
 
 	for (let index = 0; index < actual.length; index++) {
 		const fullPath = parentKey ? `${parentKey}[${index}]` : `[${index}]`;
@@ -56,38 +52,47 @@ function assertArraysAreEqual(message, expected, actual, parentKey) {
 	}
 }
 
+function assertArrayLength(message, actual, expected) {
+	if (expected.length !== actual.length) {
+		throw new Error(
+			`${message}: Expected array length ${expected.length} but found ${actual.length}`
+		);
+	}
+}
+
 function assertObjectsAreEqual(message, expected, actual, parentKey) {
 	for (const key in expected) {
 		const fullPath = parentKey ? [parentKey, key].join(".") : key;
 		console.debug(`[${fullPath}] of `, expected, actual);
-		if (expected.hasOwnProperty(key) && actual.hasOwnProperty(key)) {
-			const expectedProperty = expected[key];
-			const actualProperty = actual[key];
-			assertEquals(message, expectedProperty, actualProperty, fullPath);
-		} else {
+		const hasPropertyInBoth =
+			expected.hasOwnProperty(key) && actual.hasOwnProperty(key);
+		if (!hasPropertyInBoth) {
 			const actualValue = actual[key];
-			if (actualValue) {
-				throw new Error(
-					`${message}: Expected "${fullPath}" but found "${actualValue}"`
-				);
-			}
-			throw new Error(
-				`${message}: Expected "${fullPath}" but was not found`
-			);
+			const errorMessage = actualValue
+				? `${message}: Expected ${fullPath} but found "${actualValue}"`
+				: `${message}: Expected ${fullPath} but was not found`;
+			throw new Error(errorMessage);
 		}
+		const expectedProperty = expected[key];
+		const actualProperty = actual[key];
+		assertEquals(message, expectedProperty, actualProperty, fullPath);
 	}
 }
 
 function isArray(value) {
-	return Object.prototype.toString.call(value) === "[object Array]";
+	return isType(value, "Array");
 }
 
 function isObject(value) {
-	return Object.prototype.toString.call(value) === "[object Object]";
+	return isType(value, "Object");
 }
 
 function isNull(value) {
-	return Object.prototype.toString.call(value) === "[object Null]";
+	return isType(value, "Null");
+}
+
+function isType(value, type) {
+	return Object.prototype.toString.call(value) === `[object ${type}]`;
 }
 
 /* -- Test running code:  --- */
