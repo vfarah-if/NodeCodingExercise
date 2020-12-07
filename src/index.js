@@ -45,7 +45,7 @@ function assertArraysAreEqual(message, expected, actual, parentKey) {
 	assertArrayLength(message, actual, expected);
 
 	for (let index = 0; index < actual.length; index++) {
-		const fullPath = parentKey ? `${parentKey}[${index}]` : `[${index}]`;
+		const fullPath = `${parentKey || ""}[${index}]`;
 		const firstExpected = expected[index];
 		const secondActual = actual[index];
 		assertEquals(message, firstExpected, secondActual, fullPath);
