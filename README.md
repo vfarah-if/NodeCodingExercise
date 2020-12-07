@@ -9,7 +9,12 @@ The purpose of this Kata is to practise using the latest patterns to refresh ski
     - `npx create-react-app recipe`
     - `npm init react-app recipe-npm`
     - `yarn create react-app recipe-yarn`
+    
 2. Follow these instructions using this [kata](https://reactjs.org/docs/testing-recipes.html)
+
+3. Do the **typescript version** which is using a template which is `npx create-react-app recipe-ts --template cra-template-typescript`, [see other templates](https://www.npmjs.com/search?q=cra-template-*&page=0&perPage=20) for more examples
+
+    
 
 ## Summary
 
