@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from './Button';
+import Button from './Button';
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
@@ -10,26 +10,26 @@ export default {
 	},
 };
 
-const Template = (args) => <Button {...args} />;
+const ButtonTemplate = (args) => <Button {...args} />;
 
-export const StoryOne = Template.bind({});
+export const StoryOne = ButtonTemplate.bind({});
 StoryOne.args = {
 	primary: true,
 	displayName: 'Button',
 };
 
-export const StoryTwo = Template.bind({});
+export const StoryTwo = ButtonTemplate.bind({});
 StoryTwo.args = {
 	displayName: 'Button',
 };
 
-export const StoryThree = Template.bind({});
+export const StoryThree = ButtonTemplate.bind({});
 StoryThree.args = {
 	size: 'large',
 	displayName: 'Button',
 };
 
-export const StoryFour = Template.bind({});
+export const StoryFour = ButtonTemplate.bind({});
 StoryFour.args = {
 	size: 'small',
 	displayName: 'Button',

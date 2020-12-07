@@ -1,10 +1,22 @@
 import logo from './logo.svg';
 import './App.css';
-import { Button } from './components/Button';
+import Button from './components/Button';
+import Header from './components/Header';
 
 function App() {
+	let user = {};
+	const loginHandler = () => alert('OnLogin ...');
+	const logoutHandler = () => alert('onLogout ...');
+	const createAccountHandler = () => alert('createAccountHandler ...');
+
 	return (
 		<div className="App">
+			<Header
+				user={user}
+				onLogin={loginHandler}
+				onLogout={logoutHandler}
+				onCreateAccount={createAccountHandler}
+			></Header>
 			<header className="App-header">
 				<img src={logo} className="App-logo" alt="logo" />
 				<p>
