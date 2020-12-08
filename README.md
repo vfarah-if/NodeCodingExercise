@@ -29,6 +29,22 @@ The purpose of this Kata is to practise using the latest patterns to refresh ski
     
 6. Extend my default testing to use [storybooking with unit tests](https://storybook.js.org/docs/react/workflows/testing-with-storybook), integration tests or any other tests that could be added
 
+## Environment
+
+Should always prepare an environment with tools to  help with verifying the integrity of what you are doing.
+
+| Command                        | Description                                                  |
+| ------------------------------ | ------------------------------------------------------------ |
+| `npm run start` or `npm start` | Should *start the project* with the default production setup |
+| `npm run build`                | Should *build the project* to a distribution folder ready to be released |
+| `npm run test`                 | Should allow all the *tests* configured in the project to run |
+| `npm run coverage`             | Should run all the tests and output coverage reports for what has been tested |
+| `npm run storybook`            | Should run the **storybook** on the configured port and URL to demonstrate and allow tinkering with. **Note** this is also an extension of the tests which should be configured to use the storybook scenarios to generate snapshots |
+| `npm i` or `yarn`              | **Quick start** when installing                              |
+|                                |                                                              |
+
+
+
 ## Summary
 
-TODO: Summarise findings based on this experiment
+Was easy to setup and getting going. The storybook runs slowly on windows, 
