@@ -1,5 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`UserDetails should get no user found when user response is empty 1`] = `
+<details>
+  <p>
+    No user details for User id '
+    1000
+    '
+  </p>
+</details>
+`;
+
 exports[`UserDetails should get user details when valid id is supplied 1`] = `
 <details>
   <summary>

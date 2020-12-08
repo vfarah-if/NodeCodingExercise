@@ -161,3 +161,7 @@ exports[`Storyshots Example/Hello Hello User Story 1`] = `
   Jane Doe
 </h1>
 `;
+
+exports[`Storyshots User Details/Example User Details Not Found Story 1`] = `"loading ..."`;
+
+exports[`Storyshots User Details/Example User Details With Id Story 1`] = `"loading ..."`;

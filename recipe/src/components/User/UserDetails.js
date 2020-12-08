@@ -5,6 +5,7 @@ import './user.css';
 // Utilising https://reqres.in/api/users/{id} to get fake real user details
 export default function UserDetails({ id }) {
 	const [user, setUser] = useState(null);
+	const [isLoaded, setIsLoaded] = useState(false);
 	const fetchUserData = async (id) => {
 		const response = await fetch(`https://reqres.in/api/users/${id}`);
 		const { data } = await response.json();
@@ -13,11 +14,20 @@ export default function UserDetails({ id }) {
 	};
 
 	useEffect(() => {
+		setIsLoaded(true);
 		return fetchUserData(id);
 	}, [id]);
 
-	if (!user) {
+	if (!user && !isLoaded) {
 		return 'loading ...';
+	}
+
+	if (!user && isLoaded) {
+		return (
+			<details>
+				<p>No user details for User id '{id}'</p>
+			</details>
+		);
 	}
 
 	return (

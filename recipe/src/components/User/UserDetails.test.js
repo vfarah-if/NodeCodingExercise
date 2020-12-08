@@ -38,4 +38,18 @@ describe('UserDetails', () => {
 
 		expect(container.querySelector('details')).toMatchSnapshot();
 	});
+
+	test('should get no user found when user response is empty', async () => {
+		jest.spyOn(global, 'fetch').mockImplementation(() =>
+			Promise.resolve({
+				json: () => Promise.resolve({}),
+			})
+		);
+
+		await act(async () => {
+			render(<UserDetails id="1000"></UserDetails>, container);
+		});
+
+		expect(container.querySelector('details')).toMatchSnapshot();
+	});
 });

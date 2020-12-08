@@ -13,3 +13,8 @@ export const UserDetailsWithIdStory = UserDetailsTemplate.bind({});
 UserDetailsWithIdStory.args = {
     id:1
 };
+
+export const UserDetailsNotFoundStory = UserDetailsTemplate.bind({});
+UserDetailsNotFoundStory.args = {
+    id:1000
+};
