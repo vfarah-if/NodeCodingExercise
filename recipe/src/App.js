@@ -4,6 +4,7 @@ import Button from './components/Button';
 import Header from './components/Header';
 import Hello from './components/Hello';
 import UserDetails from './components/User';
+import Map from './components/Map';
 
 function App() {
 	let user = undefined;
@@ -11,6 +12,8 @@ function App() {
 	const logoutHandler = () => alert('onLogout ...');
 	const createAccountHandler = () => alert('createAccountHandler ...');
 	const userId = 1;
+	const mapPosition = '6 Lake Gardens, TW10';
+
 	return (
 		<div className="App">
 			<Header
@@ -20,7 +23,6 @@ function App() {
 				onCreateAccount={createAccountHandler}
 			></Header>
 			<header className="App-header">
-				<img src={logo} className="App-logo" alt="logo" />
 				<p>
 					Edit <code>src/App.js</code> and save to reload.
 				</p>
@@ -46,6 +48,7 @@ function App() {
 				></Button>
 				<Hello></Hello>
 				<UserDetails id={userId}></UserDetails>
+				<Map center={mapPosition}></Map>
 			</header>
 		</div>
 	);

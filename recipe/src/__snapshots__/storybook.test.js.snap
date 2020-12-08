@@ -162,6 +162,18 @@ exports[`Storyshots Example/Hello Hello User Story 1`] = `
 </h1>
 `;
 
+exports[`Storyshots Example/Map Map Location Story 1`] = `
+<div
+  className="map"
+>
+  <p>
+    Represents a map with '
+    6 Lake Garden, TW10
+    ' configured
+  </p>
+</div>
+`;
+
 exports[`Storyshots User Details/Example User Details Not Found Story 1`] = `"loading ..."`;
 
 exports[`Storyshots User Details/Example User Details With Id Story 1`] = `"loading ..."`;
