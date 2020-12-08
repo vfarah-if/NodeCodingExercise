@@ -3,13 +3,14 @@ import './App.css';
 import Button from './components/Button';
 import Header from './components/Header';
 import Hello from './components/Hello';
+import UserDetails from './components/User';
 
 function App() {
 	let user = undefined;
 	const loginHandler = () => alert('OnLogin ...');
 	const logoutHandler = () => alert('onLogout ...');
 	const createAccountHandler = () => alert('createAccountHandler ...');
-
+	const userId = 1;
 	return (
 		<div className="App">
 			<Header
@@ -44,6 +45,7 @@ function App() {
 					disabled={false}
 				></Button>
 				<Hello></Hello>
+				<UserDetails id={userId}></UserDetails>
 			</header>
 		</div>
 	);

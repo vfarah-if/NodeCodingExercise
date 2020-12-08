@@ -1,0 +1,24 @@
+details {
+	display: block;
+}
+
+details > summary {
+	padding: 4px;
+	width: 400px;
+	background-color: gray;
+	border: none;
+	box-shadow: 1px 1px 2px #bbbbbb;
+	cursor: pointer;
+}
+
+details > p {
+	background-color: #eeeeee;
+	padding: 4px;
+	margin: 0;
+	box-shadow: 1px 1px 2px #bbbbbb;
+}
+
+details > img {
+    border:3px solid #bbbbbb;
+    vertical-align:middle;margin:0px 50px
+}

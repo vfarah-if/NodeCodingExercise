@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UserDetails should get user details when valid id is supplied 1`] = `
+<details>
+  <summary>
+    Janet
+     
+    Weaver
+     @ 
+    janet.weaver@reqres.in
+  </summary>
+  <img
+    alt="Avatar"
+    src="https://reqres.in/img/faces/2-image.jpg"
+  />
+  <p>
+    User BIO for User id '
+    2
+    '
+  </p>
+</details>
+`;
