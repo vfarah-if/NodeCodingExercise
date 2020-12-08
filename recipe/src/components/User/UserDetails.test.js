@@ -40,6 +40,7 @@ describe('UserDetails', () => {
 	});
 
 	test('should get no user found when user response is empty', async () => {
+        const id = 1000;
 		jest.spyOn(global, 'fetch').mockImplementation(() =>
 			Promise.resolve({
 				json: () => Promise.resolve({}),
@@ -47,7 +48,7 @@ describe('UserDetails', () => {
 		);
 
 		await act(async () => {
-			render(<UserDetails id="1000"></UserDetails>, container);
+			render(<UserDetails id={id}></UserDetails>, container);
 		});
 
 		expect(container.querySelector('details')).toMatchSnapshot();

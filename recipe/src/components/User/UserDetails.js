@@ -13,9 +13,9 @@ export default function UserDetails({ id }) {
 		setUser(data);
 	};
 
-	useEffect(() => {
+	useEffect(() => {		
+		fetchUserData(id);
 		setIsLoaded(true);
-		return fetchUserData(id);
 	}, [id]);
 
 	if (!user && !isLoaded) {
