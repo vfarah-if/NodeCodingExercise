@@ -77,6 +77,7 @@ exports[`Storyshots Example/Header Logged In Story 1`] = `
     <div>
       <button
         className="storybook-button storybook-button--small storybook-button--secondary"
+        onClick={[Function]}
         style={null}
         type="button"
       >
@@ -124,6 +125,7 @@ exports[`Storyshots Example/Header Logged Out Story 1`] = `
     <div>
       <button
         className="storybook-button storybook-button--small storybook-button--secondary"
+        onClick={[Function]}
         style={null}
         type="button"
       >
@@ -131,6 +133,7 @@ exports[`Storyshots Example/Header Logged Out Story 1`] = `
       </button>
       <button
         className="storybook-button storybook-button--small storybook-button--primary"
+        onClick={[Function]}
         style={null}
         type="button"
       >
@@ -139,4 +142,22 @@ exports[`Storyshots Example/Header Logged Out Story 1`] = `
     </div>
   </div>
 </header>
+`;
+
+exports[`Storyshots Example/Hello Hello Stranger Story 1`] = `
+<h1
+  className="name"
+>
+  Hello 
+  stranger
+</h1>
+`;
+
+exports[`Storyshots Example/Hello Hello User Story 1`] = `
+<h1
+  className="name"
+>
+  Hello 
+  Jane Doe
+</h1>
 `;

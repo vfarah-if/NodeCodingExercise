@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import Button from './components/Button';
 import Header from './components/Header';
+import Hello from './components/Hello';
 
 function App() {
 	let user = undefined;
@@ -42,6 +43,7 @@ function App() {
 					onClick={() => alert('Hello from big button')}
 					disabled={false}
 				></Button>
+				<Hello></Hello>
 			</header>
 		</div>
 	);
