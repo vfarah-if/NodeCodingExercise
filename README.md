@@ -29,6 +29,10 @@ The purpose of this Kata is to practise using the latest patterns to refresh ski
     
 6. Extend my default testing to use [storybooking with unit tests](https://storybook.js.org/docs/react/workflows/testing-with-storybook), integration tests or any other tests that could be added
 
+7. Create server side components within next js
+
+    - `npx create-next-app` and you can find more information [here](https://nextjs.org/docs/api-reference/create-next-app)	
+
 ## Environment
 
 Should always prepare an environment with tools to  help with verifying the integrity of what you are doing.
