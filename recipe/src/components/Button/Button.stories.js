@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from './Button';
+import { action } from '@storybook/addon-actions';
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
@@ -10,7 +11,7 @@ export default {
 	},
 };
 
-const ButtonTemplate = (args) => <Button {...args} />;
+const ButtonTemplate = (args) => <Button {...args} onClick={action('onClicked...')} />;
 
 export const StoryOne = ButtonTemplate.bind({});
 StoryOne.args = {

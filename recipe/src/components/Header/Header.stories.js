@@ -1,26 +1,29 @@
 import React from 'react';
 import Header from './Header';
 
+import { action } from '@storybook/addon-actions';
+
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
 	title: 'Example/Header',
 	component: Header,
 };
 
-const HeaderTemplate = (args) => <Header {...args} />;
+const HeaderTemplate = (args) => (
+	<Header
+		{...args}
+		onLogin={action('onLoginClicked...')}		
+		onLogout={action('onLogoutClicked...')}
+		onCreateAccount={action('onCreateAccountClicked...')}
+	/>
+);
 
-export const LoggedInStory = HeaderTemplate.bind({});
-LoggedInStory.args = {
-	user: {},
-	onLogin: () => {},
-	onLogout: () => {},
-	onCreateAccount: () => {},
+export const UserExistingInStory = HeaderTemplate.bind({});
+UserExistingInStory.args = {
+	user: {}
 };
 
-export const LoggedOutStory = HeaderTemplate.bind({});
-LoggedOutStory.args = {
-	user: undefined,
-	onLogin: () => {},
-	onLogout: () => {},
-	onCreateAccount: () => {},
+export const NoUserExistingStory = HeaderTemplate.bind({});
+NoUserExistingStory.args = {
+	user: undefined
 };
