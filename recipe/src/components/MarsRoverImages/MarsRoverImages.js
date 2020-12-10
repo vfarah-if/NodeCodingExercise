@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
+import LoadingStatus  from './LoadingStatus';
 import { ROVER_CAMERAS } from './constants';
 import nasaLogo from '../../assets/nasa-logo-300x250.png';
 import noImage from '../../assets/no-photo-400X300.png';
@@ -63,12 +64,8 @@ export default function MarsRoverImages() {
 	};
 
 	return (
-		<div className="Mars-Rover-Images">
-			{/* TODO: Extact loading component */}
-			{isLoading && <p>Loading ...</p>}
-
+		<div className="Mars-Rover-Images">			
 			<img src={nasaLogo} className="Mars-Rover-logo" alt="logo"></img>
-
 			{/* TODO: Extract Intro Component */}
 			<div className="App-intro">
 				<h1>Mars Rover Cameras</h1>
@@ -78,7 +75,7 @@ export default function MarsRoverImages() {
 			<span>
 				Each photo was taken on the rover's 100th sol (day) on Mars.
 			</span>
-			<br />
+			<br />			
 			<br />
 			{/* TODO Extract custom selector */}
 			<label>
@@ -110,6 +107,7 @@ export default function MarsRoverImages() {
 					))}
 				</select>
 			</label>
+			<LoadingStatus isLoading={isLoading} displayValue="Loading images ..."></LoadingStatus>
 			{/* TODO: Extract cards and thumbnail component */}
 			{!photos?.length ? (
 				<div>
