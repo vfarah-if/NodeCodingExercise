@@ -9,3 +9,8 @@
 ☐ Do a mars rover images component
     ☐ Refactor to become several comnponents
     ☐ Do tests for each using a newer and better approach
+    ✔ Create AlertStatus Component @done(20-12-10 23:07)
+    ✔ Create A ShinySelect component that does all existing and more @done(20-12-10 23:08)
+    ✔ Create Loading Status Component @done(20-12-10 23:08)
+    ☐ Create a Thumbnail image component
+    ☐ Create a Card and Cardlist component and try understand how to add the contents of the text element into the card
