@@ -1,52 +1,9 @@
 import React, { useState, useEffect } from 'react';
 
+import { ROVER_CAMERAS } from './constants';
 import nasaLogo from '../../assets/nasa-logo-300x250.png';
 import noImage from '../../assets/no-photo-400X300.png';
 import './mars-rover-images.css';
-const roverCameras = {
-	spirit: [
-		{
-			abbrev: 'NAVCAM',
-			name: 'Navigation Camera',
-		},
-		{
-			abbrev: 'PANCAM',
-			name: 'Panoramic Camera',
-		},
-	],
-	curiosity: [
-		{
-			abbrev: 'FHAZ',
-			name: 'Front Hazard Avoidance Camera',
-		},
-		{
-			abbrev: 'RHAZ',
-			name: 'Rear Hazard Avoidance Camera',
-		},
-		{
-			abbrev: 'MAST',
-			name: 'Mast Camera',
-		},
-		{
-			abbrev: 'CHEMCAM',
-			name: 'Chemistry and Camera Complex',
-		},
-		{
-			abbrev: 'NAVCAM',
-			name: 'Navigation Camera',
-		},
-	],
-	opportunity: [
-		{
-			abbrev: 'NAVCAM',
-			name: 'Navigation Camera',
-		},
-		{
-			abbrev: 'PANCAM',
-			name: 'Panoramic Camera',
-		},
-	],
-};
 
 export default function MarsRoverImages() {
 	const [roverChosen, setRoverChosen] = useState('curiosity');
@@ -58,6 +15,7 @@ export default function MarsRoverImages() {
 		try {
 			setIsLoading(true);
 			if (roverChosen && cameraChosen && cameraChosen !== '') {
+				// TODO: create a locally cached response of what is needed and use local cache before going out to the server
 				const response = await fetch(
 					`https://api.nasa.gov/mars-photos/api/v1/rovers/${roverChosen}/photos?sol=100&camera=${cameraChosen}&api_key=Tv6gAKvEQVPyIf0KwDIHRQXRuJ17XQYIEETD2e35`
 				);
@@ -87,10 +45,13 @@ export default function MarsRoverImages() {
 	const handleCameraSelection = (event) => {
 		setCameraChosen(event.target.value);
 	};
-	
+
 	const handleHideErrorAlert = (event) => {
-		event.target.parentElement.style.display = 'none'
-	}
+		// event.target.parentElement.style.display = 'none'
+		const divElement = event.target.parentElement;
+		divElement.style.opacity = '0';
+		setTimeout(() => (divElement.style.display = 'none'), 600);
+	};
 
 	const getThumbnailCardItems = (photos) => {
 		const cards = photos?.map((item) => (
@@ -103,10 +64,12 @@ export default function MarsRoverImages() {
 
 	return (
 		<div className="Mars-Rover-Images">
+			{/* TODO: Extact loading component */}
 			{isLoading && <p>Loading ...</p>}
 
 			<img src={nasaLogo} className="Mars-Rover-logo" alt="logo"></img>
 
+			{/* TODO: Extract Intro Component */}
 			<div className="App-intro">
 				<h1>Mars Rover Cameras</h1>
 			</div>
@@ -117,7 +80,7 @@ export default function MarsRoverImages() {
 			</span>
 			<br />
 			<br />
-
+			{/* TODO Extract custom selector */}
 			<label>
 				Choose a Mars rover:
 				<select
@@ -131,6 +94,7 @@ export default function MarsRoverImages() {
 				</select>
 			</label>
 			<br />
+			{/* TODO Extract custom selector */}
 			<label>
 				Choose a camera:
 				<select
@@ -139,13 +103,14 @@ export default function MarsRoverImages() {
 					onChange={handleCameraSelection}
 				>
 					<option value={''}>Cameras:</option>
-					{roverCameras[roverChosen].map((camera) => (
+					{ROVER_CAMERAS[roverChosen].map((camera) => (
 						<option key={camera.abbrev} value={camera.abbrev}>
 							{camera.name}
 						</option>
 					))}
 				</select>
 			</label>
+			{/* TODO: Extract cards and thumbnail component */}
 			{!photos?.length ? (
 				<div>
 					<p>No photos loaded yet!</p>
@@ -154,12 +119,10 @@ export default function MarsRoverImages() {
 			) : (
 				<ul className="cards">{getThumbnailCardItems(photos)}</ul>
 			)}
+			{/* TODO: Extract Status Alert Control */}
 			{error && (
 				<div className="alert">
-					<span
-						className="closebtn"
-						onClick={handleHideErrorAlert}
-					>
+					<span className="closebtn" onClick={handleHideErrorAlert}>
 						&times;
 					</span>
 					{error}
