@@ -48,7 +48,6 @@ export default function MarsRoverImages() {
 	};
 
 	const handleHideErrorAlert = (event) => {
-		// event.target.parentElement.style.display = 'none'
 		const divElement = event.target.parentElement;
 		divElement.style.opacity = '0';
 		setTimeout(() => (divElement.style.display = 'none'), 600);

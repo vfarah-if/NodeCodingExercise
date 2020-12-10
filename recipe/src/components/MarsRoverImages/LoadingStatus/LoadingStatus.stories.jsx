@@ -1,13 +1,18 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import LoadingStatus from './LoadingStatus';
 
-// eslint-disable-next-line import/no-anonymous-default-export
+/* eslint-disable import/no-anonymous-default-export */
 export default {
-	title: 'Example/LoadingStatus',
+	title: 'Component/LoadingStatus',
 	component: LoadingStatus,
 };
 
-const LoadingStatusTemplate = (args) => <LoadingStatus {...args} />;
+const LoadingStatusTemplate = (args) => (
+	<Fragment>
+		<LoadingStatus {...args} />
+	</Fragment>
+);
+
 
 export const DefaultLoadingStatusStory = LoadingStatusTemplate.bind({});
 DefaultLoadingStatusStory.args = { isLoading: true };
