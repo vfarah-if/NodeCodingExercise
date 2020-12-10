@@ -68,6 +68,133 @@ exports[`Storyshots Component/LoadingStatus Incorporate Custom Display Name Stor
 </p>
 `;
 
+exports[`Storyshots Component/ShinySelect Option And Groups Story 1`] = `
+<label>
+  Select a car
+  <select
+    className="select-css"
+    onChange={[Function]}
+    value=""
+  >
+    <option
+      value=""
+    >
+      Select a car
+    </option>
+    <optgroup
+      label="Swedish Cars"
+    >
+      <option
+        value="volvo"
+      >
+        Volvo
+      </option>
+      <option
+        value="saab"
+      >
+        Saab
+      </option>
+    </optgroup>
+    <optgroup
+      label="German Cars"
+    >
+      <option
+        value="vw"
+      >
+        VW
+      </option>
+      <option
+        value="mercedes"
+      >
+        Merc
+      </option>
+      <option
+        value="audi"
+      >
+        Audi
+      </option>
+    </optgroup>
+  </select>
+</label>
+`;
+
+exports[`Storyshots Component/ShinySelect Option Groups Story 1`] = `
+<label>
+  Select a car
+  <select
+    className="select-css"
+    onChange={[Function]}
+    value="volvo"
+  >
+    <optgroup
+      label="Swedish Cars"
+    >
+      <option
+        value="volvo"
+      >
+        Volvo
+      </option>
+      <option
+        value="saab"
+      >
+        Saab
+      </option>
+    </optgroup>
+    <optgroup
+      label="German Cars"
+    >
+      <option
+        value="vw"
+      >
+        VW
+      </option>
+      <option
+        value="mercedes"
+      >
+        Merc
+      </option>
+      <option
+        value="audi"
+      >
+        Audi
+      </option>
+    </optgroup>
+  </select>
+</label>
+`;
+
+exports[`Storyshots Component/ShinySelect Simple Options Story 1`] = `
+<label>
+  Choose a Mars rover
+  <select
+    className="select-css"
+    onChange={[Function]}
+    value=""
+  >
+    <option
+      value=""
+    >
+      Select your option
+    </option>
+    <option
+      value="curiosity"
+    >
+      Curiosity
+    </option>
+    <option
+      value="spirit"
+    >
+      Spirit
+    </option>
+    <option
+      value="opportunity"
+    >
+      Opportunity
+    </option>
+  </select>
+</label>
+`;
+
 exports[`Storyshots Example/Button Story Four 1`] = `
 <button
   className="storybook-button storybook-button--small storybook-button--secondary"

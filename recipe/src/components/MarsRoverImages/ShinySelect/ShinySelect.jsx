@@ -6,7 +6,7 @@ import './style/index.css';
 const ShinySelect = ({ displayName, value, optionsList, ...rest }) => {
 	const createOptionElements = (options) => {
 		return options.map((option, index) => (
-			<option key={index} value={option.value}>
+			<option key={option.value||index} value={option.value}>
 				{option.text || option.value}
 			</option>
 		));
@@ -14,7 +14,7 @@ const ShinySelect = ({ displayName, value, optionsList, ...rest }) => {
 
 	const createOptionGroupElement = (groupName, groupOptions) => {
 		return (
-			<optgroup label={groupName}>
+			<optgroup key={groupName} label={groupName}>
 				{createOptionElements(groupOptions)}
 			</optgroup>
 		);
