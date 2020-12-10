@@ -5,4 +5,7 @@
 ✔ Develop Maps component @done(20-12-09 12:17)
 ✔ Setup coverage @done(20-12-08 14:09)
 ✔ Add any tasks to be done here or put the details in the README @done(20-12-09 12:17)
-☐ Update all the unit tests with modern day practises @high 
+☐ Update all the unit tests with modern day practises @high
+☐ Do a mars rover images component
+    ☐ Refactor to become several comnponents
+    ☐ Do tests for eachusing a newer and better approach

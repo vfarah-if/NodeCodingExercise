@@ -1,10 +1,11 @@
-import logo from './logo.svg';
 import './App.css';
 import Button from './components/Button';
 import Header from './components/Header';
 import Hello from './components/Hello';
 import UserDetails from './components/User';
 import Map from './components/Map';
+import MarsRoverImages from './components/MarsRoverImages';
+
 
 function App() {
 	let user = undefined;
@@ -49,6 +50,7 @@ function App() {
 				<Hello></Hello>
 				<UserDetails id={userId}></UserDetails>
 				<Map center={mapPosition}></Map>
+				<MarsRoverImages></MarsRoverImages>
 			</header>
 		</div>
 	);
