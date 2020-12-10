@@ -1,5 +1,61 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots Component/AlertStatus Alert Error Story 1`] = `
+<div
+  className="alert error"
+>
+  <span
+    className="closebtn"
+    onClick={[Function]}
+  >
+    ×
+  </span>
+  Error Message
+</div>
+`;
+
+exports[`Storyshots Component/AlertStatus Alert Info Story 1`] = `
+<div
+  className="alert info"
+>
+  <span
+    className="closebtn"
+    onClick={[Function]}
+  >
+    ×
+  </span>
+  Info messsage
+</div>
+`;
+
+exports[`Storyshots Component/AlertStatus Alert Success Story 1`] = `
+<div
+  className="alert success"
+>
+  <span
+    className="closebtn"
+    onClick={[Function]}
+  >
+    ×
+  </span>
+  Success messsage
+</div>
+`;
+
+exports[`Storyshots Component/AlertStatus Alert Warning Story 1`] = `
+<div
+  className="alert warning"
+>
+  <span
+    className="closebtn"
+    onClick={[Function]}
+  >
+    ×
+  </span>
+  Warning messsage
+</div>
+`;
+
 exports[`Storyshots Component/LoadingStatus Default Loading Status Story 1`] = `
 <p>
   Loading ...
