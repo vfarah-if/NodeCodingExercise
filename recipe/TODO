@@ -14,3 +14,6 @@
     ✔ Create Loading Status Component @done(20-12-10 23:08)
     ☐ Create a Thumbnail image component
     ☐ Create a Card and Cardlist component and try understand how to add the contents of the text element into the card
+    ☐ Create tests for all the components after looking at latest patterns
+    ☐ Do the typescript version
+    ☐ Investigate the Ubuntu visual plugins and document - do blog on it
