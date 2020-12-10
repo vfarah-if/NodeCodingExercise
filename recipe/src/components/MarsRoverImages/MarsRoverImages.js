@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 
 import LoadingStatus from './LoadingStatus';
 import AlertStatus from './AlertStatus';
-import { ROVER_CAMERAS } from './constants';
+import ShinySelect from './ShinySelect';
+import { ROVER_OPTIONS, ROVER_CAMERA_OPTIONS } from './constants';
 import nasaLogo from '../../assets/nasa-logo-300x250.png';
 import noImage from '../../assets/no-photo-400X300.png';
 import './mars-rover-images.css';
@@ -25,7 +26,7 @@ export default function MarsRoverImages() {
 				const { photos } = await response.json();
 				setPhotos(photos);
 				setSuccessMessage(
-					`Succeeded to retrieve '${photos.length}' photos!`
+					`Succeeded retrieving '${photos.length}' photos!`
 				);
 			} else {
 				setPhotos([]);
@@ -78,36 +79,19 @@ export default function MarsRoverImages() {
 			</span>
 			<br />
 			<br />
-			{/* TODO Extract custom selector */}
-			<label>
-				Choose a Mars rover:
-				<select
-					className="select-css"
-					value={roverChosen}
-					onChange={handleRoverSelection}
-				>
-					<option value="curiosity">Curiosity</option>
-					<option value="spirit">Spirit</option>
-					<option value="opportunity">Opportunity</option>
-				</select>
-			</label>
+			<ShinySelect
+				displayName="Choose a Mars rover:"
+				value={roverChosen}
+				optionsList={ROVER_OPTIONS}
+				onChange={handleRoverSelection}
+			/>
 			<br />
-			{/* TODO Extract custom selector */}
-			<label>
-				Choose a camera:
-				<select
-					className="select-css"
-					value={cameraChosen}
-					onChange={handleCameraSelection}
-				>
-					<option value={''}>Cameras:</option>
-					{ROVER_CAMERAS[roverChosen].map((camera) => (
-						<option key={camera.abbrev} value={camera.abbrev}>
-							{camera.name}
-						</option>
-					))}
-				</select>
-			</label>
+			<ShinySelect
+				displayName="Choose a camera:"
+				value={cameraChosen}
+				optionsList={ROVER_CAMERA_OPTIONS}
+				onChange={handleCameraSelection}
+			/>
 			<div>
 				<LoadingStatus
 					isLoading={isLoading}

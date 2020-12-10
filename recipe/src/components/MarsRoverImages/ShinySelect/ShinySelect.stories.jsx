@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import ShinySelect from './ShinySelect';
+import { action } from '@storybook/addon-actions';
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
@@ -9,15 +10,19 @@ export default {
 
 const ShinySelectTemplate = (args) => (
 	<Fragment>
-		<ShinySelect {...args} />
+		<ShinySelect {...args} onChange={action('onChanged...')} />
 	</Fragment>
 );
 
 export const SimpleOptionsStory = ShinySelectTemplate.bind({});
 SimpleOptionsStory.args = {
 	displayName: 'Choose a Mars rover',
-	value: 'curiosity',
+	value: '',
 	optionsList: [
+        {
+			value: '',
+			text: 'Select your option',
+		},
 		{
 			value: 'curiosity',
 			text: 'Curiosity',
@@ -38,6 +43,43 @@ OptionGroupsStory.args = {
 	displayName: 'Select a car',
 	value: 'volvo',
 	optionsList: [
+		{
+            group: 'Swedish Cars',
+			value: 'volvo',
+			text: 'Volvo',
+		},
+		{
+            group: 'Swedish Cars',
+			value: 'saab',
+			text: 'Saab',
+		},
+		{
+            group: 'German Cars',
+			value: 'vw',
+			text: 'VW',
+        },
+        {
+            group: 'German Cars',
+			value: 'mercedes',
+			text: 'Merc',
+        },{
+            group: 'German Cars',
+			value: 'audi',
+			text: 'Audi',
+        },
+        
+	],
+};
+
+export const OptionAndGroupsStory = ShinySelectTemplate.bind({});
+OptionAndGroupsStory.args = {
+	displayName: 'Select a car',
+	value: '',
+	optionsList: [
+        {          
+			value: '',
+			text: 'Select a car',
+		},
 		{
             group: 'Swedish Cars',
 			value: 'volvo',

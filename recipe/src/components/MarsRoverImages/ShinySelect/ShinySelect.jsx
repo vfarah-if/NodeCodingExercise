@@ -21,35 +21,30 @@ const ShinySelect = ({ displayName, value, optionsList, ...rest }) => {
 	};
 
 	const generateSelectOptions = () => {
-		const groupByOptions = optionsList.reduce((acc, option) => {
+		const groupByGroupOrOptions = optionsList.reduce((acc, option) => {
 			if (option.group) {
-				if (!acc.hasOwnProperty(option.group)) {
-					acc[option.group] = [];
-				}
+				if (!acc.hasOwnProperty(option.group)) acc[option.group] = [];
 				acc[option.group].push(option);
 			} else {
-				if (!acc.hasOwnProperty('options')) {
-					acc['options'] = [];
-				}
+				if (!acc.hasOwnProperty('options')) acc['options'] = [];
 				acc['options'].push(option);
 			}
 			return acc;
 		}, {});
 
-		if (groupByOptions.options) {
-			return createOptionElements(groupByOptions.options);
-		} else {
-			const groupResult = [];
-			for (const groupName in groupByOptions) {
-				if (groupByOptions.hasOwnProperty(groupName)) {
-					const groupOptions = groupByOptions[groupName];
-					groupResult.push(
-						createOptionGroupElement(groupName, groupOptions)
-					);
-				}
+		let optionResults = [];
+		let groupResults = [];
+		for (const optionName in groupByGroupOrOptions) {
+			if (optionName === 'options') {
+				optionResults = createOptionElements(groupByGroupOrOptions.options);
+			} else if (groupByGroupOrOptions.hasOwnProperty(optionName)) {
+				const groupOptions = groupByGroupOrOptions[optionName];
+				groupResults.push(
+					createOptionGroupElement(optionName, groupOptions)
+				);
 			}
-			return groupResult;
 		}
+		return [...optionResults, ...groupResults];
 	};
 
 	return (
