@@ -23,18 +23,8 @@ function App() {
 				onLogout={logoutHandler}
 				onCreateAccount={createAccountHandler}
 			></Header>
-			<header className="App-header">
-				<p>
-					Edit <code>src/App.js</code> and save to reload.
-				</p>
-				<a
-					className="App-link"
-					href="https://reactjs.org"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					Learn React
-				</a>
+			<header className="App-header">				
+				<MarsRoverImages/>
 				<p>
 					Button Component to help understand setting up storyboarding
 					from scratch
@@ -49,8 +39,7 @@ function App() {
 				></Button>
 				<Hello></Hello>
 				<UserDetails id={userId}></UserDetails>
-				<Map center={mapPosition}></Map>
-				<MarsRoverImages></MarsRoverImages>
+				<Map center={mapPosition}></Map>				
 			</header>
 		</div>
 	);
