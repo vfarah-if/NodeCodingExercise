@@ -9,7 +9,7 @@ export default {
 
 const ThumbnailTemplate = (args) => (
 	<>
-		<Thumbnail {...args} />
+		<Thumbnail {...args} style={{border: '1px solid yellow'}}  />
 	</>
 );
 
@@ -17,5 +17,4 @@ export const SimpleThumbnailStory = ThumbnailTemplate.bind({});
 SimpleThumbnailStory.args = {
 	imageSource: 'https://miro.medium.com/max/1592/0*aaeiaAX5kMyHCQZT.png',
 	description: 'Jest logo',
-	style: 'border: 1px solid #ddd;',
 };
