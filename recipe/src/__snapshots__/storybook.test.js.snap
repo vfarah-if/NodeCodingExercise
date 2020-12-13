@@ -195,6 +195,15 @@ exports[`Storyshots Component/ShinySelect Simple Options Story 1`] = `
 </label>
 `;
 
+exports[`Storyshots Component/Thumbnail Simple Thumbnail Story 1`] = `
+<img
+  alt="Jest logo"
+  className="thumbnail"
+  src="https://miro.medium.com/max/1592/0*aaeiaAX5kMyHCQZT.png"
+  style="border: 1px solid #ddd;"
+/>
+`;
+
 exports[`Storyshots Example/Button Story Four 1`] = `
 <button
   className="storybook-button storybook-button--small storybook-button--secondary"
