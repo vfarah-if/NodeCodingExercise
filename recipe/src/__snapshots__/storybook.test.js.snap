@@ -79,6 +79,213 @@ exports[`Storyshots Component/Card Card Story 1`] = `
 </li>
 `;
 
+exports[`Storyshots Component/Cards Default Layout Story 1`] = `
+<ul
+  style={
+    Object {
+      "display": "grid",
+      "grid-gap": "20px",
+      "grid-template-columns": "repeat(4, 1fr)",
+    }
+  }
+>
+  <li
+    className="card"
+  >
+    <h1>
+      1
+    </h1>
+  </li>
+  <li
+    className="card"
+  >
+    <h1>
+      2
+    </h1>
+  </li>
+  <li
+    className="card"
+  >
+    <h1>
+      3
+    </h1>
+  </li>
+  <li
+    className="card"
+  >
+    <h1>
+      4
+    </h1>
+  </li>
+  <li
+    className="card"
+  >
+    <h1>
+      5
+    </h1>
+  </li>
+  <li
+    className="card"
+  >
+    <h1>
+      6
+    </h1>
+  </li>
+  <li
+    className="card"
+  >
+    <h1>
+      7
+    </h1>
+  </li>
+  <li
+    className="card"
+  >
+    <h1>
+      8
+    </h1>
+  </li>
+</ul>
+`;
+
+exports[`Storyshots Component/Cards Two Column Layout Story 1`] = `
+<ul
+  style={
+    Object {
+      "display": "grid",
+      "grid-gap": "20px",
+      "grid-template-columns": "repeat(2, 1fr)",
+    }
+  }
+>
+  <li
+    className="card"
+  >
+    <h1>
+      1
+    </h1>
+  </li>
+  <li
+    className="card"
+  >
+    <h1>
+      2
+    </h1>
+  </li>
+  <li
+    className="card"
+  >
+    <h1>
+      3
+    </h1>
+  </li>
+  <li
+    className="card"
+  >
+    <h1>
+      4
+    </h1>
+  </li>
+  <li
+    className="card"
+  >
+    <h1>
+      5
+    </h1>
+  </li>
+  <li
+    className="card"
+  >
+    <h1>
+      6
+    </h1>
+  </li>
+  <li
+    className="card"
+  >
+    <h1>
+      7
+    </h1>
+  </li>
+  <li
+    className="card"
+  >
+    <h1>
+      8
+    </h1>
+  </li>
+</ul>
+`;
+
+exports[`Storyshots Component/Cards Zero Column Layout Story 1`] = `
+<ul
+  style={
+    Object {
+      "display": "grid",
+      "grid-gap": "20px",
+      "grid-template-columns": "repeat(4, 1fr)",
+    }
+  }
+>
+  <li
+    className="card"
+  >
+    <h1>
+      1
+    </h1>
+  </li>
+  <li
+    className="card"
+  >
+    <h1>
+      2
+    </h1>
+  </li>
+  <li
+    className="card"
+  >
+    <h1>
+      3
+    </h1>
+  </li>
+  <li
+    className="card"
+  >
+    <h1>
+      4
+    </h1>
+  </li>
+  <li
+    className="card"
+  >
+    <h1>
+      5
+    </h1>
+  </li>
+  <li
+    className="card"
+  >
+    <h1>
+      6
+    </h1>
+  </li>
+  <li
+    className="card"
+  >
+    <h1>
+      7
+    </h1>
+  </li>
+  <li
+    className="card"
+  >
+    <h1>
+      8
+    </h1>
+  </li>
+</ul>
+`;
+
 exports[`Storyshots Component/LoadingStatus Default Loading Status Story 1`] = `
 <p>
   Loading ...

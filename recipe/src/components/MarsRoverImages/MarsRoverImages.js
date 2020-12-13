@@ -4,7 +4,8 @@ import LoadingStatus from './LoadingStatus';
 import AlertStatus from './AlertStatus';
 import ShinySelect from './ShinySelect';
 import Thumbnail from './Thumbnail';
-import Card from './Card/Card';
+import Cards from './Cards';
+import Card from './Card';
 import { ROVER_OPTIONS, ROVER_CAMERA_OPTIONS } from './constants';
 import nasaLogo from '../../assets/nasa-logo-300x250.png';
 import noImage from '../../assets/no-photo-400X300.png';
@@ -21,6 +22,7 @@ export default function MarsRoverImages() {
 		try {
 			setIsLoading(true);
 			if (roverChosen && cameraChosen && cameraChosen !== '') {
+				// TODO: Extract config for APIKey and add URL to a const above
 				const response = await fetch(
 					`https://api.nasa.gov/mars-photos/api/v1/rovers/${roverChosen}/photos?sol=100&camera=${cameraChosen}&api_key=Tv6gAKvEQVPyIf0KwDIHRQXRuJ17XQYIEETD2e35`
 				);
@@ -54,6 +56,8 @@ export default function MarsRoverImages() {
 	const handleCameraSelection = (event) => {
 		setCameraChosen(event.target.value);
 	};
+
+	const hasNoPhotos = !photos?.length;
 
 	return (
 		<div className="Mars-Rover-Images">
@@ -92,17 +96,21 @@ export default function MarsRoverImages() {
 				<br />
 				<AlertStatus alertType="success" message={successMessage} />
 			</div>
-			{/* TODO: Extract cards component */}
-			{!photos?.length ? (
+			{hasNoPhotos ? (
 				<div>
 					<img alt="none found" src={noImage} />
 				</div>
 			) : (
-				<ul className="cards">{photos?.map((item) => (
-					<Card key={item.id}>
-						<Thumbnail imageSource={item.img_src} altText={item.id} />
-					</Card>
-				))}</ul>
+				<Cards columnCount={5}>
+					{photos?.map((item) => (
+						<Card key={item.id}>
+							<Thumbnail
+								imageSource={item.img_src}
+								altText={item.id}
+							/>
+						</Card>
+					))}
+				</Cards>
 			)}
 			<AlertStatus alertType="error" message={error}></AlertStatus>
 		</div>

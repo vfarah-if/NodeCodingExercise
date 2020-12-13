@@ -21,13 +21,3 @@
 .Mars-Rover-link {
 	color: #61dafb;
 }
-
-.cards {
-	display: grid;
-	grid-gap: 20px;
-	grid-template-columns: repeat(4, 1fr);
-}
-
-ul {
-	list-style: none;
-}
