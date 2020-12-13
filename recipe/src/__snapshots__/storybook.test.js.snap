@@ -56,6 +56,29 @@ exports[`Storyshots Component/AlertStatus Alert Warning Story 1`] = `
 </div>
 `;
 
+exports[`Storyshots Component/Card Card Story 1`] = `
+<li
+  className="card"
+>
+  <div
+    className="container"
+  >
+    <h4>
+      <b>
+        John Doe
+      </b>
+    </h4>
+    <p>
+      Architect & Engineer
+    </p>
+    <img
+      alt="Avatar"
+      src="https://www.w3schools.com/howto/img_avatar.png"
+    />
+  </div>
+</li>
+`;
+
 exports[`Storyshots Component/LoadingStatus Default Loading Status Story 1`] = `
 <p>
   Loading ...
@@ -200,7 +223,11 @@ exports[`Storyshots Component/Thumbnail Simple Thumbnail Story 1`] = `
   alt="Jest logo"
   className="thumbnail"
   src="https://miro.medium.com/max/1592/0*aaeiaAX5kMyHCQZT.png"
-  style="border: 1px solid #ddd;"
+  style={
+    Object {
+      "border": "1px solid yellow",
+    }
+  }
 />
 `;
 

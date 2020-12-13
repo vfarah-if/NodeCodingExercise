@@ -28,28 +28,6 @@
 	grid-template-columns: repeat(4, 1fr);
 }
 
-.card {
-	position: relative;
-	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
-}
-
-.card:hover {
-	cursor: pointer;
-}
-
-.card img:not(:first-of-type) {
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	opacity: 0;
-}
-
-.card img.is-visible {
-	opacity: 1;
-}
-
 ul {
 	list-style: none;
 }

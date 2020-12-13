@@ -4,11 +4,11 @@ import LoadingStatus from './LoadingStatus';
 import AlertStatus from './AlertStatus';
 import ShinySelect from './ShinySelect';
 import Thumbnail from './Thumbnail';
+import Card from './Card/Card';
 import { ROVER_OPTIONS, ROVER_CAMERA_OPTIONS } from './constants';
 import nasaLogo from '../../assets/nasa-logo-300x250.png';
 import noImage from '../../assets/no-photo-400X300.png';
 import './mars-rover-images.css';
-
 
 export default function MarsRoverImages() {
 	const [roverChosen, setRoverChosen] = useState('curiosity');
@@ -55,15 +55,6 @@ export default function MarsRoverImages() {
 		setCameraChosen(event.target.value);
 	};
 
-	const getThumbnailCardItems = (photos) => {
-		const cards = photos?.map((item) => (
-			<li key={item.id} className="card">
-				<Thumbnail imageSource={item.img_src} altText={item.id}/>
-			</li>
-		));
-		return cards;
-	};
-
 	return (
 		<div className="Mars-Rover-Images">
 			<div className="App-intro">
@@ -99,16 +90,19 @@ export default function MarsRoverImages() {
 					displayValue="Loading images ..."
 				></LoadingStatus>
 				<br />
-				<AlertStatus alertType="success" message={successMessage} />				
+				<AlertStatus alertType="success" message={successMessage} />
 			</div>
 			{/* TODO: Extract cards component */}
 			{!photos?.length ? (
 				<div>
-					<p>No photos loaded yet!</p>
 					<img alt="none found" src={noImage} />
 				</div>
 			) : (
-				<ul className="cards">{getThumbnailCardItems(photos)}</ul>
+				<ul className="cards">{photos?.map((item) => (
+					<Card key={item.id}>
+						<Thumbnail imageSource={item.img_src} altText={item.id} />
+					</Card>
+				))}</ul>
 			)}
 			<AlertStatus alertType="error" message={error}></AlertStatus>
 		</div>
