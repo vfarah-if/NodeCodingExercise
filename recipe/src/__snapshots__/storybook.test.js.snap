@@ -84,8 +84,8 @@ exports[`Storyshots Component/Cards Default Layout Story 1`] = `
   style={
     Object {
       "display": "grid",
-      "grid-gap": "20px",
-      "grid-template-columns": "repeat(4, 1fr)",
+      "gridGap": "20px",
+      "gridTemplateColumns": "repeat(4, 1fr)",
     }
   }
 >
@@ -153,8 +153,8 @@ exports[`Storyshots Component/Cards Two Column Layout Story 1`] = `
   style={
     Object {
       "display": "grid",
-      "grid-gap": "20px",
-      "grid-template-columns": "repeat(2, 1fr)",
+      "gridGap": "20px",
+      "gridTemplateColumns": "repeat(2, 1fr)",
     }
   }
 >
@@ -222,8 +222,8 @@ exports[`Storyshots Component/Cards Zero Column Layout Story 1`] = `
   style={
     Object {
       "display": "grid",
-      "grid-gap": "20px",
-      "grid-template-columns": "repeat(4, 1fr)",
+      "gridGap": "20px",
+      "gridTemplateColumns": "repeat(4, 1fr)",
     }
   }
 >
