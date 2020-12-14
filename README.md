@@ -32,6 +32,8 @@ The purpose of this Kata is to practise using the latest patterns to refresh ski
 7. Create server side components within next js
 
     - `npx create-next-app` and you can find more information [here](https://nextjs.org/docs/api-reference/create-next-app)	
+    
+8. Using **environment variables** through a Create React App worked different to what I expected because [this link](https://create-react-app.dev/docs/adding-custom-environment-variables/) exposed environment variables like so, yet this [issue link](https://stackoverflow.com/questions/53237293/react-evironment-variables-env-return-undefined) fixed my issue, meaning if you did not prefix any *env variables* with the **REACT_APP_** then nothing assigned to the config
 
 ## Environment
 
