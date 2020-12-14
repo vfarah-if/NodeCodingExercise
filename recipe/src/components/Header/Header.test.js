@@ -1,6 +1,6 @@
 import React from 'react';
 import '@testing-library/jest-dom';
-import { render, fireEvent } from '@testing-library/react';
+import { render, fireEvent, screen } from '@testing-library/react';
 
 import Header from '../Header';
 
@@ -14,7 +14,7 @@ describe('Header', () => {
 	});
 
 	it('should render header with login and sign up when no user assigned', () => {
-		const container = render(
+		render(
 			<Header
 				onLogin={loginHandler}
 				onLogout={logoutHandler}
@@ -22,13 +22,13 @@ describe('Header', () => {
 			/>
 		);
 
-		expect(container.getByText('Log in')).toBeInTheDocument();
-		expect(container.getByText('Sign up')).toBeInTheDocument();
-		expect(container.queryByText('Log out')).toBeNull();
+		expect(screen.getByText('Log in')).toBeInTheDocument();
+		expect(screen.getByText('Sign up')).toBeInTheDocument();
+		expect(screen.queryByText('Log out')).toBeNull();
 	});
 
 	it('should login a user or sign up appropriatly', () => {
-		const container = render(
+		render(
 			<Header
 				onLogin={loginHandler}
 				onLogout={logoutHandler}
@@ -36,8 +36,8 @@ describe('Header', () => {
 			/>
 		);
 
-		fireEvent.click(container.getByText('Log in'));
-		fireEvent.click(container.getByText('Sign up'));
+		fireEvent.click(screen.getByText('Log in'));
+		fireEvent.click(screen.getByText('Sign up'));
 
 		expect(loginHandler).toBeCalled();
 		expect(createAccountHandler).toBeCalled();
@@ -47,7 +47,7 @@ describe('Header', () => {
 	it('should render header with logout when user is assigned', () => {
 		const user = {};
 
-		const container = render(
+		const renderResponse = render(
 			<Header
 				user={user}
 				onLogin={loginHandler}
@@ -56,15 +56,15 @@ describe('Header', () => {
 			/>
 		);
 
-		expect(container.queryByText('Log in')).not.toBeInTheDocument();
-		expect(container.queryByText('Sign up')).not.toBeInTheDocument();
-		expect(container.getByText('Log out')).toBeInTheDocument();
+		expect(renderResponse.queryByText('Log in')).not.toBeInTheDocument();
+		expect(renderResponse.queryByText('Sign up')).not.toBeInTheDocument();
+		expect(renderResponse.getByText('Log out')).toBeInTheDocument();
 	});
 
 	it('should logout user when button clicked', () => {
 		const user = {};
 
-		const container = render(
+		render(
 			<Header
 				user={user}
 				onLogin={loginHandler}
@@ -73,7 +73,7 @@ describe('Header', () => {
 			/>
 		);
 
-		const logoutButton = container.getByText('Log out');
+		const logoutButton = screen.getByText('Log out');
 		fireEvent.click(logoutButton);
 
 		expect(loginHandler).not.toBeCalled();

@@ -390,6 +390,24 @@ exports[`Storyshots Component/Header User Existing In Story 1`] = `
 </header>
 `;
 
+exports[`Storyshots Component/Hello Hello Stranger Story 1`] = `
+<h1
+  className="name"
+>
+  Hello 
+  stranger
+</h1>
+`;
+
+exports[`Storyshots Component/Hello Hello User Story 1`] = `
+<h1
+  className="name"
+>
+  Hello 
+  Jane Doe
+</h1>
+`;
+
 exports[`Storyshots Component/LoadingStatus Default Loading Status Story 1`] = `
 <p>
   Loading ...
@@ -542,42 +560,6 @@ exports[`Storyshots Component/Thumbnail Simple Thumbnail Story 1`] = `
 />
 `;
 
-exports[`Storyshots Componentu/Hello Hello Stranger Story 1`] = `
-<h1
-  className="name"
->
-  Hello 
-  stranger
-</h1>
-`;
-
-exports[`Storyshots Componentu/Hello Hello User Story 1`] = `
-<h1
-  className="name"
->
-  Hello 
-  Jane Doe
-</h1>
-`;
-
-exports[`Storyshots Componentuuuu/Hello Hello Stranger Story 1`] = `
-<h1
-  className="name"
->
-  Hello 
-  stranger
-</h1>
-`;
-
-exports[`Storyshots Componentuuuu/Hello Hello User Story 1`] = `
-<h1
-  className="name"
->
-  Hello 
-  Jane Doe
-</h1>
-`;
-
 exports[`Storyshots Example/Button Story Four 1`] = `
 <button
   className="storybook-button storybook-button--small storybook-button--secondary"
@@ -620,24 +602,6 @@ exports[`Storyshots Example/Button Story Two 1`] = `
 >
   Button
 </button>
-`;
-
-exports[`Storyshots Example/Hello Hello Stranger Story 1`] = `
-<h1
-  className="name"
->
-  Hello 
-  stranger
-</h1>
-`;
-
-exports[`Storyshots Example/Hello Hello User Story 1`] = `
-<h1
-  className="name"
->
-  Hello 
-  Jane Doe
-</h1>
 `;
 
 exports[`Storyshots User Details/Example User Details Not Found Story 1`] = `"loading ..."`;

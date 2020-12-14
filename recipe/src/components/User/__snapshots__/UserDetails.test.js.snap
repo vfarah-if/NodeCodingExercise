@@ -12,19 +12,8 @@ exports[`UserDetails should get no user found when user response is empty 1`] = 
 
 exports[`UserDetails should get user details when valid id is supplied 1`] = `
 <details>
-  <summary>
-    Janet
-     
-    Weaver
-     @ 
-    janet.weaver@reqres.in
-  </summary>
-  <img
-    alt="Avatar"
-    src="https://reqres.in/img/faces/2-image.jpg"
-  />
   <p>
-    User BIO for User id '
+    No user details for User id '
     2
     '
   </p>
