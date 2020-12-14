@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import './user.css';
+import Card from '../Card';
 
-// Utilising https://reqres.in/api/users/{id} to get fake real user details
 export default function UserDetails({ id }) {
 	const [user, setUser] = useState(null);
 	const [isLoaded, setIsLoaded] = useState(false);
@@ -13,7 +13,7 @@ export default function UserDetails({ id }) {
 		setUser(data);
 	};
 
-	useEffect(() => {		
+	useEffect(() => {
 		fetchUserData(id);
 		setIsLoaded(true);
 	}, [id]);
@@ -24,20 +24,23 @@ export default function UserDetails({ id }) {
 
 	if (!user && isLoaded) {
 		return (
-			<details>
+			<Card>
 				<p>No user details for User id '{id}'</p>
-			</details>
+			</Card>
 		);
 	}
 
 	return (
-		<details>
-			<summary>
-				{user?.first_name} {user?.last_name} @ {user?.email}
-			</summary>
-			<img src={user?.avatar} alt="Avatar"></img>
-			<p>User BIO for User id '{id}'</p>
-		</details>
+		<Card>
+			<div className="container">
+				<h4>
+					<b>{user?.first_name} {user?.last_name}</b>
+				</h4>
+				<p><strong>Email:</strong>{user?.email}</p>
+				<img src={user?.avatar} alt="Avatar"></img>
+				<p>User BIO for User id '{id}'</p>
+			</div>								
+		</Card>
 	);
 }
 

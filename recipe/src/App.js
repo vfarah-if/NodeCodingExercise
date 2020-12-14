@@ -11,7 +11,6 @@ function App() {
 	const logoutHandler = () => alert('onLogout ...');
 	const createAccountHandler = () => alert('createAccountHandler ...');
 	const userId = 1;
-	const mapPosition = 'Richmond, TW10';
 
 	return (
 		<div className="App">

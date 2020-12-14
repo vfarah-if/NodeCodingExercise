@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 
-import LoadingStatus from './LoadingStatus';
-import AlertStatus from './AlertStatus';
-import ShinySelect from './ShinySelect';
-import Thumbnail from './Thumbnail';
-import Cards from './Cards';
-import Card from './Card';
+import LoadingStatus from '../LoadingStatus';
+import AlertStatus from '../AlertStatus';
+import ShinySelect from '../ShinySelect';
+import Thumbnail from '../Thumbnail';
+import Cards from '../Cards';
+import Card from '../Card';
 import config from '../../config';
 import { ROVER_OPTIONS, ROVER_CAMERA_OPTIONS } from './constants';
 import nasaLogo from '../../assets/nasa-logo-300x250.png';
