@@ -2,7 +2,7 @@ import './App.css';
 import Button from './components/Button';
 import Header from './components/Header';
 import Hello from './components/Hello';
-import UserDetails from './components/User';
+import UserDetails from './components/UserDetails';
 import MarsRoverImages from './components/MarsRoverImages';
 
 function App() {

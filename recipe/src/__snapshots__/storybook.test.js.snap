@@ -604,6 +604,6 @@ exports[`Storyshots Component/Thumbnail Simple Thumbnail Story 1`] = `
 />
 `;
 
-exports[`Storyshots User Details/Example User Details Not Found Story 1`] = `"loading ..."`;
+exports[`Storyshots Component/User Details User Details Not Found Story 1`] = `"loading ..."`;
 
-exports[`Storyshots User Details/Example User Details With Id Story 1`] = `"loading ..."`;
+exports[`Storyshots Component/User Details User Details With Id Story 1`] = `"loading ..."`;
