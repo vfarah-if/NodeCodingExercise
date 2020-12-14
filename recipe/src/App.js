@@ -6,14 +6,13 @@ import UserDetails from './components/User';
 import Map from './components/Map';
 import MarsRoverImages from './components/MarsRoverImages';
 
-
 function App() {
 	let user = undefined;
 	const loginHandler = () => alert('OnLogin ...');
 	const logoutHandler = () => alert('onLogout ...');
 	const createAccountHandler = () => alert('createAccountHandler ...');
 	const userId = 1;
-	const mapPosition = '6 Lake Gardens, TW10';
+	const mapPosition = 'Richmond, TW10';
 
 	return (
 		<div className="App">
@@ -23,8 +22,8 @@ function App() {
 				onLogout={logoutHandler}
 				onCreateAccount={createAccountHandler}
 			></Header>
-			<header className="App-header">				
-				<MarsRoverImages/>
+			<header className="App-header">
+				<MarsRoverImages />
 				<p>
 					Button Component to help understand setting up storyboarding
 					from scratch
@@ -39,7 +38,7 @@ function App() {
 				></Button>
 				<Hello></Hello>
 				<UserDetails id={userId}></UserDetails>
-				<Map center={mapPosition}></Map>				
+				<Map center={mapPosition}></Map>
 			</header>
 		</div>
 	);

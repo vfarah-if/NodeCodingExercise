@@ -1,12 +1,11 @@
 import React from 'react';
 import './style/index.css';
 
-
 const Cards = (props) => {
 	const cardsStyle = {
 		display: 'grid',
-		'grid-gap': '20px',
-		'grid-template-columns': `repeat(${props.columnCount || 4}, 1fr)`,
+		gridGap: '20px',
+        gridTemplateColumns: `repeat(${props.columnCount || 4}, 1fr)`,        
 	};
 
 	return <ul style={cardsStyle}>{props.children}</ul>;

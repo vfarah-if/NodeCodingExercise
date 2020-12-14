@@ -6,10 +6,12 @@ import ShinySelect from './ShinySelect';
 import Thumbnail from './Thumbnail';
 import Cards from './Cards';
 import Card from './Card';
+import config from '../../config';
 import { ROVER_OPTIONS, ROVER_CAMERA_OPTIONS } from './constants';
 import nasaLogo from '../../assets/nasa-logo-300x250.png';
 import noImage from '../../assets/no-photo-400X300.png';
 import './mars-rover-images.css';
+const { NASAPIKey } = config;
 
 export default function MarsRoverImages() {
 	const [roverChosen, setRoverChosen] = useState('curiosity');
@@ -22,9 +24,8 @@ export default function MarsRoverImages() {
 		try {
 			setIsLoading(true);
 			if (roverChosen && cameraChosen && cameraChosen !== '') {
-				// TODO: Extract config for APIKey and add URL to a const above
 				const response = await fetch(
-					`https://api.nasa.gov/mars-photos/api/v1/rovers/${roverChosen}/photos?sol=100&camera=${cameraChosen}&api_key=Tv6gAKvEQVPyIf0KwDIHRQXRuJ17XQYIEETD2e35`
+					`https://api.nasa.gov/mars-photos/api/v1/rovers/${roverChosen}/photos?sol=100&camera=${cameraChosen}&api_key=${NASAPIKey}`
 				);
 				const { photos } = await response.json();
 				setPhotos(photos);
@@ -106,7 +107,7 @@ export default function MarsRoverImages() {
 						<Card key={item.id}>
 							<Thumbnail
 								imageSource={item.img_src}
-								altText={item.id}
+								description={`${item.id}`}
 							/>
 						</Card>
 					))}
