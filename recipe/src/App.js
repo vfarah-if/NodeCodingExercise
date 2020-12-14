@@ -3,7 +3,6 @@ import Button from './components/Button';
 import Header from './components/Header';
 import Hello from './components/Hello';
 import UserDetails from './components/User';
-import Map from './components/Map';
 import MarsRoverImages from './components/MarsRoverImages';
 
 function App() {
@@ -37,8 +36,7 @@ function App() {
 					disabled={false}
 				></Button>
 				<Hello></Hello>
-				<UserDetails id={userId}></UserDetails>
-				<Map center={mapPosition}></Map>
+				<UserDetails id={userId}></UserDetails>				
 			</header>
 		</div>
 	);

@@ -286,6 +286,110 @@ exports[`Storyshots Component/Cards Zero Column Layout Story 1`] = `
 </ul>
 `;
 
+exports[`Storyshots Component/Header No User Existing Story 1`] = `
+<header>
+  <div
+    className="wrapper"
+  >
+    <div>
+      <svg
+        height="32"
+        viewBox="0 0 32 32"
+        width="32"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g
+          fill="none"
+          fillRule="evenodd"
+        >
+          <path
+            d="M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z"
+            fill="#FFF"
+          />
+          <path
+            d="M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z"
+            fill="#555AB9"
+          />
+          <path
+            d="M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z"
+            fill="#91BAF8"
+          />
+        </g>
+      </svg>
+      <h1>
+        Acme
+      </h1>
+    </div>
+    <div>
+      <button
+        className="storybook-button storybook-button--small storybook-button--secondary"
+        onClick={[Function]}
+        style={null}
+        type="button"
+      >
+        Log in
+      </button>
+      <button
+        className="storybook-button storybook-button--small storybook-button--primary"
+        onClick={[Function]}
+        style={null}
+        type="button"
+      >
+        Sign up
+      </button>
+    </div>
+  </div>
+</header>
+`;
+
+exports[`Storyshots Component/Header User Existing In Story 1`] = `
+<header>
+  <div
+    className="wrapper"
+  >
+    <div>
+      <svg
+        height="32"
+        viewBox="0 0 32 32"
+        width="32"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g
+          fill="none"
+          fillRule="evenodd"
+        >
+          <path
+            d="M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z"
+            fill="#FFF"
+          />
+          <path
+            d="M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z"
+            fill="#555AB9"
+          />
+          <path
+            d="M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z"
+            fill="#91BAF8"
+          />
+        </g>
+      </svg>
+      <h1>
+        Acme
+      </h1>
+    </div>
+    <div>
+      <button
+        className="storybook-button storybook-button--small storybook-button--secondary"
+        onClick={[Function]}
+        style={null}
+        type="button"
+      >
+        Log out
+      </button>
+    </div>
+  </div>
+</header>
+`;
+
 exports[`Storyshots Component/LoadingStatus Default Loading Status Story 1`] = `
 <p>
   Loading ...
@@ -438,6 +542,42 @@ exports[`Storyshots Component/Thumbnail Simple Thumbnail Story 1`] = `
 />
 `;
 
+exports[`Storyshots Componentu/Hello Hello Stranger Story 1`] = `
+<h1
+  className="name"
+>
+  Hello 
+  stranger
+</h1>
+`;
+
+exports[`Storyshots Componentu/Hello Hello User Story 1`] = `
+<h1
+  className="name"
+>
+  Hello 
+  Jane Doe
+</h1>
+`;
+
+exports[`Storyshots Componentuuuu/Hello Hello Stranger Story 1`] = `
+<h1
+  className="name"
+>
+  Hello 
+  stranger
+</h1>
+`;
+
+exports[`Storyshots Componentuuuu/Hello Hello User Story 1`] = `
+<h1
+  className="name"
+>
+  Hello 
+  Jane Doe
+</h1>
+`;
+
 exports[`Storyshots Example/Button Story Four 1`] = `
 <button
   className="storybook-button storybook-button--small storybook-button--secondary"
@@ -482,110 +622,6 @@ exports[`Storyshots Example/Button Story Two 1`] = `
 </button>
 `;
 
-exports[`Storyshots Example/Header No User Existing Story 1`] = `
-<header>
-  <div
-    className="wrapper"
-  >
-    <div>
-      <svg
-        height="32"
-        viewBox="0 0 32 32"
-        width="32"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <g
-          fill="none"
-          fillRule="evenodd"
-        >
-          <path
-            d="M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z"
-            fill="#FFF"
-          />
-          <path
-            d="M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z"
-            fill="#555AB9"
-          />
-          <path
-            d="M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z"
-            fill="#91BAF8"
-          />
-        </g>
-      </svg>
-      <h1>
-        Acme
-      </h1>
-    </div>
-    <div>
-      <button
-        className="storybook-button storybook-button--small storybook-button--secondary"
-        onClick={[Function]}
-        style={null}
-        type="button"
-      >
-        Log in
-      </button>
-      <button
-        className="storybook-button storybook-button--small storybook-button--primary"
-        onClick={[Function]}
-        style={null}
-        type="button"
-      >
-        Sign up
-      </button>
-    </div>
-  </div>
-</header>
-`;
-
-exports[`Storyshots Example/Header User Existing In Story 1`] = `
-<header>
-  <div
-    className="wrapper"
-  >
-    <div>
-      <svg
-        height="32"
-        viewBox="0 0 32 32"
-        width="32"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <g
-          fill="none"
-          fillRule="evenodd"
-        >
-          <path
-            d="M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z"
-            fill="#FFF"
-          />
-          <path
-            d="M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z"
-            fill="#555AB9"
-          />
-          <path
-            d="M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z"
-            fill="#91BAF8"
-          />
-        </g>
-      </svg>
-      <h1>
-        Acme
-      </h1>
-    </div>
-    <div>
-      <button
-        className="storybook-button storybook-button--small storybook-button--secondary"
-        onClick={[Function]}
-        style={null}
-        type="button"
-      >
-        Log out
-      </button>
-    </div>
-  </div>
-</header>
-`;
-
 exports[`Storyshots Example/Hello Hello Stranger Story 1`] = `
 <h1
   className="name"
@@ -602,18 +638,6 @@ exports[`Storyshots Example/Hello Hello User Story 1`] = `
   Hello 
   Jane Doe
 </h1>
-`;
-
-exports[`Storyshots Example/Map Map Location Story 1`] = `
-<div
-  className="map"
->
-  <p>
-    Represents a map with '
-    6 Lake Garden, TW10
-    ' configured
-  </p>
-</div>
 `;
 
 exports[`Storyshots User Details/Example User Details Not Found Story 1`] = `"loading ..."`;
