@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-
 import LoadingStatus from '../LoadingStatus';
 import AlertStatus from '../AlertStatus';
 import ShinySelect from '../ShinySelect';
@@ -10,12 +9,13 @@ import config from '../../config';
 import { ROVER_OPTIONS, ROVER_CAMERA_OPTIONS } from './constants';
 import nasaLogo from '../../assets/nasa-logo-300x250.png';
 import noImage from '../../assets/no-photo-400X300.png';
-import './mars-rover-images.css';
+
+import './style/index.css';
 const { NASAPIKey } = config;
 
-export default function MarsRoverImages() {
-	const [roverChosen, setRoverChosen] = useState('curiosity');
-	const [cameraChosen, setCameraChosen] = useState('');
+const MarsRoverImages = ({ roverType, cameraType }) => {
+	const [roverChosen, setRoverChosen] = useState(roverType || 'curiosity');
+	const [cameraChosen, setCameraChosen] = useState(cameraType || '');
 	const [error, setError] = useState(null);
 	const [successMessage, setSuccessMessage] = useState(null);
 	const [isLoading, setIsLoading] = useState(true);
@@ -116,4 +116,6 @@ export default function MarsRoverImages() {
 			<AlertStatus alertType="error" message={error}></AlertStatus>
 		</div>
 	);
-}
+};
+
+export default MarsRoverImages;

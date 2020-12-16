@@ -464,6 +464,242 @@ exports[`Storyshots Component/LoadingStatus Incorporate Custom Display Name Stor
 </p>
 `;
 
+exports[`Storyshots Component/MarsRoverImages Mars Rover Default Story 1`] = `
+<div
+  className="Mars-Rover-Images"
+>
+  <div
+    className="App-intro"
+  >
+    <img
+      alt="logo"
+      className="Mars-Rover-logo"
+      src="nasa-logo-300x250.png"
+    />
+  </div>
+  <span>
+    Data provided by NASA.
+  </span>
+  <br />
+  <span>
+    Each photo was taken on the rover's 100th sol (day) on Mars.
+  </span>
+  <br />
+  <br />
+  <label>
+    Choose a Mars rover:
+    <select
+      className="select-css"
+      onChange={[Function]}
+      value="curiosity"
+    >
+      <option
+        value="curiosity"
+      >
+        Curiosity
+      </option>
+      <option
+        value="spirit"
+      >
+        Spirit
+      </option>
+      <option
+        value="opportunity"
+      >
+        Opportunity
+      </option>
+    </select>
+  </label>
+  <br />
+  <label>
+    Choose a camera:
+    <select
+      className="select-css"
+      onChange={[Function]}
+      value=""
+    >
+      <option
+        value=""
+      >
+        Choose a camera
+      </option>
+      <optgroup
+        label="Spirit or Opportunity or Curiosity"
+      >
+        <option
+          value="NAVCAM"
+        >
+          Navigation Camera
+        </option>
+      </optgroup>
+      <optgroup
+        label="Spirit or Opportunity"
+      >
+        <option
+          value="PANCAM"
+        >
+          Panoramic Camera
+        </option>
+      </optgroup>
+      <optgroup
+        label="Curiosity"
+      >
+        <option
+          value="FHAZ"
+        >
+          Front Hazard Avoidance Camera
+        </option>
+        <option
+          value="RHAZ"
+        >
+          Rear Hazard Avoidance Camera
+        </option>
+        <option
+          value="MAST"
+        >
+          Mast Camera
+        </option>
+        <option
+          value="CHEMCAM"
+        >
+          Chemistry and Camera Complex
+        </option>
+      </optgroup>
+    </select>
+  </label>
+  <div>
+    <p>
+      Loading images ...
+    </p>
+    <br />
+  </div>
+  <div>
+    <img
+      alt="none found"
+      src="no-photo-400X300.png"
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots Component/MarsRoverImages Mars Rover With Presets Story 1`] = `
+<div
+  className="Mars-Rover-Images"
+>
+  <div
+    className="App-intro"
+  >
+    <img
+      alt="logo"
+      className="Mars-Rover-logo"
+      src="nasa-logo-300x250.png"
+    />
+  </div>
+  <span>
+    Data provided by NASA.
+  </span>
+  <br />
+  <span>
+    Each photo was taken on the rover's 100th sol (day) on Mars.
+  </span>
+  <br />
+  <br />
+  <label>
+    Choose a Mars rover:
+    <select
+      className="select-css"
+      onChange={[Function]}
+      value="spirit"
+    >
+      <option
+        value="curiosity"
+      >
+        Curiosity
+      </option>
+      <option
+        value="spirit"
+      >
+        Spirit
+      </option>
+      <option
+        value="opportunity"
+      >
+        Opportunity
+      </option>
+    </select>
+  </label>
+  <br />
+  <label>
+    Choose a camera:
+    <select
+      className="select-css"
+      onChange={[Function]}
+      value="NAVCAM"
+    >
+      <option
+        value=""
+      >
+        Choose a camera
+      </option>
+      <optgroup
+        label="Spirit or Opportunity or Curiosity"
+      >
+        <option
+          value="NAVCAM"
+        >
+          Navigation Camera
+        </option>
+      </optgroup>
+      <optgroup
+        label="Spirit or Opportunity"
+      >
+        <option
+          value="PANCAM"
+        >
+          Panoramic Camera
+        </option>
+      </optgroup>
+      <optgroup
+        label="Curiosity"
+      >
+        <option
+          value="FHAZ"
+        >
+          Front Hazard Avoidance Camera
+        </option>
+        <option
+          value="RHAZ"
+        >
+          Rear Hazard Avoidance Camera
+        </option>
+        <option
+          value="MAST"
+        >
+          Mast Camera
+        </option>
+        <option
+          value="CHEMCAM"
+        >
+          Chemistry and Camera Complex
+        </option>
+      </optgroup>
+    </select>
+  </label>
+  <div>
+    <p>
+      Loading images ...
+    </p>
+    <br />
+  </div>
+  <div>
+    <img
+      alt="none found"
+      src="no-photo-400X300.png"
+    />
+  </div>
+</div>
+`;
+
 exports[`Storyshots Component/ShinySelect Option And Groups Story 1`] = `
 <label>
   Select a car
