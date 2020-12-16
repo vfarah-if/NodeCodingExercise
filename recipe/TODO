@@ -7,13 +7,13 @@
 ✔ Add any tasks to be done here or put the details in the README @done(20-12-09 12:17)
 ☐ Update all the unit tests with modern day practises @high
 ✔ Do a mars rover images component @done(20-12-14 00:41)
-    ☐ Refactor to become several comnponents
-    ☐ Do tests for each using a newer and better approach
+    ✔ Refactor to become several comnponents @done(20-12-16 12:00)
+    ✔ Do tests for each using a newer and better approach @done(20-12-16 12:00)
     ✔ Create AlertStatus Component @done(20-12-10 23:07)
     ✔ Create A ShinySelect component that does all existing and more @done(20-12-10 23:08)
     ✔ Create Loading Status Component @done(20-12-10 23:08)
     ✔ Create a Thumbnail image component @done(20-12-14 00:40)
     ✔ Create a Card and Cardlist component and try understand how to add the contents of the text element into the card @done(20-12-14 00:40)
-    ☐ Create tests for all the components after looking at latest patterns
+    ✔ Create tests for all the components after looking at latest patterns @done(20-12-16 12:00)
     ☐ Do the typescript version
     ☐ Investigate the Ubuntu visual plugins and document - do blog on it
