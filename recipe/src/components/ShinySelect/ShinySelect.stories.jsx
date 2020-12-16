@@ -13,13 +13,12 @@ const ShinySelectTemplate = (args) => (
 		<ShinySelect {...args} onChange={action('onChanged...')} />
 	</Fragment>
 );
-
 export const SimpleOptionsStory = ShinySelectTemplate.bind({});
 SimpleOptionsStory.args = {
 	displayName: 'Choose a Mars rover',
 	value: '',
 	optionsList: [
-        {
+		{
 			value: '',
 			text: 'Select your option',
 		},
@@ -44,30 +43,30 @@ OptionGroupsStory.args = {
 	value: 'volvo',
 	optionsList: [
 		{
-            group: 'Swedish Cars',
+			group: 'Swedish Cars',
 			value: 'volvo',
 			text: 'Volvo',
 		},
 		{
-            group: 'Swedish Cars',
+			group: 'Swedish Cars',
 			value: 'saab',
 			text: 'Saab',
 		},
 		{
-            group: 'German Cars',
+			group: 'German Cars',
 			value: 'vw',
 			text: 'VW',
-        },
-        {
-            group: 'German Cars',
+		},
+		{
+			group: 'German Cars',
 			value: 'mercedes',
 			text: 'Merc',
-        },{
-            group: 'German Cars',
+		},
+		{
+			group: 'German Cars',
 			value: 'audi',
 			text: 'Audi',
-        },
-        
+		},
 	],
 };
 
@@ -76,34 +75,60 @@ OptionAndGroupsStory.args = {
 	displayName: 'Select a car',
 	value: '',
 	optionsList: [
-        {          
+		{
 			value: '',
 			text: 'Select a car',
 		},
 		{
-            group: 'Swedish Cars',
+			group: 'Swedish Cars',
 			value: 'volvo',
 			text: 'Volvo',
 		},
 		{
-            group: 'Swedish Cars',
+			group: 'Swedish Cars',
 			value: 'saab',
 			text: 'Saab',
 		},
 		{
-            group: 'German Cars',
+			group: 'German Cars',
 			value: 'vw',
 			text: 'VW',
-        },
-        {
-            group: 'German Cars',
+		},
+		{
+			group: 'German Cars',
 			value: 'mercedes',
 			text: 'Merc',
-        },{
-            group: 'German Cars',
+		},
+		{
+			group: 'German Cars',
 			value: 'audi',
 			text: 'Audi',
-        },
-        
+		},
+	],
+};
+
+export const ValuesOnlyStory = ShinySelectTemplate.bind({});
+ValuesOnlyStory.args = {
+	value: '',
+	optionsList: [
+		{
+			value: '',
+			text: 'Select a car',
+		},
+		{
+			value: 'volvo',
+		},
+		{
+			value: 'saab',
+		},
+		{
+			value: 'vw',
+		},
+		{
+			value: 'mercedes',
+		},
+		{
+			value: 'audi',
+		},
 	],
 };

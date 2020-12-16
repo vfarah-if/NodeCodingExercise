@@ -35,6 +35,8 @@ The purpose of this Kata is to practise using the latest patterns to refresh ski
     
 8. Using **environment variables** through a Create React App worked different to what I expected because [this link](https://create-react-app.dev/docs/adding-custom-environment-variables/) exposed environment variables like so, yet this [issue link](https://stackoverflow.com/questions/53237293/react-evironment-variables-env-return-undefined) fixed my issue, meaning if you did not prefix any *env variables* with the **REACT_APP_** then nothing assigned to the config
 
+9. [React testing library](https://testing-library.com/docs/react-testing-library/intro/), in amongst other libraries, can be found on the link and seems the simplest way to test several things about a component without using the latest
+
 ## Environment
 
 Should always prepare an environment with tools to  help with verifying the integrity of what you are doing.

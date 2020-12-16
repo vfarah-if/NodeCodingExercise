@@ -591,6 +591,47 @@ exports[`Storyshots Component/ShinySelect Simple Options Story 1`] = `
 </label>
 `;
 
+exports[`Storyshots Component/ShinySelect Values Only Story 1`] = `
+<label>
+  <select
+    className="select-css"
+    onChange={[Function]}
+    value=""
+  >
+    <option
+      value=""
+    >
+      Select a car
+    </option>
+    <option
+      value="volvo"
+    >
+      volvo
+    </option>
+    <option
+      value="saab"
+    >
+      saab
+    </option>
+    <option
+      value="vw"
+    >
+      vw
+    </option>
+    <option
+      value="mercedes"
+    >
+      mercedes
+    </option>
+    <option
+      value="audi"
+    >
+      audi
+    </option>
+  </select>
+</label>
+`;
+
 exports[`Storyshots Component/Thumbnail Simple Thumbnail Story 1`] = `
 <img
   alt="Jest logo"
