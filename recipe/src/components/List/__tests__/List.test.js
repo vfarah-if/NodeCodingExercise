@@ -21,16 +21,15 @@ describe('List', () => {
     test('should clear the list after adding another item', async () => {
 		const component = render(<List />);
 		const input = await component.findByPlaceholderText('Enter new item');		
-		editValue(input, item1);
 		
+		editValue(input, item1);		
 		await submitAddButton(component);
-
 		expect(input.value).toBe('');
-		editValue(input, item2);
-		
+
+		editValue(input, item2);	
 		await submitAddButton(component);
-
 		expect(input.value).toBe('');
+
 		const listItem = await component.findByText(item2);
 		expect(listItem).toMatchSnapshot();	
 	});
