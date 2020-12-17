@@ -17,25 +17,27 @@ describe('MarsRoverImages', () => {
 		});
 
 		test('should show success alert with zero images loaded', async () => {
-            render(<MarsRoverImages roverType="spirit" cameraType="MAST" />);
+			render(<MarsRoverImages roverType="spirit" cameraType="MAST" />);
 
-            await waitFor(() => expect(window.fetch).toHaveBeenCalledTimes(1));
-            
-            // console.debug(screen.debug());
-            expect(screen.getByText(`Succeeded retrieving '0' photos!`)).toBeInTheDocument();
-        });
-        
-        test('should show not found image', async () => {
-            render(<MarsRoverImages roverType="spirit" cameraType="MAST" />);
+			await waitFor(() => expect(window.fetch).toHaveBeenCalledTimes(1));
 
-            await waitFor(() => expect(window.fetch).toHaveBeenCalledTimes(1));
-            
-            // console.debug(screen.debug());
-            expect(screen.getByAltText('none found')).toBeInTheDocument();
+			// console.debug(screen.debug());
+			expect(
+				screen.getByText(`Succeeded retrieving '0' photos!`)
+			).toBeInTheDocument();
 		});
-    });
 
-    describe('When retrieving an full response', () => {
+		test('should show not found image', async () => {
+			render(<MarsRoverImages roverType="spirit" cameraType="MAST" />);
+
+			await waitFor(() => expect(window.fetch).toHaveBeenCalledTimes(1));
+
+			// console.debug(screen.debug());
+			expect(screen.getByAltText('none found')).toBeInTheDocument();
+		});
+	});
+
+	describe('When retrieving an full response', () => {
 		beforeEach(() => {
 			jest.spyOn(window, 'fetch').mockImplementation(() =>
 				Promise.resolve({
@@ -45,25 +47,50 @@ describe('MarsRoverImages', () => {
 		});
 
 		test('should show success alert with zero images loaded', async () => {
-            render(<MarsRoverImages roverType="curiosity" cameraType="FHA" />);
+			render(<MarsRoverImages roverType="curiosity" cameraType="FHA" />);
 
-            await waitFor(() => expect(window.fetch).toHaveBeenCalledTimes(1));
-            
-            // console.debug(screen.debug());
-            expect(screen.getByText(`Succeeded retrieving '4' photos!`)).toBeInTheDocument();
-            expect(screen.getByText(`Succeeded retrieving '4' photos!`)).toMatchSnapshot();
-        });
-        
-        test('should show one cardslist and four cards', async () => {
-            const { container } = render(<MarsRoverImages roverType="curiosity" cameraType="FHA" />);
+			await waitFor(() => expect(window.fetch).toHaveBeenCalledTimes(1));
 
-            await waitFor(() => expect(window.fetch).toHaveBeenCalledTimes(1));
-            
-            // console.debug(screen.debug());
-            expect(container.querySelectorAll('ul').length).toBe(1);
-            expect(container.querySelectorAll('li').length).toBe(4);
-            expect(container.querySelector('ul')).toMatchSnapshot();
+			// console.debug(screen.debug());
+			expect(
+				screen.getByText(`Succeeded retrieving '4' photos!`)
+			).toBeInTheDocument();
+			expect(
+				screen.getByText(`Succeeded retrieving '4' photos!`)
+			).toMatchSnapshot();
 		});
+
+		test('should show one cardslist and four cards', async () => {
+			const { container } = render(
+				<MarsRoverImages roverType="curiosity" cameraType="FHA" />
+			);
+
+			await waitFor(() => expect(window.fetch).toHaveBeenCalledTimes(1));
+
+			// console.debug(screen.debug());
+			expect(container.querySelectorAll('ul').length).toBe(1);
+			expect(container.querySelectorAll('li').length).toBe(4);
+			expect(container.querySelector('ul')).toMatchSnapshot();
+		});
+  });
+  
+  describe('Select tests', () => {
+    let selectArray, component;
+    beforeEach(() => {
+      component = render(<MarsRoverImages roverType="curiosity" cameraType="FHA" />);
+      selectArray = component.container.querySelectorAll('select');
+    })
+
+    test('should have two selects', () => {
+      expect(selectArray.length).toBe(2);
     });
-        
+
+    test('should have first select setup with a list of rovers', () => {
+      expect(selectArray[0]).toMatchSnapshot()
+    });
+
+    test('should have second select setup with a list of cameras', () => {
+      expect(selectArray[1]).toMatchSnapshot()
+    });    
+  });
 });
