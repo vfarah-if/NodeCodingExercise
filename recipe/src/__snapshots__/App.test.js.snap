@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`given App should render a user details component 1`] = `
+<li
+  class="card"
+>
+  <p>
+    No user details for User id '
+    1
+    '
+  </p>
+</li>
+`;

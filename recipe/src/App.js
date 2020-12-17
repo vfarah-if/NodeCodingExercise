@@ -8,7 +8,6 @@ import MarsRoverImages from './components/MarsRoverImages';
 function App() {
 	let user = undefined;
 	const loginHandler = () => alert('OnLogin ...');
-	const logoutHandler = () => alert('onLogout ...');
 	const createAccountHandler = () => alert('createAccountHandler ...');
 	const userId = 1;
 
@@ -17,7 +16,6 @@ function App() {
 			<Header
 				user={user}
 				onLogin={loginHandler}
-				onLogout={logoutHandler}
 				onCreateAccount={createAccountHandler}
 			></Header>
 			<header className="App-header">
