@@ -452,6 +452,39 @@ exports[`Storyshots Component/Hello Hello User Story 1`] = `
 </h1>
 `;
 
+exports[`Storyshots Component/List Default List Story 1`] = `
+<div
+  className="todo-list"
+>
+  <h2>
+    TODO List
+  </h2>
+  <ul />
+  <form
+    data-testid="form"
+    onSubmit={[Function]}
+  >
+    <div
+      className="form-group"
+    >
+      <input
+        className="form-control"
+        id="newItem"
+        onChange={[Function]}
+        placeholder="Enter new item"
+        type="text"
+        value=""
+      />
+    </div>
+    <input
+      className="btn btn-primary"
+      type="submit"
+      value="Add"
+    />
+  </form>
+</div>
+`;
+
 exports[`Storyshots Component/LoadingStatus Default Loading Status Story 1`] = `
 <p>
   Loading ...
