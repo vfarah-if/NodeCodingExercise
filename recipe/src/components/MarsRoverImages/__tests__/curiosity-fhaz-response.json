@@ -1,0 +1,80 @@
+{
+  "photos": [
+    {
+      "id": 669,
+      "sol": 100,
+      "camera": {
+        "id": 20,
+        "name": "FHAZ",
+        "rover_id": 5,
+        "full_name": "Front Hazard Avoidance Camera"
+      },
+      "img_src": "http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/00100/opgs/edr/fcam/FRA_406374643EDR_F0050178FHAZ00301M_.JPG",
+      "earth_date": "2012-11-16",
+      "rover": {
+        "id": 5,
+        "name": "Curiosity",
+        "landing_date": "2012-08-06",
+        "launch_date": "2011-11-26",
+        "status": "active"
+      }
+    },
+    {
+      "id": 9487,
+      "sol": 100,
+      "camera": {
+        "id": 20,
+        "name": "FHAZ",
+        "rover_id": 5,
+        "full_name": "Front Hazard Avoidance Camera"
+      },
+      "img_src": "http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/00100/opgs/edr/fcam/FLA_406377515EDR_F0050178FHAZ00302M_.JPG",
+      "earth_date": "2012-11-16",
+      "rover": {
+        "id": 5,
+        "name": "Curiosity",
+        "landing_date": "2012-08-06",
+        "launch_date": "2011-11-26",
+        "status": "active"
+      }
+    },
+    {
+      "id": 9488,
+      "sol": 100,
+      "camera": {
+        "id": 20,
+        "name": "FHAZ",
+        "rover_id": 5,
+        "full_name": "Front Hazard Avoidance Camera"
+      },
+      "img_src": "http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/00100/opgs/edr/fcam/FRA_406377515EDR_F0050178FHAZ00302M_.JPG",
+      "earth_date": "2012-11-16",
+      "rover": {
+        "id": 5,
+        "name": "Curiosity",
+        "landing_date": "2012-08-06",
+        "launch_date": "2011-11-26",
+        "status": "active"
+      }
+    },
+    {
+      "id": 9489,
+      "sol": 100,
+      "camera": {
+        "id": 20,
+        "name": "FHAZ",
+        "rover_id": 5,
+        "full_name": "Front Hazard Avoidance Camera"
+      },
+      "img_src": "http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/00100/opgs/edr/fcam/FLA_406374643EDR_F0050178FHAZ00301M_.JPG",
+      "earth_date": "2012-11-16",
+      "rover": {
+        "id": 5,
+        "name": "Curiosity",
+        "landing_date": "2012-08-06",
+        "launch_date": "2011-11-26",
+        "status": "active"
+      }
+    }
+  ]
+}
