@@ -37,6 +37,8 @@ The purpose of this Kata is to practise using the latest patterns to refresh ski
 
 9. [React testing library](https://testing-library.com/docs/react-testing-library/intro/), in amongst other libraries, can be found on the link and seems the simplest way to test several things about a component without using the latest
 
+10. Common mistakes that are made with the react testing library can be [found here](https://kentcdodds.com/blog/common-mistakes-with-react-testing-library), useful as I found myself making some of these mistakes as a natural inclination to test with previous bad habits
+
 ## Environment
 
 Should always prepare an environment with tools to  help with verifying the integrity of what you are doing.
