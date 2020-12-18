@@ -1,6 +1,6 @@
 # Introduction
 
-The purpose of this Kata is to practise using the latest patterns to refresh skills and common mistakes I personally may make using patterns I learnt on the job or incorrectly from blogs or developers I may have incorrectly inherited from. The end game is to either be happy with the current skills I have or to adopt a new and better way of doing this
+The purpose of this Kata is to practice using the latest patterns to refresh skills and common mistakes I personally may make using patterns I learnt on the job or incorrectly from blogs or developers I may have incorrectly inherited from. The end game is to either be happy with the current skills I have or to adopt a new and better way of doing this
 
 ## Instructions
 
@@ -15,8 +15,9 @@ The purpose of this Kata is to practise using the latest patterns to refresh ski
 3. Do the **typescript version** which is using a template which is `npx create-react-app recipe-ts --template cra-template-typescript`, [see other templates](https://www.npmjs.com/search?q=cra-template-*&page=0&perPage=20) for more examples
 
     - Make sure the latest typescript is installed `npm install -g typescript`
-
-4. Optimise any routes with [code splitting](https://reactjs.org/docs/code-splitting.html#route-based-code-splitting)
+    - Issue with react testing extensions can be fixed with this https://github.com/testing-library/react-testing-library/issues/36
+      - `yarn add --dev @testing-library/react @testing-library/jest-dom` fixes the extension problem by bumping the version to the latest
+    - 
 
 5. Always initiate project with [Storybooking](https://storybook.js.org/docs/react/get-started/install) to help with any development, style guides and UI in the future `npx sb init`
 
@@ -26,6 +27,20 @@ The purpose of this Kata is to practise using the latest patterns to refresh ski
       # .env file in root
       SKIP_PREFLIGHT_CHECK=true
       ```
+      
+    - Here is issue https://github.com/storybookjs/storybook/issues/5183
+    
+      - Run `npx -p @storybook/cli sb init --type react`
+    
+      - Add in the packages under the dev section
+    
+        ```json
+        "resolutions": {
+          "/react-scripts//babel-loader": "^8.1.0"
+        }
+        ```
+    
+      - `yarn add -D --exact babel-loader@8.1.0`
     
 6. Extend my default testing to use [storybooking with unit tests](https://storybook.js.org/docs/react/workflows/testing-with-storybook), integration tests or any other tests that could be added
 
