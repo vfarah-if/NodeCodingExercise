@@ -1,8 +1,8 @@
-☐ Install Story book @critical 
+✔ Install Story book @critical @done(20-12-18 11:20)
 ☐ Setup configuration file @high 
-☐ Setup coverage @high 
+✔ Setup coverage @high @done(20-12-18 11:20)
 ☐ Create components
-    ☐ Create button
+    ✔ Create button @done(20-12-18 11:20)
     ☐ Create header
     ☐ Create Loading Status
     ☐ Create Card and Cards
