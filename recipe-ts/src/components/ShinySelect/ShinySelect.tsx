@@ -1,3 +1,4 @@
+import { HandlerFunction } from '@storybook/addon-actions';
 import React, { Fragment } from 'react';
 import './style/index.css';
 
@@ -15,7 +16,8 @@ export interface OptionDetail {
 export interface ShinySelectProps  {
 	label?: string;
 	value: string;
-	optionsList: Array<OptionDetail>;
+    optionsList: Array<OptionDetail>;
+    onChange?: HandlerFunction
 }
 
 const OPTIONS_PROPERTY = 'options';
@@ -23,7 +25,7 @@ const OPTIONS_PROPERTY = 'options';
 const ShinySelect: React.FC<ShinySelectProps> = ({
 	label,
 	value = '',
-	optionsList,
+    optionsList,
 	...rest
 }) => {
 	const createOptionElements = (
@@ -49,19 +51,19 @@ const ShinySelect: React.FC<ShinySelectProps> = ({
 
 	const generateSelectOptions = () => {
 		const groupByGroupOrOptions = optionsList.reduce(
-			(acc: GroupOptionDetails, option: OptionDetail) => {
+			(groupOptionDetails: GroupOptionDetails, option: OptionDetail) => {
 				if (option.group) {
-					if (!acc.hasOwnProperty(option.group)) {
-						acc[option.group] = new Array<OptionDetail>();
+					if (!groupOptionDetails.hasOwnProperty(option.group)) {
+						groupOptionDetails[option.group] = new Array<OptionDetail>();
 					}
-					acc[option.group].push(option);
+					groupOptionDetails[option.group].push(option);
 				} else {
-					if (!acc.hasOwnProperty(OPTIONS_PROPERTY)) {
-						acc[OPTIONS_PROPERTY] = new Array<OptionDetail>();
+					if (!groupOptionDetails.hasOwnProperty(OPTIONS_PROPERTY)) {
+						groupOptionDetails[OPTIONS_PROPERTY] = new Array<OptionDetail>();
 					}
-					acc[OPTIONS_PROPERTY].push(option);
+					groupOptionDetails[OPTIONS_PROPERTY].push(option);
 				}
-				return acc;
+				return groupOptionDetails;
 			},
 			{} as GroupOptionDetails
 		);

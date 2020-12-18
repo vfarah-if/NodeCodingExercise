@@ -13,8 +13,8 @@ const ShinySelectTemplate: Story<ShinySelectProps> = (args) => (
 		<ShinySelect {...args} onChange={action('onChanged...')} />
 	</Fragment>
 );
-export const SimpleOptionsStory = ShinySelectTemplate.bind({});
-SimpleOptionsStory.args = {
+export const SimpleOptions = ShinySelectTemplate.bind({});
+SimpleOptions.args = {
 	label: 'Choose a Mars rover',
 	value: '',
 	optionsList: [
@@ -37,8 +37,8 @@ SimpleOptionsStory.args = {
 	],
 };
 
-export const OptionGroupsStory = ShinySelectTemplate.bind({});
-OptionGroupsStory.args = {
+export const OptionGroups = ShinySelectTemplate.bind({});
+OptionGroups.args = {
 	label: 'Select a car',
 	value: 'volvo',
 	optionsList: [
@@ -70,8 +70,8 @@ OptionGroupsStory.args = {
 	],
 };
 
-export const OptionAndGroupsStory = ShinySelectTemplate.bind({});
-OptionAndGroupsStory.args = {
+export const OptionsAndGroupsMixed = ShinySelectTemplate.bind({});
+OptionsAndGroupsMixed.args = {
 	label: 'Select a car',
 	value: '',
 	optionsList: [
@@ -107,8 +107,8 @@ OptionAndGroupsStory.args = {
 	],
 };
 
-export const ValuesOnlyStory = ShinySelectTemplate.bind({});
-ValuesOnlyStory.args = {
+export const ValuesOnly = ShinySelectTemplate.bind({});
+ValuesOnly.args = {
 	value: '',
 	optionsList: [
 		{

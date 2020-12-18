@@ -1,0 +1,169 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ShinySelect should create option groups 1`] = `
+<div>
+  <label>
+    Select a car
+    <select
+      class="select-css"
+    >
+      <optgroup
+        label="Swedish Cars"
+      >
+        <option
+          value="volvo"
+        >
+          Volvo
+        </option>
+        <option
+          value="saab"
+        >
+          Saab
+        </option>
+      </optgroup>
+      <optgroup
+        label="German Cars"
+      >
+        <option
+          value="vw"
+        >
+          VW
+        </option>
+        <option
+          value="mercedes"
+        >
+          Merc
+        </option>
+        <option
+          value="audi"
+        >
+          Audi
+        </option>
+      </optgroup>
+    </select>
+  </label>
+</div>
+`;
+
+exports[`ShinySelect should create options and groups mixed 1`] = `
+<div>
+  <label>
+    Select a car
+    <select
+      class="select-css"
+    >
+      <option
+        value=""
+      >
+        Select a car
+      </option>
+      <optgroup
+        label="Swedish Cars"
+      >
+        <option
+          value="volvo"
+        >
+          Volvo
+        </option>
+        <option
+          value="saab"
+        >
+          Saab
+        </option>
+      </optgroup>
+      <optgroup
+        label="German Cars"
+      >
+        <option
+          value="vw"
+        >
+          VW
+        </option>
+        <option
+          value="mercedes"
+        >
+          Merc
+        </option>
+        <option
+          value="audi"
+        >
+          Audi
+        </option>
+      </optgroup>
+    </select>
+  </label>
+</div>
+`;
+
+exports[`ShinySelect should create options only 1`] = `
+<div>
+  <label>
+    Choose a Mars rover
+    <select
+      class="select-css"
+    >
+      <option
+        value=""
+      >
+        Select your option
+      </option>
+      <option
+        value="curiosity"
+      >
+        Curiosity
+      </option>
+      <option
+        value="spirit"
+      >
+        Spirit
+      </option>
+      <option
+        value="opportunity"
+      >
+        Opportunity
+      </option>
+    </select>
+  </label>
+</div>
+`;
+
+exports[`ShinySelect should create values only 1`] = `
+<div>
+  <label>
+    <select
+      class="select-css"
+    >
+      <option
+        value=""
+      >
+        Select a car
+      </option>
+      <option
+        value="volvo"
+      >
+        volvo
+      </option>
+      <option
+        value="saab"
+      >
+        saab
+      </option>
+      <option
+        value="vw"
+      >
+        vw
+      </option>
+      <option
+        value="mercedes"
+      >
+        mercedes
+      </option>
+      <option
+        value="audi"
+      >
+        audi
+      </option>
+    </select>
+  </label>
+</div>
+`;
