@@ -19,6 +19,7 @@ describe("given App", () => {
 	});
 
 	test("should render login button", () => {
+		window.alert = jest.fn();
 		const alertSpy = jest.spyOn(window, 'alert');
 		render(<App />);
 
@@ -30,6 +31,7 @@ describe("given App", () => {
 	});
 
 	test("should render sign up button", () => {
+		window.alert = jest.fn();
 		const alertSpy = jest.spyOn(window, 'alert');
 		render(<App />);
 

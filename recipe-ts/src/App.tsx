@@ -1,19 +1,20 @@
 import React from 'react';
 import './App.css';
+import Header from './components/Header';
 
 function App() {
+	let user = undefined;
+	const loginHandler = () => alert('OnLogin ...');
+	const createAccountHandler = () => alert('createAccountHandler ...');
+
 	return (
 		<div className="App">
-			<header className="App-header">
-				<a
-					className="App-link"
-					href="https://reactjs.org"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					Learn React
-				</a>
-			</header>
+
+				<Header		
+					user={user}
+					onLogin={loginHandler}
+					onCreateAccount={createAccountHandler}
+				/>
 		</div>
 	);
 }
