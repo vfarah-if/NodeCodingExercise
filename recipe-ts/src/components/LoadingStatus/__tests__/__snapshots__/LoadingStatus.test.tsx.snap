@@ -2,18 +2,10 @@
 
 exports[`LoadingStatus should be invisible when not loading 1`] = `<div />`;
 
-exports[`LoadingStatus should load custom display status 1`] = `
-<div>
-  <p>
-    Poor mans loader ...
-  </p>
-</div>
-`;
-
 exports[`LoadingStatus should load default status when no value assigned 1`] = `
 <div>
-  <p>
-    Loading ...
-  </p>
+  <div
+    class="loader"
+  />
 </div>
 `;

@@ -17,12 +17,6 @@ const LoadingStatusTemplate: Story<LoadingStatusProps> = (args) => (
 export const DefaultLoadingStatus = LoadingStatusTemplate.bind({});
 DefaultLoadingStatus.args = { isLoading: true };
 
-export const CustomDisplayLoadingStatus = LoadingStatusTemplate.bind({});
-CustomDisplayLoadingStatus.args = {
-	isLoading: true,
-	displayValue: 'Poor mans loader ...',
-};
-
 export const InvisibleLoadingStatus = LoadingStatusTemplate.bind({});
 InvisibleLoadingStatus.args = {
 	isLoading: false

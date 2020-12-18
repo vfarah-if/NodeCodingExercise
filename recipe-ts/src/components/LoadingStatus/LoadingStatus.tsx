@@ -3,17 +3,13 @@ import './style/index.css';
 
 export interface LoadingStatusProps {
 	isLoading: boolean;
-	displayValue?: string;
 }
 
 const LoadingStatus: React.FC<LoadingStatusProps> = ({
-	isLoading,
-	displayValue,
+	isLoading
 }) => {
 	return isLoading ? (
-		<>
-			<p>{displayValue || 'Loading ...'}</p>
-		</>
+		<div className="loader"></div>
 	) : null;
 };
 
