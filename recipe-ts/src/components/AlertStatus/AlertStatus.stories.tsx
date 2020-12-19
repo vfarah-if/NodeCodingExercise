@@ -3,7 +3,7 @@ import React, { Fragment } from 'react';
 import AlertStatus, { AlertStatusProps } from './AlertStatus';
 
 export default {
-	title: 'Component|AlertStatus',
+	title: 'Component/AlertStatus',
 	component: AlertStatus,
 } as Meta;
 
