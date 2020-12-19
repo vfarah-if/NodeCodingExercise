@@ -2,6 +2,7 @@ import React from 'react';
 import { fireEvent, render } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import ListReducer from '../ListReducer';
+import { initialState, reducer } from '../reducer';
 
 describe('List', () => {
 	const item1 = 'TODO 1: Add the first item';
@@ -35,8 +36,23 @@ describe('List', () => {
 		expect(input.value).toBe('');
 
 		const listItem = await component.findByText(item2);
-        expect(listItem).toMatchSnapshot();
-        expect(component.container).toMatchSnapshot('both items')
+		expect(listItem).toMatchSnapshot();
+		expect(component.container).toMatchSnapshot('both items');
+	});
+
+    // REMARKS: Not needed but a good example using teh reducer direct when test driving the development
+	test('should show an example of testing the reducer direct as an example', async () => {
+		let state = reducer(initialState, {
+			type: 'newItemChange',
+			payload: item1,
+		});
+		expect(state.newItem).toBe(item1);
+		expect(state.items.length).toBe(0);
+
+		state = reducer(state, { type: 'add' });
+		expect(state.newItem).toBe('');
+		expect(state.items.length).toBe(1);
+		expect(state.items[0]).toBe(item1);
 	});
 });
 

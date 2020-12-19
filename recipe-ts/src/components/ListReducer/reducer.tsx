@@ -19,7 +19,5 @@ export const reducer = (state: typeof initialState, action: ACTIONTYPE) => {
 				items: state.items.concat([state.newItem]),
 				newItem: '',
 			};
-		default:
-			throw new Error(`Dispatch action "${action.type}" not found`);
 	}
 };
