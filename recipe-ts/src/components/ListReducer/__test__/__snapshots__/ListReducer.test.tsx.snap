@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`List should add one item into the list 1`] = `
+<li>
+  TODO 1: Add the first item
+</li>
+`;
+
+exports[`List should clear the list after adding another item 1`] = `
+<li>
+  TODO 2: Add the second item
+</li>
+`;
+
+exports[`List should clear the list after adding another item: both items 1`] = `
+<div>
+  <div
+    class="todo-list"
+  >
+    <h2>
+      TODO List
+    </h2>
+    <ul>
+      <li>
+        TODO 1: Add the first item
+      </li>
+      <li>
+        TODO 2: Add the second item
+      </li>
+    </ul>
+    <form
+      data-testid="form"
+    >
+      <div
+        class="form-group"
+      >
+        <input
+          class="form-control"
+          id="newItem"
+          placeholder="Enter new item"
+          type="text"
+          value=""
+        />
+      </div>
+      <input
+        class="btn btn-primary"
+        type="submit"
+        value="Add"
+      />
+    </form>
+  </div>
+</div>
+`;
