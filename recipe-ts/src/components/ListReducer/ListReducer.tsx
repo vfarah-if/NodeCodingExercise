@@ -4,7 +4,6 @@ import './style/index.css';
 
 export interface ListReducerProps {}
 
-
 const ListReducer: React.FC<ListReducerProps> = () => {
 	const [state, dispatch] = useReducer(reducer, initialState);
 
