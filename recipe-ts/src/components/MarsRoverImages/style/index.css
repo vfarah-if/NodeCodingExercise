@@ -2,7 +2,8 @@
 	text-align: center;
     margin: 20px;
     padding: 20px;
-    border: solid medium blue;
+	border: solid medium lightgrey;
+	border-radius: 10px;
     background-color: gray;
 }
 
