@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Cards should create a simple thumbnail with an alt and style defined 1`] = `
+<div>
+  <img
+    alt="Jest logo"
+    class="thumbnail"
+    src="https://miro.medium.com/max/1592/0*aaeiaAX5kMyHCQZT.png"
+    style="border: 1px solid yellow;"
+  />
+</div>
+`;
