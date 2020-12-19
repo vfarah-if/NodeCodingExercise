@@ -79,21 +79,27 @@ describe('MarsRoverImages', () => {
 		});
 	});
 
-	//TODO: Figure this out later
-	// describe('Select tests', () => {
-	// 	let selectArray: NodeListOf<HTMLSelectElement>,
-	// 		component: RenderResult<typeof import('@testing-library/dom/types/queries')>;
+	describe('Select tests', () => {
+		let selectArray: NodeListOf<HTMLSelectElement>,
+			component: RenderResult<typeof import('@testing-library/dom/types/queries')>;
 
-	// 	test('should have two selects', async () => {
-	// 		await waitFor(() => {
-	// 			component = render(
-	// 				<MarsRoverImages roverType="curiosity" cameraType="FHA" />
-	// 			);
-	// 			selectArray = component.container.querySelectorAll('select');
-	// 			expect(selectArray.length).toBe(2);
-	// 		});
-	// 		expect(selectArray[0]).toMatchSnapshot('Rovers');
-	// 		expect(selectArray[1]).toMatchSnapshot('Cameras');
-	// 	});
-	// });
+		beforeEach(() => {
+			mockedService.mockResolvedValue(
+				emptyResponse as NasaPhotos
+			);
+		});
+
+		test('should have two selects', async () => {
+			await waitFor(() => {
+				component = render(
+					<MarsRoverImages roverType="curiosity" cameraType="FHA" />
+				);
+				selectArray = component.container.querySelectorAll('select');
+				expect(selectArray.length).toBe(2);
+			});
+
+			expect(selectArray[0]).toMatchSnapshot('Rovers');
+			expect(selectArray[1]).toMatchSnapshot('Cameras');
+		});
+	});
 });

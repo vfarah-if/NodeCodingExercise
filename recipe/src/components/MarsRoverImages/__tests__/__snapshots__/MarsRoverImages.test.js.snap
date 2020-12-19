@@ -1,28 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`MarsRoverImages Select tests should have first select setup with a list of rovers 1`] = `
-<select
-  class="select-css"
->
-  <option
-    value="curiosity"
-  >
-    Curiosity
-  </option>
-  <option
-    value="spirit"
-  >
-    Spirit
-  </option>
-  <option
-    value="opportunity"
-  >
-    Opportunity
-  </option>
-</select>
-`;
-
-exports[`MarsRoverImages Select tests should have second select setup with a list of cameras 1`] = `
+exports[`MarsRoverImages Select tests should have two selects: Cameras 1`] = `
 <select
   class="select-css"
 >
@@ -73,6 +51,28 @@ exports[`MarsRoverImages Select tests should have second select setup with a lis
       Chemistry and Camera Complex
     </option>
   </optgroup>
+</select>
+`;
+
+exports[`MarsRoverImages Select tests should have two selects: Rovers 1`] = `
+<select
+  class="select-css"
+>
+  <option
+    value="curiosity"
+  >
+    Curiosity
+  </option>
+  <option
+    value="spirit"
+  >
+    Spirit
+  </option>
+  <option
+    value="opportunity"
+  >
+    Opportunity
+  </option>
 </select>
 `;
 

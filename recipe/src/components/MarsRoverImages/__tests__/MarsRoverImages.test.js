@@ -19,21 +19,23 @@ describe('MarsRoverImages', () => {
 		test('should show success alert with zero images loaded', async () => {
 			render(<MarsRoverImages roverType="spirit" cameraType="MAST" />);
 
-			await waitFor(() => expect(window.fetch).toHaveBeenCalledTimes(1));
-
-			// console.debug(screen.debug());
-			expect(
-				screen.getByText(`Succeeded retrieving '0' photos!`)
-			).toBeInTheDocument();
+			await waitFor(() => {
+				expect(window.fetch).toHaveBeenCalledTimes(1);
+				// console.debug(screen.debug());
+				expect(
+					screen.getByText(`Succeeded retrieving '0' photos!`)
+				).toBeInTheDocument();
+			});
 		});
 
 		test('should show not found image', async () => {
 			render(<MarsRoverImages roverType="spirit" cameraType="MAST" />);
 
-			await waitFor(() => expect(window.fetch).toHaveBeenCalledTimes(1));
-
-			// console.debug(screen.debug());
-			expect(screen.getByAltText('none found')).toBeInTheDocument();
+			await waitFor(() => {
+				expect(window.fetch).toHaveBeenCalledTimes(1);
+				// console.debug(screen.debug());
+				expect(screen.getByAltText('none found')).toBeInTheDocument();
+			});
 		});
 	});
 
@@ -49,12 +51,14 @@ describe('MarsRoverImages', () => {
 		test('should show success alert with zero images loaded', async () => {
 			render(<MarsRoverImages roverType="curiosity" cameraType="FHA" />);
 
-			await waitFor(() => expect(window.fetch).toHaveBeenCalledTimes(1));
+			await waitFor(() => {
+				expect(window.fetch).toHaveBeenCalledTimes(1);
+				// console.debug(screen.debug());
+				expect(
+					screen.getByText(`Succeeded retrieving '4' photos!`)
+				).toBeInTheDocument();
+			});
 
-			// console.debug(screen.debug());
-			expect(
-				screen.getByText(`Succeeded retrieving '4' photos!`)
-			).toBeInTheDocument();
 			expect(
 				screen.getByText(`Succeeded retrieving '4' photos!`)
 			).toMatchSnapshot();
@@ -65,32 +69,39 @@ describe('MarsRoverImages', () => {
 				<MarsRoverImages roverType="curiosity" cameraType="FHA" />
 			);
 
-			await waitFor(() => expect(window.fetch).toHaveBeenCalledTimes(1));
+			await waitFor(() => {
+				expect(window.fetch).toHaveBeenCalledTimes(1);
+				// console.debug(screen.debug());
+				expect(container.querySelectorAll('ul').length).toBe(1);
+				expect(container.querySelectorAll('li').length).toBe(4);
+			});
 
-			// console.debug(screen.debug());
-			expect(container.querySelectorAll('ul').length).toBe(1);
-			expect(container.querySelectorAll('li').length).toBe(4);
 			expect(container.querySelector('ul')).toMatchSnapshot();
 		});
-  });
-  
-  describe('Select tests', () => {
-    let selectArray, component;
-    beforeEach(() => {
-      component = render(<MarsRoverImages roverType="curiosity" cameraType="FHA" />);
-      selectArray = component.container.querySelectorAll('select');
-    })
+	});
 
-    test('should have two selects', () => {
-      expect(selectArray.length).toBe(2);
-    });
+	describe('Select tests', () => {
+		let selectArray, component;
+		beforeEach(() => {
+			jest.spyOn(window, 'fetch').mockImplementation(() =>
+				Promise.resolve({
+					json: () => Promise.resolve(emptyResponse),
+				})
+			);
+		});
 
-    test('should have first select setup with a list of rovers', () => {
-      expect(selectArray[0]).toMatchSnapshot()
-    });
+		test('should have two selects', async () => {
+			component = render(
+				<MarsRoverImages roverType="curiosity" cameraType="FHA" />
+			);
+			
+			await waitFor(() => {
+				selectArray = component.container.querySelectorAll('select');
+				expect(selectArray.length).toBe(2);
+			});
 
-    test('should have second select setup with a list of cameras', () => {
-      expect(selectArray[1]).toMatchSnapshot()
-    });    
-  });
+			expect(selectArray[0]).toMatchSnapshot('Rovers');
+			expect(selectArray[1]).toMatchSnapshot('Cameras');
+		});
+	});
 });
