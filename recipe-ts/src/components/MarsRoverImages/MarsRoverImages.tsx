@@ -23,6 +23,10 @@ interface NasaPhoto {
 	img_src: string;
 }
 
+export interface NasaPhotos {
+	photos: Array<NasaPhoto>;
+}
+
 const MarsRoverImages: React.FC<MarsRoverImagesProps> = ({
 	roverType = 'curiosity',
 	cameraType,
@@ -40,7 +44,7 @@ const MarsRoverImages: React.FC<MarsRoverImagesProps> = ({
 				const response = await fetch(
 					`https://api.nasa.gov/mars-photos/api/v1/rovers/${roverChosen}/photos?sol=100&camera=${cameraChosen}&api_key=${NASAPIKey}`
 				);
-				const { photos } = await response.json();
+				const { photos } = await response.json() as NasaPhotos;
 				setPhotos(photos);
 				setSuccessMessage(
 					`Succeeded retrieving '${photos.length}' photos!`

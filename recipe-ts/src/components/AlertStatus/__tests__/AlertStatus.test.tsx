@@ -101,7 +101,7 @@ describe('AlertStatus', () => {
 		// eslint-disable-next-line testing-library/await-async-utils
 		await waitForElementToBeRemoved(() =>
 			component.container.querySelector('div[style*="opacity: 0"]')
-		).catch((err) => console.warn(err));        
+		).catch((err) => console.warn('IGNORE THIS', err));        
 
 		// console.debug(screen.debug());
 		expect(

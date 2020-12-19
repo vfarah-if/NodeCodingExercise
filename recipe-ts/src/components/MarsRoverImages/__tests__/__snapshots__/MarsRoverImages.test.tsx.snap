@@ -1,0 +1,133 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MarsRoverImages Select tests should have first select setup with a list of rovers 1`] = `
+<select
+  class="select-css"
+>
+  <option
+    value="curiosity"
+  >
+    Curiosity
+  </option>
+  <option
+    value="spirit"
+  >
+    Spirit
+  </option>
+  <option
+    value="opportunity"
+  >
+    Opportunity
+  </option>
+</select>
+`;
+
+exports[`MarsRoverImages Select tests should have second select setup with a list of cameras 1`] = `
+<select
+  class="select-css"
+>
+  <option
+    value=""
+  >
+    Choose a camera
+  </option>
+  <optgroup
+    label="Spirit or Opportunity or Curiosity"
+  >
+    <option
+      value="NAVCAM"
+    >
+      Navigation Camera
+    </option>
+  </optgroup>
+  <optgroup
+    label="Spirit or Opportunity"
+  >
+    <option
+      value="PANCAM"
+    >
+      Panoramic Camera
+    </option>
+  </optgroup>
+  <optgroup
+    label="Curiosity"
+  >
+    <option
+      value="FHAZ"
+    >
+      Front Hazard Avoidance Camera
+    </option>
+    <option
+      value="RHAZ"
+    >
+      Rear Hazard Avoidance Camera
+    </option>
+    <option
+      value="MAST"
+    >
+      Mast Camera
+    </option>
+    <option
+      value="CHEMCAM"
+    >
+      Chemistry and Camera Complex
+    </option>
+  </optgroup>
+</select>
+`;
+
+exports[`MarsRoverImages When retrieving an full response should show one cardslist and four cards 1`] = `
+<ul
+  style="display: grid; grid-template-columns: repeat(5, 1fr);"
+>
+  <li
+    class="card"
+  >
+    <img
+      alt="669"
+      class="thumbnail"
+      src="http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/00100/opgs/edr/fcam/FRA_406374643EDR_F0050178FHAZ00301M_.JPG"
+    />
+  </li>
+  <li
+    class="card"
+  >
+    <img
+      alt="9487"
+      class="thumbnail"
+      src="http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/00100/opgs/edr/fcam/FLA_406377515EDR_F0050178FHAZ00302M_.JPG"
+    />
+  </li>
+  <li
+    class="card"
+  >
+    <img
+      alt="9488"
+      class="thumbnail"
+      src="http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/00100/opgs/edr/fcam/FRA_406377515EDR_F0050178FHAZ00302M_.JPG"
+    />
+  </li>
+  <li
+    class="card"
+  >
+    <img
+      alt="9489"
+      class="thumbnail"
+      src="http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/00100/opgs/edr/fcam/FLA_406374643EDR_F0050178FHAZ00301M_.JPG"
+    />
+  </li>
+</ul>
+`;
+
+exports[`MarsRoverImages When retrieving an full response should show success alert with zero images loaded 1`] = `
+<div
+  class="alert success"
+>
+  <span
+    class="closebtn"
+  >
+    ×
+  </span>
+  Succeeded retrieving '4' photos!
+</div>
+`;
