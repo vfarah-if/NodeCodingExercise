@@ -1,0 +1,27 @@
+.Mars-Rover-Images {
+	text-align: center;
+    margin: 20px;
+    padding: 20px;
+    border: solid medium blue;
+    background-color: gray;
+}
+
+.Mars-Rover-logo {
+	height: 15vmin;
+	pointer-events: none;
+}
+
+.Mars-Rover-header {
+	background-color: #282c34;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	font-size: calc(10px + 2vmin);
+	color: white;
+}
+
+.Mars-Rover-link {
+	color: #61dafb;
+}
