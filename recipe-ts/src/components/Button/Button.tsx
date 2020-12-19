@@ -7,7 +7,7 @@ export interface ButtonProps {
 	size?: 'small' | 'medium' | 'large';
 	label: string;
 	onClick?: () => void;
-	
+	style?: React.CSSProperties;
 }
 export const Button: React.FC<ButtonProps> = ({
 	primary = false,

@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card should create a card with children contents 1`] = `
+<div>
+  <li
+    class="card"
+  >
+    <div
+      class="container"
+    >
+      <h4>
+        <b>
+          John Doe
+        </b>
+      </h4>
+      <p>
+        Architect & Engineer
+      </p>
+      <img
+        alt="Avatar"
+        src="https://www.w3schools.com/howto/img_avatar.png"
+      />
+    </div>
+  </li>
+</div>
+`;
