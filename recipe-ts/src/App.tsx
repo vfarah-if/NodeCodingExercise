@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import Header from './components/Header';
+import MarsRoverImages from './components/MarsRoverImages';
 
 function App() {
 	let user = undefined;
@@ -15,6 +16,8 @@ function App() {
 					onLogin={loginHandler}
 					onCreateAccount={createAccountHandler}
 				/>
+				<br/>
+				<MarsRoverImages/>
 		</div>
 	);
 }

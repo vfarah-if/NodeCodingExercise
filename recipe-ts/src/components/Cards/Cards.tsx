@@ -2,7 +2,7 @@ import React from 'react';
 import './style/index.css';
 
 export interface CardsProps {
-	columnCount: number|undefined
+	columnCount: number
 	children?: React.ReactNode;
 }
 
@@ -15,20 +15,24 @@ const Cards: React.FC<CardsProps> = ({columnCount = 4, children}) => {
 	return <ul style={cardsStyle}>{children}</ul>;
 };
 
-const numberGreaterThan = (min: number) => {
-    return (props: any, propName: any, componentName: any) => {
-        const prop = props[propName];
-        if (prop && (typeof prop !== 'number' || prop < min)) {
-            return new Error(
-                `Prop ${propName} must be a number greater than ${min} on ${componentName}`
-            );
-        }
-    };
-};
+//TODO: Figure out how to get this to work
+// const numberGreaterThan = (min: number) => {
+//     return (props: any, propName: any, componentName: any) => {
+//         const prop = props[propName];
+//         if (prop && (typeof prop !== 'number' || prop < min)) {
+//             return new Error(
+//                 `Prop ${propName} must be a number greater than ${min} on ${componentName}`
+//             );
+//         }
+//     };
+// };
 
-Cards.propTypes = {
-    columnCount: numberGreaterThan(1),    
-};
+// Cards.propTypes = {
+//     columnCount: numberGreaterThan(1),    
+// };
 
+// Cards.defaultProps = {
+// 	columnCount: 4,
+// };
 
 export default Cards;
