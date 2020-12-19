@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AlertStatus should create a default error alert with message 1`] = `
+<div>
+  <div
+    class="alert error"
+  >
+    <span
+      class="closebtn"
+    >
+      ×
+    </span>
+    Error Message
+  </div>
+</div>
+`;
+
+exports[`AlertStatus should create an alert error 1`] = `
+<div>
+  <div
+    class="alert error"
+  >
+    <span
+      class="closebtn"
+    >
+      ×
+    </span>
+    Error Message
+  </div>
+</div>
+`;
+
+exports[`AlertStatus should create an alert info 1`] = `
+<div>
+  <div
+    class="alert info"
+  >
+    <span
+      class="closebtn"
+    >
+      ×
+    </span>
+    Info messsage
+  </div>
+</div>
+`;
+
+exports[`AlertStatus should create an alert success 1`] = `
+<div>
+  <div
+    class="alert success"
+  >
+    <span
+      class="closebtn"
+    >
+      ×
+    </span>
+    Success messsage
+  </div>
+</div>
+`;
+
+exports[`AlertStatus should create an alert warning 1`] = `
+<div>
+  <div
+    class="alert warning"
+  >
+    <span
+      class="closebtn"
+    >
+      ×
+    </span>
+    Warning messsage
+  </div>
+</div>
+`;
+
+exports[`AlertStatus should create no alert when no message associated 1`] = `<div />`;
