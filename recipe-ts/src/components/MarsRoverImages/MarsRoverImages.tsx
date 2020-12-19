@@ -5,13 +5,12 @@ import ShinySelect from '../ShinySelect';
 import Thumbnail from '../Thumbnail';
 import Cards from '../Cards';
 import Card from '../Card';
-import config from '../../config';
 import { ROVER_OPTIONS, ROVER_CAMERA_OPTIONS } from './constants';
 import nasaLogo from '../../assets/nasa-logo-300x250.png';
 import noImage from '../../assets/no-photo-400X300.png';
+import { marsRoverImageService } from './marsRoverImageService';
 
 import './style/index.css';
-const { NASAPIKey } = config;
 
 export interface MarsRoverImagesProps {
 	roverType?: string;
@@ -41,10 +40,10 @@ const MarsRoverImages: React.FC<MarsRoverImagesProps> = ({
 		try {
 			setIsLoading(true);
 			if (roverChosen && cameraChosen && cameraChosen !== '') {
-				const response = await fetch(
-					`https://api.nasa.gov/mars-photos/api/v1/rovers/${roverChosen}/photos?sol=100&camera=${cameraChosen}&api_key=${NASAPIKey}`
+				const { photos } = await marsRoverImageService(
+					roverChosen,
+					cameraChosen
 				);
-				const { photos } = await response.json() as NasaPhotos;
 				setPhotos(photos);
 				setSuccessMessage(
 					`Succeeded retrieving '${photos.length}' photos!`
@@ -111,7 +110,7 @@ const MarsRoverImages: React.FC<MarsRoverImagesProps> = ({
 				onChange={handleCameraSelection}
 			/>
 			<div>
-                <br />
+				<br />
 				<LoadingStatus isLoading={isLoading}></LoadingStatus>
 				<br />
 				<AlertStatus alertType="success" message={successMessage} />
