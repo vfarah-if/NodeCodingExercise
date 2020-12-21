@@ -1,9 +1,9 @@
 .todo-list {
 	margin: 20px;
-    padding: 20px;
+	padding: 20px;
 	border: solid medium lightgrey;
 	border-radius: 10px;
-    background-color: gray;
+	background-color: gray;
 }
 
 .form-group {
@@ -12,7 +12,7 @@
 
 .form-control {
 	display: block;
-	width: 100%;
+	width: 99%;
 	padding: 0.375rem;
 	font-size: 1rem;
 	line-height: 1.5;
