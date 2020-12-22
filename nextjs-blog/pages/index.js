@@ -14,11 +14,18 @@ export default function Home() {
           Learn to <a href="https://nextjs.org">Next.js!</a>
         </h1>
 
-        <h2>
-          <Link href="/posts/first-post">
-            <a>First Post ...</a>
-          </Link>
-        </h2>
+        <ul>
+          <li>
+            <Link href="/">
+              <a>Home</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/posts/first-post">
+              <a>First Post</a>
+            </Link>
+          </li>          
+        </ul>
 
         <p className="description">
           Get started by editing <code>pages/index.js</code>
