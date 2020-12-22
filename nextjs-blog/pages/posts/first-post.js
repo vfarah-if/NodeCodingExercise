@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function FirstPost() {
     return (
         <>
@@ -6,6 +8,7 @@ export default function FirstPost() {
                 <Link href="/">
                     <a>Back to home</a>
                 </Link>
+                {/* <a href="/">Back to home</a> */}
             </h2>
         </>
     )
