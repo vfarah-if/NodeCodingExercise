@@ -5,7 +5,6 @@ import matter from 'gray-matter'
 const postsDirectory = path.join('./lib', 'posts');
 
 export function getSortedPostsData() {
-    console.debug(postsDirectory);
     const fileNames = fs.readdirSync(postsDirectory);
     console.debug('File Names', fileNames);
     const allPostsData = fileNames
