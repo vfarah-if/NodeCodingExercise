@@ -1,6 +1,10 @@
 import { parseISO, format } from 'date-fns';
 
-export default function Date({ dateString }) {
+export interface DateProps {
+    dateString: string
+}
+
+export default function Date({ dateString } : DateProps)  {
     if (dateString) {
         console.debug('datesting:', dateString);
         const date = parseISO(dateString);
