@@ -17,7 +17,8 @@ export function getSortedPostsData(id) {
             const matterResult = matter(fileContents);
             return {
                 id,
-                ...matterResult.data
+                contentHtml: id && matterResult.content,
+                ...matterResult.data,                
             }
         })
 
