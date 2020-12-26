@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "debug": "NODE_OPTIONS='--inspect' next dev",
+    "debug": "cross-env NODE_OPTIONS='--inspect' next dev",
     "build": "next build",
     "start": "next start"
   },
@@ -15,5 +15,8 @@
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "sass": "^1.30.0"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3"
   }
 }
