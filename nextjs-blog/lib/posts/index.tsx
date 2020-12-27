@@ -8,7 +8,7 @@ const postsDirectory = path.join('./lib', 'posts');
 export interface PostData {
     contentHtml: string;
     id: string;    
-    date: Date;
+    date: string;
     title: string;
 }
 

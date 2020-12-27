@@ -6,14 +6,14 @@ export interface DateProps {
 
 export default function Date({ dateString } : DateProps)  {
     if (dateString) {
-        console.debug('datesting:', dateString);
+        console.debug('dateString:', dateString);
         const date = parseISO(dateString);
         console.debug('date:', date);
         const dateFormatted = format(date, 'LLLL d, yyyy');
         console.debug('dateFormatted:', dateFormatted);
         return <time dateTime={dateString}>{dateFormatted}</time>
     } else {
-        return <time>N/A</time>
+        return <time>Infinite and no time assigned</time>
     }
 
 }
