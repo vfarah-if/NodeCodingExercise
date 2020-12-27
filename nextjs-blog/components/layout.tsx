@@ -12,7 +12,7 @@ export interface LayoutProps {
     isHome: boolean;
 }
 
-export default function Layout({ children, isHome }: LayoutProps): JSX.Element {
+export default function Layout({ children, isHome = false }: LayoutProps): JSX.Element {
 	return (
 		<div className={styles.container}>
 			<Head>

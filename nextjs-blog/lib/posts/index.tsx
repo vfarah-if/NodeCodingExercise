@@ -21,7 +21,8 @@ export function getSortedPostsData(id: string | undefined): Array<Post> | Post {
 			const fullPath = path.join(postsDirectory, fileName);
 
 			const fileContents = fs.readFileSync(fullPath, 'utf-8');
-			const matterResult = matter(fileContents);
+            const matterResult = matter(fileContents);
+            console.debug('matterResult', matterResult);
 			return {
 				id,
 				contentHtml: id && matterResult.content,

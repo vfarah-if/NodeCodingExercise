@@ -18,22 +18,10 @@ export const getStaticProps: GetStaticProps = () => {
 
 export default function Home({ allPostsData }) {
 	return (
-		<Layout home>
+		<Layout isHome={true}>
 			<Head>
 				<title>{siteTitle}</title>
 			</Head>
-			<ul>
-				<li>
-					<Link href="/">
-						<a>Home</a>
-					</Link>
-				</li>
-				<li>
-					<Link href="/posts/first-post">
-						<a>First Post</a>
-					</Link>
-				</li>
-			</ul>
 			<section className={utilStyles.headingMd}>
 				<p>
 					Having worked with Next JS without doing any tutorials, I
