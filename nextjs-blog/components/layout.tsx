@@ -9,7 +9,7 @@ export const siteTitle = 'Next.js Sample Website';
 
 export interface LayoutProps {
     children: React.ReactNode;
-    isHome: boolean;
+    isHome?: boolean;
 }
 
 export default function Layout({ children, isHome = false }: LayoutProps): JSX.Element {

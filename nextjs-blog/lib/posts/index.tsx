@@ -1,17 +1,18 @@
+// ISSUe with Windows - https://github.com/vercel/next.js/issues/7755
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 
 const postsDirectory = path.join('./lib', 'posts');
 
-export interface Post {
+export interface PostData {
     contentHtml: string;
     id: string;    
     date: Date;
     title: string;
 }
 
-export function getSortedPostsData(id: string | undefined): Array<Post> | Post {
+export function getSortedPostsData(id?: string | undefined): Array<PostData> | PostData {
 	const fileNames = fs.readdirSync(postsDirectory);
 	console.debug('File Names', fileNames);
 	const allPostsData = fileNames
@@ -27,7 +28,7 @@ export function getSortedPostsData(id: string | undefined): Array<Post> | Post {
 				id,
 				contentHtml: id && matterResult.content,
 				...matterResult.data,
-			} as Post;
+			} as PostData;
 		});
 
 	return id
