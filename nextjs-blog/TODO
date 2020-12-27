@@ -2,5 +2,7 @@
 ✔ Start working through the tutorial until the end @done(20-12-22 16:32)
 ✔ Create the same as a typescript tutorial @done(20-12-27 17:45)
     ✔ Create all the same except add some api data fetch stuff to add a mix @done(20-12-27 17:45)
-    ☐ Setup storybook
+    ✔ Setup storybook @done(20-12-27 18:39)
+        ✔ Create Date Storybook @done(20-12-27 18:39)
+        ☐ Create Layout Storybook        
     ☐ Setup jest tests
