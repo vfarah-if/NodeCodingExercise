@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Date tests as defined by stories should generate a default date when assigned all expected values 1`] = `
+exports[`Date should generate a default date when assigned all expected values: DefaultDate 1`] = `
 <div>
   <time
     datetime="2011-10-05T14:48:00.000Z"
@@ -10,7 +10,25 @@ exports[`Date tests as defined by stories should generate a default date when as
 </div>
 `;
 
-exports[`Date tests as defined by stories should generate a no time assigned message when nothing assigned 1`] = `
+exports[`Date should generate a no time assigned message when nothing assigned: EmptyDate 1`] = `
+<div>
+  <time>
+    Infinite and no time assigned
+  </time>
+</div>
+`;
+
+exports[`Date tests as defined by stories should generate a default date when assigned all expected values: DefaultDate 1`] = `
+<div>
+  <time
+    datetime="2011-10-05T14:48:00.000Z"
+  >
+    October 5, 2011
+  </time>
+</div>
+`;
+
+exports[`Date tests as defined by stories should generate a no time assigned message when nothing assigned: EmptyDate 1`] = `
 <div>
   <time>
     Infinite and no time assigned

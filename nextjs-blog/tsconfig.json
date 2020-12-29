@@ -5,6 +5,7 @@
       "@components/*": ["./components/*"]
     },
     "target": "es5",
+    "types": ["jest", "node"],
     "lib": [
       "dom",
       "dom.iterable",
