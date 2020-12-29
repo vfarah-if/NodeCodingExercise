@@ -1,6 +1,7 @@
 import React from 'react';
-import Date, { DateProps } from '.';
 import { Story, Meta } from '@storybook/react/types-6-0';
+
+import Date, { DateProps } from '.';
 
 export default { title: 'Component/Date', component: Date } as Meta;
 

@@ -1,8 +1,8 @@
 import Head from 'next/head';
 import Link from 'next/link';
 
-import utilStyles from '../styles/utils.module.css';
-import styles from './Layout.module.css';
+import utilStyles from '../../styles/utils.module.css';
+import styles from './layout.module.css';
 
 const name = 'Jon Doe';
 export const siteTitle = 'Next.js Sample Website';
@@ -42,7 +42,7 @@ export default function Layout({ children, isHome = false }: LayoutProps): JSX.E
 					</>
 				) : (
 					<>
-						<Link href="/">
+						<Link href="/" prefetch={false}>
 							<a>
 								<img
 									src="/images/profile.jpg"
@@ -52,7 +52,7 @@ export default function Layout({ children, isHome = false }: LayoutProps): JSX.E
 							</a>
 						</Link>
 						<h2 className={utilStyles.headingLg}>
-							<Link href="/">
+							<Link href="/" >
 								<a className={utilStyles.colorInherit}>
 									{name}
 								</a>
