@@ -1,4 +1,4 @@
-import { PostData } from '../lib/posts';
+import { PostData } from '@lib/posts';
 
 export async function getPosts(
 	id?: string
