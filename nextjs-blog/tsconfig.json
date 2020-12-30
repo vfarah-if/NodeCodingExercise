@@ -4,6 +4,7 @@
     "paths": {
       "@components/*": ["./components/*"],
       "@lib/*": ["./lib/*"],
+      "@services/*": ["./services/*"]
     },
     "target": "es5",
     "types": ["jest", "node"],

@@ -1,10 +1,10 @@
 import Head from 'next/head';
-import { GetStaticProps, GetStaticPaths } from 'next';
+// import { GetStaticProps, GetStaticPaths } from 'next';
 
 import Layout from '@components/layout';
 import { PostData } from '@lib/posts';
 import Date from '@components/date';
-import { getPosts } from '../../services/posts';
+import { getPosts } from '@services/posts';
 
 import utilStyles from '../../styles/utils.module.css';
 
