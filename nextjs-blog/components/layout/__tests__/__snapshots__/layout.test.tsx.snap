@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Layout should generate a detail different to home layout: NotHomeLayout 1`] = `
+<div>
+  <div>
+    <header>
+      <a
+        href="/"
+      >
+        <img
+          alt="Jon Doe"
+          class="undefined undefined"
+          src="/images/profile.jpg"
+        />
+      </a>
+      <h2>
+        <a
+          href="/"
+        >
+          Jon Doe
+        </a>
+      </h2>
+    </header>
+    <main>
+      <section>
+        <p>
+          Having worked with Next JS without doing any tutorials, I thought I would go back and take nothign for granted.
+        </p>
+      </section>
+    </main>
+    <div>
+      <a
+        href="/"
+      >
+        ← Back to home
+      </a>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Layout should generate a home page with expected home layout: HomeLayout 1`] = `
+<div>
+  <div>
+    <header>
+      <img
+        alt="Jon Doe"
+        class="undefined undefined"
+        src="/images/profile.jpg"
+      />
+      <h1>
+        Jon Doe
+      </h1>
+    </header>
+    <main>
+      <section>
+        <p>
+          Having worked with Next JS without doing any tutorials, I thought I would go back and take nothign for granted.
+        </p>
+      </section>
+    </main>
+  </div>
+</div>
+`;
