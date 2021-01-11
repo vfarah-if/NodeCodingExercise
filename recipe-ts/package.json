@@ -54,6 +54,6 @@
     "babel-loader": "8.1.0"
   },
   "resolutions": {
-    "/react-scripts//babel-loader": "^8.1.0"
+    "/react-scripts/babel-loader": "^8.1.0"
   }
 }
