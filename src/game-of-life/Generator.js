@@ -14,21 +14,29 @@ class Generator {
 	}
 
 	initialiaseBoard() {
-		for (let y = 0; y < this.size; y++) {
-			for (let x = 0; x < this.size; x++) {
-				this.board[y][x] = new Cell();
-			}
-		}
+		this.boardPositions().forEach((position) => {
+			const { x, y } = position;
+			this.board[y][x] = new Cell();
+		});
 	}
 
 	setupNeighbours() {
+		this.boardPositions().forEach((position) => {
+			const { x, y } = position;
+			const cell = this.board[y][x];
+			const neighbours = this.getNeighbours(x, y);
+			cell.addNeighbours(neighbours);
+		});
+	}
+
+	boardPositions() {
+		const positions = new Array();
 		for (let y = 0; y < this.size; y++) {
 			for (let x = 0; x < this.size; x++) {
-				const cell = this.board[y][x];
-				const neighbours = this.getNeighbours(x, y);
-				cell.addNeighbours(neighbours);
+				positions.push({ x, y });
 			}
 		}
+		return positions;
 	}
 
 	getNeighbours(x, y) {
@@ -71,11 +79,10 @@ class Generator {
 	}
 
 	getNextStates() {
-		for (let y = 0; y < this.size; y++) {
-			for (let x = 0; x < this.size; x++) {
-				this.nextStates[y][x] = this.board[y][x].nextState();
-			}
-		}
+		this.boardPositions().forEach((position) => {
+			const { x, y } = position;
+			this.nextStates[y][x] = this.board[y][x].nextState();
+		});
 	}
 
 	toString() {
