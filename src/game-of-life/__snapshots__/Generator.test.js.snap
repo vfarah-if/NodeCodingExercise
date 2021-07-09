@@ -19,3 +19,15 @@ exports[`Generator should generate an empty two by two board 1`] = `
 " |   |   | 
  |   |   | "
 `;
+
+exports[`Generator should survive with two or three neighbours: InitialSeed 1`] = `
+" | X |   |   | 
+ |   | X |   | 
+ |   | X |   | "
+`;
+
+exports[`Generator should survive with two or three neighbours: Tick 1`] = `
+" |   |   |   | 
+ | X | X |   | 
+ |   |   |   | "
+`;

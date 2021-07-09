@@ -31,4 +31,18 @@ describe('Generator', () => {
 
 		expect(generator.toString()).toMatchSnapshot('Tick');
 	});
+
+	test('should survive with two or three neighbours', () => {
+		const generator = new Generator(3, [
+			{ x: 0, y: 0 },
+			{ x: 1, y: 1 },
+			{ x: 1, y: 2 },
+		]);
+
+		expect(generator.toString()).toMatchSnapshot('InitialSeed');
+
+		generator.tick();
+
+		expect(generator.toString()).toMatchSnapshot('Tick');
+	});
 });
