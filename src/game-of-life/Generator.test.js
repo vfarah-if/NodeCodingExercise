@@ -45,4 +45,19 @@ describe('Generator', () => {
 
 		expect(generator.toString()).toMatchSnapshot('Tick');
 	});
+
+	test('should generate a four by four block still life', () => {
+		const generator = new Generator(4, [
+			{ x: 1, y: 1 },
+			{ x: 2, y: 1 },
+			{ x: 1, y: 2 },
+			{ x: 2, y: 2 },
+		]);
+
+		expect(generator.toString()).toMatchSnapshot('InitialSeed');
+
+		generator.tick();
+
+		expect(generator.toString()).toMatchSnapshot('Tick');
+	});
 });
