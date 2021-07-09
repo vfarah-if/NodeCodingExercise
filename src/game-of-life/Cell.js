@@ -23,8 +23,9 @@ class Cell {
 			result = CellState.Alive;
 		}
 
-		const isOverPopulated = liveNeighbours.length < 2;
-		if (isOverPopulated) {
+		const isOverpopulated = liveNeighbours.length > 3;
+		const isUnderpopulated = liveNeighbours.length < 2;
+		if (isUnderpopulated || isOverpopulated) {
 			result = CellState.Dead;
 		}
 		return result;
