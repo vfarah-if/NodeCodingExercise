@@ -5,5 +5,5 @@ https://github.com/fabiospampinato/vscode-todo-plus/blob/master/resources/readme
 ✔ Move the correct file into the root and verify base state @today @done(20-12-01 17:52)
 ✔ Define the readme with a really simple state machine Kata to practise short cuts and other code pairing details @critical @done(20-12-02 13:17)
 ✔ Test the initial state @done(20-12-02 13:22)
-☐ Test transitioning to the next state
-☐ Repeat until done following instructions
+✔ Test transitioning to the next state @done(21-07-09 11:59)
+✔ Repeat until done following instructions @done(21-07-09 11:59)
