@@ -1,5 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Generator should die from solitide with only one neighbour: InitialSeed 1`] = `
+" | X |   | 
+ |   | X | "
+`;
+
+exports[`Generator should die from solitide with only one neighbour: Tick 1`] = `
+" |   |   | 
+ |   |   | "
+`;
+
 exports[`Generator should generate a two by two board with seeded data in all rows and columns 1`] = `
 " | X | X | 
  | X | X | "

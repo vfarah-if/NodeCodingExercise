@@ -18,4 +18,17 @@ describe('Generator', () => {
 
 		expect(generator.toString()).toMatchSnapshot();
 	});
+
+	test('should die from solitide with only one neighbour', () => {
+		const generator = new Generator(2, [
+			{ x: 0, y: 0 },
+			{ x: 1, y: 1 },
+		]);
+
+		expect(generator.toString()).toMatchSnapshot('InitialSeed');
+
+		generator.tick();
+
+		expect(generator.toString()).toMatchSnapshot('Tick');
+	});
 });
