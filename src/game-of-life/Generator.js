@@ -20,12 +20,16 @@ class Generator {
 		});
 	}
 
+	cell(x, y) {
+		return this.board[y][x];
+	}
+
 	setupNeighbours() {
 		this.boardPositions().forEach((position) => {
 			const { x, y } = position;
-			const cell = this.board[y][x];
-			const neighbours = this.getNeighbours(x, y);
-			cell.addNeighbours(neighbours);
+			const neighbours = this.getNeighboursByPosition(x, y);
+			console.log('Neighbours', neighbours);
+			this.cell(x, y).addNeighbours(neighbours);
 		});
 	}
 
@@ -39,14 +43,14 @@ class Generator {
 		return positions;
 	}
 
-	getNeighbours(x, y) {
+	getNeighboursByPosition(x, y) {
 		const yRange = [y - 1, y, y + 1];
 		const xRange = [x - 1, x, x + 1];
 		const neighbours = Array();
 		yRange.forEach((row) => {
 			xRange.forEach((col) => {
 				if ((row !== y || col !== x) && this.isOnBoard(col, row)) {
-					neighbours.Append(this.board[row][col]);
+					neighbours.push(this.board[row][col]);
 				}
 			});
 		});
@@ -54,14 +58,13 @@ class Generator {
 	}
 
 	isOnBoard(x, y) {
-		return x >= 0 < this.size && y >= 0 < self.size;
+		return x >= 0 && x < this.size && y >= 0 && y < this.size;
 	}
 
 	seed(positions) {
 		positions.forEach((position) => {
 			const { x, y } = position;
-			const cell = this.board[y][x];
-			cell.currentState = CellState.Alive;
+			this.cell(x, y).currentState = CellState.Alive;
 		});
 	}
 
@@ -73,7 +76,7 @@ class Generator {
 	transferStates() {
 		for (let y = 0; y < this.size; y++) {
 			for (let x = 0; x < this.size; x++) {
-				this.board[y][x].currentState = this.nextStates[y][x];
+				this.cell(x, y).currentState = this.nextStates[y][x];
 			}
 		}
 	}
@@ -81,7 +84,7 @@ class Generator {
 	getNextStates() {
 		this.boardPositions().forEach((position) => {
 			const { x, y } = position;
-			this.nextStates[y][x] = this.board[y][x].nextState();
+			this.nextStates[y][x] = this.cell(x, y).nextState();
 		});
 	}
 
@@ -90,8 +93,7 @@ class Generator {
 		for (let y = 0; y < this.size; y++) {
 			if (y !== 0) result += `${os.EOL} | `;
 			for (let x = 0; x < this.size; x++) {
-				const cell = this.board[y][x];
-				result += `${cell.toString()} | `;
+				result += `${this.cell(x, y).toString()} | `;
 			}
 		}
 		return result;
