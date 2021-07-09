@@ -24,7 +24,7 @@ describe('cell', () => {
 		expect(actual).toBe(CellState.Alive);
 	});
 
-	test('should kill a living cell when fewer than two live neighbours by virtuation of underpopulation', () => {
+	test('should kill a living cell when fewer than two live neighbours by virtue of underpopulation', () => {
 		const cell = new Cell(CellState.Alive);
 		cell.addNeighbours(
 			new Array(
@@ -54,7 +54,7 @@ describe('cell', () => {
 		expect(actual).toBe(CellState.Alive);
 	});
 
-	test('should kill the cell with more than three live neighbours by virtue of over_population', () => {
+	test('should kill the cell with more than three live neighbours by virtue of over population', () => {
 		const cell = new Cell(CellState.Alive);
 		cell.addNeighbours(
 			new Array(
