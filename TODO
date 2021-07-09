@@ -7,3 +7,7 @@ https://github.com/fabiospampinato/vscode-todo-plus/blob/master/resources/readme
 ✔ Test the initial state @done(20-12-02 13:22)
 ✔ Test transitioning to the next state @done(21-07-09 11:59)
 ✔ Repeat until done following instructions @done(21-07-09 11:59)
+✔ Create game of life kata in JS with a basic README and file details @critical @today @done(21-07-09 14:10)
+☐ TDD starting with the Cell and the basic logic of life and death  @high
+☐ TDD the GameOfLife generator where we testing the cell logic against various patterns @high 
+☐ Refactor code to reduce size and follow KISS, DRY and SOLID @high 
