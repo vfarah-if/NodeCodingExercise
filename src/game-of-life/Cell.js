@@ -19,7 +19,6 @@ class Cell {
 		);
 		const isFertile =
 			liveNeighbours.length === 3 && this.currentState === CellState.Dead;
-		console.log(liveNeighbours);
 		if (isFertile) {
 			result = CellState.Alive;
 		}
