@@ -69,4 +69,20 @@ describe('cell', () => {
 
 		expect(actual).toBe(CellState.Dead);
 	});
+
+	test('should output "X" to represent the active cell', () => {
+		const cell = new Cell(CellState.Alive);
+
+		const actual = cell.toString();
+
+		expect(actual).toBe('X');
+	});
+
+	test('should output " " to represent the active cell', () => {
+		const cell = new Cell(CellState.Dead);
+
+		const actual = cell.toString();
+
+		expect(actual).toBe(' ');
+	});
 });

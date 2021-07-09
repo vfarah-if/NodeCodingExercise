@@ -32,6 +32,10 @@ class Cell {
 
 		return this.currentState;
 	}
+
+	toString() {
+		return this.currentState === CellState.Alive ? 'X' : ' ';
+	}
 }
 
 module.exports = Cell;
