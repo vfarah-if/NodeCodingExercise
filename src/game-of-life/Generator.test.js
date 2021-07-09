@@ -60,4 +60,26 @@ describe('Generator', () => {
 
 		expect(generator.toString()).toMatchSnapshot('Tick');
 	});
+
+	test('should generate a three by three blinker oscilator', () => {
+		const generator = new Generator(3, [
+			{ x: 0, y: 1 },
+			{ x: 1, y: 1 },
+			{ x: 2, y: 1 },
+		]);
+
+		expect(generator.toString()).toMatchSnapshot('InitialSeed');
+
+		generator.tick();
+
+		expect(generator.toString()).toMatchSnapshot('Tick');
+
+		generator.tick();
+
+		expect(generator.toString()).toMatchSnapshot('Tick');
+
+		generator.tick();
+
+		expect(generator.toString()).toMatchSnapshot('Tick');
+	});
 });
