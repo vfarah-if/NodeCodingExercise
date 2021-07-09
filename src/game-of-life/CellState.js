@@ -1,4 +1,4 @@
 export const CellState = Object.freeze({
-  Dead: "dead",
-  Alive: "alive",
+	Dead: 'dead',
+	Alive: 'alive',
 });
