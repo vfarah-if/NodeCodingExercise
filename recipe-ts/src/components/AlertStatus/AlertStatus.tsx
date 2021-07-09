@@ -10,8 +10,7 @@ export interface AlertStatusProps {
 const AlertStatus: React.FC<AlertStatusProps> = ({alertType = 'error', message = ''}) => {
     // TODO: Try investigate how this can be fixed
     // const handleHideErrorAlert = (event:  React.MouseEvent<HTMLSpanElement, MouseEvent>) => {
-    const handleHideErrorAlert = (event:  any) => {
-        debugger;        
+    const handleHideErrorAlert = (event:  any) => {  
 		const divElement = event.target.parentElement as HTMLDivElement;
 		divElement.style.opacity = '0';
 		setTimeout(() => (divElement.style.display = 'none'), 600);

@@ -6,6 +6,7 @@ export default function Hello({ name }) {
 	return <h1 className="name">Hello {name || 'stranger'}</h1>;
 }
 
+
 Hello.propTypes = {
 	name: PropTypes.string,
 };

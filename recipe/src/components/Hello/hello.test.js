@@ -7,7 +7,7 @@ describe('Hello', () => {
     test('should say hello stranger when no name assigned', () => {
         render(<Hello/>);
 
-        expect(screen.getByText('Hello stranger')).toBeInTheDocument();
+        expect(screen.getByText('Hello strange')).toBeInTheDocument();
     });
 
     test('should say hello to the person when name is assigned', () => {
@@ -15,5 +15,4 @@ describe('Hello', () => {
 
         expect(screen.getByText('Hello Jane Doe')).toBeInTheDocument()
     });
-
 });
