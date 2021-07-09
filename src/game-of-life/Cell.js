@@ -20,8 +20,13 @@ class Cell {
 		const isFertile =
 			liveNeighbours.length === 3 && this.currentState === CellState.Dead;
 		console.log(liveNeighbours);
-		if (isFertile(liveNeighbours)) {
+		if (isFertile) {
 			result = CellState.Alive;
+		}
+
+		const isOverPopulated = liveNeighbours.length < 2;
+		if (isOverPopulated) {
+			result = CellState.Dead;
 		}
 		return result;
 	}

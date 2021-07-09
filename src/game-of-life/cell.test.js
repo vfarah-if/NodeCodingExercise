@@ -23,4 +23,19 @@ describe('cell', () => {
 
 		expect(actual).toBe(CellState.Alive);
 	});
+
+	test('should kill an living cell when fewer than two live neighbours cause underspopulation', () => {
+		const cell = new Cell(CellState.Alive);
+		cell.addNeighbours(
+			new Array(
+				new Cell(CellState.Dead),
+				new Cell(CellState.Dead),
+				new Cell(CellState.Dead)
+			)
+		);
+
+		const actual = cell.nextState();
+
+		expect(actual).toBe(CellState.Dead);
+	});
 });
