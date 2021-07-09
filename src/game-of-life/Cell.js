@@ -13,22 +13,24 @@ class Cell {
 	}
 
 	nextState() {
-		let result = this.currentState;
 		const liveNeighbours = this.neighbours.filter(
-			(item) => item.currentState === CellState.Alive
+			(neighbour) => neighbour.currentState === CellState.Alive
 		);
-		const isFertile =
-			liveNeighbours.length === 3 && this.currentState === CellState.Dead;
-		if (isFertile) {
-			result = CellState.Alive;
-		}
 
+		const isFertile =
+			this.currentState === CellState.Dead && liveNeighbours.length === 3;
+		const isThriving =
+			(this.currentState === CellState.Alive && liveNeighbours.length) === 2;
+		if (isFertile || isThriving) {
+			return CellState.Alive;
+		}
 		const isOverpopulated = liveNeighbours.length > 3;
 		const isUnderpopulated = liveNeighbours.length < 2;
 		if (isUnderpopulated || isOverpopulated) {
-			result = CellState.Dead;
+			return CellState.Dead;
 		}
-		return result;
+
+		return this.currentState;
 	}
 }
 
