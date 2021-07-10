@@ -1,6 +1,6 @@
-const { CellState } = require('./CellState');
+import { CellState } from './CellState';
 
-class Cell {
+export default class Cell {
   constructor(state = CellState.Dead) {
     this.currentState = state;
     this.neighbours = new Array();
@@ -51,5 +51,3 @@ class Cell {
     return this.currentState === CellState.Alive ? 'X' : ' ';
   }
 }
-
-module.exports = Cell;

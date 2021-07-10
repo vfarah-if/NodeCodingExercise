@@ -1,5 +1,5 @@
-const Cell = require('./Cell');
-const { CellState } = require('./CellState');
+import Cell from './Cell';
+import { CellState } from './CellState';
 
 describe('cell', () => {
   test('should create by default as a dead cell', () => {

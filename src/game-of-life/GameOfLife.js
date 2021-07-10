@@ -1,7 +1,7 @@
-const os = require('os');
+import { EOL } from 'os';
 
-const Cell = require('./cell');
-const { CellState } = require('./CellState');
+import Cell from './cell';
+import { CellState } from './CellState';
 
 class GameOfLife {
   constructor(size, positions = Array()) {
@@ -91,7 +91,7 @@ class GameOfLife {
   toString() {
     let result = ' | ';
     for (let y = 0; y < this.size; y++) {
-      if (y !== 0) result += `${os.EOL} | `;
+      if (y !== 0) result += `${EOL} | `;
       for (let x = 0; x < this.size; x++) {
         result += `${this.cell(x, y).toString()} | `;
       }
@@ -100,4 +100,4 @@ class GameOfLife {
   }
 }
 
-module.exports = GameOfLife;
+export default GameOfLife;

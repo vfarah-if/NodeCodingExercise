@@ -1,4 +1,4 @@
-const GameOfLife = require('./GameOfLife');
+import GameOfLife from './GameOfLife';
 
 describe('GameOfLife', () => {
   test('should generate an empty two by two board', () => {
