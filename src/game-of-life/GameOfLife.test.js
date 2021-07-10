@@ -26,9 +26,9 @@ describe('GameOfLife', () => {
 
 		expect(gameOfLife.toString()).toMatchSnapshot('InitialSeed');
 
-		gameOfLife.tick();
+		gameOfLife.generate();
 
-		expect(gameOfLife.toString()).toMatchSnapshot('Tick');
+		expect(gameOfLife.toString()).toMatchSnapshot('Generate');
 	});
 
 	test('should survive with two or three neighbours', () => {
@@ -40,9 +40,9 @@ describe('GameOfLife', () => {
 
 		expect(gameOfLife.toString()).toMatchSnapshot('InitialSeed');
 
-		gameOfLife.tick();
+		gameOfLife.generate();
 
-		expect(gameOfLife.toString()).toMatchSnapshot('Tick');
+		expect(gameOfLife.toString()).toMatchSnapshot('Generate');
 	});
 
 	test('should generate a four by four block still life', () => {
@@ -55,9 +55,9 @@ describe('GameOfLife', () => {
 
 		expect(gameOfLife.toString()).toMatchSnapshot('InitialSeed');
 
-		gameOfLife.tick();
+		gameOfLife.generate();
 
-		expect(gameOfLife.toString()).toMatchSnapshot('Tick');
+		expect(gameOfLife.toString()).toMatchSnapshot('Generate');
 	});
 
 	test('should generate a three by three blinker oscilator', () => {
@@ -69,17 +69,17 @@ describe('GameOfLife', () => {
 
 		expect(gameOfLife.toString()).toMatchSnapshot('InitialSeed');
 
-		gameOfLife.tick();
+		gameOfLife.generate();
 
-		expect(gameOfLife.toString()).toMatchSnapshot('Tick');
+		expect(gameOfLife.toString()).toMatchSnapshot('Generate');
 
-		gameOfLife.tick();
+		gameOfLife.generate();
 
-		expect(gameOfLife.toString()).toMatchSnapshot('Tick');
+		expect(gameOfLife.toString()).toMatchSnapshot('Generate');
 
-		gameOfLife.tick();
+		gameOfLife.generate();
 
-		expect(gameOfLife.toString()).toMatchSnapshot('Tick');
+		expect(gameOfLife.toString()).toMatchSnapshot('Generate');
 	});
 
 	test('should generate a six by six blinker oscilator', () => {
@@ -96,16 +96,16 @@ describe('GameOfLife', () => {
 
 		expect(gameOfLife.toString()).toMatchSnapshot('InitialSeed');
 
-		gameOfLife.tick();
+		gameOfLife.generate();
 
-		expect(gameOfLife.toString()).toMatchSnapshot('Tick');
+		expect(gameOfLife.toString()).toMatchSnapshot('Generate');
 
-		gameOfLife.tick();
+		gameOfLife.generate();
 
-		expect(gameOfLife.toString()).toMatchSnapshot('Tick');
+		expect(gameOfLife.toString()).toMatchSnapshot('Generate');
 
-		gameOfLife.tick();
+		gameOfLife.generate();
 
-		expect(gameOfLife.toString()).toMatchSnapshot('Tick');
+		expect(gameOfLife.toString()).toMatchSnapshot('Generate');
 	});
 });

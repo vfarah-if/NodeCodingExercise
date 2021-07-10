@@ -68,7 +68,7 @@ class GameOfLife {
 		});
 	}
 
-	tick() {
+	generate() {
 		this.getNextStates();
 		this.transferStates();
 	}
