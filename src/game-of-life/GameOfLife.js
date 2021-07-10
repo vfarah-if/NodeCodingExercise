@@ -3,7 +3,7 @@ const os = require('os');
 const Cell = require('./cell');
 const { CellState } = require('./CellState');
 
-class Generator {
+class GameOfLife {
 	constructor(size, positions = Array()) {
 		this.size = size;
 		this.board = Array.from(Array(size), () => new Array(size));
@@ -100,4 +100,4 @@ class Generator {
 	}
 }
 
-module.exports = Generator;
+module.exports = GameOfLife;
