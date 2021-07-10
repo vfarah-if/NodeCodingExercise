@@ -1,0 +1,107 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GameOfLife should die from solitide with only one neighbour: InitialSeed 1`] = `
+" | X |   | 
+ |   | X | "
+`;
+
+exports[`GameOfLife should die from solitide with only one neighbour: Tick 1`] = `
+" |   |   | 
+ |   |   | "
+`;
+
+exports[`GameOfLife should generate a four by four block still life: InitialSeed 1`] = `
+" |   |   |   |   | 
+ |   | X | X |   | 
+ |   | X | X |   | 
+ |   |   |   |   | "
+`;
+
+exports[`GameOfLife should generate a four by four block still life: Tick 1`] = `
+" |   |   |   |   | 
+ |   | X | X |   | 
+ |   | X | X |   | 
+ |   |   |   |   | "
+`;
+
+exports[`GameOfLife should generate a six by six blinker oscilator: InitialSeed 1`] = `
+" |   |   |   |   |   |   | 
+ |   | X | X |   |   |   | 
+ |   | X | X |   |   |   | 
+ |   |   |   | X | X |   | 
+ |   |   |   | X | X |   | 
+ |   |   |   |   |   |   | "
+`;
+
+exports[`GameOfLife should generate a six by six blinker oscilator: Tick 1`] = `
+" |   |   |   |   |   |   | 
+ |   | X | X |   |   |   | 
+ |   | X |   |   |   |   | 
+ |   |   |   |   | X |   | 
+ |   |   |   | X | X |   | 
+ |   |   |   |   |   |   | "
+`;
+
+exports[`GameOfLife should generate a six by six blinker oscilator: Tick 2`] = `
+" |   |   |   |   |   |   | 
+ |   | X | X |   |   |   | 
+ |   | X | X |   |   |   | 
+ |   |   |   | X | X |   | 
+ |   |   |   | X | X |   | 
+ |   |   |   |   |   |   | "
+`;
+
+exports[`GameOfLife should generate a six by six blinker oscilator: Tick 3`] = `
+" |   |   |   |   |   |   | 
+ |   | X | X |   |   |   | 
+ |   | X |   |   |   |   | 
+ |   |   |   |   | X |   | 
+ |   |   |   | X | X |   | 
+ |   |   |   |   |   |   | "
+`;
+
+exports[`GameOfLife should generate a three by three blinker oscilator: InitialSeed 1`] = `
+" |   |   |   | 
+ | X | X | X | 
+ |   |   |   | "
+`;
+
+exports[`GameOfLife should generate a three by three blinker oscilator: Tick 1`] = `
+" |   | X |   | 
+ |   | X |   | 
+ |   | X |   | "
+`;
+
+exports[`GameOfLife should generate a three by three blinker oscilator: Tick 2`] = `
+" |   |   |   | 
+ | X | X | X | 
+ |   |   |   | "
+`;
+
+exports[`GameOfLife should generate a three by three blinker oscilator: Tick 3`] = `
+" |   | X |   | 
+ |   | X |   | 
+ |   | X |   | "
+`;
+
+exports[`GameOfLife should generate a two by two board with seeded data in all rows and columns 1`] = `
+" | X | X | 
+ | X | X | "
+`;
+
+exports[`GameOfLife should generate an empty two by two board 1`] = `
+" |   |   | 
+ |   |   | "
+`;
+
+exports[`GameOfLife should survive with two or three neighbours: InitialSeed 1`] = `
+" | X |   |   | 
+ |   | X |   | 
+ |   | X |   | "
+`;
+
+exports[`GameOfLife should survive with two or three neighbours: Tick 1`] = `
+" |   |   |   | 
+ | X | X |   | 
+ |   |   |   | "
+`;

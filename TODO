@@ -9,5 +9,5 @@ https://github.com/fabiospampinato/vscode-todo-plus/blob/master/resources/readme
 ✔ Repeat until done following instructions @done(21-07-09 11:59)
 ✔ Create game of life kata in JS with a basic README and file details @critical @today @done(21-07-09 14:10)
 ✔ TDD starting with the Cell and the basic logic of life and death  @high @done(21-07-09 21:16)
-☐ TDD the GameOfLife generator where we testing the cell logic against various patterns @high 
+✔ TDD the GameOfLife generator where we testing the cell logic against various patterns @high @done(21-07-10 01:10)
 ☐ Refactor code to reduce size and follow KISS, DRY and SOLID @high 

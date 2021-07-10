@@ -1,4 +1,3 @@
-const os = require('os');
 const GameOfLife = require('./GameOfLife');
 
 describe('GameOfLife', () => {
