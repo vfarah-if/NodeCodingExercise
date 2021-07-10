@@ -49,7 +49,8 @@ class GameOfLife {
     const neighbours = Array();
     yRange.forEach((row) => {
       xRange.forEach((col) => {
-        if ((row !== y || col !== x) && this.isOnBoard(col, row)) {
+        const isNotCentralCell = row !== y || col !== x;
+        if (isNotCentralCell && this.isOnBoard(col, row)) {
           neighbours.push(this.board[row][col]);
         }
       });
@@ -70,10 +71,10 @@ class GameOfLife {
 
   generate() {
     this.getNextStates();
-    this.transferStates();
+    this.transferNextStateToCurrentState();
   }
 
-  transferStates() {
+  transferNextStateToCurrentState() {
     for (let y = 0; y < this.size; y++) {
       for (let x = 0; x < this.size; x++) {
         this.cell(x, y).currentState = this.nextStates[y][x];
