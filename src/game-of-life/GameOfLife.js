@@ -28,7 +28,7 @@ class GameOfLife {
     this.boardPositions().forEach((position) => {
       const { x, y } = position;
       const neighbours = this.getNeighboursByPosition(x, y);
-      console.log('Neighbours', neighbours);
+      //   console.debug('Neighbours', neighbours);
       this.cell(x, y).addNeighbours(neighbours);
     });
   }
