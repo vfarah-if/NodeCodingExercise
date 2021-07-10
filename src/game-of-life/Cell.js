@@ -17,20 +17,34 @@ class Cell {
       (neighbour) => neighbour.currentState === CellState.Alive
     );
 
-    const isFertile =
-      this.currentState === CellState.Dead && liveNeighbours.length === 3;
-    const isThriving =
-      (this.currentState === CellState.Alive && liveNeighbours.length) === 2;
-    if (isFertile || isThriving) {
+    if (this.isFertile(liveNeighbours) || this.isThriving(liveNeighbours)) {
       return CellState.Alive;
     }
-    const isOverpopulated = liveNeighbours.length > 3;
-    const isUnderpopulated = liveNeighbours.length < 2;
-    if (isUnderpopulated || isOverpopulated) {
+
+    if (
+      this.isUnderpopulated(liveNeighbours) ||
+      this.isOverpopulated(liveNeighbours)
+    ) {
       return CellState.Dead;
     }
 
     return this.currentState;
+  }
+
+  isFertile(liveNeighbours) {
+    return this.currentState === CellState.Dead && liveNeighbours.length === 3;
+  }
+
+  isThriving(liveNeighbours) {
+    return this.currentState === CellState.Alive && liveNeighbours.length === 2;
+  }
+
+  isOverpopulated(liveNeighbours) {
+    return liveNeighbours.length > 3;
+  }
+
+  isUnderpopulated(liveNeighbours) {
+    return liveNeighbours.length < 2;
   }
 
   toString() {
