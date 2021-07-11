@@ -90,7 +90,7 @@ class GameOfLife {
   }
 
   toString() {
-    let result = ' | ';
+    let result = '| ';
     for (let y = 0; y < this.size; y++) {
       if (y !== 0) result += `${EOL} | `;
       for (let x = 0; x < this.size; x++) {
