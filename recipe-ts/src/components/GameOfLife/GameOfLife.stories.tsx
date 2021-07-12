@@ -41,3 +41,14 @@ SeedAllTwoByTwoWithActiveCells.args = {
     { x: 1, y: 1 },
   ],
 };
+
+export const SeedBlinkerOscillator = GameOfLifeTemplate.bind({});
+SeedBlinkerOscillator.args = {
+  boardSize: 3,
+  cellSize: 50,
+  seedActivePositions: [
+    { x: 1, y: 0 },
+    { x: 1, y: 1 },
+    { x: 1, y: 2 },
+  ],
+};
