@@ -7,6 +7,7 @@ export default {
   component: GameOfLife,
   argTypes: {
     gridColor: { control: 'color' },
+    activeColor: { control: 'color' },
   },
 } as Meta;
 
@@ -25,4 +26,18 @@ CreateFiveByFiveBoardOfEmptyCells.args = {
   cellSize: 50,
   gridColor: 'orange',
   activeColor: 'green',
+};
+
+export const SeedAllTwoByTwoWithActiveCells = GameOfLifeTemplate.bind({});
+SeedAllTwoByTwoWithActiveCells.args = {
+  boardSize: 2,
+  cellSize: 50,
+  gridColor: 'black',
+  activeColor: 'yellow',
+  seedActivePositions: [
+    { x: 0, y: 0 },
+    { x: 1, y: 0 },
+    { x: 0, y: 1 },
+    { x: 1, y: 1 },
+  ],
 };
