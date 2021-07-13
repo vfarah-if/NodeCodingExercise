@@ -1,6 +1,7 @@
 import produce from 'immer';
 import React, { useCallback, useEffect, useState } from 'react';
 import Button from '../Button';
+import Cell from './Cell';
 import './style/index.css';
 
 type ButtonCallbackType = () => void;
@@ -165,17 +166,13 @@ const GameOfLife: React.FC<GameOfLifeProps> = ({
       >
         {board.map((columns, y) =>
           columns.map((rows, x) => (
-            <div
+            <Cell
               key={`[${y},${x}]`}
-              className='cell'
-              onClick={() => handleCellClick(x, y)}
-              style={{
-                width: cellSize,
-                height: cellSize,
-                border: `solid 1px ${gridColor}`,
-                backgroundColor: board[y][x] ? activeColor : undefined,
-              }}
-            ></div>
+              onCellClick={() => handleCellClick(x, y)}
+              cellSize={cellSize}
+              cellBorderColor={gridColor}
+              cellBackgroundColor={board[y][x] ? activeColor : undefined}
+            ></Cell>
           ))
         )}
       </div>
