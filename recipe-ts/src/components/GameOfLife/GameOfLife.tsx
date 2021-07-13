@@ -1,7 +1,9 @@
 import produce from 'immer';
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import Button from '../Button';
 import './style/index.css';
+
+type ButtonCallbackType = () => void;
 
 export interface Position {
   x: number;
@@ -28,6 +30,7 @@ const GameOfLife: React.FC<GameOfLifeProps> = ({
     )
   );
   // console.debug(board);
+  const [isRunning, setIsRunning] = useState(false);
 
   useEffect(() => {
     if (seedActivePositions && seedActivePositions.length > 0) {
@@ -50,27 +53,29 @@ const GameOfLife: React.FC<GameOfLifeProps> = ({
     setBoard(modifiedBoard);
   };
 
-  const isOnBoard = (x: number, y: number): boolean => {
-    return x >= 0 && x < boardSize && y >= 0 && y < boardSize;
-  };
-
-  const getNeighboursByPosition = (x: number, y: number): Array<boolean> => {
-    const yRange = [y - 1, y, y + 1];
-    const xRange = [x - 1, x, x + 1];
-    const neighbours = Array<boolean>();
-    yRange.forEach((row) => {
-      xRange.forEach((col) => {
-        const isNotCentralCell = row !== y || col !== x;
-        if (isNotCentralCell && isOnBoard(col, row)) {
-          neighbours.push(board[row][col]);
-        }
-      });
-    });
-    return neighbours;
-  };
-
-  const generate = () => {
+  const generate = useCallback<ButtonCallbackType>(() => {
     setBoard((currentBoard) => {
+      const isOnBoard = (x: number, y: number): boolean => {
+        return x >= 0 && x < boardSize && y >= 0 && y < boardSize;
+      };
+
+      const getNeighboursByPosition = (
+        x: number,
+        y: number
+      ): Array<boolean> => {
+        const yRange = [y - 1, y, y + 1];
+        const xRange = [x - 1, x, x + 1];
+        const neighbours = Array<boolean>();
+        yRange.forEach((row) => {
+          xRange.forEach((col) => {
+            const isNotCentralCell = row !== y || col !== x;
+            if (isNotCentralCell && isOnBoard(col, row)) {
+              neighbours.push(board[row][col]);
+            }
+          });
+        });
+        return neighbours;
+      };
       return produce(currentBoard, (newBoard) => {
         for (let y = 0; y < boardSize; y++) {
           for (let x = 0; x < boardSize; x++) {
@@ -92,9 +97,25 @@ const GameOfLife: React.FC<GameOfLifeProps> = ({
         }
       });
     });
+  }, [board, boardSize]);
+
+  const runSimulation = useCallback<ButtonCallbackType>((): void => {
+    generate();
+  }, [generate]);
+
+  useEffect(() => {
+    if (isRunning) {
+      const timer = setTimeout(() => {
+        runSimulation();
+      }, 400);
+      return () => clearTimeout(timer);
+    }
+  }, [isRunning, runSimulation]);
+
+  const simulate = () => {
+    setIsRunning(!isRunning);
   };
 
-  const simulate = () => {};
   return (
     <>
       <header>
@@ -125,7 +146,12 @@ const GameOfLife: React.FC<GameOfLifeProps> = ({
           </div>
           <div>
             <Button primary size='medium' onClick={generate} label='Generate' />
-            <Button primary size='medium' onClick={simulate} label='Simulate' />
+            <Button
+              primary
+              size='medium'
+              onClick={simulate}
+              label={isRunning ? 'Stop Simulation' : 'Start Simulation'}
+            />
           </div>
         </div>
       </header>
