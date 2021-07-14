@@ -1,0 +1,3 @@
+describe('GameOfLife', () => {
+  test('should ...', () => {});
+});
