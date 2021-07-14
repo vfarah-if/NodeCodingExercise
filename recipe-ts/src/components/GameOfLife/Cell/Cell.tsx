@@ -6,6 +6,7 @@ export interface CellProps {
   cellBorderColor: string;
   cellBackgroundColor?: string;
   onCellClick: MouseEventHandler;
+  displayText?: string;
 }
 
 const Cell: React.FC<CellProps> = ({
@@ -13,6 +14,7 @@ const Cell: React.FC<CellProps> = ({
   cellSize = 40,
   cellBorderColor = 'blue',
   cellBackgroundColor,
+  displayText,
 }) => {
   return (
     <div
@@ -24,7 +26,9 @@ const Cell: React.FC<CellProps> = ({
         border: `solid 1px ${cellBorderColor}`,
         backgroundColor: cellBackgroundColor,
       }}
-    ></div>
+    >
+      {displayText}
+    </div>
   );
 };
 

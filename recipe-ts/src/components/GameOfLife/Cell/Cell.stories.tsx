@@ -20,9 +20,10 @@ const CellTemplate: Story<CellProps> = (args) => (
 export const DefaultCell = CellTemplate.bind({});
 DefaultCell.args = {};
 
-export const ConfiguredFlashyCell = CellTemplate.bind({});
-ConfiguredFlashyCell.args = {
+export const BrightHappyCell = CellTemplate.bind({});
+BrightHappyCell.args = {
   cellSize: 50,
   cellBorderColor: 'orange',
-  cellBackgroundColor: 'red',
+  cellBackgroundColor: 'yellow',
+  displayText: '(ツ)',
 };

@@ -2,12 +2,6 @@
   display: inline-grid;
 }
 
-.cell {
-  width: 20;
-  height: 20;
-  border: solid 1px black;
-}
-
 .wrapper {
   font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
