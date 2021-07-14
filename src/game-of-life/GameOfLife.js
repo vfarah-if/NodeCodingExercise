@@ -6,18 +6,14 @@ import { CellState } from './CellState';
 class GameOfLife {
   constructor(size, positions = Array()) {
     this.size = size;
-    this.board = Array.from(Array(size), () => new Array(size));
-    this.nextStates = Array.from(Array(size), () => new Array(size));
-    this.initialiaseBoard();
+    this.board = Array.from(Array(size), () =>
+      Array.from(Array(size), () => new Cell())
+    );
+    this.nextStates = Array.from(Array(size), () =>
+      Array.from(Array(size), () => CellState.Dead)
+    );
     this.setupNeighbours();
     this.seed(positions);
-  }
-
-  initialiaseBoard() {
-    this.boardPositions().forEach((position) => {
-      const { x, y } = position;
-      this.board[y][x] = new Cell();
-    });
   }
 
   cell(x, y) {
