@@ -112,6 +112,18 @@ const GameOfLife: React.FC<GameOfLifeProps> = ({
     });
   }, [board, boardSize]);
 
+  const clear = useCallback<ButtonCallbackType>((): void => {
+    setBoard((currentBoard) => {
+      return produce(currentBoard, (newBoard) => {
+        for (let y = 0; y < boardSize; y++) {
+          for (let x = 0; x < boardSize; x++) {
+            newBoard[y][x] = false;
+          }
+        }
+      });
+    });
+  }, [boardSize]);
+
   const runSimulation = useCallback<ButtonCallbackType>((): void => {
     generate();
   }, [generate]);
@@ -171,6 +183,7 @@ const GameOfLife: React.FC<GameOfLifeProps> = ({
               onClick={randomise}
               label='Randomise'
             ></Button>
+            <Button primary size='small' onClick={clear} label='Clear'></Button>
           </div>
         </div>
       </header>

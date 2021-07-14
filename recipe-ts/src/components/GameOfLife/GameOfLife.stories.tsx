@@ -173,3 +173,58 @@ SquareFlower.args = {
     { x: 9, y: 8 },
   ],
 };
+
+export const GosperGliderGun = GameOfLifeTemplate.bind({});
+GosperGliderGun.args = {
+  boardSize: 35,
+  cellSize: 20,
+  gridColor: 'black',
+  activeColor: 'red',
+  showCellInfo: false,
+  seedActivePositions: [
+    { x: 1, y: 1 },
+    { x: 2, y: 1 },
+    { x: 1, y: 2 },
+    { x: 2, y: 2 },
+
+    { x: 8, y: 1 },
+    { x: 9, y: 1 },
+    { x: 8, y: 2 },
+    { x: 9, y: 2 },
+
+    { x: 5, y: 4 },
+    { x: 6, y: 4 },
+    { x: 5, y: 5 },
+    { x: 6, y: 5 },
+
+    { x: 23, y: 10 },
+    { x: 24, y: 10 },
+    { x: 26, y: 10 },
+    { x: 27, y: 10 },
+
+    { x: 22, y: 11 },
+    { x: 28, y: 11 },
+
+    { x: 22, y: 12 },
+    { x: 29, y: 12 },
+    { x: 22, y: 13 },
+    { x: 28, y: 13 },
+    { x: 23, y: 13 },
+    { x: 24, y: 13 },
+    { x: 27, y: 14 },
+
+    { x: 31, y: 12 },
+    { x: 32, y: 12 },
+    { x: 31, y: 13 },
+    { x: 32, y: 13 },
+
+    { x: 21, y: 18 },
+    { x: 22, y: 18 },
+    { x: 21, y: 19 },
+
+    { x: 22, y: 20 },
+    { x: 23, y: 20 },
+    { x: 24, y: 20 },
+    { x: 24, y: 21 },
+  ],
+};
