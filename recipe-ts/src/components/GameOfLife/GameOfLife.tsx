@@ -54,29 +54,39 @@ const GameOfLife: React.FC<GameOfLifeProps> = ({
     setBoard(modifiedBoard);
   };
 
-  const generate = useCallback<ButtonCallbackType>(() => {
+  const randomise = useCallback<ButtonCallbackType>(() => {
     setBoard((currentBoard) => {
-      const isOnBoard = (x: number, y: number): boolean => {
-        return x >= 0 && x < boardSize && y >= 0 && y < boardSize;
-      };
+      return produce(currentBoard, (newBoard) => {
+        for (let y = 0; y < boardSize; y++) {
+          for (let x = 0; x < boardSize; x++) {
+            newBoard[y][x] = Math.random() > 0.2 ? false : true;
+          }
+        }
+      });
+    });
+  }, [boardSize]);
 
-      const getNeighboursByPosition = (
-        x: number,
-        y: number
-      ): Array<boolean> => {
-        const yRange = [y - 1, y, y + 1];
-        const xRange = [x - 1, x, x + 1];
-        const neighbours = Array<boolean>();
-        yRange.forEach((row) => {
-          xRange.forEach((col) => {
-            const isNotCentralCell = row !== y || col !== x;
-            if (isNotCentralCell && isOnBoard(col, row)) {
-              neighbours.push(board[row][col]);
-            }
-          });
+  const generate = useCallback<ButtonCallbackType>(() => {
+    const isOnBoard = (x: number, y: number): boolean => {
+      return x >= 0 && x < boardSize && y >= 0 && y < boardSize;
+    };
+
+    const getNeighboursByPosition = (x: number, y: number): Array<boolean> => {
+      const yRange = [y - 1, y, y + 1];
+      const xRange = [x - 1, x, x + 1];
+      const neighbours = Array<boolean>();
+      yRange.forEach((row) => {
+        xRange.forEach((col) => {
+          const isNotCentralCell = row !== y || col !== x;
+          if (isNotCentralCell && isOnBoard(col, row)) {
+            neighbours.push(board[row][col]);
+          }
         });
-        return neighbours;
-      };
+      });
+      return neighbours;
+    };
+
+    setBoard((currentBoard) => {
       return produce(currentBoard, (newBoard) => {
         for (let y = 0; y < boardSize; y++) {
           for (let x = 0; x < boardSize; x++) {
@@ -146,13 +156,19 @@ const GameOfLife: React.FC<GameOfLifeProps> = ({
             <h1>Conway's Game of Life</h1>
           </div>
           <div>
-            <Button primary size='medium' onClick={generate} label='Generate' />
+            <Button primary size='small' onClick={generate} label='Generate' />
             <Button
               primary
-              size='medium'
+              size='small'
               onClick={simulate}
               label={isRunning ? 'Stop Simulation' : 'Start Simulation'}
             />
+            <Button
+              primary
+              size='small'
+              onClick={randomise}
+              label='Randomise'
+            ></Button>
           </div>
         </div>
       </header>
