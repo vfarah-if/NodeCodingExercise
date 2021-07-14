@@ -30,19 +30,23 @@ const GameOfLife: React.FC<GameOfLifeProps> = ({
       Array.from(Array(boardSize), () => false)
     )
   );
-  // console.debug(board);
   const [isRunning, setIsRunning] = useState(false);
+  const isOnBoard = (x: number, y: number): boolean => {
+    return x >= 0 && x < boardSize && y >= 0 && y < boardSize;
+  };
 
   useEffect(() => {
     if (seedActivePositions && seedActivePositions.length > 0) {
       const modifiedBoard = produce(board, (boardWithNewState) => {
-        seedActivePositions.forEach(
-          (position) =>
-            (boardWithNewState[position.y][position.x] = !boardWithNewState[
-              position.y
-            ][position.x])
-        );
+        seedActivePositions.forEach((position) => {
+          if (isOnBoard(position.x, position.y)) {
+            return (boardWithNewState[position.y][
+              position.x
+            ] = !boardWithNewState[position.y][position.x]);
+          }
+        });
       });
+
       setBoard(modifiedBoard);
     }
   }, [seedActivePositions]);
@@ -59,7 +63,7 @@ const GameOfLife: React.FC<GameOfLifeProps> = ({
       return produce(currentBoard, (newBoard) => {
         for (let y = 0; y < boardSize; y++) {
           for (let x = 0; x < boardSize; x++) {
-            newBoard[y][x] = Math.random() > 0.2 ? false : true;
+            newBoard[y][x] = Math.random() > 0.5 ? false : true;
           }
         }
       });
@@ -67,10 +71,6 @@ const GameOfLife: React.FC<GameOfLifeProps> = ({
   }, [boardSize]);
 
   const generate = useCallback<ButtonCallbackType>(() => {
-    const isOnBoard = (x: number, y: number): boolean => {
-      return x >= 0 && x < boardSize && y >= 0 && y < boardSize;
-    };
-
     const getNeighboursByPosition = (x: number, y: number): Array<boolean> => {
       const yRange = [y - 1, y, y + 1];
       const xRange = [x - 1, x, x + 1];
