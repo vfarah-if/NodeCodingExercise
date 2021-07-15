@@ -7,6 +7,7 @@ import {
   SeedAllTwoByTwoWithActiveCells,
   SeedBlinkerOscillator,
   ToadOscillator,
+  BeaconOscillator,
 } from '../GameOfLife.stories';
 
 describe('GameOfLife', () => {
@@ -62,6 +63,7 @@ describe('GameOfLife', () => {
 
       const generateButton = screen.getByRole('button', { name: 'Generate' });
       expect(generateButton).toHaveTextContent('Generate');
+
       const flip = container.querySelector('.grid');
       expect(flip).toMatchSnapshot('blink');
 
@@ -89,7 +91,6 @@ describe('GameOfLife', () => {
       );
 
       const generateButton = screen.getByRole('button', { name: 'Generate' });
-      expect(generateButton).toHaveTextContent('Generate');
       const flip = container.querySelector('.grid');
       expect(flip).toMatchSnapshot('toad');
 
@@ -102,6 +103,60 @@ describe('GameOfLife', () => {
 
       generateButton.click();
       expect(container.querySelector('.grid')).toBe(flop);
+    });
+
+    test('should seed toad oscillator and then clear this with the clear button', () => {
+      const { container } = render(<ToadOscillator {...ToadOscillator.args} />);
+
+      const clearButton = screen.getByRole('button', {
+        name: 'Clear',
+      });
+      expect(clearButton).toHaveTextContent('Clear');
+      const activeBackgroundColor = ".cell[style*='background-color: green']";
+      const activeCells = container.querySelectorAll(activeBackgroundColor);
+      expect(activeCells).toMatchSnapshot('active-toad');
+      expect(activeCells.length).toBe(6);
+
+      clearButton.click();
+      const clearedCells = container.querySelectorAll(activeBackgroundColor);
+      expect(clearedCells).not.toEqual(activeCells);
+      expect(clearedCells.length).toEqual(0);
+    });
+
+    test('should seed beacon oscillator with generate button', () => {
+      const { container } = render(
+        <BeaconOscillator {...BeaconOscillator.args} />
+      );
+
+      const generateButton = screen.getByRole('button', { name: 'Generate' });
+      const initial = container.querySelectorAll('.cell');
+      expect(initial).toMatchSnapshot('initial');
+
+      generateButton.click();
+      const alternate = container.querySelectorAll('.cell');
+      expect(alternate).toMatchSnapshot('beacon');
+
+      generateButton.click();
+      expect(container.querySelectorAll('.cell')).toEqual(initial);
+
+      generateButton.click();
+      expect(container.querySelectorAll('.cell')).toEqual(alternate);
+    });
+
+    test('should simulate beacon oscillator with simulate button', () => {
+      render(<BeaconOscillator {...BeaconOscillator.args} />);
+
+      const startSimulateButton = screen.getByRole('button', {
+        name: 'Start Simulation',
+      });
+      expect(startSimulateButton).toHaveTextContent('Start Simulation');
+      startSimulateButton.click();
+
+      const stopSimulateButton = screen.getByRole('button', {
+        name: 'Stop Simulation',
+      });
+      expect(stopSimulateButton).toHaveTextContent('Stop Simulation');
+      stopSimulateButton.click();
     });
   });
 });
