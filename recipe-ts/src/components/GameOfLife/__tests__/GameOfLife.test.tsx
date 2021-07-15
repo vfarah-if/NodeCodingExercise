@@ -1,14 +1,15 @@
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 
 import {
   DefaultBoardOfEmptyCells,
   CreateFiveByFiveBoardOfEmptyCells,
   SeedAllTwoByTwoWithActiveCells,
+  SeedBlinkerOscillator,
 } from '../GameOfLife.stories';
 
 describe('GameOfLife', () => {
-  describe('Given a default board', () => {
+  describe('Given a default or configured board', () => {
     test('should create a default sized empty board with all expected controls', () => {
       const { container } = render(<DefaultBoardOfEmptyCells />);
 
@@ -42,6 +43,35 @@ describe('GameOfLife', () => {
       );
 
       expect(container).toMatchSnapshot();
+    });
+  });
+
+  describe('Given various patterns', () => {
+    test('should seed generate blinker oscillator pattern with generate button showing the blinker', () => {
+      const { container } = render(
+        <SeedBlinkerOscillator
+          boardSize={SeedBlinkerOscillator.args?.boardSize}
+          cellSize={SeedBlinkerOscillator.args?.cellSize}
+          gridColor={SeedBlinkerOscillator.args?.gridColor}
+          activeColor={SeedBlinkerOscillator.args?.activeColor}
+          seedActivePositions={SeedBlinkerOscillator.args?.seedActivePositions}
+        />
+      );
+
+      const generateButton = screen.getByRole('button', { name: 'Generate' });
+      expect(generateButton).toHaveTextContent('Generate');
+      const flip = container.querySelector('.grid');
+      expect(flip).toMatchSnapshot('blink');
+
+      generateButton.click();
+      const flop = container.querySelector('.grid');
+      expect(flop).toMatchSnapshot('blink');
+
+      generateButton.click();
+      expect(container.querySelector('.grid')).toBe(flip);
+
+      generateButton.click();
+      expect(container.querySelector('.grid')).toBe(flop);
     });
   });
 });

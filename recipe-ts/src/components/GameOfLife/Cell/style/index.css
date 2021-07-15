@@ -5,3 +5,7 @@
   text-align: center;
   cursor: cell;
 }
+
+.cell .active {
+  background-color: red;
+}
