@@ -5,16 +5,17 @@ import Cell from './Cell';
 import './style/index.css';
 
 type ButtonCallbackType = () => void;
+type BoardCallbackType = (x: number, y: number) => boolean;
 
 export interface Position {
   x: number;
   y: number;
 }
 export interface GameOfLifeProps {
-  boardSize: number;
-  cellSize: number;
-  gridColor: string;
-  activeColor: string;
+  boardSize?: number;
+  cellSize?: number;
+  gridColor?: string;
+  activeColor?: string;
   seedActivePositions?: Array<Position>;
   showCellInfo?: boolean;
 }
@@ -33,9 +34,12 @@ const GameOfLife: React.FC<GameOfLifeProps> = ({
     )
   );
   const [isRunning, setIsRunning] = useState(false);
-  const isOnBoard = (x: number, y: number): boolean => {
-    return x >= 0 && x < boardSize && y >= 0 && y < boardSize;
-  };
+  const isOnBoard = useCallback<BoardCallbackType>(
+    (x: number, y: number): boolean => {
+      return x >= 0 && x < boardSize && y >= 0 && y < boardSize;
+    },
+    [boardSize]
+  );
 
   useEffect(() => {
     if (seedActivePositions && seedActivePositions.length > 0) {
@@ -51,6 +55,7 @@ const GameOfLife: React.FC<GameOfLifeProps> = ({
 
       setBoard(modifiedBoard);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [seedActivePositions]);
 
   const handleCellClick = (x: number, y: number): void => {
@@ -110,7 +115,7 @@ const GameOfLife: React.FC<GameOfLifeProps> = ({
         }
       });
     });
-  }, [board, boardSize]);
+  }, [board, boardSize, isOnBoard]);
 
   const clear = useCallback<ButtonCallbackType>((): void => {
     setBoard((currentBoard) => {
