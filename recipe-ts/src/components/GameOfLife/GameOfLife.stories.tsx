@@ -51,6 +51,7 @@ SeedBlinkerOscillator.args = {
     { x: 1, y: 1 },
     { x: 1, y: 2 },
   ],
+  showCellInfo: true,
 };
 
 export const ToadOscillator = GameOfLifeTemplate.bind({});
@@ -67,6 +68,7 @@ ToadOscillator.args = {
     { x: 2, y: 3 },
     { x: 3, y: 3 },
   ],
+  showCellInfo: true,
 };
 
 export const BeaconOscillator = GameOfLifeTemplate.bind({});
@@ -86,6 +88,7 @@ BeaconOscillator.args = {
     { x: 3, y: 4 },
     { x: 4, y: 4 },
   ],
+  showCellInfo: true,
 };
 
 export const DieHard = GameOfLifeTemplate.bind({});
@@ -105,6 +108,7 @@ DieHard.args = {
     { x: 8, y: 5 },
     { x: 9, y: 5 },
   ],
+  showCellInfo: false,
 };
 
 export const RPentiminoWithCellInformation = GameOfLifeTemplate.bind({});

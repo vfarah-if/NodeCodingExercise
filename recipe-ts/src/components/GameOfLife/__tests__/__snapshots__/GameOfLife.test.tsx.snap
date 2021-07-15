@@ -737,39 +737,57 @@ exports[`GameOfLife Given various patterns should seed generate blinker oscillat
   <div
     class="cell"
     style="width: 50px; height: 50px; border: 1px solid gray;"
-  />
+  >
+    [0, 0]
+  </div>
   <div
     class="cell"
     style="width: 50px; height: 50px; border: 1px solid gray; background-color: blue;"
-  />
+  >
+    [1, 0]
+  </div>
   <div
     class="cell"
     style="width: 50px; height: 50px; border: 1px solid gray;"
-  />
+  >
+    [2, 0]
+  </div>
   <div
     class="cell"
     style="width: 50px; height: 50px; border: 1px solid gray;"
-  />
+  >
+    [0, 1]
+  </div>
   <div
     class="cell"
     style="width: 50px; height: 50px; border: 1px solid gray; background-color: blue;"
-  />
+  >
+    [1, 1]
+  </div>
   <div
     class="cell"
     style="width: 50px; height: 50px; border: 1px solid gray;"
-  />
+  >
+    [2, 1]
+  </div>
   <div
     class="cell"
     style="width: 50px; height: 50px; border: 1px solid gray;"
-  />
+  >
+    [0, 2]
+  </div>
   <div
     class="cell"
     style="width: 50px; height: 50px; border: 1px solid gray; background-color: blue;"
-  />
+  >
+    [1, 2]
+  </div>
   <div
     class="cell"
     style="width: 50px; height: 50px; border: 1px solid gray;"
-  />
+  >
+    [2, 2]
+  </div>
 </div>
 `;
 
@@ -781,38 +799,56 @@ exports[`GameOfLife Given various patterns should seed generate blinker oscillat
   <div
     class="cell"
     style="width: 50px; height: 50px; border: 1px solid gray;"
-  />
+  >
+    [0, 0]
+  </div>
   <div
     class="cell"
     style="width: 50px; height: 50px; border: 1px solid gray;"
-  />
+  >
+    [1, 0]
+  </div>
   <div
     class="cell"
     style="width: 50px; height: 50px; border: 1px solid gray;"
-  />
+  >
+    [2, 0]
+  </div>
   <div
     class="cell"
     style="width: 50px; height: 50px; border: 1px solid gray; background-color: blue;"
-  />
+  >
+    [0, 1]
+  </div>
   <div
     class="cell"
     style="width: 50px; height: 50px; border: 1px solid gray; background-color: blue;"
-  />
+  >
+    [1, 1]
+  </div>
   <div
     class="cell"
     style="width: 50px; height: 50px; border: 1px solid gray; background-color: blue;"
-  />
+  >
+    [2, 1]
+  </div>
   <div
     class="cell"
     style="width: 50px; height: 50px; border: 1px solid gray;"
-  />
+  >
+    [0, 2]
+  </div>
   <div
     class="cell"
     style="width: 50px; height: 50px; border: 1px solid gray;"
-  />
+  >
+    [1, 2]
+  </div>
   <div
     class="cell"
     style="width: 50px; height: 50px; border: 1px solid gray;"
-  />
+  >
+    [2, 2]
+  </div>
 </div>
 `;

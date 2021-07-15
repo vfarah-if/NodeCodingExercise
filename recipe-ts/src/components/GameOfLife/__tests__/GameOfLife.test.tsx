@@ -55,6 +55,7 @@ describe('GameOfLife', () => {
           gridColor={SeedBlinkerOscillator.args?.gridColor}
           activeColor={SeedBlinkerOscillator.args?.activeColor}
           seedActivePositions={SeedBlinkerOscillator.args?.seedActivePositions}
+          showCellInfo={SeedBlinkerOscillator.args?.showCellInfo}
         />
       );
 
