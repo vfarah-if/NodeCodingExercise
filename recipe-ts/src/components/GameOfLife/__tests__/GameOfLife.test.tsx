@@ -6,6 +6,7 @@ import {
   CreateFiveByFiveBoardOfEmptyCells,
   SeedAllTwoByTwoWithActiveCells,
   SeedBlinkerOscillator,
+  ToadOscillator,
 } from '../GameOfLife.stories';
 
 describe('GameOfLife', () => {
@@ -47,7 +48,7 @@ describe('GameOfLife', () => {
   });
 
   describe('Given various patterns', () => {
-    test('should seed generate blinker oscillator pattern with generate button showing the blinker', () => {
+    test('should seed generate blinker oscillator pattern with generate button', () => {
       const { container } = render(
         <SeedBlinkerOscillator
           boardSize={SeedBlinkerOscillator.args?.boardSize}
@@ -67,6 +68,34 @@ describe('GameOfLife', () => {
       generateButton.click();
       const flop = container.querySelector('.grid');
       expect(flop).toMatchSnapshot('blink');
+
+      generateButton.click();
+      expect(container.querySelector('.grid')).toBe(flip);
+
+      generateButton.click();
+      expect(container.querySelector('.grid')).toBe(flop);
+    });
+
+    test('should seed toad oscillator pattern with generate button', () => {
+      const { container } = render(
+        <ToadOscillator
+          boardSize={ToadOscillator.args?.boardSize}
+          cellSize={ToadOscillator.args?.cellSize}
+          gridColor={ToadOscillator.args?.gridColor}
+          activeColor={ToadOscillator.args?.activeColor}
+          seedActivePositions={ToadOscillator.args?.seedActivePositions}
+          showCellInfo={ToadOscillator.args?.showCellInfo}
+        />
+      );
+
+      const generateButton = screen.getByRole('button', { name: 'Generate' });
+      expect(generateButton).toHaveTextContent('Generate');
+      const flip = container.querySelector('.grid');
+      expect(flip).toMatchSnapshot('toad');
+
+      generateButton.click();
+      const flop = container.querySelector('.grid');
+      expect(flop).toMatchSnapshot('toad');
 
       generateButton.click();
       expect(container.querySelector('.grid')).toBe(flip);
