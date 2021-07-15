@@ -4,6 +4,7 @@ import '@testing-library/jest-dom/extend-expect';
 import {
   DefaultBoardOfEmptyCells,
   CreateFiveByFiveBoardOfEmptyCells,
+  SeedAllTwoByTwoWithActiveCells,
 } from '../GameOfLife.stories';
 
 describe('GameOfLife', () => {
@@ -21,6 +22,22 @@ describe('GameOfLife', () => {
           cellSize={CreateFiveByFiveBoardOfEmptyCells.args?.cellSize}
           gridColor={CreateFiveByFiveBoardOfEmptyCells.args?.gridColor}
           activeColor={CreateFiveByFiveBoardOfEmptyCells.args?.activeColor}
+        />
+      );
+
+      expect(container).toMatchSnapshot();
+    });
+
+    test('should seed all cells as active', () => {
+      const { container } = render(
+        <SeedAllTwoByTwoWithActiveCells
+          boardSize={SeedAllTwoByTwoWithActiveCells.args?.boardSize}
+          cellSize={SeedAllTwoByTwoWithActiveCells.args?.cellSize}
+          gridColor={SeedAllTwoByTwoWithActiveCells.args?.gridColor}
+          activeColor={SeedAllTwoByTwoWithActiveCells.args?.activeColor}
+          seedActivePositions={
+            SeedAllTwoByTwoWithActiveCells.args?.seedActivePositions
+          }
         />
       );
 

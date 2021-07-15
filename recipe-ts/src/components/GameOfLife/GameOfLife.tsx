@@ -172,7 +172,7 @@ const GameOfLife: React.FC<GameOfLifeProps> = ({
                 />
               </g>
             </svg>
-            <h1>Conway's Game of Life</h1>
+            <h1>Conway's Game of Life on Mars</h1>
           </div>
           <div>
             <Button primary size='small' onClick={generate} label='Generate' />
