@@ -56,6 +56,25 @@ describe('GameOfLife', () => {
       }
     });
 
+    test('should allow click on cells to manually configure patterns', () => {
+      const { container } = render(
+        <CreateFiveByFiveBoardOfEmptyCells
+          {...CreateFiveByFiveBoardOfEmptyCells.args}
+          showCellInfo={true}
+        />
+      );
+
+      const cells = container.querySelectorAll('.cell');
+      cells.forEach((cell) => {
+        (cell as HTMLDivElement).click();
+      });
+
+      expect(
+        container.querySelectorAll(".cell[style*='background-color: green']")
+          .length
+      ).toBe(cells.length);
+    });
+
     test('should seed all cells as active', () => {
       const { container } = render(
         <SeedAllTwoByTwoWithActiveCells
