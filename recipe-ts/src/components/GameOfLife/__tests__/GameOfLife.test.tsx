@@ -9,6 +9,7 @@ import {
   ToadOscillator,
   BeaconOscillator,
 } from '../GameOfLife.stories';
+jest.useFakeTimers();
 
 describe('GameOfLife', () => {
   describe('Given a default or configured board', () => {
@@ -29,6 +30,30 @@ describe('GameOfLife', () => {
       );
 
       expect(container).toMatchSnapshot();
+    });
+
+    test('should randomise values on a board using the randomise button', () => {
+      const { container } = render(
+        <CreateFiveByFiveBoardOfEmptyCells
+          {...CreateFiveByFiveBoardOfEmptyCells.args}
+          showCellInfo={true}
+        />
+      );
+
+      const randomiseButton = screen.getByRole('button', {
+        name: 'Randomise',
+      });
+      expect(randomiseButton).toHaveTextContent('Randomise');
+
+      for (let index = 0; index < 5; index++) {
+        randomiseButton.click();
+        const activeBackgroundColor = ".cell[style*='background-color: green']";
+        const before = container.querySelectorAll(activeBackgroundColor);
+
+        randomiseButton.click();
+        const after = container.querySelectorAll(activeBackgroundColor);
+        expect(before).not.toEqual(after);
+      }
     });
 
     test('should seed all cells as active', () => {
@@ -143,7 +168,7 @@ describe('GameOfLife', () => {
       expect(container.querySelectorAll('.cell')).toEqual(alternate);
     });
 
-    test('should simulate beacon oscillator with simulate button', () => {
+    test('should simulate beacon oscillator with simulate button calling timeouts', () => {
       render(<BeaconOscillator {...BeaconOscillator.args} />);
 
       const startSimulateButton = screen.getByRole('button', {
@@ -157,6 +182,8 @@ describe('GameOfLife', () => {
       });
       expect(stopSimulateButton).toHaveTextContent('Stop Simulation');
       stopSimulateButton.click();
+
+      expect(setTimeout).toHaveBeenCalled();
     });
   });
 });

@@ -106,11 +106,10 @@ const GameOfLife: React.FC<GameOfLifeProps> = ({
             const isUnderPopulated = () => liveNeighbours.length < 2;
 
             if (isFertile() || isThriving()) {
-              isAlive = true;
+              newBoard[y][x] = true;
             } else if (isOverPopulated() || isUnderPopulated()) {
-              isAlive = false;
+              newBoard[y][x] = false;
             }
-            newBoard[y][x] = isAlive;
           }
         }
       });
