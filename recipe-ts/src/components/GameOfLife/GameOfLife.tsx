@@ -6,6 +6,7 @@ import './style/index.css';
 
 type ButtonCallbackType = () => void;
 type BoardCallbackType = (x: number, y: number) => boolean;
+type BoardPositionCallbackType = () => Array<Position>;
 
 export interface Position {
   x: number;
@@ -36,12 +37,23 @@ const GameOfLife: React.FC<GameOfLifeProps> = ({
     )
   );
   const [isRunning, setIsRunning] = useState(false);
+
   const isOnBoard = useCallback<BoardCallbackType>(
     (x: number, y: number): boolean => {
       return x >= 0 && x < boardSize && y >= 0 && y < boardSize;
     },
     [boardSize]
   );
+
+  const boardPositions = useCallback<BoardPositionCallbackType>(() => {
+    const result = new Array<Position>();
+    for (let y = 0; y < boardSize; y++) {
+      for (let x = 0; x < boardSize; x++) {
+        result.push({ x, y });
+      }
+    }
+    return result;
+  }, [boardSize]);
 
   useEffect(() => {
     if (seedActivePositions && seedActivePositions.length > 0) {
@@ -70,14 +82,12 @@ const GameOfLife: React.FC<GameOfLifeProps> = ({
   const randomise = useCallback<ButtonCallbackType>(() => {
     setBoard((currentBoard) => {
       return produce(currentBoard, (newBoard) => {
-        for (let y = 0; y < boardSize; y++) {
-          for (let x = 0; x < boardSize; x++) {
-            newBoard[y][x] = Math.random() > 0.5 ? false : true;
-          }
-        }
+        boardPositions().forEach(
+          (pos) => (newBoard[pos.y][pos.x] = Math.random() > 0.5 ? false : true)
+        );
       });
     });
-  }, [boardSize]);
+  }, [boardPositions]);
 
   const generate = useCallback<ButtonCallbackType>(() => {
     const getNeighboursByPosition = (x: number, y: number): Array<boolean> => {
@@ -97,38 +107,33 @@ const GameOfLife: React.FC<GameOfLifeProps> = ({
 
     setBoard((currentBoard) => {
       return produce(currentBoard, (newBoard) => {
-        for (let y = 0; y < boardSize; y++) {
-          for (let x = 0; x < boardSize; x++) {
-            const neighbours = getNeighboursByPosition(x, y);
-            const liveNeighbours = neighbours.filter((item) => item === true);
-            let isAlive = board[y][x];
-            const isFertile = () => !isAlive && liveNeighbours.length === 3;
-            const isThriving = () => isAlive && liveNeighbours.length === 2;
-            const isOverPopulated = () => liveNeighbours.length > 3;
-            const isUnderPopulated = () => liveNeighbours.length < 2;
+        boardPositions().forEach((pos) => {
+          const { x, y } = pos;
+          const neighbours = getNeighboursByPosition(x, y);
+          const liveNeighbours = neighbours.filter((item) => item === true);
+          let isAlive = board[y][x];
+          const isFertile = () => !isAlive && liveNeighbours.length === 3;
+          const isThriving = () => isAlive && liveNeighbours.length === 2;
+          const isOverPopulated = () => liveNeighbours.length > 3;
+          const isUnderPopulated = () => liveNeighbours.length < 2;
 
-            if (isFertile() || isThriving()) {
-              newBoard[y][x] = true;
-            } else if (isOverPopulated() || isUnderPopulated()) {
-              newBoard[y][x] = false;
-            }
+          if (isFertile() || isThriving()) {
+            newBoard[y][x] = true;
+          } else if (isOverPopulated() || isUnderPopulated()) {
+            newBoard[y][x] = false;
           }
-        }
+        });
       });
     });
-  }, [board, boardSize, isOnBoard]);
+  }, [board, isOnBoard, boardPositions]);
 
   const clear = useCallback<ButtonCallbackType>((): void => {
     setBoard((currentBoard) => {
       return produce(currentBoard, (newBoard) => {
-        for (let y = 0; y < boardSize; y++) {
-          for (let x = 0; x < boardSize; x++) {
-            newBoard[y][x] = false;
-          }
-        }
+        boardPositions().forEach((pos) => (newBoard[pos.y][pos.x] = false));
       });
     });
-  }, [boardSize]);
+  }, [boardPositions]);
 
   const runSimulation = useCallback<ButtonCallbackType>((): void => {
     generate();
@@ -193,7 +198,6 @@ const GameOfLife: React.FC<GameOfLifeProps> = ({
           </div>
         </div>
       </header>
-
       <div
         className='grid'
         style={{
