@@ -83,7 +83,7 @@ const GameOfLife: React.FC<GameOfLifeProps> = ({
     setBoard((currentBoard) => {
       return produce(currentBoard, (newBoard) => {
         boardPositions().forEach(
-          (pos) => (newBoard[pos.y][pos.x] = Math.random() > 0.5 ? false : true)
+          ({ x, y }) => (newBoard[y][x] = Math.random() > 0.5 ? false : true)
         );
       });
     });
@@ -107,8 +107,7 @@ const GameOfLife: React.FC<GameOfLifeProps> = ({
 
     setBoard((currentBoard) => {
       return produce(currentBoard, (newBoard) => {
-        boardPositions().forEach((pos) => {
-          const { x, y } = pos;
+        boardPositions().forEach(({ x, y }) => {
           const neighbours = getNeighboursByPosition(x, y);
           const liveNeighbours = neighbours.filter((item) => item === true);
           let isAlive = board[y][x];
@@ -130,7 +129,7 @@ const GameOfLife: React.FC<GameOfLifeProps> = ({
   const clear = useCallback<ButtonCallbackType>((): void => {
     setBoard((currentBoard) => {
       return produce(currentBoard, (newBoard) => {
-        boardPositions().forEach((pos) => (newBoard[pos.y][pos.x] = false));
+        boardPositions().forEach(({ x, y }) => (newBoard[y][x] = false));
       });
     });
   }, [boardPositions]);
