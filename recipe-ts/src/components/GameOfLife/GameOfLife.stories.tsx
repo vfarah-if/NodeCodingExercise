@@ -115,7 +115,7 @@ DieHard.args = {
     { x: 9, y: 5 },
   ],
   showCellInfo: false,
-  backgroundColor: 'white',
+  backgroundColor: 'lightskyblue',
 };
 
 export const RPentiminoWithCellInformation = GameOfLifeTemplate.bind({});
