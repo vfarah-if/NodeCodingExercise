@@ -2,23 +2,24 @@ import React, { MouseEventHandler } from 'react';
 import './style/index.css';
 
 export interface CellProps {
-  cellSize: number;
-  cellBorderColor: string;
+  cellSize?: number;
+  cellBorderColor?: string;
   cellBackgroundColor?: string;
-  onCellClick: MouseEventHandler;
+  cellActiveColor?: string;
   displayText?: string;
   isActive?: boolean;
-  cellActiveColor?: string;
+
+  onCellClick?: MouseEventHandler;
 }
 
 const Cell: React.FC<CellProps> = ({
-  onCellClick,
   cellSize = 40,
   cellBorderColor = 'gray',
   cellBackgroundColor,
+  cellActiveColor = 'blue',
   displayText,
   isActive = false,
-  cellActiveColor = 'blue',
+  onCellClick,
 }) => {
   return (
     <div

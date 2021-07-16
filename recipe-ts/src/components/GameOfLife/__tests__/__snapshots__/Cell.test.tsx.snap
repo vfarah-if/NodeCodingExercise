@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Cell should render a cell with configured values 1`] = `
+<div>
+  <div
+    class="cell"
+    style="width: 50px; height: 50px; border: 1px solid orange; background-color: yellow;"
+  >
+    (ツ)
+  </div>
+</div>
+`;
+
+exports[`Cell should render a cell with default values 1`] = `
+<div>
+  <div
+    class="cell"
+    style="width: 40px; height: 40px; border: 1px solid gray;"
+  />
+</div>
+`;
