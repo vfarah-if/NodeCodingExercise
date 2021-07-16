@@ -8,6 +8,7 @@ export default {
   argTypes: {
     cellBorderColor: { control: 'color' },
     cellBackgroundColor: { control: 'color' },
+    cellActiveColor: { control: 'color' },
   },
 } as Meta;
 
@@ -25,5 +26,7 @@ BrightHappyCell.args = {
   cellSize: 50,
   cellBorderColor: 'orange',
   cellBackgroundColor: 'yellow',
+  cellActiveColor: 'blue',
   displayText: '(ツ)',
+  isActive: false,
 };

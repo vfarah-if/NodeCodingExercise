@@ -40,10 +40,10 @@ describe('GameOfLife', () => {
 
       for (let index = 0; index < 5; index++) {
         randomiseButton.click();
-        const first = getAllActiveCells(container, 'green');
+        const first = getAllActiveCells(container);
 
         randomiseButton.click();
-        const second = getAllActiveCells(container, 'green');
+        const second = getAllActiveCells(container);
         expect(first).not.toEqual(second);
       }
     });
@@ -61,7 +61,7 @@ describe('GameOfLife', () => {
         (cell as HTMLDivElement).click();
       });
 
-      expect(getAllActiveCells(container, 'green').length).toBe(cells.length);
+      expect(getAllActiveCells(container).length).toBe(cells.length);
     });
 
     test('should seed all cells as active', () => {
@@ -117,14 +117,14 @@ describe('GameOfLife', () => {
 
     test('should seed toad oscillator and then clear this with the clear button', () => {
       const { container } = render(<ToadOscillator {...ToadOscillator.args} />);
-      const activeCells = getAllActiveCells(container, 'green');
+      const activeCells = getAllActiveCells(container);
       expect(activeCells).toMatchSnapshot('active-toad');
       expect(activeCells.length).toBe(6);
 
       const clearButton = getAndAssertButton('Clear');
       clearButton.click();
 
-      const clearedCells = getAllActiveCells(container, 'green');
+      const clearedCells = getAllActiveCells(container);
       expect(clearedCells).not.toEqual(activeCells);
       expect(clearedCells.length).toEqual(0);
     });
@@ -177,11 +177,6 @@ function getAllCells(container: Element): NodeListOf<HTMLDivElement> {
   return container.querySelectorAll('.cell') as NodeListOf<HTMLDivElement>;
 }
 
-function getAllActiveCells(
-  container: Element,
-  colour: string
-): NodeListOf<HTMLDivElement> {
-  return container.querySelectorAll(
-    `.cell[style*='background-color: ${colour}']`
-  );
+function getAllActiveCells(container: Element): NodeListOf<HTMLDivElement> {
+  return container.querySelectorAll(`.cell.active`);
 }

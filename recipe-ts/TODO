@@ -16,7 +16,9 @@
         ✔ Create a cell @done(21-07-14 07:18)
         ✔ Create the game of life @done(21-07-14 07:18)
         ✔ Create stories @done(21-07-14 07:18)
-        ☐ Create a generator and simulator button
-        ☐ Create a randomiser button
-        ☐ Create tests for all the button actions
+        ✔ Create a generator and simulator button @done(21-07-16 08:45)
+        ✔ Create a randomiser button @done(21-07-16 08:45)
+        ✔ Create tests for all the button actions using stories @done(21-07-16 08:45)
+    ☐ Add routing exposing different components on different pages
+        ☐ Create a breadcrumb to expose path information
 

@@ -7,24 +7,28 @@ export interface CellProps {
   cellBackgroundColor?: string;
   onCellClick: MouseEventHandler;
   displayText?: string;
+  isActive?: boolean;
+  cellActiveColor?: string;
 }
 
 const Cell: React.FC<CellProps> = ({
   onCellClick,
   cellSize = 40,
-  cellBorderColor = 'blue',
+  cellBorderColor = 'gray',
   cellBackgroundColor,
   displayText,
+  isActive = false,
+  cellActiveColor = 'blue',
 }) => {
   return (
     <div
-      className='cell'
+      className={isActive ? 'cell active' : 'cell'}
       onClick={onCellClick}
       style={{
         width: cellSize,
         height: cellSize,
         border: `solid 1px ${cellBorderColor}`,
-        backgroundColor: cellBackgroundColor,
+        backgroundColor: `${isActive ? cellActiveColor : cellBackgroundColor}`,
       }}
     >
       {displayText}

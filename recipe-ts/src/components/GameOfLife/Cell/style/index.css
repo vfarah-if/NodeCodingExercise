@@ -5,3 +5,9 @@
   text-align: center;
   cursor: cell;
 }
+
+.cell .active {
+  align-content: center;
+  display: flex;
+  flex-wrap: wrap;
+}

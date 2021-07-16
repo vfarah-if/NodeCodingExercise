@@ -8,6 +8,7 @@ export default {
   argTypes: {
     gridColor: { control: 'color' },
     activeColor: { control: 'color' },
+    backgroundColor: { control: 'color' },
   },
 } as Meta;
 
@@ -26,6 +27,7 @@ CreateFiveByFiveBoardOfEmptyCells.args = {
   cellSize: 50,
   gridColor: 'orange',
   activeColor: 'green',
+  backgroundColor: 'white',
 };
 
 export const SeedAllTwoByTwoWithActiveCells = GameOfLifeTemplate.bind({});
@@ -40,6 +42,7 @@ SeedAllTwoByTwoWithActiveCells.args = {
     { x: 0, y: 1 },
     { x: 1, y: 1 },
   ],
+  backgroundColor: 'white',
 };
 
 export const SeedBlinkerOscillator = GameOfLifeTemplate.bind({});
@@ -52,6 +55,7 @@ SeedBlinkerOscillator.args = {
     { x: 1, y: 2 },
   ],
   showCellInfo: true,
+  backgroundColor: 'white',
 };
 
 export const ToadOscillator = GameOfLifeTemplate.bind({});
@@ -69,6 +73,7 @@ ToadOscillator.args = {
     { x: 3, y: 3 },
   ],
   showCellInfo: true,
+  backgroundColor: 'white',
 };
 
 export const BeaconOscillator = GameOfLifeTemplate.bind({});
@@ -89,6 +94,7 @@ BeaconOscillator.args = {
     { x: 4, y: 4 },
   ],
   showCellInfo: true,
+  backgroundColor: 'white',
 };
 
 export const DieHard = GameOfLifeTemplate.bind({});
@@ -109,6 +115,7 @@ DieHard.args = {
     { x: 9, y: 5 },
   ],
   showCellInfo: false,
+  backgroundColor: 'white',
 };
 
 export const RPentiminoWithCellInformation = GameOfLifeTemplate.bind({});
@@ -127,6 +134,7 @@ RPentiminoWithCellInformation.args = {
 
     { x: 2, y: 3 },
   ],
+  backgroundColor: 'white',
 };
 
 export const SquareFlower = GameOfLifeTemplate.bind({});
@@ -182,7 +190,7 @@ export const GosperGliderGun = GameOfLifeTemplate.bind({});
 GosperGliderGun.args = {
   boardSize: 35,
   cellSize: 20,
-  gridColor: 'black',
+  gridColor: 'brown',
   activeColor: 'red',
   showCellInfo: false,
   seedActivePositions: [
@@ -231,4 +239,5 @@ GosperGliderGun.args = {
     { x: 24, y: 20 },
     { x: 24, y: 21 },
   ],
+  backgroundColor: 'black',
 };

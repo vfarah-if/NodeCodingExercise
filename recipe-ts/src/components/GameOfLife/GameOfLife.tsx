@@ -18,6 +18,7 @@ export interface GameOfLifeProps {
   activeColor?: string;
   seedActivePositions?: Array<Position>;
   showCellInfo?: boolean;
+  backgroundColor?: string;
 }
 
 const GameOfLife: React.FC<GameOfLifeProps> = ({
@@ -27,6 +28,7 @@ const GameOfLife: React.FC<GameOfLifeProps> = ({
   activeColor = 'blue',
   seedActivePositions = [],
   showCellInfo = false,
+  backgroundColor = 'white',
 }) => {
   const [board, setBoard] = useState(
     Array.from(Array(boardSize), () =>
@@ -206,8 +208,10 @@ const GameOfLife: React.FC<GameOfLifeProps> = ({
               onCellClick={() => handleCellClick(x, y)}
               cellSize={cellSize}
               cellBorderColor={gridColor}
-              cellBackgroundColor={board[y][x] ? activeColor : undefined}
+              cellBackgroundColor={backgroundColor}
+              cellActiveColor={activeColor}
               displayText={showCellInfo ? `[${x}, ${y}]` : undefined}
+              isActive={board[y][x]}
             ></Cell>
           ))
         )}
