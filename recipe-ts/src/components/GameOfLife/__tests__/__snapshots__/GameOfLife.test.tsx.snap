@@ -8,31 +8,121 @@ exports[`GameOfLife given a default or configured board should configure a five 
     >
       <div>
         <svg
-          height="32"
-          viewBox="0 0 32 32"
-          width="32"
+          height="58"
+          version="1.0"
+          width="72"
           xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
         >
+          <defs>
+            <rect
+              fill="black"
+              height="14"
+              id="alive"
+              stroke="#c0c0c0"
+              stroke-width="2"
+              width="14"
+              x="0"
+              y="0"
+            />
+            <rect
+              fill="white"
+              height="14"
+              id="dead"
+              stroke="#c0c0c0"
+              stroke-width="2"
+              width="14"
+              x="0"
+              y="0"
+            />
+          </defs>
           <g
-            fill="none"
-            fill-rule="evenodd"
+            transform="translate(1,1)"
           >
-            <path
-              d="M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z"
-              fill="#FFF"
+            <use
+              transform="translate(0,0)"
+              xlink:href="#dead"
             />
-            <path
-              d="M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z"
-              fill="#555AB9"
+            <use
+              transform="translate(14,0)"
+              xlink:href="#alive"
             />
-            <path
-              d="M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z"
-              fill="#91BAF8"
+            <use
+              transform="translate(28,0)"
+              xlink:href="#dead"
+            />
+            <use
+              transform="translate(42,0)"
+              xlink:href="#dead"
+            />
+            <use
+              transform="translate(56,0)"
+              xlink:href="#alive"
+            />
+            <use
+              transform="translate(0,14)"
+              xlink:href="#alive"
+            />
+            <use
+              transform="translate(14,14)"
+              xlink:href="#dead"
+            />
+            <use
+              transform="translate(28,14)"
+              xlink:href="#dead"
+            />
+            <use
+              transform="translate(42,14)"
+              xlink:href="#dead"
+            />
+            <use
+              transform="translate(56,14)"
+              xlink:href="#dead"
+            />
+            <use
+              transform="translate(0,28)"
+              xlink:href="#alive"
+            />
+            <use
+              transform="translate(14,28)"
+              xlink:href="#dead"
+            />
+            <use
+              transform="translate(28,28)"
+              xlink:href="#dead"
+            />
+            <use
+              transform="translate(42,28)"
+              xlink:href="#dead"
+            />
+            <use
+              transform="translate(56,28)"
+              xlink:href="#alive"
+            />
+            <use
+              transform="translate(0,42)"
+              xlink:href="#alive"
+            />
+            <use
+              transform="translate(14,42)"
+              xlink:href="#alive"
+            />
+            <use
+              transform="translate(28,42)"
+              xlink:href="#alive"
+            />
+            <use
+              transform="translate(42,42)"
+              xlink:href="#alive"
+            />
+            <use
+              transform="translate(56,42)"
+              xlink:href="#dead"
             />
           </g>
         </svg>
         <h1>
-          Conway's Game of Life on Mars
+          Game of Life on Mars
         </h1>
       </div>
       <div>
@@ -179,31 +269,121 @@ exports[`GameOfLife given a default or configured board should create a default 
     >
       <div>
         <svg
-          height="32"
-          viewBox="0 0 32 32"
-          width="32"
+          height="58"
+          version="1.0"
+          width="72"
           xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
         >
+          <defs>
+            <rect
+              fill="black"
+              height="14"
+              id="alive"
+              stroke="#c0c0c0"
+              stroke-width="2"
+              width="14"
+              x="0"
+              y="0"
+            />
+            <rect
+              fill="white"
+              height="14"
+              id="dead"
+              stroke="#c0c0c0"
+              stroke-width="2"
+              width="14"
+              x="0"
+              y="0"
+            />
+          </defs>
           <g
-            fill="none"
-            fill-rule="evenodd"
+            transform="translate(1,1)"
           >
-            <path
-              d="M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z"
-              fill="#FFF"
+            <use
+              transform="translate(0,0)"
+              xlink:href="#dead"
             />
-            <path
-              d="M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z"
-              fill="#555AB9"
+            <use
+              transform="translate(14,0)"
+              xlink:href="#alive"
             />
-            <path
-              d="M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z"
-              fill="#91BAF8"
+            <use
+              transform="translate(28,0)"
+              xlink:href="#dead"
+            />
+            <use
+              transform="translate(42,0)"
+              xlink:href="#dead"
+            />
+            <use
+              transform="translate(56,0)"
+              xlink:href="#alive"
+            />
+            <use
+              transform="translate(0,14)"
+              xlink:href="#alive"
+            />
+            <use
+              transform="translate(14,14)"
+              xlink:href="#dead"
+            />
+            <use
+              transform="translate(28,14)"
+              xlink:href="#dead"
+            />
+            <use
+              transform="translate(42,14)"
+              xlink:href="#dead"
+            />
+            <use
+              transform="translate(56,14)"
+              xlink:href="#dead"
+            />
+            <use
+              transform="translate(0,28)"
+              xlink:href="#alive"
+            />
+            <use
+              transform="translate(14,28)"
+              xlink:href="#dead"
+            />
+            <use
+              transform="translate(28,28)"
+              xlink:href="#dead"
+            />
+            <use
+              transform="translate(42,28)"
+              xlink:href="#dead"
+            />
+            <use
+              transform="translate(56,28)"
+              xlink:href="#alive"
+            />
+            <use
+              transform="translate(0,42)"
+              xlink:href="#alive"
+            />
+            <use
+              transform="translate(14,42)"
+              xlink:href="#alive"
+            />
+            <use
+              transform="translate(28,42)"
+              xlink:href="#alive"
+            />
+            <use
+              transform="translate(42,42)"
+              xlink:href="#alive"
+            />
+            <use
+              transform="translate(56,42)"
+              xlink:href="#dead"
             />
           </g>
         </svg>
         <h1>
-          Conway's Game of Life on Mars
+          Game of Life on Mars
         </h1>
       </div>
       <div>
@@ -650,31 +830,121 @@ exports[`GameOfLife given a default or configured board should seed all cells as
     >
       <div>
         <svg
-          height="32"
-          viewBox="0 0 32 32"
-          width="32"
+          height="58"
+          version="1.0"
+          width="72"
           xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
         >
+          <defs>
+            <rect
+              fill="black"
+              height="14"
+              id="alive"
+              stroke="#c0c0c0"
+              stroke-width="2"
+              width="14"
+              x="0"
+              y="0"
+            />
+            <rect
+              fill="white"
+              height="14"
+              id="dead"
+              stroke="#c0c0c0"
+              stroke-width="2"
+              width="14"
+              x="0"
+              y="0"
+            />
+          </defs>
           <g
-            fill="none"
-            fill-rule="evenodd"
+            transform="translate(1,1)"
           >
-            <path
-              d="M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z"
-              fill="#FFF"
+            <use
+              transform="translate(0,0)"
+              xlink:href="#dead"
             />
-            <path
-              d="M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z"
-              fill="#555AB9"
+            <use
+              transform="translate(14,0)"
+              xlink:href="#alive"
             />
-            <path
-              d="M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z"
-              fill="#91BAF8"
+            <use
+              transform="translate(28,0)"
+              xlink:href="#dead"
+            />
+            <use
+              transform="translate(42,0)"
+              xlink:href="#dead"
+            />
+            <use
+              transform="translate(56,0)"
+              xlink:href="#alive"
+            />
+            <use
+              transform="translate(0,14)"
+              xlink:href="#alive"
+            />
+            <use
+              transform="translate(14,14)"
+              xlink:href="#dead"
+            />
+            <use
+              transform="translate(28,14)"
+              xlink:href="#dead"
+            />
+            <use
+              transform="translate(42,14)"
+              xlink:href="#dead"
+            />
+            <use
+              transform="translate(56,14)"
+              xlink:href="#dead"
+            />
+            <use
+              transform="translate(0,28)"
+              xlink:href="#alive"
+            />
+            <use
+              transform="translate(14,28)"
+              xlink:href="#dead"
+            />
+            <use
+              transform="translate(28,28)"
+              xlink:href="#dead"
+            />
+            <use
+              transform="translate(42,28)"
+              xlink:href="#dead"
+            />
+            <use
+              transform="translate(56,28)"
+              xlink:href="#alive"
+            />
+            <use
+              transform="translate(0,42)"
+              xlink:href="#alive"
+            />
+            <use
+              transform="translate(14,42)"
+              xlink:href="#alive"
+            />
+            <use
+              transform="translate(28,42)"
+              xlink:href="#alive"
+            />
+            <use
+              transform="translate(42,42)"
+              xlink:href="#alive"
+            />
+            <use
+              transform="translate(56,42)"
+              xlink:href="#dead"
             />
           </g>
         </svg>
         <h1>
-          Conway's Game of Life on Mars
+          Game of Life on Mars
         </h1>
       </div>
       <div>

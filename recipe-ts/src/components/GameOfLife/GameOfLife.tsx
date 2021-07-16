@@ -157,27 +157,63 @@ const GameOfLife: React.FC<GameOfLifeProps> = ({
         <div className='wrapper'>
           <div>
             <svg
-              width='32'
-              height='32'
-              viewBox='0 0 32 32'
+              version='1.0'
               xmlns='http://www.w3.org/2000/svg'
+              xmlnsXlink='http://www.w3.org/1999/xlink'
+              width='72'
+              height='58'
             >
-              <g fill='none' fillRule='evenodd'>
-                <path
-                  d='M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z'
-                  fill='#FFF'
+              <defs>
+                <rect
+                  id='alive'
+                  x='0'
+                  y='0'
+                  width='14'
+                  height='14'
+                  fill='black'
+                  stroke='#c0c0c0'
+                  strokeWidth='2'
                 />
-                <path
-                  d='M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z'
-                  fill='#555AB9'
+                <rect
+                  id='dead'
+                  x='0'
+                  y='0'
+                  width='14'
+                  height='14'
+                  fill='white'
+                  stroke='#c0c0c0'
+                  strokeWidth='2'
                 />
-                <path
-                  d='M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z'
-                  fill='#91BAF8'
-                />
+              </defs>
+              <g transform='translate(1,1)'>
+                <use xlinkHref='#dead' transform='translate(0,0)' />
+                <use xlinkHref='#alive' transform='translate(14,0)' />
+
+                <use xlinkHref='#dead' transform='translate(28,0)' />
+                <use xlinkHref='#dead' transform='translate(42,0)' />
+                <use xlinkHref='#alive' transform='translate(56,0)' />
+
+                <use xlinkHref='#alive' transform='translate(0,14)' />
+                <use xlinkHref='#dead' transform='translate(14,14)' />
+                <use xlinkHref='#dead' transform='translate(28,14)' />
+                <use xlinkHref='#dead' transform='translate(42,14)' />
+                <use xlinkHref='#dead' transform='translate(56,14)' />
+
+                <use xlinkHref='#alive' transform='translate(0,28)' />
+                <use xlinkHref='#dead' transform='translate(14,28)' />
+                <use xlinkHref='#dead' transform='translate(28,28)' />
+                <use xlinkHref='#dead' transform='translate(42,28)' />
+                <use xlinkHref='#alive' transform='translate(56,28)' />
+
+                <use xlinkHref='#alive' transform='translate(0,42)' />
+                <use xlinkHref='#alive' transform='translate(14,42)' />
+                <use xlinkHref='#alive' transform='translate(28,42)' />
+
+                <use xlinkHref='#alive' transform='translate(42,42)' />
+                <use xlinkHref='#dead' transform='translate(56,42)' />
               </g>
             </svg>
-            <h1>Conway's Game of Life on Mars</h1>
+            <h1>Game of Life on Mars</h1>
           </div>
           <div>
             <Button primary size='small' onClick={generate} label='Generate' />
