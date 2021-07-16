@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`GameOfLife Given a default or configured board should configure a five by five board of empty cells with specific settings 1`] = `
+exports[`GameOfLife given a default or configured board should configure a five by five board of empty cells with specific settings 1`] = `
 <div>
   <header>
     <div
@@ -171,7 +171,7 @@ exports[`GameOfLife Given a default or configured board should configure a five 
 </div>
 `;
 
-exports[`GameOfLife Given a default or configured board should create a default sized empty board with all expected controls 1`] = `
+exports[`GameOfLife given a default or configured board should create a default sized empty board with all expected controls 1`] = `
 <div>
   <header>
     <div
@@ -642,7 +642,7 @@ exports[`GameOfLife Given a default or configured board should create a default 
 </div>
 `;
 
-exports[`GameOfLife Given a default or configured board should seed all cells as active 1`] = `
+exports[`GameOfLife given a default or configured board should seed all cells as active 1`] = `
 <div>
   <header>
     <div
@@ -729,7 +729,7 @@ exports[`GameOfLife Given a default or configured board should seed all cells as
 </div>
 `;
 
-exports[`GameOfLife Given various patterns should seed beacon oscillator with generate button: beacon 1`] = `
+exports[`GameOfLife given various patterns should seed beacon oscillator with generate button: beacon 1`] = `
 NodeList [
   <div
     class="cell"
@@ -950,7 +950,7 @@ NodeList [
 ]
 `;
 
-exports[`GameOfLife Given various patterns should seed beacon oscillator with generate button: initial 1`] = `
+exports[`GameOfLife given various patterns should seed beacon oscillator with generate button: initial 1`] = `
 NodeList [
   <div
     class="cell"
@@ -1171,7 +1171,7 @@ NodeList [
 ]
 `;
 
-exports[`GameOfLife Given various patterns should seed generate blinker oscillator pattern with generate button: blink 1`] = `
+exports[`GameOfLife given various patterns should seed generate blinker oscillator pattern with generate button: blink 1`] = `
 <div
   class="grid"
   style="display: grid; grid-template-columns: repeat(3, 50px);"
@@ -1233,7 +1233,7 @@ exports[`GameOfLife Given various patterns should seed generate blinker oscillat
 </div>
 `;
 
-exports[`GameOfLife Given various patterns should seed generate blinker oscillator pattern with generate button: blink 2`] = `
+exports[`GameOfLife given various patterns should seed generate blinker oscillator pattern with generate button: blink 2`] = `
 <div
   class="grid"
   style="display: grid; grid-template-columns: repeat(3, 50px);"
@@ -1295,7 +1295,7 @@ exports[`GameOfLife Given various patterns should seed generate blinker oscillat
 </div>
 `;
 
-exports[`GameOfLife Given various patterns should seed toad oscillator and then clear this with the clear button: active-toad 1`] = `
+exports[`GameOfLife given various patterns should seed toad oscillator and then clear this with the clear button: active-toad 1`] = `
 NodeList [
   <div
     class="cell"
@@ -1336,7 +1336,7 @@ NodeList [
 ]
 `;
 
-exports[`GameOfLife Given various patterns should seed toad oscillator pattern with generate button: toad 1`] = `
+exports[`GameOfLife given various patterns should seed toad oscillator pattern with generate button: toad 1`] = `
 <div
   class="grid"
   style="display: grid; grid-template-columns: repeat(6, 50px);"
@@ -1560,7 +1560,7 @@ exports[`GameOfLife Given various patterns should seed toad oscillator pattern w
 </div>
 `;
 
-exports[`GameOfLife Given various patterns should seed toad oscillator pattern with generate button: toad 2`] = `
+exports[`GameOfLife given various patterns should seed toad oscillator pattern with generate button: toad 2`] = `
 <div
   class="grid"
   style="display: grid; grid-template-columns: repeat(6, 50px);"

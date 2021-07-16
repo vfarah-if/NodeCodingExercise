@@ -12,7 +12,7 @@ import {
 jest.useFakeTimers();
 
 describe('GameOfLife', () => {
-  describe('Given a default or configured board', () => {
+  describe('given a default or configured board', () => {
     test('should create a default sized empty board with all expected controls', () => {
       const { container } = render(<DefaultBoardOfEmptyCells />);
 
@@ -22,10 +22,7 @@ describe('GameOfLife', () => {
     test('should configure a five by five board of empty cells with specific settings', () => {
       const { container } = render(
         <CreateFiveByFiveBoardOfEmptyCells
-          boardSize={CreateFiveByFiveBoardOfEmptyCells.args?.boardSize}
-          cellSize={CreateFiveByFiveBoardOfEmptyCells.args?.cellSize}
-          gridColor={CreateFiveByFiveBoardOfEmptyCells.args?.gridColor}
-          activeColor={CreateFiveByFiveBoardOfEmptyCells.args?.activeColor}
+          {...CreateFiveByFiveBoardOfEmptyCells.args}
         />
       );
 
@@ -39,20 +36,15 @@ describe('GameOfLife', () => {
           showCellInfo={true}
         />
       );
-
-      const randomiseButton = screen.getByRole('button', {
-        name: 'Randomise',
-      });
-      expect(randomiseButton).toHaveTextContent('Randomise');
+      const randomiseButton = getAndAssertButton('Randomise');
 
       for (let index = 0; index < 5; index++) {
         randomiseButton.click();
-        const activeBackgroundColor = ".cell[style*='background-color: green']";
-        const before = container.querySelectorAll(activeBackgroundColor);
+        const first = getAllActiveCells(container, 'green');
 
         randomiseButton.click();
-        const after = container.querySelectorAll(activeBackgroundColor);
-        expect(before).not.toEqual(after);
+        const second = getAllActiveCells(container, 'green');
+        expect(first).not.toEqual(second);
       }
     });
 
@@ -64,27 +56,18 @@ describe('GameOfLife', () => {
         />
       );
 
-      const cells = container.querySelectorAll('.cell');
+      const cells = getAllCells(container);
       cells.forEach((cell) => {
         (cell as HTMLDivElement).click();
       });
 
-      expect(
-        container.querySelectorAll(".cell[style*='background-color: green']")
-          .length
-      ).toBe(cells.length);
+      expect(getAllActiveCells(container, 'green').length).toBe(cells.length);
     });
 
     test('should seed all cells as active', () => {
       const { container } = render(
         <SeedAllTwoByTwoWithActiveCells
-          boardSize={SeedAllTwoByTwoWithActiveCells.args?.boardSize}
-          cellSize={SeedAllTwoByTwoWithActiveCells.args?.cellSize}
-          gridColor={SeedAllTwoByTwoWithActiveCells.args?.gridColor}
-          activeColor={SeedAllTwoByTwoWithActiveCells.args?.activeColor}
-          seedActivePositions={
-            SeedAllTwoByTwoWithActiveCells.args?.seedActivePositions
-          }
+          {...SeedAllTwoByTwoWithActiveCells.args}
         />
       );
 
@@ -92,77 +75,56 @@ describe('GameOfLife', () => {
     });
   });
 
-  describe('Given various patterns', () => {
+  describe('given various patterns', () => {
     test('should seed generate blinker oscillator pattern with generate button', () => {
       const { container } = render(
-        <SeedBlinkerOscillator
-          boardSize={SeedBlinkerOscillator.args?.boardSize}
-          cellSize={SeedBlinkerOscillator.args?.cellSize}
-          gridColor={SeedBlinkerOscillator.args?.gridColor}
-          activeColor={SeedBlinkerOscillator.args?.activeColor}
-          seedActivePositions={SeedBlinkerOscillator.args?.seedActivePositions}
-          showCellInfo={SeedBlinkerOscillator.args?.showCellInfo}
-        />
+        <SeedBlinkerOscillator {...SeedBlinkerOscillator.args} />
       );
 
-      const generateButton = screen.getByRole('button', { name: 'Generate' });
-      expect(generateButton).toHaveTextContent('Generate');
+      const generateButton = getAndAssertButton('Generate');
 
-      const flip = container.querySelector('.grid');
+      const flip = getGrid(container);
       expect(flip).toMatchSnapshot('blink');
 
       generateButton.click();
-      const flop = container.querySelector('.grid');
+      const flop = getGrid(container);
       expect(flop).toMatchSnapshot('blink');
 
       generateButton.click();
-      expect(container.querySelector('.grid')).toBe(flip);
+      expect(getGrid(container)).toBe(flip);
 
       generateButton.click();
-      expect(container.querySelector('.grid')).toBe(flop);
+      expect(getGrid(container)).toBe(flop);
     });
 
     test('should seed toad oscillator pattern with generate button', () => {
-      const { container } = render(
-        <ToadOscillator
-          boardSize={ToadOscillator.args?.boardSize}
-          cellSize={ToadOscillator.args?.cellSize}
-          gridColor={ToadOscillator.args?.gridColor}
-          activeColor={ToadOscillator.args?.activeColor}
-          seedActivePositions={ToadOscillator.args?.seedActivePositions}
-          showCellInfo={ToadOscillator.args?.showCellInfo}
-        />
-      );
+      const { container } = render(<ToadOscillator {...ToadOscillator.args} />);
 
-      const generateButton = screen.getByRole('button', { name: 'Generate' });
-      const flip = container.querySelector('.grid');
+      const generateButton = getAndAssertButton('Generate');
+      const flip = getGrid(container);
       expect(flip).toMatchSnapshot('toad');
 
       generateButton.click();
-      const flop = container.querySelector('.grid');
+      const flop = getGrid(container);
       expect(flop).toMatchSnapshot('toad');
 
       generateButton.click();
-      expect(container.querySelector('.grid')).toBe(flip);
+      expect(getGrid(container)).toBe(flip);
 
       generateButton.click();
-      expect(container.querySelector('.grid')).toBe(flop);
+      expect(getGrid(container)).toBe(flop);
     });
 
     test('should seed toad oscillator and then clear this with the clear button', () => {
       const { container } = render(<ToadOscillator {...ToadOscillator.args} />);
-
-      const clearButton = screen.getByRole('button', {
-        name: 'Clear',
-      });
-      expect(clearButton).toHaveTextContent('Clear');
-      const activeBackgroundColor = ".cell[style*='background-color: green']";
-      const activeCells = container.querySelectorAll(activeBackgroundColor);
+      const activeCells = getAllActiveCells(container, 'green');
       expect(activeCells).toMatchSnapshot('active-toad');
       expect(activeCells.length).toBe(6);
 
+      const clearButton = getAndAssertButton('Clear');
       clearButton.click();
-      const clearedCells = container.querySelectorAll(activeBackgroundColor);
+
+      const clearedCells = getAllActiveCells(container, 'green');
       expect(clearedCells).not.toEqual(activeCells);
       expect(clearedCells.length).toEqual(0);
     });
@@ -172,37 +134,54 @@ describe('GameOfLife', () => {
         <BeaconOscillator {...BeaconOscillator.args} />
       );
 
-      const generateButton = screen.getByRole('button', { name: 'Generate' });
-      const initial = container.querySelectorAll('.cell');
-      expect(initial).toMatchSnapshot('initial');
+      const generateButton = getAndAssertButton('Generate');
+      const flip = getAllCells(container);
+      expect(flip).toMatchSnapshot('initial');
 
       generateButton.click();
-      const alternate = container.querySelectorAll('.cell');
-      expect(alternate).toMatchSnapshot('beacon');
+      const flop = getAllCells(container);
+      expect(flop).toMatchSnapshot('beacon');
 
       generateButton.click();
-      expect(container.querySelectorAll('.cell')).toEqual(initial);
+      expect(getAllCells(container)).toEqual(flip);
 
       generateButton.click();
-      expect(container.querySelectorAll('.cell')).toEqual(alternate);
+      expect(getAllCells(container)).toEqual(flop);
     });
 
-    test('should simulate beacon oscillator with simulate button calling timeouts', () => {
+    test('should simulate beacon oscillator toggling button calling setTimeout', () => {
       render(<BeaconOscillator {...BeaconOscillator.args} />);
 
-      const startSimulateButton = screen.getByRole('button', {
-        name: 'Start Simulation',
-      });
-      expect(startSimulateButton).toHaveTextContent('Start Simulation');
+      const startSimulateButton = getAndAssertButton('Start Simulation');
       startSimulateButton.click();
 
-      const stopSimulateButton = screen.getByRole('button', {
-        name: 'Stop Simulation',
-      });
-      expect(stopSimulateButton).toHaveTextContent('Stop Simulation');
+      const stopSimulateButton = getAndAssertButton('Stop Simulation');
       stopSimulateButton.click();
 
       expect(setTimeout).toHaveBeenCalled();
     });
   });
 });
+
+function getAndAssertButton(name: string): HTMLButtonElement {
+  const button = screen.getByRole('button', { name }) as HTMLButtonElement;
+  expect(button).toHaveTextContent(name);
+  return button;
+}
+
+function getGrid(container: Element): HTMLDivElement {
+  return container.querySelector('.grid') as HTMLDivElement;
+}
+
+function getAllCells(container: Element): NodeListOf<HTMLDivElement> {
+  return container.querySelectorAll('.cell') as NodeListOf<HTMLDivElement>;
+}
+
+function getAllActiveCells(
+  container: Element,
+  colour: string
+): NodeListOf<HTMLDivElement> {
+  return container.querySelectorAll(
+    `.cell[style*='background-color: ${colour}']`
+  );
+}
