@@ -97,6 +97,54 @@ BeaconOscillator.args = {
   backgroundColor: 'white',
 };
 
+export const PentaDecathlon = GameOfLifeTemplate.bind({});
+PentaDecathlon.args = {
+  boardSize: 20,
+  cellSize: 50,
+  gridColor: 'red',
+  activeColor: 'green',
+  seedActivePositions: [
+    { x: 9, y: 4 },
+    { x: 8, y: 5 },
+    { x: 9, y: 5 },
+    { x: 10, y: 5 },
+    { x: 7, y: 6 },
+    { x: 8, y: 6 },
+    { x: 9, y: 6 },
+    { x: 10, y: 6 },
+    { x: 11, y: 6 },
+
+    { x: 9, y: 15 },
+    { x: 8, y: 14 },
+    { x: 9, y: 14 },
+    { x: 10, y: 14 },
+    { x: 7, y: 13 },
+    { x: 8, y: 13 },
+    { x: 9, y: 13 },
+    { x: 10, y: 13 },
+    { x: 11, y: 13 },
+  ],
+  showCellInfo: true,
+  backgroundColor: 'white',
+};
+
+export const Glider = GameOfLifeTemplate.bind({});
+Glider.args = {
+  boardSize: 20,
+  cellSize: 50,
+  gridColor: 'red',
+  activeColor: 'green',
+  seedActivePositions: [
+    { x: 1, y: 0 },
+    { x: 2, y: 1 },
+    { x: 2, y: 2 },
+    { x: 1, y: 2 },
+    { x: 0, y: 2 },
+  ],
+  showCellInfo: true,
+  backgroundColor: 'white',
+};
+
 export const DieHard = GameOfLifeTemplate.bind({});
 DieHard.args = {
   boardSize: 15,

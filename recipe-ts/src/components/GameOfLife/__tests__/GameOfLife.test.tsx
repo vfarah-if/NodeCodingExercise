@@ -8,6 +8,7 @@ import {
   SeedBlinkerOscillator,
   ToadOscillator,
   BeaconOscillator,
+  PentaDecathlon,
 } from '../GameOfLife.stories';
 jest.useFakeTimers();
 
@@ -159,6 +160,21 @@ describe('GameOfLife', () => {
       stopSimulateButton.click();
 
       expect(setTimeout).toHaveBeenCalled();
+    });
+
+    test('should seed penta-decathlon with generate button with a period of 15', () => {
+      const { container } = render(<PentaDecathlon {...PentaDecathlon.args} />);
+      const original = getAllActiveCells(container);
+      const generateButton = getAndAssertButton('Generate');
+      const periods = 15;
+      for (let index = 0; index < periods; index++) {
+        expect(getAllActiveCells(container)).toMatchSnapshot(
+          'penta-decathlon-period'
+        );
+        generateButton.click();
+      }
+
+      expect(getAllActiveCells(container)).toEqual(original);
     });
   });
 });

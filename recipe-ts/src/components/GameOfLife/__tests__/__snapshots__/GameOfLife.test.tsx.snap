@@ -1565,6 +1565,1965 @@ exports[`GameOfLife given various patterns should seed generate blinker oscillat
 </div>
 `;
 
+exports[`GameOfLife given various patterns should seed penta-decathlon with generate button with a period of 15: penta-decathlon-period 1`] = `
+NodeList [
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 4]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [8, 5]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 5]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [10, 5]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [7, 6]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [8, 6]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 6]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [10, 6]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [11, 6]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [7, 13]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [8, 13]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 13]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [10, 13]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [11, 13]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [8, 14]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 14]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [10, 14]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 15]
+  </div>,
+]
+`;
+
+exports[`GameOfLife given various patterns should seed penta-decathlon with generate button with a period of 15: penta-decathlon-period 2`] = `
+NodeList [
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [8, 4]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 4]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [10, 4]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [7, 5]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [11, 5]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [7, 6]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [11, 6]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [8, 7]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 7]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [10, 7]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [8, 12]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 12]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [10, 12]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [7, 13]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [11, 13]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [7, 14]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [11, 14]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [8, 15]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 15]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [10, 15]
+  </div>,
+]
+`;
+
+exports[`GameOfLife given various patterns should seed penta-decathlon with generate button with a period of 15: penta-decathlon-period 3`] = `
+NodeList [
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 3]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [8, 4]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 4]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [10, 4]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [7, 5]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 5]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [11, 5]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [7, 6]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 6]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [11, 6]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [8, 7]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 7]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [10, 7]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 8]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 11]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [8, 12]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 12]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [10, 12]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [7, 13]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 13]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [11, 13]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [7, 14]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 14]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [11, 14]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [8, 15]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 15]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [10, 15]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 16]
+  </div>,
+]
+`;
+
+exports[`GameOfLife given various patterns should seed penta-decathlon with generate button with a period of 15: penta-decathlon-period 4`] = `
+NodeList [
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [8, 3]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 3]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [10, 3]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [7, 5]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [11, 5]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [7, 6]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [11, 6]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [8, 8]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 8]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [10, 8]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [8, 11]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 11]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [10, 11]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [7, 13]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [11, 13]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [7, 14]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [11, 14]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [8, 16]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 16]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [10, 16]
+  </div>,
+]
+`;
+
+exports[`GameOfLife given various patterns should seed penta-decathlon with generate button with a period of 15: penta-decathlon-period 5`] = `
+NodeList [
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 2]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 3]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [8, 4]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 4]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [10, 4]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [8, 7]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 7]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [10, 7]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 8]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 9]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 10]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 11]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [8, 12]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 12]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [10, 12]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [8, 15]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 15]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [10, 15]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 16]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 17]
+  </div>,
+]
+`;
+
+exports[`GameOfLife given various patterns should seed penta-decathlon with generate button with a period of 15: penta-decathlon-period 6`] = `
+NodeList [
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [8, 4]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 4]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [10, 4]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 5]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 6]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [8, 7]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 7]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [10, 7]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [8, 9]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 9]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [10, 9]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [8, 10]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 10]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [10, 10]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [8, 12]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 12]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [10, 12]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 13]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 14]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [8, 15]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 15]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [10, 15]
+  </div>,
+]
+`;
+
+exports[`GameOfLife given various patterns should seed penta-decathlon with generate button with a period of 15: penta-decathlon-period 7`] = `
+NodeList [
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 3]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [8, 4]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 4]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [10, 4]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [8, 7]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 7]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [10, 7]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [8, 9]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [10, 9]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [8, 10]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [10, 10]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [8, 12]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 12]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [10, 12]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [8, 15]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 15]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [10, 15]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 16]
+  </div>,
+]
+`;
+
+exports[`GameOfLife given various patterns should seed penta-decathlon with generate button with a period of 15: penta-decathlon-period 8`] = `
+NodeList [
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [8, 3]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 3]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [10, 3]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [8, 4]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 4]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [10, 4]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 5]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 6]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 7]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [8, 8]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [10, 8]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [8, 11]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [10, 11]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 12]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 13]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 14]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [8, 15]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 15]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [10, 15]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [8, 16]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 16]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [10, 16]
+  </div>,
+]
+`;
+
+exports[`GameOfLife given various patterns should seed penta-decathlon with generate button with a period of 15: penta-decathlon-period 9`] = `
+NodeList [
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 2]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [8, 3]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [10, 3]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [8, 6]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 6]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [10, 6]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [8, 7]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 7]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [10, 7]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 8]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 11]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [8, 12]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 12]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [10, 12]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [8, 13]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 13]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [10, 13]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [8, 16]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [10, 16]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 17]
+  </div>,
+]
+`;
+
+exports[`GameOfLife given various patterns should seed penta-decathlon with generate button with a period of 15: penta-decathlon-period 10`] = `
+NodeList [
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 2]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 3]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 5]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [8, 6]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [10, 6]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [8, 8]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 8]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [10, 8]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [8, 11]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 11]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [10, 11]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [8, 13]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [10, 13]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 14]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 16]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 17]
+  </div>,
+]
+`;
+
+exports[`GameOfLife given various patterns should seed penta-decathlon with generate button with a period of 15: penta-decathlon-period 11`] = `
+NodeList [
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 5]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 6]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [8, 7]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [10, 7]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 8]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 9]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 10]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 11]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [8, 12]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [10, 12]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 13]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 14]
+  </div>,
+]
+`;
+
+exports[`GameOfLife given various patterns should seed penta-decathlon with generate button with a period of 15: penta-decathlon-period 12`] = `
+NodeList [
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [8, 6]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 6]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [10, 6]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [8, 7]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [10, 7]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [8, 8]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 8]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [10, 8]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [8, 9]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 9]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [10, 9]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [8, 10]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 10]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [10, 10]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [8, 11]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 11]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [10, 11]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [8, 12]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [10, 12]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [8, 13]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 13]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [10, 13]
+  </div>,
+]
+`;
+
+exports[`GameOfLife given various patterns should seed penta-decathlon with generate button with a period of 15: penta-decathlon-period 13`] = `
+NodeList [
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 5]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [8, 6]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [10, 6]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [7, 7]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [11, 7]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [7, 8]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [11, 8]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [7, 9]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [11, 9]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [7, 10]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [11, 10]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [7, 11]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [11, 11]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [7, 12]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [11, 12]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [8, 13]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [10, 13]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 14]
+  </div>,
+]
+`;
+
+exports[`GameOfLife given various patterns should seed penta-decathlon with generate button with a period of 15: penta-decathlon-period 14`] = `
+NodeList [
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 5]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [8, 6]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 6]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [10, 6]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [7, 7]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [8, 7]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [10, 7]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [11, 7]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [6, 8]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [7, 8]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [8, 8]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [10, 8]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [11, 8]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [12, 8]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [6, 9]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [7, 9]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [8, 9]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [10, 9]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [11, 9]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [12, 9]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [6, 10]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [7, 10]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [8, 10]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [10, 10]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [11, 10]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [12, 10]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [6, 11]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [7, 11]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [8, 11]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [10, 11]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [11, 11]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [12, 11]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [7, 12]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [8, 12]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [10, 12]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [11, 12]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [8, 13]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 13]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [10, 13]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 14]
+  </div>,
+]
+`;
+
+exports[`GameOfLife given various patterns should seed penta-decathlon with generate button with a period of 15: penta-decathlon-period 15`] = `
+NodeList [
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [8, 5]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 5]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [10, 5]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [7, 6]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [11, 6]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [6, 7]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [12, 7]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [5, 9]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [13, 9]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [5, 10]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [13, 10]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [6, 12]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [12, 12]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [7, 13]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [11, 13]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [8, 14]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [9, 14]
+  </div>,
+  <div
+    class="cell active"
+    style="width: 50px; height: 50px; border: 1px solid red; background-color: green;"
+  >
+    [10, 14]
+  </div>,
+]
+`;
+
 exports[`GameOfLife given various patterns should seed toad oscillator and then clear this with the clear button: active-toad 1`] = `
 NodeList [
   <div
