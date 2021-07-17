@@ -21,9 +21,9 @@ function App() {
       <br />
       <MarsRoverImages />
       <GameOfLife
-        gridColor='red'
+        gridColor='green'
         activeColor='green'
-        backgroundColor='white'
+        backgroundColor='red'
         boardSize={20}
         cellSize={50}
         seedActivePositions={[
