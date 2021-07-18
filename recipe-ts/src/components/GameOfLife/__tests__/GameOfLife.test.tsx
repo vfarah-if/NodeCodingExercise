@@ -179,20 +179,22 @@ describe('GameOfLife', () => {
   });
 });
 
-function getAndAssertButton(name: string): HTMLButtonElement {
+function getGrid(container: Element): HTMLDivElement {
+  return container.querySelector('.grid') as HTMLDivElement;
+}
+
+export function getAndAssertButton(name: string): HTMLButtonElement {
   const button = screen.getByRole('button', { name }) as HTMLButtonElement;
   expect(button).toHaveTextContent(name);
   return button;
 }
 
-function getGrid(container: Element): HTMLDivElement {
-  return container.querySelector('.grid') as HTMLDivElement;
-}
-
-function getAllCells(container: Element): NodeListOf<HTMLDivElement> {
+export function getAllCells(container: Element): NodeListOf<HTMLDivElement> {
   return container.querySelectorAll('.cell') as NodeListOf<HTMLDivElement>;
 }
 
-function getAllActiveCells(container: Element): NodeListOf<HTMLDivElement> {
+export function getAllActiveCells(
+  container: Element
+): NodeListOf<HTMLDivElement> {
   return container.querySelectorAll(`.cell.active`);
 }

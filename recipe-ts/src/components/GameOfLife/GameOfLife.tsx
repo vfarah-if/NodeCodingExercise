@@ -1,7 +1,7 @@
 import produce from 'immer';
 import React, { useCallback, useEffect, useState } from 'react';
-import Button from '../Button';
 import Cell from './Cell';
+import Commandbar from './Commandbar';
 import './style/index.css';
 
 type ButtonCallbackType = () => void;
@@ -110,7 +110,7 @@ const GameOfLife: React.FC<GameOfLifeProps> = ({
         boardPositions().forEach(({ x, y }) => {
           const neighbours = getNeighboursByPosition(x, y);
           const liveNeighbours = neighbours.filter((item) => item === true);
-          let isAlive = board[y][x];
+          const isAlive = board[y][x];
           const isFertile = () => !isAlive && liveNeighbours.length === 3;
           const isThriving = () => isAlive && liveNeighbours.length === 2;
           const isOverPopulated = () => liveNeighbours.length > 3;
@@ -153,86 +153,13 @@ const GameOfLife: React.FC<GameOfLifeProps> = ({
 
   return (
     <>
-      <header>
-        <div className='wrapper'>
-          <div>
-            <svg
-              version='1.0'
-              xmlns='http://www.w3.org/2000/svg'
-              xmlnsXlink='http://www.w3.org/1999/xlink'
-              width='72'
-              height='58'
-            >
-              <defs>
-                <rect
-                  id='alive'
-                  x='0'
-                  y='0'
-                  width='14'
-                  height='14'
-                  fill='black'
-                  stroke='#c0c0c0'
-                  strokeWidth='2'
-                />
-                <rect
-                  id='dead'
-                  x='0'
-                  y='0'
-                  width='14'
-                  height='14'
-                  fill='white'
-                  stroke='#c0c0c0'
-                  strokeWidth='2'
-                />
-              </defs>
-              <g transform='translate(1,1)'>
-                <use xlinkHref='#dead' transform='translate(0,0)' />
-                <use xlinkHref='#alive' transform='translate(14,0)' />
-
-                <use xlinkHref='#dead' transform='translate(28,0)' />
-                <use xlinkHref='#dead' transform='translate(42,0)' />
-                <use xlinkHref='#alive' transform='translate(56,0)' />
-
-                <use xlinkHref='#alive' transform='translate(0,14)' />
-                <use xlinkHref='#dead' transform='translate(14,14)' />
-                <use xlinkHref='#dead' transform='translate(28,14)' />
-                <use xlinkHref='#dead' transform='translate(42,14)' />
-                <use xlinkHref='#dead' transform='translate(56,14)' />
-
-                <use xlinkHref='#alive' transform='translate(0,28)' />
-                <use xlinkHref='#dead' transform='translate(14,28)' />
-                <use xlinkHref='#dead' transform='translate(28,28)' />
-                <use xlinkHref='#dead' transform='translate(42,28)' />
-                <use xlinkHref='#alive' transform='translate(56,28)' />
-
-                <use xlinkHref='#alive' transform='translate(0,42)' />
-                <use xlinkHref='#alive' transform='translate(14,42)' />
-                <use xlinkHref='#alive' transform='translate(28,42)' />
-
-                <use xlinkHref='#alive' transform='translate(42,42)' />
-                <use xlinkHref='#dead' transform='translate(56,42)' />
-              </g>
-            </svg>
-            <h1>Game of Life on Mars</h1>
-          </div>
-          <div>
-            <Button primary size='small' onClick={generate} label='Generate' />
-            <Button
-              primary
-              size='small'
-              onClick={simulate}
-              label={isRunning ? 'Stop Simulation' : 'Start Simulation'}
-            />
-            <Button
-              primary
-              size='small'
-              onClick={randomise}
-              label='Randomise'
-            ></Button>
-            <Button primary size='small' onClick={clear} label='Clear'></Button>
-          </div>
-        </div>
-      </header>
+      <Commandbar
+        simulateDisplay={isRunning ? 'Stop Simulation' : 'Start Simulation'}
+        onClear={clear}
+        onGenerate={generate}
+        onSimulate={simulate}
+        onRandomise={randomise}
+      ></Commandbar>
       <div
         className='grid'
         style={{

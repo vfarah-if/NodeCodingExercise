@@ -56,5 +56,21 @@
   },
   "resolutions": {
     "/react-scripts/babel-loader": "^8.1.0"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,ts,tsx}",
+      "!<rootDir>/node_modules/",
+      "!src/**/*.stories.tsx",
+      "!src/**/*.index.ts"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 80,
+        "functions": 80,
+        "lines": 80,
+        "statements": 80
+      }
+    }
   }
 }
