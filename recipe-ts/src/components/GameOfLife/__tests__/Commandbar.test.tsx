@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { render } from '@testing-library/react';
 
 import {
   DefaultCommandbar,
@@ -30,11 +30,6 @@ describe('Commandbar', () => {
     );
 
     expect(container).toMatchSnapshot();
-
-    //TODO : Figure out why this is not working as expected
-    // const generateButton = getAndAssertButton('Generate');
-    // generateButton.click();
-    // expect(generate).toHaveBeenCalledTimes(1);
   });
 
   test('should customise commandbar settings', () => {
@@ -51,9 +46,3 @@ describe('Commandbar', () => {
     expect(container).toMatchSnapshot();
   });
 });
-
-export function getAndAssertButton(name: string): HTMLButtonElement {
-  const button = screen.getByRole('button', { name }) as HTMLButtonElement;
-  expect(button).toHaveTextContent(name);
-  return button;
-}
