@@ -20,6 +20,7 @@ describe('cell', () => {
     const actual = cell.nextState();
 
     expect(actual).toBe(CellState.Alive);
+    expect(cell.isFertile()).toBeTruthy();
   });
 
   test('should kill a living cell when fewer than two live neighbours by virtue of underpopulation', () => {
@@ -33,6 +34,7 @@ describe('cell', () => {
     const actual = cell.nextState();
 
     expect(actual).toBe(CellState.Dead);
+    expect(cell.isUnderpopulated()).toBeTruthy();
   });
 
   test('should stay alive with two live neighbours by virtue of thriving', () => {
@@ -46,6 +48,7 @@ describe('cell', () => {
     const actual = cell.nextState();
 
     expect(actual).toBe(CellState.Alive);
+    expect(cell.isThriving()).toBeTruthy();
   });
 
   test('should kill the cell with more than three live neighbours by virtue of over population', () => {
@@ -60,6 +63,7 @@ describe('cell', () => {
     const actual = cell.nextState();
 
     expect(actual).toBe(CellState.Dead);
+    expect(cell.isOverpopulated()).toBeTruthy();
   });
 
   test('should output "X" to represent the alive cell', () => {
