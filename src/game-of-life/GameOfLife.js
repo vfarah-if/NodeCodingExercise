@@ -21,10 +21,8 @@ class GameOfLife {
   }
 
   setupNeighbours() {
-    this.boardPositions().forEach((position) => {
-      const { x, y } = position;
+    this.boardPositions().forEach(({ x, y }) => {
       const neighbours = this.getNeighboursByPosition(x, y);
-      //   console.debug('Neighbours', neighbours);
       this.cell(x, y).addNeighbours(neighbours);
     });
   }
@@ -59,8 +57,7 @@ class GameOfLife {
   }
 
   seed(positions) {
-    positions.forEach((position) => {
-      const { x, y } = position;
+    positions.forEach(({ x, y }) => {
       this.cell(x, y).currentState = CellState.Alive;
     });
   }
@@ -71,16 +68,13 @@ class GameOfLife {
   }
 
   transferNextStateToCurrentState() {
-    for (let y = 0; y < this.size; y++) {
-      for (let x = 0; x < this.size; x++) {
-        this.cell(x, y).currentState = this.nextStates[y][x];
-      }
-    }
+    this.boardPositions().forEach(({ x, y }) => {
+      this.cell(x, y).currentState = this.nextStates[y][x];
+    });
   }
 
   getNextStates() {
-    this.boardPositions().forEach((position) => {
-      const { x, y } = position;
+    this.boardPositions().forEach(({ x, y }) => {
       this.nextStates[y][x] = this.cell(x, y).nextState();
     });
   }
