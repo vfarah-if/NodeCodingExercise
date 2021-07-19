@@ -12,39 +12,44 @@ export default class Cell {
     });
   }
 
-  nextState() {
-    const liveNeighbours = this.neighbours.filter(
+  aliveNeighbours() {
+    return this.neighbours.filter(
       (neighbour) => neighbour.currentState === CellState.Alive
     );
+  }
 
-    if (this.isFertile(liveNeighbours) || this.isThriving(liveNeighbours)) {
+  nextState() {
+    if (this.isFertile() || this.isThriving()) {
       return CellState.Alive;
     }
 
-    if (
-      this.isUnderpopulated(liveNeighbours) ||
-      this.isOverpopulated(liveNeighbours)
-    ) {
+    if (this.isUnderpopulated() || this.isOverpopulated()) {
       return CellState.Dead;
     }
 
     return this.currentState;
   }
 
-  isFertile(liveNeighbours) {
-    return this.currentState === CellState.Dead && liveNeighbours.length === 3;
+  isFertile() {
+    return (
+      this.currentState === CellState.Dead &&
+      this.aliveNeighbours().length === 3
+    );
   }
 
-  isThriving(liveNeighbours) {
-    return this.currentState === CellState.Alive && liveNeighbours.length === 2;
+  isThriving() {
+    return (
+      this.currentState === CellState.Alive &&
+      this.aliveNeighbours().length === 2
+    );
   }
 
-  isOverpopulated(liveNeighbours) {
-    return liveNeighbours.length > 3;
+  isOverpopulated() {
+    return this.aliveNeighbours().length > 3;
   }
 
-  isUnderpopulated(liveNeighbours) {
-    return liveNeighbours.length < 2;
+  isUnderpopulated() {
+    return this.aliveNeighbours().length < 2;
   }
 
   toString() {
