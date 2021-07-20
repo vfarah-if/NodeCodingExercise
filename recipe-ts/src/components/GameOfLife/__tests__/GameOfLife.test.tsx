@@ -156,10 +156,12 @@ describe('GameOfLife', () => {
       const startSimulateButton = getAndAssertButton('Start Simulation');
       startSimulateButton.click();
 
+      jest.advanceTimersByTime(1000);
+
       const stopSimulateButton = getAndAssertButton('Stop Simulation');
       stopSimulateButton.click();
 
-      expect(setTimeout).toHaveBeenCalled();
+      expect(setTimeout).toHaveBeenCalledTimes(1);
     });
 
     test('should seed penta-decathlon with generate button with a period of 15', () => {
