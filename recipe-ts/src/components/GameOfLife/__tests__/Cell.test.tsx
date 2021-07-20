@@ -1,4 +1,5 @@
-import { fireEvent, render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
+import Cell from '../Cell';
 import { BrightHappyCell, DefaultCell } from '../Cell/Cell.stories';
 
 describe('Cell', () => {
@@ -16,21 +17,12 @@ describe('Cell', () => {
 
   test('should allow the cell to be clicked and an event to be assigned', () => {
     const handleClick = jest.fn();
-    render(
-      <BrightHappyCell
-        {...BrightHappyCell.args}
-        onCellClick={() => {
-          console.debug('test');
-          handleClick();
-        }}
-      />
-    );
+    // REMARKS: Need to explicitly use Cell when utilising onCellClick event
+    render(<Cell {...BrightHappyCell.args} onCellClick={handleClick} />);
 
     const cell: HTMLElement = screen.getByText('(ツ)');
     expect(cell).toBeDefined();
-    // fireEvent.click(cell);
-    // TODO: figure out why this does not work
     cell.click();
-    // expect(handleClick).toHaveBeenCalledTimes(1);
+    expect(handleClick).toHaveBeenCalledTimes(1);
   });
 });
