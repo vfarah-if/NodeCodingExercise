@@ -7,26 +7,26 @@ import {
 } from '../Commandbar/Commandbar.stories';
 
 describe('Commandbar', () => {
-  const generate = jest.fn();
-  const clear = jest.fn();
-  const randomise = jest.fn();
-  const simulate = jest.fn();
+  const generateHandler = jest.fn();
+  const clearHandler = jest.fn();
+  const randomiseHandler = jest.fn();
+  const simulateHandler = jest.fn();
 
   beforeEach(() => {
-    generate.mockClear();
-    clear.mockClear();
-    randomise.mockClear();
-    simulate.mockClear();
+    generateHandler.mockClear();
+    clearHandler.mockClear();
+    randomiseHandler.mockClear();
+    simulateHandler.mockClear();
   });
 
   test('should default expected command settings', () => {
     const { container } = render(
       <DefaultCommandbar
         {...DefaultCommandbar.args}
-        onClear={clear}
-        onGenerate={generate}
-        onRandomise={randomise}
-        onSimulate={simulate}
+        onClear={clearHandler}
+        onGenerate={generateHandler}
+        onRandomise={randomiseHandler}
+        onSimulate={simulateHandler}
       />
     );
 
@@ -37,10 +37,10 @@ describe('Commandbar', () => {
     const { container } = render(
       <CustomCommandbar
         {...CustomCommandbar.args}
-        onClear={clear}
-        onGenerate={generate}
-        onRandomise={randomise}
-        onSimulate={simulate}
+        onClear={clearHandler}
+        onGenerate={generateHandler}
+        onRandomise={randomiseHandler}
+        onSimulate={simulateHandler}
       />
     );
 
@@ -51,67 +51,67 @@ describe('Commandbar', () => {
     render(
       <Commandbar
         {...CustomCommandbar.args}
-        onClear={clear}
-        onGenerate={generate}
-        onRandomise={randomise}
-        onSimulate={simulate}
+        onClear={clearHandler}
+        onGenerate={generateHandler}
+        onRandomise={randomiseHandler}
+        onSimulate={simulateHandler}
       />
     );
 
     const clearButton = screen.getByText('Erase');
     clearButton.click();
 
-    expect(clear).toHaveBeenCalledTimes(1);
+    expect(clearHandler).toHaveBeenCalledTimes(1);
   });
 
   test('should command generate event', () => {
     render(
       <Commandbar
         {...CustomCommandbar.args}
-        onClear={clear}
-        onGenerate={generate}
-        onRandomise={randomise}
-        onSimulate={simulate}
+        onClear={clearHandler}
+        onGenerate={generateHandler}
+        onRandomise={randomiseHandler}
+        onSimulate={simulateHandler}
       />
     );
     const generateButton = screen.getByText('Make it so');
 
     generateButton.click();
 
-    expect(generate).toHaveBeenCalledTimes(1);
+    expect(generateHandler).toHaveBeenCalledTimes(1);
   });
 
   test('should command randomise event', () => {
     render(
       <Commandbar
         {...CustomCommandbar.args}
-        onClear={clear}
-        onGenerate={generate}
-        onRandomise={randomise}
-        onSimulate={simulate}
+        onClear={clearHandler}
+        onGenerate={generateHandler}
+        onRandomise={randomiseHandler}
+        onSimulate={simulateHandler}
       />
     );
     const randomiseButton = screen.getByText('Shuffle it');
 
     randomiseButton.click();
 
-    expect(randomise).toHaveBeenCalledTimes(1);
+    expect(randomiseHandler).toHaveBeenCalledTimes(1);
   });
 
   test('should command simulate event', () => {
     render(
       <Commandbar
         {...CustomCommandbar.args}
-        onClear={clear}
-        onGenerate={generate}
-        onRandomise={randomise}
-        onSimulate={simulate}
+        onClear={clearHandler}
+        onGenerate={generateHandler}
+        onRandomise={randomiseHandler}
+        onSimulate={simulateHandler}
       />
     );
     const simulateButton = screen.getByText('Animate');
 
     simulateButton.click();
 
-    expect(simulate).toHaveBeenCalledTimes(1);
+    expect(simulateHandler).toHaveBeenCalledTimes(1);
   });
 });
