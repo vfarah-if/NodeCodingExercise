@@ -1,4 +1,5 @@
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
+import Commandbar from '../Commandbar';
 
 import {
   DefaultCommandbar,
@@ -44,5 +45,73 @@ describe('Commandbar', () => {
     );
 
     expect(container).toMatchSnapshot();
+  });
+
+  test('should command clear event', () => {
+    render(
+      <Commandbar
+        {...CustomCommandbar.args}
+        onClear={clear}
+        onGenerate={generate}
+        onRandomise={randomise}
+        onSimulate={simulate}
+      />
+    );
+
+    const clearButton = screen.getByText('Erase');
+    clearButton.click();
+
+    expect(clear).toHaveBeenCalledTimes(1);
+  });
+
+  test('should command generate event', () => {
+    render(
+      <Commandbar
+        {...CustomCommandbar.args}
+        onClear={clear}
+        onGenerate={generate}
+        onRandomise={randomise}
+        onSimulate={simulate}
+      />
+    );
+    const generateButton = screen.getByText('Make it so');
+
+    generateButton.click();
+
+    expect(generate).toHaveBeenCalledTimes(1);
+  });
+
+  test('should command randomise event', () => {
+    render(
+      <Commandbar
+        {...CustomCommandbar.args}
+        onClear={clear}
+        onGenerate={generate}
+        onRandomise={randomise}
+        onSimulate={simulate}
+      />
+    );
+    const randomiseButton = screen.getByText('Shuffle it');
+
+    randomiseButton.click();
+
+    expect(randomise).toHaveBeenCalledTimes(1);
+  });
+
+  test('should command simulate event', () => {
+    render(
+      <Commandbar
+        {...CustomCommandbar.args}
+        onClear={clear}
+        onGenerate={generate}
+        onRandomise={randomise}
+        onSimulate={simulate}
+      />
+    );
+    const simulateButton = screen.getByText('Animate');
+
+    simulateButton.click();
+
+    expect(simulate).toHaveBeenCalledTimes(1);
   });
 });
