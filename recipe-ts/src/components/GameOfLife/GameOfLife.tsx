@@ -46,14 +46,35 @@ const GameOfLife: React.FC<GameOfLifeProps> = ({
   );
 
   const boardPositions = useCallback<BoardPositionCallbackType>(() => {
-    const result = new Array<Position>();
+    const positions = new Array<Position>();
     for (let y = 0; y < boardSize; y++) {
       for (let x = 0; x < boardSize; x++) {
-        result.push({ x, y });
+        positions.push({ x, y });
       }
     }
-    return result;
+    return positions;
   }, [boardSize]);
+
+  const resizeBoard = useCallback<BoardPositionCallbackType>(() => {
+    const modifiedBoard = Array.from(Array(boardSize), () =>
+      Array.from(Array(boardSize), () => false)
+    );
+    boardPositions().forEach(({ x, y }) => {
+      try {
+        if (board[y][x]) return (modifiedBoard[y][x] = true);
+      } catch {
+        console.warn(
+          `Position [${x}, ${y}] or [${y}, ${x}] did not exist on previous board`
+        );
+      }
+    });
+    setBoard(modifiedBoard);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [boardSize, boardPositions]);
+
+  useEffect(() => {
+    resizeBoard();
+  }, [boardSize, resizeBoard]);
 
   useEffect(() => {
     if (seedActivePositions && seedActivePositions.length > 0) {
@@ -163,6 +184,7 @@ const GameOfLife: React.FC<GameOfLifeProps> = ({
         style={{
           display: 'grid',
           gridTemplateColumns: `repeat(${boardSize}, ${cellSize}px)`,
+          gridTemplateRows: `repeat(${boardSize}, ${cellSize}px)`,
         }}
       >
         {board.map((columns, y) =>

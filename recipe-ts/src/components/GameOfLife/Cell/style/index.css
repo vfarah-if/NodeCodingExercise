@@ -1,6 +1,4 @@
 .cell {
-  width: 20;
-  height: 20;
   border: solid 1px black;
   text-align: center;
   cursor: cell;
@@ -10,11 +8,11 @@
 }
 
 .cell .active {
-  align-content: center;
+  cursor: cell;
 }
 
 .cell,
 .cell:before,
 .cell:after {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
 }
