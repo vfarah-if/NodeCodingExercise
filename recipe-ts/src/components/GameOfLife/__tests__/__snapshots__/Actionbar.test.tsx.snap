@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Commandbar should customise commandbar settings 1`] = `
+exports[`Actionbar should customise action bar settings 1`] = `
 <div>
   <header>
     <div
@@ -156,7 +156,7 @@ exports[`Commandbar should customise commandbar settings 1`] = `
 </div>
 `;
 
-exports[`Commandbar should default expected command settings 1`] = `
+exports[`Actionbar should default expected action settings 1`] = `
 <div>
   <header>
     <div

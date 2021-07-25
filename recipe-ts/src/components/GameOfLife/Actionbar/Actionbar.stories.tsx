@@ -1,16 +1,16 @@
 import { action } from '@storybook/addon-actions';
 import { Meta, Story } from '@storybook/react/types-6-0';
 
-import Commandbar, { CommandbarProps } from './CommandBar';
+import Actionbar, { ActionbarProps } from './ActionBar';
 
 export default {
-  title: 'Component/GameOfLife/Commandbar',
-  component: Commandbar,
+  title: 'Component/GameOfLife/Actionbar',
+  component: Actionbar,
 } as Meta;
 
-const CommandbarTemplate: Story<CommandbarProps> = (args) => (
+const ActionbarTemplate: Story<ActionbarProps> = (args) => (
   <>
-    <Commandbar
+    <Actionbar
       {...args}
       onClear={action('onClear...')}
       onGenerate={action('onGenerate...')}
@@ -20,11 +20,11 @@ const CommandbarTemplate: Story<CommandbarProps> = (args) => (
   </>
 );
 
-export const DefaultCommandbar = CommandbarTemplate.bind({});
-DefaultCommandbar.args = {};
+export const DefaultActionbar = ActionbarTemplate.bind({});
+DefaultActionbar.args = {};
 
-export const CustomCommandbar = CommandbarTemplate.bind({});
-CustomCommandbar.args = {
+export const CustomActionbar = ActionbarTemplate.bind({});
+CustomActionbar.args = {
   title: "Conway's Game of life",
   clearDisplay: 'Erase',
   generateDisplay: 'Make it so',

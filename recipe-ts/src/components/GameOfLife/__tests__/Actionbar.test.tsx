@@ -1,12 +1,12 @@
 import { render, screen } from '@testing-library/react';
-import Commandbar from '../Commandbar';
+import Actionbar from '../Actionbar';
 
 import {
-  DefaultCommandbar,
-  CustomCommandbar,
-} from '../Commandbar/Commandbar.stories';
+  DefaultActionbar,
+  CustomActionbar,
+} from '../Actionbar/Actionbar.stories';
 
-describe('Commandbar', () => {
+describe('Actionbar', () => {
   const generateHandler = jest.fn();
   const clearHandler = jest.fn();
   const randomiseHandler = jest.fn();
@@ -19,10 +19,10 @@ describe('Commandbar', () => {
     simulateHandler.mockClear();
   });
 
-  test('should default expected command settings', () => {
+  test('should default expected action settings', () => {
     const { container } = render(
-      <DefaultCommandbar
-        {...DefaultCommandbar.args}
+      <DefaultActionbar
+        {...DefaultActionbar.args}
         onClear={clearHandler}
         onGenerate={generateHandler}
         onRandomise={randomiseHandler}
@@ -33,10 +33,10 @@ describe('Commandbar', () => {
     expect(container).toMatchSnapshot();
   });
 
-  test('should customise commandbar settings', () => {
+  test('should customise action bar settings', () => {
     const { container } = render(
-      <CustomCommandbar
-        {...CustomCommandbar.args}
+      <CustomActionbar
+        {...CustomActionbar.args}
         onClear={clearHandler}
         onGenerate={generateHandler}
         onRandomise={randomiseHandler}
@@ -49,8 +49,8 @@ describe('Commandbar', () => {
 
   test('should command clear event', () => {
     render(
-      <Commandbar
-        {...CustomCommandbar.args}
+      <Actionbar
+        {...CustomActionbar.args}
         onClear={clearHandler}
         onGenerate={generateHandler}
         onRandomise={randomiseHandler}
@@ -66,8 +66,8 @@ describe('Commandbar', () => {
 
   test('should command generate event', () => {
     render(
-      <Commandbar
-        {...CustomCommandbar.args}
+      <Actionbar
+        {...CustomActionbar.args}
         onClear={clearHandler}
         onGenerate={generateHandler}
         onRandomise={randomiseHandler}
@@ -83,8 +83,8 @@ describe('Commandbar', () => {
 
   test('should command randomise event', () => {
     render(
-      <Commandbar
-        {...CustomCommandbar.args}
+      <Actionbar
+        {...CustomActionbar.args}
         onClear={clearHandler}
         onGenerate={generateHandler}
         onRandomise={randomiseHandler}
@@ -100,8 +100,8 @@ describe('Commandbar', () => {
 
   test('should command simulate event', () => {
     render(
-      <Commandbar
-        {...CustomCommandbar.args}
+      <Actionbar
+        {...CustomActionbar.args}
         onClear={clearHandler}
         onGenerate={generateHandler}
         onRandomise={randomiseHandler}

@@ -155,7 +155,7 @@ exports[`GameOfLife given a default or configured board should configure a five 
   </header>
   <div
     class="grid"
-    style="display: grid; grid-template-columns: repeat(5, 50px);"
+    style="display: grid; grid-template-columns: repeat(5, 50px); grid-template-rows: repeat(5, 50px);"
   >
     <div
       class="cell"
@@ -416,7 +416,7 @@ exports[`GameOfLife given a default or configured board should create a default 
   </header>
   <div
     class="grid"
-    style="display: grid; grid-template-columns: repeat(10, 40px);"
+    style="display: grid; grid-template-columns: repeat(10, 40px); grid-template-rows: repeat(10, 40px);"
   >
     <div
       class="cell"
@@ -977,7 +977,7 @@ exports[`GameOfLife given a default or configured board should seed all cells as
   </header>
   <div
     class="grid"
-    style="display: grid; grid-template-columns: repeat(2, 50px);"
+    style="display: grid; grid-template-columns: repeat(2, 50px); grid-template-rows: repeat(2, 50px);"
   >
     <div
       class="cell active"
@@ -1444,7 +1444,7 @@ NodeList [
 exports[`GameOfLife given various patterns should seed generate blinker oscillator pattern with generate button: blink 1`] = `
 <div
   class="grid"
-  style="display: grid; grid-template-columns: repeat(3, 50px);"
+  style="display: grid; grid-template-columns: repeat(3, 50px); grid-template-rows: repeat(3, 50px);"
 >
   <div
     class="cell"
@@ -1506,7 +1506,7 @@ exports[`GameOfLife given various patterns should seed generate blinker oscillat
 exports[`GameOfLife given various patterns should seed generate blinker oscillator pattern with generate button: blink 2`] = `
 <div
   class="grid"
-  style="display: grid; grid-template-columns: repeat(3, 50px);"
+  style="display: grid; grid-template-columns: repeat(3, 50px); grid-template-rows: repeat(3, 50px);"
 >
   <div
     class="cell"
@@ -3568,7 +3568,7 @@ NodeList [
 exports[`GameOfLife given various patterns should seed toad oscillator pattern with generate button: toad 1`] = `
 <div
   class="grid"
-  style="display: grid; grid-template-columns: repeat(6, 50px);"
+  style="display: grid; grid-template-columns: repeat(6, 50px); grid-template-rows: repeat(6, 50px);"
 >
   <div
     class="cell"
@@ -3792,7 +3792,7 @@ exports[`GameOfLife given various patterns should seed toad oscillator pattern w
 exports[`GameOfLife given various patterns should seed toad oscillator pattern with generate button: toad 2`] = `
 <div
   class="grid"
-  style="display: grid; grid-template-columns: repeat(6, 50px);"
+  style="display: grid; grid-template-columns: repeat(6, 50px); grid-template-rows: repeat(6, 50px);"
 >
   <div
     class="cell"

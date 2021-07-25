@@ -1,7 +1,7 @@
 import produce from 'immer';
 import React, { useCallback, useEffect, useState } from 'react';
 import Cell from './Cell';
-import Commandbar from './Commandbar';
+import Actionbar from './Actionbar';
 import './style/index.css';
 
 type ButtonCallbackType = () => void;
@@ -172,13 +172,13 @@ const GameOfLife: React.FC<GameOfLifeProps> = ({
 
   return (
     <>
-      <Commandbar
+      <Actionbar
         simulateDisplay={isRunning ? 'Stop Simulation' : 'Start Simulation'}
         onClear={clear}
         onGenerate={generate}
         onSimulate={simulate}
         onRandomise={randomise}
-      ></Commandbar>
+      ></Actionbar>
       <div
         className='grid'
         style={{

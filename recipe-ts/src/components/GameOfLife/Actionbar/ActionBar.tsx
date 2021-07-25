@@ -2,7 +2,7 @@ import React from 'react';
 import Button from '../../Button';
 import './style/index.css';
 
-export interface CommandbarProps {
+export interface ActionbarProps {
   title?: string;
   generateDisplay?: string;
   simulateDisplay?: string;
@@ -14,7 +14,7 @@ export interface CommandbarProps {
   onClear: () => void;
 }
 
-const Commandbar: React.FC<CommandbarProps> = ({
+const Actionbar: React.FC<ActionbarProps> = ({
   title = 'Game of Life on Mars',
   generateDisplay = 'Generate',
   simulateDisplay = 'Simulate',
@@ -119,4 +119,4 @@ const Commandbar: React.FC<CommandbarProps> = ({
   );
 };
 
-export default Commandbar;
+export default Actionbar;
