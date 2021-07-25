@@ -58,11 +58,9 @@ const GameOfLife: React.FC<GameOfLifeProps> = ({
   useEffect(() => {
     if (seedActivePositions && seedActivePositions.length > 0) {
       const modifiedBoard = produce(board, (boardWithNewState) => {
-        seedActivePositions.forEach((position) => {
-          if (isOnBoard(position.x, position.y)) {
-            return (boardWithNewState[position.y][
-              position.x
-            ] = !boardWithNewState[position.y][position.x]);
+        seedActivePositions.forEach(({ x, y }) => {
+          if (isOnBoard(x, y)) {
+            return (boardWithNewState[y][x] = !boardWithNewState[y][x]);
           }
         });
       });
