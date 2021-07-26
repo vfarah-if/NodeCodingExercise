@@ -1,8 +1,10 @@
 import produce from 'immer';
 import React, { useCallback, useEffect, useState } from 'react';
+
 import Cell from './Cell';
 import Actionbar from './Actionbar';
 import './style/index.css';
+import Board from './Board';
 
 type ButtonCallbackType = () => void;
 type BoardCallbackType = (x: number, y: number) => boolean;
@@ -55,7 +57,7 @@ const GameOfLife: React.FC<GameOfLifeProps> = ({
     return positions;
   }, [boardSize]);
 
-  const resizeBoard = useCallback<BoardPositionCallbackType>(() => {
+  const resizeBoard = useCallback<ButtonCallbackType>(() => {
     const modifiedBoard = Array.from(Array(boardSize), () =>
       Array.from(Array(boardSize), () => false)
     );
@@ -171,7 +173,7 @@ const GameOfLife: React.FC<GameOfLifeProps> = ({
   };
 
   return (
-    <>
+    <div className='game-of-life'>
       <Actionbar
         simulateDisplay={isRunning ? 'Stop Simulation' : 'Start Simulation'}
         onClear={clear}
@@ -179,14 +181,7 @@ const GameOfLife: React.FC<GameOfLifeProps> = ({
         onSimulate={simulate}
         onRandomise={randomise}
       ></Actionbar>
-      <div
-        className='grid'
-        style={{
-          display: 'grid',
-          gridTemplateColumns: `repeat(${boardSize}, ${cellSize}px)`,
-          gridTemplateRows: `repeat(${boardSize}, ${cellSize}px)`,
-        }}
-      >
+      <Board boardSize={boardSize} cellSize={cellSize}>
         {board.map((columns, y) =>
           columns.map((rows, x) => (
             <Cell
@@ -201,8 +196,8 @@ const GameOfLife: React.FC<GameOfLifeProps> = ({
             ></Cell>
           ))
         )}
-      </div>
-    </>
+      </Board>
+    </div>
   );
 };
 

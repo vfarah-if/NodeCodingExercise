@@ -1,4 +1,8 @@
-.grid {
-  display: inline-grid;
-  padding: 15px 20px;
+.game-of-life {
+  text-align: center;
+  margin: 20px;
+  padding: 20px;
+  border: solid medium lightgrey;
+  border-radius: 10px;
+  background-color: whitesmoke;
 }

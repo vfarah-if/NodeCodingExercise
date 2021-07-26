@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Board should output a board of simpl items as children 1`] = `
+<div>
+  <div
+    class="grid"
+    style="display: grid; grid-template-columns: repeat(2, 40px); grid-template-rows: repeat(2, 40px);"
+  >
+    <div>
+      1
+    </div>
+    <div>
+      2
+    </div>
+    <div>
+      3
+    </div>
+    <div>
+      4
+    </div>
+  </div>
+</div>
+`;

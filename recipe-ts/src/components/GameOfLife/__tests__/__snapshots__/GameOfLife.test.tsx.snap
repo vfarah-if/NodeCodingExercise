@@ -2,999 +2,1011 @@
 
 exports[`GameOfLife given a default or configured board should configure a five by five board of empty cells with specific settings 1`] = `
 <div>
-  <header>
-    <div
-      class="wrapper"
-    >
-      <div>
-        <svg
-          height="58"
-          version="1.0"
-          width="72"
-          xmlns="http://www.w3.org/2000/svg"
-          xmlns:xlink="http://www.w3.org/1999/xlink"
-        >
-          <defs>
-            <rect
-              fill="black"
-              height="14"
-              id="alive"
-              stroke="#c0c0c0"
-              stroke-width="2"
-              width="14"
-              x="0"
-              y="0"
-            />
-            <rect
-              fill="white"
-              height="14"
-              id="dead"
-              stroke="#c0c0c0"
-              stroke-width="2"
-              width="14"
-              x="0"
-              y="0"
-            />
-          </defs>
-          <g
-            transform="translate(1,1)"
-          >
-            <use
-              transform="translate(0,0)"
-              xlink:href="#dead"
-            />
-            <use
-              transform="translate(14,0)"
-              xlink:href="#alive"
-            />
-            <use
-              transform="translate(28,0)"
-              xlink:href="#dead"
-            />
-            <use
-              transform="translate(42,0)"
-              xlink:href="#dead"
-            />
-            <use
-              transform="translate(56,0)"
-              xlink:href="#alive"
-            />
-            <use
-              transform="translate(0,14)"
-              xlink:href="#alive"
-            />
-            <use
-              transform="translate(14,14)"
-              xlink:href="#dead"
-            />
-            <use
-              transform="translate(28,14)"
-              xlink:href="#dead"
-            />
-            <use
-              transform="translate(42,14)"
-              xlink:href="#dead"
-            />
-            <use
-              transform="translate(56,14)"
-              xlink:href="#dead"
-            />
-            <use
-              transform="translate(0,28)"
-              xlink:href="#alive"
-            />
-            <use
-              transform="translate(14,28)"
-              xlink:href="#dead"
-            />
-            <use
-              transform="translate(28,28)"
-              xlink:href="#dead"
-            />
-            <use
-              transform="translate(42,28)"
-              xlink:href="#dead"
-            />
-            <use
-              transform="translate(56,28)"
-              xlink:href="#alive"
-            />
-            <use
-              transform="translate(0,42)"
-              xlink:href="#alive"
-            />
-            <use
-              transform="translate(14,42)"
-              xlink:href="#alive"
-            />
-            <use
-              transform="translate(28,42)"
-              xlink:href="#alive"
-            />
-            <use
-              transform="translate(42,42)"
-              xlink:href="#alive"
-            />
-            <use
-              transform="translate(56,42)"
-              xlink:href="#dead"
-            />
-          </g>
-        </svg>
-        <h1>
-          Game of Life on Mars
-        </h1>
-      </div>
-      <div>
-        <button
-          class="storybook-button storybook-button--small storybook-button--primary"
-          type="button"
-        >
-          Generate
-        </button>
-        <button
-          class="storybook-button storybook-button--small storybook-button--primary"
-          type="button"
-        >
-          Start Simulation
-        </button>
-        <button
-          class="storybook-button storybook-button--small storybook-button--primary"
-          type="button"
-        >
-          Randomise
-        </button>
-        <button
-          class="storybook-button storybook-button--small storybook-button--primary"
-          type="button"
-        >
-          Clear
-        </button>
-      </div>
-    </div>
-  </header>
   <div
-    class="grid"
-    style="display: grid; grid-template-columns: repeat(5, 50px); grid-template-rows: repeat(5, 50px);"
+    class="game-of-life"
   >
+    <header>
+      <div
+        class="wrapper"
+      >
+        <div>
+          <svg
+            height="58"
+            version="1.0"
+            width="72"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+          >
+            <defs>
+              <rect
+                fill="black"
+                height="14"
+                id="alive"
+                stroke="#c0c0c0"
+                stroke-width="2"
+                width="14"
+                x="0"
+                y="0"
+              />
+              <rect
+                fill="white"
+                height="14"
+                id="dead"
+                stroke="#c0c0c0"
+                stroke-width="2"
+                width="14"
+                x="0"
+                y="0"
+              />
+            </defs>
+            <g
+              transform="translate(1,1)"
+            >
+              <use
+                transform="translate(0,0)"
+                xlink:href="#dead"
+              />
+              <use
+                transform="translate(14,0)"
+                xlink:href="#alive"
+              />
+              <use
+                transform="translate(28,0)"
+                xlink:href="#dead"
+              />
+              <use
+                transform="translate(42,0)"
+                xlink:href="#dead"
+              />
+              <use
+                transform="translate(56,0)"
+                xlink:href="#alive"
+              />
+              <use
+                transform="translate(0,14)"
+                xlink:href="#alive"
+              />
+              <use
+                transform="translate(14,14)"
+                xlink:href="#dead"
+              />
+              <use
+                transform="translate(28,14)"
+                xlink:href="#dead"
+              />
+              <use
+                transform="translate(42,14)"
+                xlink:href="#dead"
+              />
+              <use
+                transform="translate(56,14)"
+                xlink:href="#dead"
+              />
+              <use
+                transform="translate(0,28)"
+                xlink:href="#alive"
+              />
+              <use
+                transform="translate(14,28)"
+                xlink:href="#dead"
+              />
+              <use
+                transform="translate(28,28)"
+                xlink:href="#dead"
+              />
+              <use
+                transform="translate(42,28)"
+                xlink:href="#dead"
+              />
+              <use
+                transform="translate(56,28)"
+                xlink:href="#alive"
+              />
+              <use
+                transform="translate(0,42)"
+                xlink:href="#alive"
+              />
+              <use
+                transform="translate(14,42)"
+                xlink:href="#alive"
+              />
+              <use
+                transform="translate(28,42)"
+                xlink:href="#alive"
+              />
+              <use
+                transform="translate(42,42)"
+                xlink:href="#alive"
+              />
+              <use
+                transform="translate(56,42)"
+                xlink:href="#dead"
+              />
+            </g>
+          </svg>
+          <h1>
+            Game of Life on Mars
+          </h1>
+        </div>
+        <div>
+          <button
+            class="storybook-button storybook-button--small storybook-button--primary"
+            type="button"
+          >
+            Generate
+          </button>
+          <button
+            class="storybook-button storybook-button--small storybook-button--primary"
+            type="button"
+          >
+            Start Simulation
+          </button>
+          <button
+            class="storybook-button storybook-button--small storybook-button--primary"
+            type="button"
+          >
+            Randomise
+          </button>
+          <button
+            class="storybook-button storybook-button--small storybook-button--primary"
+            type="button"
+          >
+            Clear
+          </button>
+        </div>
+      </div>
+    </header>
     <div
-      class="cell"
-      style="width: 50px; height: 50px; border: 1px solid orange; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 50px; height: 50px; border: 1px solid orange; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 50px; height: 50px; border: 1px solid orange; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 50px; height: 50px; border: 1px solid orange; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 50px; height: 50px; border: 1px solid orange; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 50px; height: 50px; border: 1px solid orange; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 50px; height: 50px; border: 1px solid orange; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 50px; height: 50px; border: 1px solid orange; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 50px; height: 50px; border: 1px solid orange; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 50px; height: 50px; border: 1px solid orange; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 50px; height: 50px; border: 1px solid orange; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 50px; height: 50px; border: 1px solid orange; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 50px; height: 50px; border: 1px solid orange; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 50px; height: 50px; border: 1px solid orange; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 50px; height: 50px; border: 1px solid orange; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 50px; height: 50px; border: 1px solid orange; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 50px; height: 50px; border: 1px solid orange; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 50px; height: 50px; border: 1px solid orange; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 50px; height: 50px; border: 1px solid orange; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 50px; height: 50px; border: 1px solid orange; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 50px; height: 50px; border: 1px solid orange; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 50px; height: 50px; border: 1px solid orange; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 50px; height: 50px; border: 1px solid orange; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 50px; height: 50px; border: 1px solid orange; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 50px; height: 50px; border: 1px solid orange; background-color: white;"
-    />
+      class="grid"
+      style="display: grid; grid-template-columns: repeat(5, 50px); grid-template-rows: repeat(5, 50px);"
+    >
+      <div
+        class="cell"
+        style="width: 50px; height: 50px; border: 1px solid orange; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 50px; height: 50px; border: 1px solid orange; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 50px; height: 50px; border: 1px solid orange; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 50px; height: 50px; border: 1px solid orange; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 50px; height: 50px; border: 1px solid orange; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 50px; height: 50px; border: 1px solid orange; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 50px; height: 50px; border: 1px solid orange; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 50px; height: 50px; border: 1px solid orange; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 50px; height: 50px; border: 1px solid orange; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 50px; height: 50px; border: 1px solid orange; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 50px; height: 50px; border: 1px solid orange; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 50px; height: 50px; border: 1px solid orange; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 50px; height: 50px; border: 1px solid orange; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 50px; height: 50px; border: 1px solid orange; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 50px; height: 50px; border: 1px solid orange; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 50px; height: 50px; border: 1px solid orange; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 50px; height: 50px; border: 1px solid orange; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 50px; height: 50px; border: 1px solid orange; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 50px; height: 50px; border: 1px solid orange; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 50px; height: 50px; border: 1px solid orange; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 50px; height: 50px; border: 1px solid orange; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 50px; height: 50px; border: 1px solid orange; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 50px; height: 50px; border: 1px solid orange; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 50px; height: 50px; border: 1px solid orange; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 50px; height: 50px; border: 1px solid orange; background-color: white;"
+      />
+    </div>
   </div>
 </div>
 `;
 
 exports[`GameOfLife given a default or configured board should create a default sized empty board with all expected controls 1`] = `
 <div>
-  <header>
-    <div
-      class="wrapper"
-    >
-      <div>
-        <svg
-          height="58"
-          version="1.0"
-          width="72"
-          xmlns="http://www.w3.org/2000/svg"
-          xmlns:xlink="http://www.w3.org/1999/xlink"
-        >
-          <defs>
-            <rect
-              fill="black"
-              height="14"
-              id="alive"
-              stroke="#c0c0c0"
-              stroke-width="2"
-              width="14"
-              x="0"
-              y="0"
-            />
-            <rect
-              fill="white"
-              height="14"
-              id="dead"
-              stroke="#c0c0c0"
-              stroke-width="2"
-              width="14"
-              x="0"
-              y="0"
-            />
-          </defs>
-          <g
-            transform="translate(1,1)"
-          >
-            <use
-              transform="translate(0,0)"
-              xlink:href="#dead"
-            />
-            <use
-              transform="translate(14,0)"
-              xlink:href="#alive"
-            />
-            <use
-              transform="translate(28,0)"
-              xlink:href="#dead"
-            />
-            <use
-              transform="translate(42,0)"
-              xlink:href="#dead"
-            />
-            <use
-              transform="translate(56,0)"
-              xlink:href="#alive"
-            />
-            <use
-              transform="translate(0,14)"
-              xlink:href="#alive"
-            />
-            <use
-              transform="translate(14,14)"
-              xlink:href="#dead"
-            />
-            <use
-              transform="translate(28,14)"
-              xlink:href="#dead"
-            />
-            <use
-              transform="translate(42,14)"
-              xlink:href="#dead"
-            />
-            <use
-              transform="translate(56,14)"
-              xlink:href="#dead"
-            />
-            <use
-              transform="translate(0,28)"
-              xlink:href="#alive"
-            />
-            <use
-              transform="translate(14,28)"
-              xlink:href="#dead"
-            />
-            <use
-              transform="translate(28,28)"
-              xlink:href="#dead"
-            />
-            <use
-              transform="translate(42,28)"
-              xlink:href="#dead"
-            />
-            <use
-              transform="translate(56,28)"
-              xlink:href="#alive"
-            />
-            <use
-              transform="translate(0,42)"
-              xlink:href="#alive"
-            />
-            <use
-              transform="translate(14,42)"
-              xlink:href="#alive"
-            />
-            <use
-              transform="translate(28,42)"
-              xlink:href="#alive"
-            />
-            <use
-              transform="translate(42,42)"
-              xlink:href="#alive"
-            />
-            <use
-              transform="translate(56,42)"
-              xlink:href="#dead"
-            />
-          </g>
-        </svg>
-        <h1>
-          Game of Life on Mars
-        </h1>
-      </div>
-      <div>
-        <button
-          class="storybook-button storybook-button--small storybook-button--primary"
-          type="button"
-        >
-          Generate
-        </button>
-        <button
-          class="storybook-button storybook-button--small storybook-button--primary"
-          type="button"
-        >
-          Start Simulation
-        </button>
-        <button
-          class="storybook-button storybook-button--small storybook-button--primary"
-          type="button"
-        >
-          Randomise
-        </button>
-        <button
-          class="storybook-button storybook-button--small storybook-button--primary"
-          type="button"
-        >
-          Clear
-        </button>
-      </div>
-    </div>
-  </header>
   <div
-    class="grid"
-    style="display: grid; grid-template-columns: repeat(10, 40px); grid-template-rows: repeat(10, 40px);"
+    class="game-of-life"
   >
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
-    <div
-      class="cell"
-      style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
-    />
+    <header>
+      <div
+        class="wrapper"
+      >
+        <div>
+          <svg
+            height="58"
+            version="1.0"
+            width="72"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+          >
+            <defs>
+              <rect
+                fill="black"
+                height="14"
+                id="alive"
+                stroke="#c0c0c0"
+                stroke-width="2"
+                width="14"
+                x="0"
+                y="0"
+              />
+              <rect
+                fill="white"
+                height="14"
+                id="dead"
+                stroke="#c0c0c0"
+                stroke-width="2"
+                width="14"
+                x="0"
+                y="0"
+              />
+            </defs>
+            <g
+              transform="translate(1,1)"
+            >
+              <use
+                transform="translate(0,0)"
+                xlink:href="#dead"
+              />
+              <use
+                transform="translate(14,0)"
+                xlink:href="#alive"
+              />
+              <use
+                transform="translate(28,0)"
+                xlink:href="#dead"
+              />
+              <use
+                transform="translate(42,0)"
+                xlink:href="#dead"
+              />
+              <use
+                transform="translate(56,0)"
+                xlink:href="#alive"
+              />
+              <use
+                transform="translate(0,14)"
+                xlink:href="#alive"
+              />
+              <use
+                transform="translate(14,14)"
+                xlink:href="#dead"
+              />
+              <use
+                transform="translate(28,14)"
+                xlink:href="#dead"
+              />
+              <use
+                transform="translate(42,14)"
+                xlink:href="#dead"
+              />
+              <use
+                transform="translate(56,14)"
+                xlink:href="#dead"
+              />
+              <use
+                transform="translate(0,28)"
+                xlink:href="#alive"
+              />
+              <use
+                transform="translate(14,28)"
+                xlink:href="#dead"
+              />
+              <use
+                transform="translate(28,28)"
+                xlink:href="#dead"
+              />
+              <use
+                transform="translate(42,28)"
+                xlink:href="#dead"
+              />
+              <use
+                transform="translate(56,28)"
+                xlink:href="#alive"
+              />
+              <use
+                transform="translate(0,42)"
+                xlink:href="#alive"
+              />
+              <use
+                transform="translate(14,42)"
+                xlink:href="#alive"
+              />
+              <use
+                transform="translate(28,42)"
+                xlink:href="#alive"
+              />
+              <use
+                transform="translate(42,42)"
+                xlink:href="#alive"
+              />
+              <use
+                transform="translate(56,42)"
+                xlink:href="#dead"
+              />
+            </g>
+          </svg>
+          <h1>
+            Game of Life on Mars
+          </h1>
+        </div>
+        <div>
+          <button
+            class="storybook-button storybook-button--small storybook-button--primary"
+            type="button"
+          >
+            Generate
+          </button>
+          <button
+            class="storybook-button storybook-button--small storybook-button--primary"
+            type="button"
+          >
+            Start Simulation
+          </button>
+          <button
+            class="storybook-button storybook-button--small storybook-button--primary"
+            type="button"
+          >
+            Randomise
+          </button>
+          <button
+            class="storybook-button storybook-button--small storybook-button--primary"
+            type="button"
+          >
+            Clear
+          </button>
+        </div>
+      </div>
+    </header>
+    <div
+      class="grid"
+      style="display: grid; grid-template-columns: repeat(10, 40px); grid-template-rows: repeat(10, 40px);"
+    >
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+      <div
+        class="cell"
+        style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
+      />
+    </div>
   </div>
 </div>
 `;
 
 exports[`GameOfLife given a default or configured board should seed all cells as active 1`] = `
 <div>
-  <header>
-    <div
-      class="wrapper"
-    >
-      <div>
-        <svg
-          height="58"
-          version="1.0"
-          width="72"
-          xmlns="http://www.w3.org/2000/svg"
-          xmlns:xlink="http://www.w3.org/1999/xlink"
-        >
-          <defs>
-            <rect
-              fill="black"
-              height="14"
-              id="alive"
-              stroke="#c0c0c0"
-              stroke-width="2"
-              width="14"
-              x="0"
-              y="0"
-            />
-            <rect
-              fill="white"
-              height="14"
-              id="dead"
-              stroke="#c0c0c0"
-              stroke-width="2"
-              width="14"
-              x="0"
-              y="0"
-            />
-          </defs>
-          <g
-            transform="translate(1,1)"
-          >
-            <use
-              transform="translate(0,0)"
-              xlink:href="#dead"
-            />
-            <use
-              transform="translate(14,0)"
-              xlink:href="#alive"
-            />
-            <use
-              transform="translate(28,0)"
-              xlink:href="#dead"
-            />
-            <use
-              transform="translate(42,0)"
-              xlink:href="#dead"
-            />
-            <use
-              transform="translate(56,0)"
-              xlink:href="#alive"
-            />
-            <use
-              transform="translate(0,14)"
-              xlink:href="#alive"
-            />
-            <use
-              transform="translate(14,14)"
-              xlink:href="#dead"
-            />
-            <use
-              transform="translate(28,14)"
-              xlink:href="#dead"
-            />
-            <use
-              transform="translate(42,14)"
-              xlink:href="#dead"
-            />
-            <use
-              transform="translate(56,14)"
-              xlink:href="#dead"
-            />
-            <use
-              transform="translate(0,28)"
-              xlink:href="#alive"
-            />
-            <use
-              transform="translate(14,28)"
-              xlink:href="#dead"
-            />
-            <use
-              transform="translate(28,28)"
-              xlink:href="#dead"
-            />
-            <use
-              transform="translate(42,28)"
-              xlink:href="#dead"
-            />
-            <use
-              transform="translate(56,28)"
-              xlink:href="#alive"
-            />
-            <use
-              transform="translate(0,42)"
-              xlink:href="#alive"
-            />
-            <use
-              transform="translate(14,42)"
-              xlink:href="#alive"
-            />
-            <use
-              transform="translate(28,42)"
-              xlink:href="#alive"
-            />
-            <use
-              transform="translate(42,42)"
-              xlink:href="#alive"
-            />
-            <use
-              transform="translate(56,42)"
-              xlink:href="#dead"
-            />
-          </g>
-        </svg>
-        <h1>
-          Game of Life on Mars
-        </h1>
-      </div>
-      <div>
-        <button
-          class="storybook-button storybook-button--small storybook-button--primary"
-          type="button"
-        >
-          Generate
-        </button>
-        <button
-          class="storybook-button storybook-button--small storybook-button--primary"
-          type="button"
-        >
-          Start Simulation
-        </button>
-        <button
-          class="storybook-button storybook-button--small storybook-button--primary"
-          type="button"
-        >
-          Randomise
-        </button>
-        <button
-          class="storybook-button storybook-button--small storybook-button--primary"
-          type="button"
-        >
-          Clear
-        </button>
-      </div>
-    </div>
-  </header>
   <div
-    class="grid"
-    style="display: grid; grid-template-columns: repeat(2, 50px); grid-template-rows: repeat(2, 50px);"
+    class="game-of-life"
   >
+    <header>
+      <div
+        class="wrapper"
+      >
+        <div>
+          <svg
+            height="58"
+            version="1.0"
+            width="72"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+          >
+            <defs>
+              <rect
+                fill="black"
+                height="14"
+                id="alive"
+                stroke="#c0c0c0"
+                stroke-width="2"
+                width="14"
+                x="0"
+                y="0"
+              />
+              <rect
+                fill="white"
+                height="14"
+                id="dead"
+                stroke="#c0c0c0"
+                stroke-width="2"
+                width="14"
+                x="0"
+                y="0"
+              />
+            </defs>
+            <g
+              transform="translate(1,1)"
+            >
+              <use
+                transform="translate(0,0)"
+                xlink:href="#dead"
+              />
+              <use
+                transform="translate(14,0)"
+                xlink:href="#alive"
+              />
+              <use
+                transform="translate(28,0)"
+                xlink:href="#dead"
+              />
+              <use
+                transform="translate(42,0)"
+                xlink:href="#dead"
+              />
+              <use
+                transform="translate(56,0)"
+                xlink:href="#alive"
+              />
+              <use
+                transform="translate(0,14)"
+                xlink:href="#alive"
+              />
+              <use
+                transform="translate(14,14)"
+                xlink:href="#dead"
+              />
+              <use
+                transform="translate(28,14)"
+                xlink:href="#dead"
+              />
+              <use
+                transform="translate(42,14)"
+                xlink:href="#dead"
+              />
+              <use
+                transform="translate(56,14)"
+                xlink:href="#dead"
+              />
+              <use
+                transform="translate(0,28)"
+                xlink:href="#alive"
+              />
+              <use
+                transform="translate(14,28)"
+                xlink:href="#dead"
+              />
+              <use
+                transform="translate(28,28)"
+                xlink:href="#dead"
+              />
+              <use
+                transform="translate(42,28)"
+                xlink:href="#dead"
+              />
+              <use
+                transform="translate(56,28)"
+                xlink:href="#alive"
+              />
+              <use
+                transform="translate(0,42)"
+                xlink:href="#alive"
+              />
+              <use
+                transform="translate(14,42)"
+                xlink:href="#alive"
+              />
+              <use
+                transform="translate(28,42)"
+                xlink:href="#alive"
+              />
+              <use
+                transform="translate(42,42)"
+                xlink:href="#alive"
+              />
+              <use
+                transform="translate(56,42)"
+                xlink:href="#dead"
+              />
+            </g>
+          </svg>
+          <h1>
+            Game of Life on Mars
+          </h1>
+        </div>
+        <div>
+          <button
+            class="storybook-button storybook-button--small storybook-button--primary"
+            type="button"
+          >
+            Generate
+          </button>
+          <button
+            class="storybook-button storybook-button--small storybook-button--primary"
+            type="button"
+          >
+            Start Simulation
+          </button>
+          <button
+            class="storybook-button storybook-button--small storybook-button--primary"
+            type="button"
+          >
+            Randomise
+          </button>
+          <button
+            class="storybook-button storybook-button--small storybook-button--primary"
+            type="button"
+          >
+            Clear
+          </button>
+        </div>
+      </div>
+    </header>
     <div
-      class="cell active"
-      style="width: 50px; height: 50px; border: 1px solid black; background-color: yellow;"
-    />
-    <div
-      class="cell active"
-      style="width: 50px; height: 50px; border: 1px solid black; background-color: yellow;"
-    />
-    <div
-      class="cell active"
-      style="width: 50px; height: 50px; border: 1px solid black; background-color: yellow;"
-    />
-    <div
-      class="cell active"
-      style="width: 50px; height: 50px; border: 1px solid black; background-color: yellow;"
-    />
+      class="grid"
+      style="display: grid; grid-template-columns: repeat(2, 50px); grid-template-rows: repeat(2, 50px);"
+    >
+      <div
+        class="cell active"
+        style="width: 50px; height: 50px; border: 1px solid black; background-color: yellow;"
+      />
+      <div
+        class="cell active"
+        style="width: 50px; height: 50px; border: 1px solid black; background-color: yellow;"
+      />
+      <div
+        class="cell active"
+        style="width: 50px; height: 50px; border: 1px solid black; background-color: yellow;"
+      />
+      <div
+        class="cell active"
+        style="width: 50px; height: 50px; border: 1px solid black; background-color: yellow;"
+      />
+    </div>
   </div>
 </div>
 `;
