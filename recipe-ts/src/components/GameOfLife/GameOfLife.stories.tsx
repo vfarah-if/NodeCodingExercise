@@ -100,7 +100,7 @@ BeaconOscillator.args = {
 export const PentaDecathlon = GameOfLifeTemplate.bind({});
 PentaDecathlon.args = {
   boardSize: 20,
-  cellSize: 50,
+  cellSize: 43,
   gridColor: 'red',
   activeColor: 'green',
   seedActivePositions: [
@@ -131,7 +131,7 @@ PentaDecathlon.args = {
 export const Glider = GameOfLifeTemplate.bind({});
 Glider.args = {
   boardSize: 20,
-  cellSize: 50,
+  cellSize: 43,
   gridColor: 'red',
   activeColor: 'green',
   seedActivePositions: [
@@ -237,7 +237,7 @@ SquareFlower.args = {
 export const GosperGliderGun = GameOfLifeTemplate.bind({});
 GosperGliderGun.args = {
   boardSize: 35,
-  cellSize: 20,
+  cellSize: 24,
   gridColor: 'brown',
   activeColor: 'red',
   showCellInfo: false,
