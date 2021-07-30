@@ -330,6 +330,8 @@ exports[`Storyshots Component/Cards Zero Column Layout Story 1`] = `
 </ul>
 `;
 
+exports[`Storyshots Component/GameOfLife Game Of Life Example 1`] = `"TODO: With Chloe"`;
+
 exports[`Storyshots Component/Header No User Existing Story 1`] = `
 <header>
   <div
