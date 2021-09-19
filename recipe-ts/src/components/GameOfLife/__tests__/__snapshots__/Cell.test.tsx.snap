@@ -15,7 +15,7 @@ exports[`Cell should render a cell with default values 1`] = `
 <div>
   <div
     class="cell"
-    style="width: 40px; height: 40px; border: 1px solid gray;"
+    style="width: 40px; height: 40px; border: 1px solid gray; background-color: white;"
   />
 </div>
 `;

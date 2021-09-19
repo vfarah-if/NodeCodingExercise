@@ -15,7 +15,7 @@ export interface CellProps {
 const Cell: React.FC<CellProps> = ({
   cellSize = 40,
   cellBorderColor = 'gray',
-  cellBackgroundColor,
+  cellBackgroundColor = 'white',
   cellActiveColor = 'blue',
   displayText,
   isActive = false,
