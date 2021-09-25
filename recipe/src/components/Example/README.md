@@ -5,23 +5,13 @@
 3. Ran tests and got one for free based on the storybook scenarios see [global snapshots](src/**snapshots**/storybook.test.js.snap) for last snapshot
 
    ```html
-exports[`Storyshots Page/Example Default 1`] = `
+   exports[`Storyshots Page/Example Default 1`] = `
    <div>
-     <p>
-       You clicked 
-       0
-        times
-     </p>
-     <button
-       onClick={[Function]}
-     >
-       Click me
-     </button>
+     <p>You clicked 0 times</p>
+     <button onClick="{[Function]}">Click me</button>
    </div>
    `;
    ```
-
-   
 
 4. Created behaviour tests only within the tests
 
