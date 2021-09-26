@@ -330,6 +330,21 @@ exports[`Storyshots Component/Cards Zero Column Layout Story 1`] = `
 </ul>
 `;
 
+exports[`Storyshots Component/Example Default 1`] = `
+<div>
+  <p>
+    You clicked 
+    0
+     times
+  </p>
+  <button
+    onClick={[Function]}
+  >
+    Click me
+  </button>
+</div>
+`;
+
 exports[`Storyshots Component/GameOfLife Game Of Life Example 1`] = `"TODO: With Chloe"`;
 
 exports[`Storyshots Component/Header No User Existing Story 1`] = `
@@ -919,18 +934,3 @@ exports[`Storyshots Component/Thumbnail Simple Thumbnail Story 1`] = `
 exports[`Storyshots Component/User Details User Details Not Found Story 1`] = `"loading ..."`;
 
 exports[`Storyshots Component/User Details User Details With Id Story 1`] = `"loading ..."`;
-
-exports[`Storyshots Page/Example Default 1`] = `
-<div>
-  <p>
-    You clicked 
-    0
-     times
-  </p>
-  <button
-    onClick={[Function]}
-  >
-    Click me
-  </button>
-</div>
-`;

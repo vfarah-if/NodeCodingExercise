@@ -4,7 +4,7 @@
 
 2. Ran storybook and modified storybook to represent what was of interest and visually understood what was being done
 
-3. Ran tests and got one for free based on the storybook scenarios see [global snapshots](src/**snapshots**/storybook.test.js.snap) for last snapshot
+3. Ran tests and got one for free based on the storybook scenarios see [global snapshots](./src/**snapshots**/storybook.test.js.snap) for last snapshot
 
    ```html
    exports[`Storyshots Page/Example Default 1`] = `
