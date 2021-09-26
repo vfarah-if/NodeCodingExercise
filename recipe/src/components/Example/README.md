@@ -1,3 +1,5 @@
+# Journey with Pedro so far
+
 1. Created storybook and component together
 
 2. Ran storybook and modified storybook to represent what was of interest and visually understood what was being done
@@ -13,7 +15,7 @@
    `;
    ```
 
-4. Created behaviour tests only within the tests
+4. Created behavioural test to drive core functionality of component
 
    ```javascript
     describe('Example', () => {

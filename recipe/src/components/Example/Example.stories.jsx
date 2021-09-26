@@ -1,7 +1,8 @@
 import React from 'react';
 import Example from './Example';
 
-export default { title: 'Page/Example' };
+// eslint-disable-next-line import/no-anonymous-default-export
+export default { title: 'Component/Example' };
 
 export const Default = () => (
   <>
