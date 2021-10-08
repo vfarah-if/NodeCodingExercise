@@ -22,10 +22,11 @@ describe('NFTClient Integration Test', () => {
 
     test('should get data', async () => {
       const collectionData = await actualResponse.json();
-      expect(collectionData.errorCode).toBe(0);
-      expect(collectionData.data).toBeDefined();
-      expect(collectionData.data.length).toBe(10);
-      collectionData.data.forEach((item) => {
+      const { errorCode, data } = collectionData;
+      expect(errorCode).toBe(0);
+      expect(data).toBeDefined();
+      expect(data.length).toBe(10);
+      data.forEach((item) => {
         const { id, name } = item;
         expect(id).toBeDefined();
         expect(name).toBeDefined();
@@ -52,17 +53,18 @@ describe('NFTClient Integration Test', () => {
 
     test('should get blockchains', async () => {
       const collectionData = await actualResponse.json();
-      expect(collectionData.errorCode).toBe(0);
-      expect(collectionData.data).toBeDefined();
-      const { blockchains } = collectionData.data;
+      const { errorCode, data } = collectionData;
+      expect(errorCode).toBe(0);
+      expect(data).toBeDefined();
+      const { blockchains } = data;
       expect(blockchains.length).toBeGreaterThan(0);
-      blockchains.forEach((item) => {
-        const { name, logo, logoGrey, explorerUrl } = item;
+      blockchains.forEach((blockchain) => {
+        const { name, logo, logoGrey, explorerUrl } = blockchain;
         expect(name).toBeDefined();
         expect(logo).toBeDefined();
         expect(logoGrey).toBeDefined();
         expect(explorerUrl).toBeDefined();
-        // console.debug(item);
+        // console.debug(blockchain);
       });
     });
   });
