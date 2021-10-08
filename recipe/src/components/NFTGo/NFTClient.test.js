@@ -1,4 +1,4 @@
-import { getHotCollection } from './NFTClient';
+import { getHotCollection, getBlockChains } from './NFTClient';
 
 describe('NFTClient Integration Test', () => {
   describe('getHotCollection', () => {
@@ -14,7 +14,7 @@ describe('NFTClient Integration Test', () => {
     });
 
     test('should get status 200', () => {
-      console.debug(actualResponse);
+      // console.debug(actualResponse);
 
       expect(actualResponse).toBeDefined();
       expect(actualResponse.status).toBe(200);
@@ -29,7 +29,40 @@ describe('NFTClient Integration Test', () => {
         const { id, name } = item;
         expect(id).toBeDefined();
         expect(name).toBeDefined();
-        console.debug(item);
+        // console.debug(item);
+      });
+    });
+  });
+
+  describe('getBlockChains', () => {
+    let actualResponse;
+
+    beforeAll(async () => {
+      try {
+        actualResponse = await getBlockChains();
+      } catch (error) {
+        console.error(error);
+      }
+    });
+
+    test('should get data response', () => {
+      expect(actualResponse).toBeDefined();
+      expect(actualResponse.status).toBe(200);
+    });
+
+    test('should get blockchains', async () => {
+      const collectionData = await actualResponse.json();
+      expect(collectionData.errorCode).toBe(0);
+      expect(collectionData.data).toBeDefined();
+      const { blockchains } = collectionData.data;
+      expect(blockchains.length).toBeGreaterThan(0);
+      blockchains.forEach((item) => {
+        const { name, logo, logoGrey, explorerUrl } = item;
+        expect(name).toBeDefined();
+        expect(logo).toBeDefined();
+        expect(logoGrey).toBeDefined();
+        expect(explorerUrl).toBeDefined();
+        // console.debug(item);
       });
     });
   });
