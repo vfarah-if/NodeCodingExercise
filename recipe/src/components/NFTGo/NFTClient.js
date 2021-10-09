@@ -5,13 +5,13 @@ const TOP_SALES_URL = `${NFTGO_API_V1_URL}/asset/top-sales`;
 const LATEST_DEAL_URL = `${NFTGO_API_V1_URL}/asset/latestdeal`;
 const RECENTLY_CREATED_URL = `${NFTGO_API_V1_URL}/assets/recently-created`;
 const TRADING_HISTORY_URL = `${NFTGO_API_V1_URL}/asset/trading-history`;
+const DEFAULT_PAGINATION_OPTIONS = { limit: 10, offset: 0 };
 
 // https://api.nftgo.io/api/v1/asset/trading-history/6125b9851722e60a4a7f864c?limit=20&offset=0
 
-// TODO: Refactor pagination into default options
 // TODO: Remove duplication where possible
 
-export const getHotCollection = (limit = 10, withStat = 1) => {
+export const getHotCollection = (withStat = 1, limit = 10) => {
   return fetch(`${COLLECTIONS_URL}/hot?limit=${limit}&withStat=${withStat}`);
 };
 
@@ -23,37 +23,37 @@ export const getBlockChains = () => {
 export const getTopSales = (
   timesSpan = '24h',
   cid = '6125b9851722e60a4a7f864c',
-  limit = 10,
-  offset = 0
+  paginationOptions = DEFAULT_PAGINATION_OPTIONS
 ) => {
   return fetch(
-    `${TOP_SALES_URL}?limit=${limit}&timespan=${timesSpan}&cid=${cid}&offset=${offset}`
+    `${TOP_SALES_URL}?limit=${paginationOptions.limit}&timespan=${timesSpan}&cid=${cid}&offset=${paginationOptions.offset}`
   );
 };
 
 export const getLatestDeal = (
   cid = '6125b9851722e60a4a7f864c',
-  limit = 10,
-  offset = 0
+  paginationOptions = DEFAULT_PAGINATION_OPTIONS
 ) => {
-  return fetch(`${LATEST_DEAL_URL}?limit=${limit}&cid=${cid}&offset=${offset}`);
+  return fetch(
+    `${LATEST_DEAL_URL}?limit=${paginationOptions.limit}&cid=${cid}&offset=${paginationOptions.offset}`
+  );
 };
 
 export const getRecentlyCreated = (
   withCollection = 1,
   cid = '6125b9851722e60a4a7f864c',
-  limit = 10,
-  offset = 0
+  paginationOptions = DEFAULT_PAGINATION_OPTIONS
 ) => {
   return fetch(
-    `${RECENTLY_CREATED_URL}?limit=${limit}&withCollection=${withCollection}&cid=${cid}&offset=${offset}`
+    `${RECENTLY_CREATED_URL}?limit=${paginationOptions.limit}&withCollection=${withCollection}&cid=${cid}&offset=${paginationOptions.offset}`
   );
 };
 
 export const getTradingHistory = (
   cid = '6125b9851722e60a4a7f864c',
-  limit = 10,
-  offset = 0
+  paginationOptions = DEFAULT_PAGINATION_OPTIONS
 ) => {
-  return fetch(`${TRADING_HISTORY_URL}/${cid}?limit=${limit}&offset=${offset}`);
+  return fetch(
+    `${TRADING_HISTORY_URL}/${cid}?limit=${paginationOptions.limit}&offset=${paginationOptions.offset}`
+  );
 };
