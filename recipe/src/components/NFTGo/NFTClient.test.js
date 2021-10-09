@@ -3,9 +3,10 @@ import {
   getBlockChains,
   getTopSales,
   getLatestDeal,
+  getRecentlyCreated,
 } from './NFTClient';
 
-describe('NFTClient Integration Test', () => {
+describe('NFTClient Integration Tests', () => {
   describe('getHotCollection', () => {
     let actualResponse;
 
@@ -127,6 +128,54 @@ describe('NFTClient Integration Test', () => {
     beforeAll(async () => {
       try {
         actualResponse = await getLatestDeal();
+      } catch (error) {
+        console.error(error);
+      }
+    });
+
+    test('should get data response', () => {
+      expect(actualResponse).toBeDefined();
+      expect(actualResponse.status).toBe(200);
+    });
+
+    test('should get assets', async () => {
+      const collectionData = await actualResponse.json();
+      const { errorCode, data } = collectionData;
+      expect(errorCode).toBe(0);
+      expect(data).toBeDefined();
+      const { assets } = data;
+      expect(assets.length).toBe(10);
+      assets.forEach((asset) => {
+        const {
+          id,
+          collectionId,
+          tokenId,
+          contract,
+          props,
+          lastSale,
+          highestSale,
+          lowestSale,
+          // Others ...
+        } = asset;
+        expect(id).toBeDefined();
+        expect(collectionId).toBeDefined();
+        expect(tokenId).toBeDefined();
+        expect(contract).toBeDefined();
+        expect(props).toBeDefined();
+        expect(lastSale).toBeDefined();
+        expect(highestSale).toBeDefined();
+        expect(lowestSale).toBeDefined();
+        // console.debug(assets);
+      });
+    });
+  });
+
+  describe('getRecentlyCreated', () => {
+    let actualResponse;
+
+    beforeAll(async () => {
+      try {
+        actualResponse = await getRecentlyCreated();
       } catch (error) {
         console.error(error);
       }
