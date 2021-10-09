@@ -5,6 +5,7 @@ import {
   getLatestDeal,
   getRecentlyCreated,
   getTradingHistory,
+  getTopHolders,
 } from './NFTClient';
 
 describe('NFTClient Integration Tests', () => {
@@ -266,6 +267,60 @@ describe('NFTClient Integration Tests', () => {
         expect(highestSale).toBeDefined();
         expect(lowestSale).toBeDefined();
         // console.debug(asset);
+      });
+    });
+  });
+
+  describe('getTopHolders', () => {
+    let actualResponse;
+
+    beforeAll(async () => {
+      try {
+        actualResponse = await getTopHolders();
+      } catch (error) {
+        console.error(error);
+      }
+    });
+
+    test('should get data response', () => {
+      expect(actualResponse).toBeDefined();
+      expect(actualResponse.status).toBe(200);
+    });
+
+    test('should get holder list', async () => {
+      const collectionData = await actualResponse.json();
+      const { errorCode, data } = collectionData;
+      expect(errorCode).toBe(0);
+      expect(data).toBeDefined();
+      const { list, total } = data;
+      expect(list).toBeDefined();
+      expect(total).toBeGreaterThan(0);
+      list.forEach((holder) => {
+        const {
+          ranking,
+          blockchain,
+          address,
+          value,
+          nftNum,
+          lastOrderTimestamp,
+          buyVolume,
+          sellVolume,
+          lastTrade,
+          nftNumRatio,
+          valueRatio,
+        } = holder;
+        expect(ranking).toBeDefined();
+        expect(blockchain).toBeDefined();
+        expect(address).toBeDefined();
+        expect(value).toBeDefined();
+        expect(nftNum).toBeDefined();
+        expect(lastOrderTimestamp).toBeDefined();
+        expect(buyVolume).toBeDefined();
+        expect(sellVolume).toBeDefined();
+        expect(lastTrade).toBeDefined();
+        expect(nftNumRatio).toBeDefined();
+        expect(valueRatio).toBeDefined();
+        // console.debug(holder);
       });
     });
   });
