@@ -4,6 +4,7 @@ import {
   getTopSales,
   getLatestDeal,
   getRecentlyCreated,
+  getTradingHistory,
 } from './NFTClient';
 
 describe('NFTClient Integration Tests', () => {
@@ -12,7 +13,7 @@ describe('NFTClient Integration Tests', () => {
 
     beforeAll(async () => {
       try {
-        actualResponse = await getHotCollection(10);
+        actualResponse = await getHotCollection();
       } catch (error) {
         console.error(error);
         actualResponse = undefined;
@@ -80,7 +81,7 @@ describe('NFTClient Integration Tests', () => {
 
     beforeAll(async () => {
       try {
-        actualResponse = await getTopSales(10, '24h');
+        actualResponse = await getTopSales();
       } catch (error) {
         console.error(error);
       }
@@ -214,6 +215,57 @@ describe('NFTClient Integration Tests', () => {
         expect(highestSale).toBeDefined();
         expect(lowestSale).toBeDefined();
         // console.debug(assets);
+      });
+    });
+  });
+
+  describe('getTradingHistory', () => {
+    let actualResponse;
+
+    beforeAll(async () => {
+      try {
+        actualResponse = await getTradingHistory();
+      } catch (error) {
+        console.error(error);
+      }
+    });
+
+    test('should get data response', () => {
+      expect(actualResponse).toBeDefined();
+      expect(actualResponse.status).toBe(200);
+    });
+
+    test('should get deals', async () => {
+      const collectionData = await actualResponse.json();
+      const { errorCode, data } = collectionData;
+      expect(errorCode).toBe(0);
+      expect(data).toBeDefined();
+      const { deals, total } = data;
+      expect(deals).toBeDefined();
+      expect(total).toBeGreaterThan(0);
+      deals.forEach((deal) => {
+        const { asset } = deal;
+        expect(asset).toBeDefined();
+        const {
+          id,
+          collectionId,
+          tokenId,
+          contract,
+          props,
+          lastSale,
+          highestSale,
+          lowestSale,
+          // Others ...
+        } = asset;
+        expect(id).toBeDefined();
+        expect(collectionId).toBeDefined();
+        expect(tokenId).toBeDefined();
+        expect(contract).toBeDefined();
+        expect(props).toBeDefined();
+        expect(lastSale).toBeDefined();
+        expect(highestSale).toBeDefined();
+        expect(lowestSale).toBeDefined();
+        // console.debug(asset);
       });
     });
   });

@@ -4,6 +4,9 @@ const SYSTEM_URL = `${NFTGO_API_V1_URL}/system`;
 const TOP_SALES_URL = `${NFTGO_API_V1_URL}/asset/top-sales`;
 const LATEST_DEAL_URL = `${NFTGO_API_V1_URL}/asset/latestdeal`;
 const RECENTLY_CREATED_URL = `${NFTGO_API_V1_URL}/assets/recently-created`;
+const TRADING_HISTORY_URL = `${NFTGO_API_V1_URL}/asset/trading-history`;
+
+// https://api.nftgo.io/api/v1/asset/trading-history/6125b9851722e60a4a7f864c?limit=20&offset=0
 
 // TODO: Refactor pagination into default options
 // TODO: Remove duplication where possible
@@ -18,9 +21,9 @@ export const getBlockChains = () => {
 
 // REMARKS: timeSpan can be '24h' | '7d' | '30d'
 export const getTopSales = (
-  limit = 10,
   timesSpan = '24h',
   cid = '6125b9851722e60a4a7f864c',
+  limit = 10,
   offset = 0
 ) => {
   return fetch(
@@ -29,20 +32,28 @@ export const getTopSales = (
 };
 
 export const getLatestDeal = (
-  limit = 10,
   cid = '6125b9851722e60a4a7f864c',
+  limit = 10,
   offset = 0
 ) => {
   return fetch(`${LATEST_DEAL_URL}?limit=${limit}&cid=${cid}&offset=${offset}`);
 };
 
 export const getRecentlyCreated = (
-  limit = 10,
   withCollection = 1,
   cid = '6125b9851722e60a4a7f864c',
+  limit = 10,
   offset = 0
 ) => {
   return fetch(
     `${RECENTLY_CREATED_URL}?limit=${limit}&withCollection=${withCollection}&cid=${cid}&offset=${offset}`
   );
+};
+
+export const getTradingHistory = (
+  cid = '6125b9851722e60a4a7f864c',
+  limit = 10,
+  offset = 0
+) => {
+  return fetch(`${TRADING_HISTORY_URL}/${cid}?limit=${limit}&offset=${offset}`);
 };
