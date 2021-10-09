@@ -7,7 +7,12 @@ const RECENTLY_CREATED_URL = `${NFTGO_API_V1_URL}/assets/recently-created`;
 const TRADING_HISTORY_URL = `${NFTGO_API_V1_URL}/asset/trading-history`;
 const TOP_HOLDERS_URL = `${NFTGO_API_V1_URL}/ranking/coll-holder`;
 
-const DEFAULT_PAGINATION_OPTIONS = { limit: 10, offset: 0 };
+const DEFAULT_LIMIT = 10;
+const DEFAULT_OFFSET = 0;
+const DEFAULT_PAGINATION_OPTIONS = {
+  limit: DEFAULT_LIMIT,
+  offset: DEFAULT_OFFSET,
+};
 
 // TODO: Remove duplication where possible
 
@@ -20,7 +25,10 @@ export const getHotCollection = (
   paginationOptions = DEFAULT_PAGINATION_OPTIONS
 ) => {
   return fetch(
-    `${COLLECTIONS_URL}/hot?limit=${paginationOptions.limit}&withStat=${withStat}`
+    `${COLLECTIONS_URL}/hot?limit=${
+      paginationOptions?.limit || DEFAULT_LIMIT
+    }&offset=${paginationOptions?.offset || DEFAULT_OFFSET}
+    &withStat=${withStat}`
   );
 };
 
@@ -31,7 +39,9 @@ export const getTopSales = (
   paginationOptions = DEFAULT_PAGINATION_OPTIONS
 ) => {
   return fetch(
-    `${TOP_SALES_URL}?limit=${paginationOptions.limit}&timespan=${timesSpan}&cid=${cid}&offset=${paginationOptions.offset}`
+    `${TOP_SALES_URL}?timespan=${timesSpan}&cid=${cid}&limit=${
+      paginationOptions?.limit || DEFAULT_LIMIT
+    }&offset=${paginationOptions?.offset || DEFAULT_OFFSET}`
   );
 };
 
@@ -40,7 +50,9 @@ export const getLatestDeal = (
   paginationOptions = DEFAULT_PAGINATION_OPTIONS
 ) => {
   return fetch(
-    `${LATEST_DEAL_URL}?limit=${paginationOptions.limit}&cid=${cid}&offset=${paginationOptions.offset}`
+    `${LATEST_DEAL_URL}?cid=${cid}&limit=${
+      paginationOptions?.limit || DEFAULT_LIMIT
+    }&offset=${paginationOptions?.offset || DEFAULT_OFFSET}`
   );
 };
 
@@ -50,7 +62,9 @@ export const getRecentlyCreated = (
   paginationOptions = DEFAULT_PAGINATION_OPTIONS
 ) => {
   return fetch(
-    `${RECENTLY_CREATED_URL}?limit=${paginationOptions.limit}&withCollection=${withCollection}&cid=${cid}&offset=${paginationOptions.offset}`
+    `${RECENTLY_CREATED_URL}?withCollection=${withCollection}&cid=${cid}&limit=${
+      paginationOptions?.limit || DEFAULT_LIMIT
+    }&offset=${paginationOptions?.offset || DEFAULT_OFFSET}`
   );
 };
 
@@ -59,7 +73,9 @@ export const getTradingHistory = (
   paginationOptions = DEFAULT_PAGINATION_OPTIONS
 ) => {
   return fetch(
-    `${TRADING_HISTORY_URL}/${cid}?limit=${paginationOptions.limit}&offset=${paginationOptions.offset}`
+    `${TRADING_HISTORY_URL}/${cid}?limit=${
+      paginationOptions?.limit || DEFAULT_LIMIT
+    }&offset=${paginationOptions?.offset || DEFAULT_OFFSET}`
   );
 };
 
@@ -68,6 +84,8 @@ export const getTopHolders = (
   paginationOptions = DEFAULT_PAGINATION_OPTIONS
 ) => {
   return fetch(
-    `${TOP_HOLDERS_URL}?limit=${paginationOptions.limit}&offset=${paginationOptions.offset}&id=${cid}`
+    `${TOP_HOLDERS_URL}?id=${cid}&limit=${
+      paginationOptions?.limit || DEFAULT_LIMIT
+    }&offset=${paginationOptions?.offset || DEFAULT_OFFSET}`
   );
 };
