@@ -8,7 +8,7 @@ const RECENTLY_CREATED_URL = `${NFTGO_API_V1_URL}/assets/recently-created`;
 const TRADING_HISTORY_URL = `${NFTGO_API_V1_URL}/asset/trading-history`;
 const TOP_HOLDERS_URL = `${NFTGO_API_V1_URL}/ranking/coll-holder`;
 
-const DEFAULT_LIMIT = 10;
+const DEFAULT_LIMIT = 20;
 const DEFAULT_OFFSET = 0;
 const DEFAULT_PAGINATION_OPTIONS = {
   limit: DEFAULT_LIMIT,

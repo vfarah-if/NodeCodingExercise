@@ -146,7 +146,7 @@ describe('NFTClient Integration Tests', () => {
       expect(errorCode).toBe(0);
       expect(data).toBeDefined();
       const { assets } = data;
-      expect(assets.length).toBe(10);
+      expect(assets.length).toBeGreaterThan(0);
       assets.forEach((asset) => {
         const {
           id,
@@ -194,7 +194,7 @@ describe('NFTClient Integration Tests', () => {
       expect(errorCode).toBe(0);
       expect(data).toBeDefined();
       const { assets } = data;
-      expect(assets.length).toBe(10);
+      expect(assets.length).toBeGreaterThan(0);
       assets.forEach((asset) => {
         const {
           id,
