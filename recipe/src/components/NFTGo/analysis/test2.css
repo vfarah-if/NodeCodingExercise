@@ -1,0 +1,6098 @@
+@media screen and (max-width: 1263px) {
+  .layout_bodyContent__jC3FX {
+    width: 100%;
+    min-width: 1024px;
+    background: #f4f6f6;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+}
+@media screen and (min-width: 1264px) {
+  .layout_bodyContent__jC3FX {
+    width: 100%;
+    min-width: 1264px;
+    background: #f4f6f6;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+}
+.flex-box_flexBoxRow__2sC4D {
+  flex-direction: row;
+}
+.flex-box_flexBoxColumn__3RsOR,
+.flex-box_flexBoxRow__2sC4D {
+  display: flex;
+  justify-content: space-between;
+  align-items: space-between;
+}
+.flex-box_flexBoxColumn__3RsOR {
+  flex-direction: column;
+}
+.alert_alertContainer__Nb7Wi {
+  border: 1px solid;
+  width: 640px;
+  height: -moz-fit-content;
+  height: fit-content;
+  border-radius: 6px;
+  padding: 18px 20px 18px 32px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.alert_alertContainer__Nb7Wi .alert_title__3l-SX {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: 1px;
+  color: #333;
+}
+.alert_alertContainer__Nb7Wi .alert_content__2uG2E {
+  margin-top: 8px;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 1px;
+  color: #333;
+}
+.alert_alertContainer__Nb7Wi .alert_icon__5seLv {
+  width: 22px;
+  height: 22px;
+}
+.alert_alertContainer__Nb7Wi .alert_cross__NysaC {
+  margin-top: 4px;
+  width: 14px;
+  height: 14px;
+}
+.alert_text__1Y4GE {
+  flex: 1 1;
+}
+.alert_icon__5seLv {
+  margin-right: 16px;
+}
+.alert_cross__NysaC {
+  cursor: pointer;
+}
+.alert_mobileAlert__6R2fC {
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 24px 32px;
+}
+.alert_mobileAlert__6R2fC .alert_title__3l-SX {
+  font-weight: 500;
+  font-size: 26px;
+  letter-spacing: 1px;
+  line-height: 32px;
+  color: #333;
+}
+.alert_mobileAlert__6R2fC .alert_content__2uG2E {
+  margin-top: 8px;
+  font-weight: 500;
+  font-size: 22px;
+  letter-spacing: 1px;
+  color: #333;
+}
+.alert_mobileAlert__6R2fC .alert_icon__5seLv {
+  width: 32px;
+  height: 32px;
+}
+.alert_mobileAlert__6R2fC .alert_cross__NysaC {
+  margin-top: 4px;
+  width: 24px;
+  height: 24px;
+}
+.alert_success__1S7Me {
+  background: #eaf9fa;
+  border-color: #89e0e1;
+}
+.alert_success__1S7Me .alert_icon__5seLv {
+  fill: #89e0e1;
+}
+.alert_info__pmai9 {
+  background: #f2f3ff;
+  border-color: #5a66f9;
+}
+.alert_info__pmai9 .alert_icon__5seLv {
+  fill: #5a66f9;
+}
+.alert_error__1_GLf {
+  background: #fff2f0;
+  border-color: #ed7066;
+}
+.alert_error__1_GLf .alert_icon__5seLv {
+  fill: #ed7066;
+}
+.alert_warning__1qMeC {
+  background: #fffaf4;
+  border-color: #ffbc70;
+}
+.alert_warning__1qMeC .alert_icon__5seLv {
+  fill: #ffbc70;
+}
+.alert_alertArea__14X6Q {
+  position: fixed;
+  height: 58px;
+  width: 640px;
+  top: 68px;
+  z-index: 300;
+  left: calc(50% - 320px);
+}
+.alert_mobileAlertArea__3qeSf {
+  top: 134px;
+}
+@keyframes alert_fadeIn__2sPVn {
+  0% {
+    opacity: 0;
+    margin-top: -58px;
+  }
+  to {
+    opacity: 1;
+    margin-top: 0;
+  }
+}
+@keyframes alert_fadeOut__363rj {
+  0% {
+    opacity: 1;
+    margin-top: 0;
+  }
+  to {
+    opacity: 0;
+    margin-top: -58px;
+  }
+}
+.alert_alert__2dnCa {
+  animation: alert_fadeIn__2sPVn 0.5s;
+}
+.alert_alertFadeOut__3e3RP {
+  animation: alert_fadeOut__363rj 0.5s;
+}
+* {
+  box-sizing: border-box;
+  font-family: PingFang SC;
+  transition: width 0.3s;
+  -moz-transition: width 0.3s;
+  -webkit-transition: width 0.3s;
+  -o-transition: width 0.3s;
+}
+html {
+  scroll-behavior: smooth;
+}
+.icon {
+  width: 16px;
+  height: 16px;
+  vertical-align: -0.15em;
+  overflow: hidden;
+}
+@media screen and (max-width: 1263px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 1024px;
+    overflow-y: overlay;
+    margin: 0;
+    padding-top: 80px;
+    background: #f8fafa;
+    height: unset;
+  }
+}
+@media screen and (min-width: 1264px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 1264px;
+    overflow-y: overlay;
+    margin: 0;
+    padding-top: 80px;
+    background: #f8fafa;
+    height: unset;
+  }
+}
+a {
+  text-decoration: none;
+  color: #333;
+}
+a:active,
+a:hover {
+  color: unset;
+}
+input {
+  outline: none;
+}
+button {
+  cursor: pointer;
+}
+.ant-picker-focused {
+  border-color: #5a66f9 !important;
+  border-right-width: 1px !important;
+  outline: 0;
+  box-shadow: unset;
+}
+.ant-picker-range .ant-picker-active-bar {
+  background: #5a66f9 !important;
+}
+.ant-picker-panel-container {
+  border-radius: 8px !important;
+}
+.ant-picker-cell-inner {
+  border-radius: 50% !important;
+}
+.ant-picker-cell-in-view.ant-picker-cell-range-end .ant-picker-cell-inner,
+.ant-picker-cell-in-view.ant-picker-cell-range-start .ant-picker-cell-inner,
+.ant-picker-cell-in-view.ant-picker-cell-selected .ant-picker-cell-inner {
+  background: #5a66f9 !important;
+}
+.ant-picker-cell-in-view.ant-picker-cell-in-range:before {
+  background: #f2f3ff;
+}
+.ant-picker-cell-in-view.ant-picker-cell-in-range.ant-picker-cell-range-hover:before,
+.ant-picker-cell-in-view.ant-picker-cell-range-end.ant-picker-cell-range-hover:before,
+.ant-picker-cell-in-view.ant-picker-cell-range-end:not(.ant-picker-cell-range-end-single).ant-picker-cell-range-hover-end:before,
+.ant-picker-cell-in-view.ant-picker-cell-range-start.ant-picker-cell-range-hover:before,
+.ant-picker-cell-in-view.ant-picker-cell-range-start:not(.ant-picker-cell-range-start-single).ant-picker-cell-range-hover-start:before,
+.ant-picker-date-panel
+  .ant-picker-cell-in-view.ant-picker-cell-in-range.ant-picker-cell-range-hover-end
+  .ant-picker-cell-inner:after,
+.ant-picker-date-panel
+  .ant-picker-cell-in-view.ant-picker-cell-in-range.ant-picker-cell-range-hover-start
+  .ant-picker-cell-inner:after,
+.ant-picker-panel
+  > :not(.ant-picker-date-panel)
+  .ant-picker-cell-in-view.ant-picker-cell-in-range.ant-picker-cell-range-hover-end:before,
+.ant-picker-panel
+  > :not(.ant-picker-date-panel)
+  .ant-picker-cell-in-view.ant-picker-cell-in-range.ant-picker-cell-range-hover-start:before {
+  background: #f2f3ff !important;
+}
+.ant-picker-cell-in-view.ant-picker-cell-range-end:not(.ant-picker-cell-range-end-single):before,
+.ant-picker-cell-in-view.ant-picker-cell-range-start:not(.ant-picker-cell-range-start-single):before {
+  background: #f2f3ff;
+}
+.ant-picker-cell-in-view.ant-picker-cell-today .ant-picker-cell-inner:before {
+  border: unset;
+}
+.ant-picker-cell-in-view.ant-picker-cell-range-hover-end.ant-picker-cell-range-end-single:after,
+.ant-picker-cell-in-view.ant-picker-cell-range-hover-end.ant-picker-cell-range-start.ant-picker-cell-range-end.ant-picker-cell-range-start-near-hover:after,
+.ant-picker-cell-in-view.ant-picker-cell-range-hover-end:not(.ant-picker-cell-in-range):not(.ant-picker-cell-range-start):not(.ant-picker-cell-range-end):after,
+.ant-picker-cell-in-view.ant-picker-cell-range-hover-start.ant-picker-cell-range-start-single:after,
+.ant-picker-cell-in-view.ant-picker-cell-range-hover-start.ant-picker-cell-range-start.ant-picker-cell-range-end.ant-picker-cell-range-end-near-hover:after,
+.ant-picker-cell-in-view.ant-picker-cell-range-hover-start:not(.ant-picker-cell-in-range):not(.ant-picker-cell-range-start):not(.ant-picker-cell-range-end):after,
+.ant-picker-cell-in-view.ant-picker-cell-range-hover:not(.ant-picker-cell-in-range):after {
+  border-top: 1px dashed #5a66f9;
+  border-bottom: 1px dashed #5a66f9;
+}
+.ant-picker-cell-in-view.ant-picker-cell-end.ant-picker-cell-range-hover-edge-end.ant-picker-cell-range-hover-edge-end-near-range:after,
+.ant-picker-cell-in-view.ant-picker-cell-range-hover-edge-end:not(.ant-picker-cell-range-hover-edge-end-near-range):after,
+.ant-picker-cell-in-view.ant-picker-cell-range-hover-end:after,
+.ant-picker-cell-in-view.ant-picker-cell-range-hover:last-child:after,
+tr
+  > .ant-picker-cell-in-view.ant-picker-cell-range-hover-start:last-child:after {
+  border-right: 1px dashed #5a66f9;
+}
+.ant-picker-cell-in-view.ant-picker-cell-range-hover-edge-start:not(.ant-picker-cell-range-hover-edge-start-near-range):after,
+.ant-picker-cell-in-view.ant-picker-cell-range-hover-start:after,
+.ant-picker-cell-in-view.ant-picker-cell-range-hover:first-child:after,
+.ant-picker-cell-in-view.ant-picker-cell-start.ant-picker-cell-range-hover-edge-start.ant-picker-cell-range-hover-edge-start-near-range:after,
+tr
+  > .ant-picker-cell-in-view.ant-picker-cell-range-hover-end:first-child:after {
+  border-left: 1px dashed #5a66f9;
+}
+.ant-picker-dropdown {
+  z-index: 10;
+}
+#__next {
+  width: 100%;
+}
+.button_button__fdmtm {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.button_button-normal__1JKVo {
+  background: #fff;
+  color: #5a66f9;
+}
+.button_button-normal__1JKVo,
+.button_button-primary__3pnVL {
+  border: 2px solid #5a66f9;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+}
+.button_button-primary__3pnVL {
+  background: #5a66f9;
+  color: #fff;
+}
+.select_selectContainer__1QIph {
+  position: relative;
+}
+.select_selectOptionActive__fKoOk {
+  width: 200px;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  cursor: pointer;
+}
+.select_selectOptions__Ff2-a {
+  padding-top: 8px;
+  position: absolute;
+  top: 100%;
+}
+.select_selectOptionItem__1rLxo {
+  cursor: pointer;
+  width: 200px;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+}
+.select_selectionOptionRight__3ZH2n {
+  right: 0;
+}
+.select_selectionOptionLeft__3SUUE {
+  left: 0;
+}
+.select_selectionOptionCenter__4bqK7 {
+  left: 50%;
+  transform: translate(-50%);
+}
+.modal_modalArea__3YD1k {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 200;
+}
+.modal_modalSingleArea__cQuJ5 {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.modal_modalContainer__3oxBC {
+  min-width: 420px;
+  background-color: #fff;
+  border-radius: 10px;
+  z-index: 300;
+  animation: modal_fadeIn__1AfPZ 0.5s;
+  position: relative;
+}
+.modal_closeIcon__2hIWf {
+  position: absolute;
+  top: 24px;
+  right: 18px;
+  cursor: pointer;
+}
+.modal_mask__1XfCY {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 200;
+}
+@keyframes modal_fadeIn__1AfPZ {
+  0% {
+    opacity: 0;
+    margin-top: -158px;
+  }
+  to {
+    opacity: 1;
+    margin-top: 0;
+  }
+}
+@keyframes modal_modalFadeOut__cFG1x {
+  0% {
+    opacity: 0.5;
+    margin-top: 0;
+  }
+  to {
+    opacity: 0;
+    margin-top: -158px;
+  }
+}
+@keyframes modal_maskFadeOut__1M5tB {
+  0% {
+    opacity: 0.15;
+  }
+  to {
+    opacity: 0;
+  }
+}
+.modal_modalFadeOut__cFG1x {
+  animation: modal_modalFadeOut__cFG1x 0.5s;
+}
+.modal_maskFadeOut__1M5tB {
+  animation: modal_maskFadeOut__1M5tB 0.5s;
+}
+.range-picker_container__17-Ly {
+  position: relative;
+}
+.range-picker_container__17-Ly .range-picker_calendarIcon__34wxX {
+  cursor: pointer;
+}
+.range-picker_datePicker__3lWTR {
+  position: absolute;
+  width: 314px;
+  min-height: 380px;
+  background-color: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  top: calc(100% + 6px);
+  animation: range-picker_fadeIn__3oWo_ 0.5s;
+}
+.range-picker_datePicker__left__3yLrK {
+  left: 0;
+}
+.range-picker_datePicker__right__5VtMW {
+  right: 0;
+}
+.range-picker_datePicker__center__1lvP3 {
+  left: calc(50% - 157px);
+}
+.range-picker_head__S_6hu {
+  width: 100%;
+  height: 56px;
+  padding: 0 13px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 500;
+  font-size: 16px;
+  color: #333;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.range-picker_head__S_6hu .range-picker_arrowContainer__-mBBO {
+  cursor: pointer;
+}
+.range-picker_head__S_6hu .range-picker_arrowContainer__-mBBO:hover path {
+  stroke: #5a66f9;
+}
+.range-picker_head__S_6hu .range-picker_arrowLeft__HMksR {
+  margin: 0 30px 0 20px;
+}
+.range-picker_head__S_6hu .range-picker_arrowRight__1lsEq {
+  margin: 0 20px 0 30px;
+  transform: rotate(180deg);
+}
+.range-picker_content__3ZVRM {
+  width: 100%;
+  padding: 0 16px;
+}
+.range-picker_content__3ZVRM .range-picker_weekdays__2VqRF {
+  width: 100%;
+  height: 36px;
+  border-bottom: 1px solid #e5e5e5;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.range-picker_content__3ZVRM
+  .range-picker_weekdays__2VqRF
+  .range-picker_weekday__UeVx2 {
+  flex: 1 1;
+  font-size: 12px;
+  font-weight: 500;
+  text-align: center;
+  color: #9c9c9c;
+}
+.range-picker_content__3ZVRM .range-picker_days__10ohS {
+  width: 100%;
+  margin-top: 12px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.range-picker_content__3ZVRM
+  .range-picker_days__10ohS
+  .range-picker_dayWrapper__1vv_d {
+  width: 40px;
+  height: 40px;
+}
+.range-picker_content__3ZVRM
+  .range-picker_days__10ohS
+  .range-picker_dayWrapper__leftend__3JvT1 {
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+}
+.range-picker_content__3ZVRM
+  .range-picker_days__10ohS
+  .range-picker_dayWrapper__rightend__3b9dI {
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+}
+.range-picker_content__3ZVRM
+  .range-picker_days__10ohS
+  .range-picker_dayWrapper__active__3fFvn {
+  background-color: #f2f3ff;
+}
+.range-picker_content__3ZVRM
+  .range-picker_days__10ohS
+  .range-picker_dayWrapper__hover__2mzsY {
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+}
+.range-picker_content__3ZVRM
+  .range-picker_days__10ohS
+  .range-picker_day__2v3vv {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+}
+.range-picker_content__3ZVRM
+  .range-picker_days__10ohS
+  .range-picker_day__2v3vv:hover {
+  background-color: #f2f3ff;
+}
+.range-picker_content__3ZVRM
+  .range-picker_days__10ohS
+  .range-picker_dayActive__3Bmgd {
+  background-color: #5a66f9 !important;
+  color: #fff;
+}
+.range-picker_content__3ZVRM
+  .range-picker_days__10ohS
+  .range-picker_dayDisable__3UMz1 {
+  color: #c4c4c4;
+  cursor: default;
+}
+.range-picker_content__3ZVRM
+  .range-picker_days__10ohS
+  .range-picker_dayDisable__3UMz1:hover {
+  background-color: #fff;
+}
+.range-picker_foot__2ZFk2 {
+  height: 75px;
+  padding-bottom: 23px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+}
+.range-picker_foot__2ZFk2 .range-picker_cancel__2bmHo,
+.range-picker_foot__2ZFk2 .range-picker_filter__1j7Im {
+  width: 96px;
+  height: 32px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+}
+.range-picker_foot__2ZFk2 .range-picker_cancel__2bmHo {
+  background-color: #fff;
+  color: #333;
+  border: 1px solid #e5e5e5;
+}
+.range-picker_foot__2ZFk2 .range-picker_filter__1j7Im {
+  margin-left: 24px;
+  background-color: #5a66f9;
+  color: #fff;
+  transition: all 0.3s;
+}
+.range-picker_foot__2ZFk2 .range-picker_filter__1j7Im:hover {
+  background-color: #3946ee;
+}
+.range-picker_foot__2ZFk2 .range-picker_disabled__1MVi- {
+  background-color: rgba(90, 102, 249, 0.6) !important;
+  cursor: default;
+}
+@keyframes range-picker_fadeIn__3oWo_ {
+  0% {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.timerange-picker_container__1Tqd4 {
+  background: #f2f3ff;
+  border-radius: 8px;
+  height: 40px;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.timerange-picker_timeSpan__aXHA_ {
+  width: 50px;
+  height: 30px;
+  font-weight: 500;
+  border-radius: 6px;
+  color: #4d4d4d;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.timerange-picker_selected__2TJdn {
+  background-color: #fff;
+  color: #5a66f9;
+  font-weight: 600;
+}
+.timerange-picker_dropdown__1V54s {
+  right: -5px !important;
+}
+.audio_controls__6f1Fm {
+  width: 100%;
+  position: relative;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+}
+.audio_controls__6f1Fm path {
+  fill: #fff;
+}
+.audio_controls__6f1Fm
+  .audio_ant-slider__1jnat:hover
+  .audio_ant-slider-handle__311dV {
+  border: 0;
+  width: 8px;
+  height: 8px;
+  margin-top: -2px;
+}
+.audio_controls__6f1Fm
+  .audio_ant-slider__1jnat:hover
+  .audio_ant-slider-rail__3Ib3G {
+  background-color: hsla(0, 0%, 100%, 0.6);
+  border-radius: 4px;
+}
+.audio_controls__6f1Fm
+  .audio_ant-slider__1jnat:hover
+  .audio_ant-slider-track__2MoFH {
+  background-color: #fff;
+}
+.audio_controls__6f1Fm .audio_ant-slider-handle__311dV {
+  border: 0;
+  width: 8px;
+  height: 8px;
+  margin-top: -2px;
+}
+.audio_controls__6f1Fm .audio_ant-slider-rail__3Ib3G {
+  background-color: hsla(0, 0%, 100%, 0.6);
+  border-radius: 4px;
+}
+.audio_controls__6f1Fm .audio_ant-slider-track__2MoFH {
+  background-color: #fff;
+}
+.audio_controlBtn__3yDGN {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+  transition: all 0.3s;
+}
+.audio_controlBtn__3yDGN:hover {
+  background: hsla(0, 0%, 100%, 0.1);
+}
+.audio_playBtn__1dVbX {
+  position: absolute;
+  bottom: 18px;
+  left: 16px;
+  z-index: 1;
+}
+.audio_playBtn__1dVbX path {
+  fill: #fff;
+}
+.desc-modal_mask__2Lo4w {
+  background-color: rgba(0, 0, 0, 0.15);
+}
+.desc-modal_modal__10W0k {
+  width: 595px;
+  padding: 15px 24px 50px;
+}
+.desc-modal_close__1P7SO {
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+.desc-modal_icon__101vu path {
+  fill: #e0e0e0;
+}
+.desc-modal_info__BBkHG {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.desc-modal_img__2w5mO {
+  width: 104px;
+  height: 104px;
+  margin-top: 33px;
+}
+.desc-modal_title__3sxYD {
+  font-weight: 600;
+  font-size: 24px;
+  text-align: center;
+  line-height: 34px;
+  letter-spacing: 1px;
+  margin-top: 16px;
+}
+.desc-modal_desc__3gMIJ {
+  margin-top: 21px;
+  width: 100%;
+  font-size: 15px;
+  line-height: 24px;
+  align-items: center;
+  letter-spacing: 1px;
+  color: grey;
+  max-height: 168px;
+  overflow-y: overlay;
+  overflow-x: overlay;
+  scrollbar-width: thin;
+}
+.desc-modal_desc__3gMIJ::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+.desc-modal_desc__3gMIJ::-webkit-scrollbar-button {
+  height: 0;
+}
+.desc-modal_desc__3gMIJ::-webkit-scrollbar-thumb {
+  background: #c4c4c4;
+  border-radius: 20px;
+}
+@keyframes loading_rotate__1rO2Z {
+  0% {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
+.loading_loading__2-2Yw {
+  animation: loading_rotate__1rO2Z 4s ease 0s infinite;
+}
+#nprogress {
+  pointer-events: none;
+}
+#nprogress .bar {
+  background: #5a66f9;
+  position: fixed;
+  z-index: 1031;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+}
+#nprogress .peg {
+  display: block;
+  position: absolute;
+  right: 0;
+  width: 100px;
+  height: 100%;
+  box-shadow: 0 0 10px #5a66f9, 0 0 5px #5a66f9;
+  opacity: 1;
+  transform: rotate(3deg) translateY(-4px);
+}
+.nprogress-custom-parent {
+  overflow: hidden;
+  position: relative;
+}
+.nprogress-custom-parent #nprogress .bar,
+.nprogress-custom-parent #nprogress .spinner {
+  position: absolute;
+}
+@keyframes nprogress-spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
+.user-info_login__3nFUW {
+  min-width: 47px;
+  height: 20px;
+  margin-left: 16px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  cursor: pointer;
+}
+.user-info_loading__1240i,
+.user-info_loginArea__2hV_d {
+  width: 47px;
+  margin-left: 16px;
+}
+.user-info_avatarImg__1fU66 {
+  width: 32px;
+  height: 32px;
+  border-radius: 16px;
+  cursor: pointer;
+}
+.user-info_icon__2UmB9 {
+  cursor: pointer;
+}
+.user-info_optionList__31I2H {
+  background: #fff;
+  box-shadow: 0 4px 8px hsla(0, 0%, 87.8%, 0.4);
+  border-radius: 14px;
+  padding-top: 0 !important;
+  font-family: unset;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  margin-top: 8px;
+}
+.user-info_option__366kA {
+  width: 102px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 14px;
+}
+.user-info_option__366kA:hover {
+  background-color: #f2f3ff;
+}
+.language-select_languageSelectArea__3neNO {
+  position: relative;
+}
+.language-select_languageSelect__3RfEb {
+  width: 66px;
+  height: 24px;
+  padding: 6px 4.53px 6px 19px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  cursor: pointer;
+}
+.language-select_languageSelect__3RfEb:hover {
+  background: #f6f6f6;
+}
+.language-select_CountryIcon__2g1z3 {
+  width: 28px;
+  height: 28px;
+  margin-right: 13px;
+  border-radius: 50%;
+}
+.language-select_Triangle__4VYoi {
+  width: 10px;
+  height: 5;
+  margin-left: 9px;
+  transition: all 0.3s;
+}
+.language-select_openTriangle__3-X3r {
+  transform: rotate(180deg);
+}
+.language-select_languageOptionList__3Rimo {
+  display: none;
+  position: absolute;
+  right: 0;
+  padding-top: 8px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px hsla(0, 0%, 87.8%, 0.4);
+  border-radius: 14px;
+}
+.language-select_languageOption__1m4Zs {
+  width: 138px;
+  height: 40px;
+  padding: 0 26px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 14px;
+  cursor: pointer;
+}
+.language-select_languageOption__1m4Zs:hover {
+  background-color: #f2f3ff;
+}
+.language-select_languageType__Vu_pY {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+}
+.language-select_languageSimple__1L7sI {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #828282;
+}
+.language-select_optionArea__1-Iig {
+  background-color: #fff;
+  border-radius: 14px;
+  box-shadow: 0 4px 8px hsla(0, 0%, 87.8%, 0.4);
+}
+.search-input_search__3JdnK {
+  height: 40px;
+  border-radius: 20px;
+  background-color: #f7f7f7;
+  padding: 0 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.search-input_searchIcon__2PehQ {
+  width: 24px;
+  height: 24px;
+  fill: #5a66f9;
+}
+.search-input_searchInput__9BHfm {
+  flex: 1 1;
+  width: 100%;
+  margin-left: 8px;
+  border: none;
+  background-color: transparent;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 20px;
+}
+.nft-card-withProj_card__3WcfC {
+  width: 206px;
+  height: 283px;
+  border: 1px solid #e0e0e0;
+  background-color: #fff;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: box-shadow 0.3s;
+  position: relative;
+  display: block;
+}
+.nft-card-withProj_card__3WcfC:hover {
+  box-shadow: 0 10px 24px hsla(0, 0%, 87.8%, 0.6);
+}
+.nft-card-withProj_card__3WcfC .nft-card-withProj_image__3wis8 {
+  width: 204px;
+  height: 204px;
+  border-radius: 14px 14px 0 0;
+  object-fit: contain;
+  object-position: center center;
+  border-radius: 14px;
+}
+.nft-card-withProj_card__3WcfC .nft-card-withProj_infoContainer__1rXDm {
+  padding: 13px 15px 0;
+}
+.nft-card-withProj_card__3WcfC .nft-card-withProj_title__2DXmf {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #424242;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  word-break: break-all;
+}
+.nft-card-withProj_card__3WcfC .nft-card-withProj_cover__36KRv {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.nft-card-withProj_card__3WcfC .nft-card-withProj_info__3UAwF {
+  height: 36px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.nft-card-withProj_card__3WcfC .nft-card-withProj_collectionImage__1zEs0 {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  margin-right: 12px;
+}
+.nft-card-withProj_card__3WcfC .nft-card-withProj_blockchainImage__1TJmu {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  margin-right: 12px;
+}
+.nft-card-withProj_card__3WcfC .nft-card-withProj_priceArea__1_o6t {
+  flex: 1 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+}
+.nft-card-withProj_card__3WcfC .nft-card-withProj_price__1cHgu {
+  font-family: unset;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  color: #202020;
+}
+.nft-card-withProj_card__3WcfC .nft-card-withProj_icon__JCEw1 {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  cursor: pointer;
+}
+.nft-card-withProj_card__3WcfC .nft-card-withProj_quantity__37qg8 {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0 6px;
+  background-color: #333;
+  border-radius: 80px;
+  font-size: 12px;
+  line-height: 22px;
+  letter-spacing: 1px;
+  color: #fff;
+}
+.nft-card-withProj_smallCard__EhCrO {
+  width: 157px;
+  border: 1px solid #e0e0e0;
+  background-color: #fff;
+  border-radius: 10.7745px;
+  cursor: pointer;
+  transition: box-shadow 0.3s;
+  position: relative;
+  display: block;
+}
+.nft-card-withProj_smallCard__EhCrO:hover {
+  box-shadow: 0 10px 24px hsla(0, 0%, 87.8%, 0.6);
+}
+.nft-card-withProj_smallCard__EhCrO .nft-card-withProj_image__3wis8 {
+  width: 155px;
+  height: 157px;
+  border-radius: 10.7745px 10.7745px 0 0;
+  object-fit: contain;
+  object-position: center center;
+  border-radius: 10.7745px;
+}
+.nft-card-withProj_smallCard__EhCrO .nft-card-withProj_infoContainer__1rXDm {
+  padding: 8px;
+}
+.nft-card-withProj_smallCard__EhCrO .nft-card-withProj_title__2DXmf {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #424242;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  word-break: break-all;
+}
+.nft-card-withProj_smallCard__EhCrO .nft-card-withProj_cover__36KRv {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.nft-card-withProj_smallCard__EhCrO .nft-card-withProj_info__3UAwF {
+  height: 24px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.nft-card-withProj_smallCard__EhCrO .nft-card-withProj_collectionImage__1zEs0 {
+  width: 16.93px;
+  height: 16.93px;
+  border-radius: 50%;
+  margin-right: 6px;
+}
+.nft-card-withProj_smallCard__EhCrO .nft-card-withProj_blockchainImage__1TJmu {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  margin-right: 6px;
+}
+.nft-card-withProj_smallCard__EhCrO .nft-card-withProj_priceArea__1_o6t {
+  flex: 1 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+}
+.nft-card-withProj_smallCard__EhCrO .nft-card-withProj_price__1cHgu {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 13px;
+  color: #202020;
+}
+.nft-card-withProj_smallCard__EhCrO .nft-card-withProj_icon__JCEw1 {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  cursor: pointer;
+}
+.nft-card-withProj_smallCard__EhCrO .nft-card-withProj_quantity__37qg8 {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0 6px;
+  background-color: #333;
+  border-radius: 80px;
+  font-size: 12px;
+  line-height: 22px;
+  letter-spacing: 1px;
+  color: #fff;
+}
+@media screen and (max-width: 1359px) {
+  .search-area_SearchArea__2wJah {
+    width: 598px;
+    background: #fff;
+    box-shadow: 0 4px 8px hsla(0, 0%, 87.8%, 0.4);
+    border-radius: 14px;
+    padding: 24px 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .search-area_nftResultCard__1imsx {
+    margin-right: 19px;
+  }
+  .search-area_nftResultCard__1imsx:last-child {
+    margin-right: 0;
+  }
+}
+@media screen and (min-width: 1360px) {
+  .search-area_SearchArea__2wJah {
+    width: 750px;
+    background: #fff;
+    box-shadow: 0 4px 8px hsla(0, 0%, 87.8%, 0.4);
+    border-radius: 14px;
+    padding: 24px 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .search-area_searchResult__T7xVV {
+    width: 100%;
+  }
+  .search-area_nftResultCard__1imsx {
+    margin-right: 16px;
+  }
+  .search-area_nftResultCard__1imsx:last-child {
+    margin-right: 0;
+  }
+}
+@media screen and (max-height: 800px) {
+  .search-area_searchResult__T7xVV {
+    max-height: 600px;
+    width: 100%;
+    overflow: hidden;
+    overflow-y: auto;
+  }
+}
+.search-area_searchResult__T7xVV::-webkit-scrollbar {
+  width: 4px;
+}
+.search-area_searchResult__T7xVV::-webkit-scrollbar-button {
+  height: 0;
+}
+.search-area_searchResult__T7xVV::-webkit-scrollbar-thumb {
+  background: #c4c4c4;
+  border-radius: 20px;
+}
+.search-area_searchInputArea__D6i9m {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.search-area_searchInput__13Wu4 {
+  flex: 1 1;
+}
+.search-area_cross__15Tzj {
+  height: 24px;
+  width: 24px;
+  margin-left: 24px;
+  cursor: pointer;
+}
+.search-area_fire__29v2T {
+  height: 24px;
+  width: 24px;
+  margin-right: 8px;
+}
+.search-area_title__Td6oW {
+  width: 100%;
+  margin-top: 18px;
+  margin-bottom: 8px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  color: #aaa;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.search-area_title__Td6oW span {
+  margin-top: 4px;
+}
+.search-area_searchListItem__3oCBm {
+  width: 100%;
+  height: 60px;
+  border-radius: 14px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #fff;
+  padding: 0 12px;
+}
+.search-area_searchListItem__3oCBm:hover {
+  background-color: #f2f3ff;
+  cursor: pointer;
+}
+.search-area_searchListItem__3oCBm:hover .search-area_itemIconGoto__2kubt {
+  display: block;
+}
+.search-area_searchIndicate__1AZUE {
+  width: 100%;
+  height: 60px;
+  background: #f9f9f9;
+  border-radius: 14px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 1px;
+  color: #5a66f9;
+  padding: 0 14px;
+  margin-top: 14px;
+}
+.search-area_itemText__1lzmy {
+  flex: 1 1;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #000;
+}
+.search-area_cover__3KWq3 {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  margin-right: 16px;
+}
+.search-area_itemIconGoto__2kubt {
+  display: none;
+}
+.search-area_historyTags__3DAx_ {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: hidden;
+  overflow-x: auto;
+}
+.search-area_historyTags__3DAx_::-webkit-scrollbar {
+  height: 4px;
+}
+.search-area_historyTags__3DAx_::-webkit-scrollbar-button {
+  height: 0;
+}
+.search-area_historyTags__3DAx_::-webkit-scrollbar-thumb {
+  background: #c4c4c4;
+  border-radius: 20px;
+}
+.search-area_tag__2QtRW {
+  height: 40px;
+  padding: 3px 18px;
+  background: #f2f2f2;
+  border-radius: 12px;
+  margin-right: 12px;
+  margin-bottom: 12px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 34px;
+  color: #828282;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.search-area_nftArea__2rGJg {
+  width: 100%;
+  overflow-x: overlay;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: hidden;
+  overflow-x: hidden;
+  padding-bottom: 30px;
+  margin-bottom: -30px;
+}
+.search-area_emptyContainer__2-B9G {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.search-area_emptyLogo__27NDs {
+  margin-top: 44px;
+  margin-bottom: 30px;
+  width: 128px;
+  height: 128px;
+  background-color: #f3f4f5;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.search-area_emptyTitle__lB8TH {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 34px;
+  color: #000;
+  margin-bottom: 20px;
+}
+.search-area_emptyContent__izi5R {
+  text-align: center;
+  width: 440px;
+  font-size: 18px;
+  line-height: 25px;
+  color: #828282;
+  margin-bottom: 60px;
+}
+.search-area_hotWordArea__3UHlf {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.search-area_hotWord__2CNQC {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 34px;
+  display: flex;
+  align-items: center;
+  padding: 4px 16px;
+  border-radius: 12px;
+  margin-right: 16px;
+  margin-bottom: 16px;
+}
+.search-area_loading__2rNr_ {
+  width: 100%;
+  height: 80px;
+  margin-top: 24px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.layout_bodyContent__1uoS1 {
+  width: 100%;
+  background: #f4f6f6;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.rate-number_rateNumUp__20nR- {
+  color: #38e25d;
+}
+.rate-number_rateNumDown__30JII {
+  color: #eb5757;
+}
+.rate-number_rateNum__3o3cC {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+}
+.card-number_number__1iFcQ {
+  font-family: inherit;
+}
+.text_text__1MBDK {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  word-break: break-all;
+}
+.text_text-2__GCguC {
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.text_none__12Oh- {
+  visibility: hidden;
+  height: 0;
+}
+.wallet_wallet__1RieI {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 452px;
+  height: 144px;
+  background-color: #f5f5f5;
+  border: 1px solid #f5f5f5;
+  border-radius: 14px;
+  margin-bottom: 50px;
+  cursor: pointer;
+}
+.wallet_name__L6yF4 {
+  font-weight: 500;
+  font-size: 24px;
+  letter-spacing: 1px;
+  color: #000;
+}
+.wallet_logo__1hiJI {
+  width: 92px;
+  height: 92px;
+  margin-right: 24px;
+  background-image: url(/_next/static/media/metamask.8141fb362bfc2a8e9fa7bc206b9efa97.svg);
+}
+.wallet_active__2kX9u {
+  background-color: rgba(90, 102, 249, 0.1);
+  border: 1px solid #5a66f9;
+}
+.wallet_button__2YM9L {
+  width: 452px;
+  height: 60px;
+  line-height: 60px;
+  border-radius: 12px;
+  color: #fff;
+  background-color: #5a66f9;
+  text-align: center;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: 1px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.wallet_loading__1_DLU {
+  background-color: #a7adff;
+  cursor: not-allowed;
+}
+@keyframes nft-image_rotate__GOlse {
+  0% {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
+.nft-image_container__2dxog {
+  position: relative;
+  z-index: 0;
+}
+.nft-image_spin__1nNQn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 4;
+  height: 100%;
+  background-color: hsla(0, 0%, 100%, 0.6);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.nft-image_imgLoaded__1dlBQ {
+  min-height: -moz-fit-content;
+  min-height: fit-content;
+}
+.nft-image_nftAudio__1UIB5 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  transition: height 0.3s;
+}
+.nft-image_nftAudio__1UIB5 .nft-image_audio__3svV7 {
+  position: absolute;
+  height: 68px;
+  width: 100%;
+  bottom: 0;
+  background: linear-gradient(1turn, #333, rgba(2, 2, 3, 0));
+  transition: all 0.5s;
+}
+.nft-image_nftAudio__1UIB5 .nft-image_icon__rT1xC {
+  width: 32px;
+  height: 32px;
+  background-color: #fff;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+}
+.nft-image_nftAudio__1UIB5 .nft-image_icon__rT1xC svg {
+  margin-left: 2px;
+}
+.nft-image_nftAudio__1UIB5 .nft-image_icon__rT1xC path {
+  fill: grey;
+}
+.nft-image_nftAudio__1UIB5 .nft-image_icon__rT1xC:hover path {
+  fill: #333;
+}
+.nft-image_pcAudio__Gy5K6 .nft-image_audio__3svV7,
+.nft-image_pcAudio__Gy5K6:hover .nft-image_audio__3svV7 {
+  opacity: 1;
+}
+.nft-image_background__2Its3 {
+  background-color: #fff;
+}
+.nav-menu_menuContainer__3iW0E {
+  position: relative;
+  cursor: pointer;
+}
+.nav-menu_menuContainer__3iW0E .nav-menu_menuItems__hBnZJ {
+  display: none;
+}
+.nav-menu_menuContainer__3iW0E:hover div:first-child {
+  color: #5a66f9;
+}
+.nav-menu_menuContainer__3iW0E:hover .nav-menu_menuItems__hBnZJ {
+  display: block;
+}
+.nav-menu_menuItems__hBnZJ {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  border-radius: 14px;
+  padding-top: 8px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px hsla(0, 0%, 87.8%, 0.4);
+}
+.nav-menu_menuItem__2qUm6 {
+  width: 203px;
+  height: 40px;
+  border-radius: 14px;
+  padding: 10px 16px 10px 24px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.2s;
+}
+.nav-menu_menuItem__2qUm6:hover {
+  background: #f2f3ff;
+}
+.nav-menu_menuItem__2qUm6:hover .nav-menu_icon__e7SdB {
+  display: block;
+}
+.nav-menu_menuItem__2qUm6 .nav-menu_titleText__k2UC- {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #333;
+}
+.nav-menu_icon__e7SdB {
+  display: none;
+  fill: #5a66f9;
+}
+.nav-menu_menuItemWithIcon__1gOdB {
+  padding: 0 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.nav-menu_menuItemWithIcon__1gOdB .nav-menu_titleText__k2UC- {
+  width: 123px;
+  margin-left: 14px;
+}
+.nav-menu_menuItemWithIcon__1gOdB:hover {
+  transition: all 0.2s;
+}
+.nav-menu_menuItemWithIcon__1gOdB:hover svg path {
+  fill: #9da5ff;
+}
+.nav-menu_menuItemWithIcon__1gOdB:hover .nav-menu_icon__e7SdB path {
+  fill: #5a66f9;
+}
+@media screen and (min-width: 1264px) {
+  .nav-menu-list_menuListContainer__11_lt,
+  .nav-menu-list_menuListMask__39y0Y {
+    display: none;
+  }
+}
+@media screen and (orientation: portrait) {
+  .nav-menu-list_menuListContainer__11_lt {
+    max-height: 792px;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+}
+@media screen and (orientation: landscape) {
+  .nav-menu-list_menuListContainer__11_lt {
+    max-height: 576px;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+}
+.nav-menu-list_menuListMask__39y0Y {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.15);
+  z-index: 1;
+  top: 80px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.nav-menu-list_menuListContainer__11_lt {
+  background: #fff;
+  box-shadow: 0 4px 8px hsla(0, 0%, 87.8%, 0.4);
+  border-radius: 0 0 14px 14px;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  top: 80px;
+  z-index: 2;
+  transition: all 0.5s;
+  scrollbar-width: none;
+}
+.nav-menu-list_menuListContainer__11_lt::-webkit-scrollbar {
+  display: none;
+}
+.nav-menu-list_menuList__1A9Tb {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 960px;
+}
+.nav-menu-list_menuTitleSelected__2jRp8 {
+  background: #f2f3ff !important;
+}
+.nav-menu-list_menuItems__1VV1z {
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #f8fafa;
+}
+.nav-menu-list_menuItem__2ALtu {
+  width: 524px;
+  height: 72px;
+  font-weight: 500;
+  line-height: 72px;
+  font-size: 18px;
+  color: #333;
+}
+.nav-menu-list_menuTitleContainer__2bJbN {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.nav-menu-list_menuTitleContainer__2bJbN:hover {
+  background: #f9f9f9;
+}
+.nav-menu-list_menuTitle__20NEx {
+  background: inherit;
+  width: 524px;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  font-size: 18px;
+  color: #000;
+  justify-content: space-between;
+  height: 72px;
+}
+.nav-menu-list_icon__2XqJg {
+  width: 24px;
+}
+.nav-menu-list_down__3KXq6 {
+  transform: rotate(90deg);
+  background: #5a66f9;
+}
+@media screen and (max-width: 1263px) {
+  .header_headerContainer__1Iz5N {
+    justify-content: center;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    box-shadow: 0 4px 8px hsla(0, 0%, 87.8%, 0.4);
+  }
+  .header_header__1wDir,
+  .header_headerContainer__1Iz5N {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #fff;
+  }
+  .header_header__1wDir {
+    max-width: 960px;
+    justify-content: flex-start;
+  }
+  .header_menu__3tCXY {
+    display: none;
+  }
+  .header_vectorMenu__N1cl7 {
+    display: block;
+    width: 27.7px;
+    cursor: pointer;
+    height: 15.85px;
+    margin-right: 33.13px;
+    transition: all 0.3s;
+  }
+  .header_logo__bZZgj {
+    width: 192px;
+    height: 54px;
+    margin-right: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media screen and (min-width: 1264px) {
+  .header_headerContainer__1Iz5N {
+    min-width: 1264px;
+    justify-content: center;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    box-shadow: 0 4px 8px hsla(0, 0%, 87.8%, 0.4);
+  }
+  .header_header__1wDir,
+  .header_headerContainer__1Iz5N {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #fff;
+  }
+  .header_header__1wDir {
+    padding-right: calc(50% - 604px);
+    justify-content: flex-start;
+  }
+  .header_menu__3tCXY {
+    display: flex;
+  }
+  .header_vectorMenu__N1cl7 {
+    display: none;
+  }
+  .header_logo__bZZgj {
+    width: 192px;
+    height: 54px;
+    margin-right: 74px;
+    margin-left: 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .header_header__1wDir {
+    width: 100%;
+    max-width: 1440px;
+    height: 80px;
+    padding-right: 116px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+  }
+}
+.header_longheader__1MOsv {
+  padding-right: 33px;
+  max-width: unset;
+}
+.header_navItem__3OY3F {
+  padding: 0 19px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  line-height: unset;
+}
+.header_activeItem__3d8W2,
+.header_navItem__3OY3F:hover {
+  color: #5a66f9;
+}
+.header_input__2XPID {
+  margin-left: 5px;
+  position: relative;
+}
+.header_searchInput__216ba {
+  margin-left: 15px;
+  width: 291px;
+}
+.header_searchInput__216ba:-ms-input-placeholder {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #aaa;
+}
+.header_searchInput__216ba::placeholder {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #aaa;
+}
+.header_searchArea__1z5gI {
+  position: absolute;
+  left: -20px;
+  top: -24px;
+  z-index: 3;
+}
+.header_language__1_0rL {
+  flex: 1 1;
+  padding-right: 16px;
+  border-right: 1px solid #f7f7f7;
+  margin-left: 32px;
+  height: 56px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+.header_headerIcon__1II6A {
+  height: 16px;
+  width: 16px;
+}
+.header_headerIcon__1II6A:hover {
+  color: #5a66f9;
+}
+.header_headerIcon__1II6A:hover path {
+  fill: #5a66f9;
+}
+.search-input_search__2lNia {
+  height: 57px;
+  border-radius: 46px;
+  background-color: #f7f7f7;
+  padding: 0 32px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.search-input_searchIcon__T7-nB {
+  width: 32px;
+  height: 32px;
+  fill: #5a66f9;
+}
+.search-input_searchInput__3_ADj {
+  flex: 1 1;
+  width: 100%;
+  border: none;
+  background-color: transparent;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 36px;
+  margin-left: 16px;
+}
+.nft-card_card__1xEWX {
+  height: 246px;
+  width: 170px;
+  background-color: #fff;
+  border-radius: 11px;
+  border: 1px solid #e0e0e0;
+}
+.nft-card_image__3nw73 {
+  height: 170px;
+  width: 168px;
+  border-radius: 11px 11px 0 0;
+  margin-bottom: 8px;
+  object-fit: contain;
+  object-position: center center;
+}
+.nft-card_title__2g2Zz {
+  padding: 0 12px;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: 1px;
+  color: #333;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  word-break: break-all;
+}
+.nft-card_content__3HOWD {
+  padding: 0 12px;
+  height: 28px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 28px;
+  color: #333;
+}
+.nft-card_price__nY_HT {
+  font-weight: 500;
+}
+.nft-card_icon__GxwZu {
+  height: 26px;
+  width: 26px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.nft-card-with-proj_card__3fmjn {
+  width: 322px;
+  height: 450px;
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: box-shadow 0.3s;
+  position: relative;
+  display: block;
+}
+.nft-card-with-proj_card__3fmjn:hover {
+  box-shadow: 0 10px 24px hsla(0, 0%, 87.8%, 0.6);
+}
+.nft-card-with-proj_card__3fmjn .nft-card-with-proj_image__32jOm {
+  width: 320px;
+  height: 322px;
+  border-radius: 14px 14px 0 0;
+  object-fit: contain;
+  object-position: center center;
+  border-radius: 14px;
+}
+.nft-card-with-proj_card__3fmjn .nft-card-with-proj_info__lPT78 {
+  height: 128px;
+  padding: 20px 24px 10px;
+}
+.nft-card-with-proj_card__3fmjn .nft-card-with-proj_title__1ppMc {
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 38px;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+  color: #333;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  word-break: break-all;
+}
+.nft-card-with-proj_card__3fmjn .nft-card-with-proj_icon__15aSy {
+  position: absolute;
+  top: 27px;
+  right: 27px;
+  cursor: pointer;
+}
+.nft-card-with-proj_card__3fmjn .nft-card-with-proj_cover__30iE3 {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.nft-card-with-proj_card__3fmjn .nft-card-with-proj_collectionImage__2c8Jv {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+}
+.nft-card-with-proj_card__3fmjn .nft-card-with-proj_blockchainImage__5ENVs {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}
+.nft-card-with-proj_card__3fmjn .nft-card-with-proj_imageMargin__AUh52 {
+  margin-right: 17px;
+}
+.nft-card-with-proj_card__3fmjn .nft-card-with-proj_priceArea__1xILA {
+  flex: 1 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+.nft-card-with-proj_card__3fmjn .nft-card-with-proj_priceText__3oJ0Z {
+  font-size: 24px;
+  line-height: 23px;
+  margin-bottom: 8px;
+  text-align: right;
+  letter-spacing: 1px;
+  color: grey;
+}
+.nft-card-with-proj_card__3fmjn .nft-card-with-proj_price__1EGvQ {
+  font-weight: 600;
+  font-size: 28px;
+  text-align: right;
+  color: #333;
+}
+.nft-card-with-proj_card__3fmjn .nft-card-with-proj_quantity__6Z1NO {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0 10px;
+  background-color: #333;
+  border-radius: 80px;
+  font-size: 22px;
+  line-height: 32px;
+  letter-spacing: 1px;
+  color: #fff;
+}
+.nft-card-with-proj_empty__3V2N7 {
+  width: 322px;
+  height: 450px;
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: box-shadow 0.3s;
+}
+.nft-card-with-proj_empty__3V2N7:hover {
+  box-shadow: 0 10px 24px hsla(0, 0%, 87.8%, 0.6);
+}
+.nft-card-with-proj_emptyImage__1m_ua {
+  width: 322px;
+  height: 322px;
+  border-radius: 14px;
+  background-color: #f2f3f4;
+}
+.nft-card-with-proj_empty__3V2N7 .nft-card-with-proj_title__1ppMc {
+  height: 38px;
+  width: 160px;
+  margin-bottom: 10px;
+  border-radius: 44px;
+  background-color: #f2f3f4;
+}
+.nft-card-with-proj_empty__3V2N7 .nft-card-with-proj_info__lPT78 {
+  height: 128px;
+  padding: 20px 24px 10px;
+}
+.nft-card-with-proj_empty__3V2N7 .nft-card-with-proj_cover__30iE3 {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.nft-card-with-proj_empty__3V2N7 .nft-card-with-proj_collectionImage__2c8Jv {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background-color: #f2f3f4;
+}
+.nft-card-with-proj_empty__3V2N7 .nft-card-with-proj_blockchainImage__5ENVs {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #f2f3f4;
+}
+.nft-card-with-proj_empty__3V2N7 .nft-card-with-proj_imageMargin__AUh52 {
+  margin-right: 17px;
+}
+.nft-card-with-proj_empty__3V2N7 .nft-card-with-proj_priceArea__1xILA {
+  flex: 1 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+.nft-card-with-proj_empty__3V2N7 .nft-card-with-proj_priceText__3oJ0Z {
+  height: 23px;
+  margin-bottom: 8px;
+  background-color: #f2f3f4;
+  width: 100px;
+  border-radius: 44px;
+}
+.nft-card-with-proj_empty__3V2N7 .nft-card-with-proj_price__1EGvQ {
+  height: 36px;
+  background-color: #f2f3f4;
+  width: 120px;
+  border-radius: 44px;
+}
+.card-box_cardBox__2AGez {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: hidden;
+  overflow-x: auto;
+  margin-bottom: -30px;
+  padding-bottom: 30px;
+}
+.card-box_cardBox__2AGez::-webkit-scrollbar,
+.card-box_cardBox__2AGez::-webkit-scrollbar-button {
+  height: 0;
+}
+.card-box_cardBox__2AGez::-webkit-scrollbar-thumb {
+  background: #c4c4c4;
+  border-radius: 20px;
+}
+.address_button__1-5o2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.address_button-normal__2CPlm {
+  background: #fff;
+  color: #5a66f9;
+}
+.address_button-normal__2CPlm,
+.address_button-primary__29Gf6 {
+  border: 2px solid #5a66f9;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+}
+.address_button-primary__29Gf6 {
+  background: #5a66f9;
+  color: #fff;
+}
+.search-area_SearchArea__2iz1W {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  box-shadow: 0 4px 8px hsla(0, 0%, 87.8%, 0.4);
+  border-radius: 14px;
+  padding: 24px 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  position: fixed;
+  z-index: 101;
+}
+.search-area_searchResult__1a3TT {
+  width: 100%;
+}
+.search-area_searchResult__1a3TT::-webkit-scrollbar {
+  width: 4px;
+}
+.search-area_searchResult__1a3TT::-webkit-scrollbar-button {
+  height: 0;
+}
+.search-area_searchResult__1a3TT::-webkit-scrollbar-thumb {
+  background: #c4c4c4;
+  border-radius: 20px;
+}
+.search-area_searchInputArea__WM994 {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.search-area_searchInput__7gMz8 {
+  flex: 1 1;
+}
+.search-area_cross__rIPRq {
+  height: 46px;
+  width: 46px;
+  border-radius: 50%;
+  margin-left: 24px;
+  background-image: url(/_next/static/media/cross.70b25451634911dbfd607d561448f463.svg);
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.search-area_fire__13nkI {
+  height: 24px;
+  width: 24px;
+  margin-right: 8px;
+}
+.search-area_title__2clF2 {
+  width: 100%;
+  margin: 24px 0;
+  font-weight: 500;
+  line-height: 24px;
+  color: #aaa;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.search-area_title__2clF2:not(:first-child) {
+  margin-top: 48px;
+}
+.search-area_searchListItem__1FGwF {
+  width: 100%;
+  height: 88px;
+  border-radius: 14px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #fff;
+  padding: 0 24px;
+}
+.search-area_searchListItem__1FGwF:hover {
+  background-color: #f2f3ff;
+  cursor: pointer;
+}
+.search-area_searchIndicate__3LxEz {
+  width: 100%;
+  height: 60px;
+  background: #f9f9f9;
+  border-radius: 14px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 1px;
+  color: #5a66f9;
+  padding: 0 14px;
+  margin-top: 14px;
+}
+.search-area_itemText__1JRTf {
+  flex: 1 1;
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 20px;
+  color: #000;
+}
+.search-area_cover__3gtZp {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  margin-right: 16px;
+}
+.search-area_itemIconGoto__yPGJx {
+  display: none;
+}
+.search-area_historyTags__3lM4f {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: hidden;
+  overflow-x: auto;
+  margin-top: 16px;
+}
+.search-area_historyTags__3lM4f::-webkit-scrollbar {
+  height: 4px;
+}
+.search-area_historyTags__3lM4f::-webkit-scrollbar-button {
+  height: 0;
+}
+.search-area_historyTags__3lM4f::-webkit-scrollbar-thumb {
+  background: #c4c4c4;
+  border-radius: 20px;
+}
+.search-area_tag__2rsZi {
+  height: 64px;
+  padding: 3px 18px;
+  background: #f2f2f2;
+  border-radius: 18px;
+  margin-right: 12px;
+  margin-bottom: 12px;
+  font-weight: 600;
+  line-height: 58px;
+  color: #828282;
+  cursor: pointer;
+}
+.search-area_nftArea__1IC4s {
+  width: 100%;
+}
+.search-area_nftArea__1IC4s a:not(:first-child) {
+  margin-left: 24px;
+}
+.search-area_emptyContainer__3Ahhx {
+  width: 100%;
+  margin-top: 99px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.search-area_emptyLogo__3uf2W {
+  margin-bottom: 30px;
+  width: 190px;
+  height: 190px;
+  background-color: #f3f4f5;
+  border-radius: 50%;
+  background-image: url(/_next/static/media/search-area-empty.4d673324bc8047a2cc4470fccd538860.svg);
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.search-area_emptyTitle__2-S_a {
+  width: 680px;
+  font-weight: 600;
+  font-size: 36px;
+  color: #333;
+  margin-bottom: 32px;
+  text-align: center;
+  word-break: break-word;
+}
+.search-area_emptyContent__3qKzx {
+  text-align: center;
+  width: 710px;
+  font-size: 26px;
+  line-height: 36px;
+  letter-spacing: 1px;
+  color: grey;
+  margin-bottom: 60px;
+}
+.search-area_hotWordArea__3B9TO {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.search-area_hotWord__2XkfF {
+  font-weight: 600;
+  line-height: 34px;
+  display: flex;
+  align-items: center;
+  padding: 4px 16px;
+  border-radius: 12px;
+  margin-right: 16px;
+  margin-bottom: 16px;
+}
+.search-area_loading__3w_gi {
+  width: 100%;
+  height: 80px;
+  margin-top: 24px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.nav-menu-list_menuListContainer__3c0tq {
+  max-height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.nav-menu-list_menuListMask__kwsxS {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.15);
+  z-index: 1;
+  top: 114px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.nav-menu-list_menuListContainer__3c0tq {
+  background: #fff;
+  box-shadow: 0 4px 8px hsla(0, 0%, 87.8%, 0.4);
+  border-radius: 0 0 14px 14px;
+  width: 100%;
+  left: 0;
+  position: fixed;
+  top: 114px;
+  z-index: 2;
+  transition: all 0.5s;
+  scrollbar-width: none;
+}
+.nav-menu-list_menuListContainer__3c0tq::-webkit-scrollbar {
+  display: none;
+}
+.nav-menu-list_menuList__35XCC {
+  width: 100%;
+}
+.nav-menu-list_menuTitleSelected__184Dr {
+  background: #f2f3ff !important;
+}
+.nav-menu-list_menuItems__k4jSD {
+  width: 100%;
+  flex-direction: column;
+}
+.nav-menu-list_menuItem__3CAjv {
+  width: 100%;
+  padding: 0 56px 0 98px;
+  height: 72px;
+  font-weight: 500;
+  line-height: 72px;
+  font-size: 24px;
+  color: #333;
+  background: #f8fafa;
+}
+.nav-menu-list_menuTitleContainer__3WCNm {
+  background: #fff;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.nav-menu-list_menuTitleContainer__3WCNm:hover {
+  background: #f9f9f9;
+}
+.nav-menu-list_menuTitle__22lg_ {
+  padding: 0 56px 0 98px;
+  width: 100%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  font-size: 24px;
+  color: #000;
+  justify-content: space-between;
+  height: 96px;
+}
+.nav-menu-list_icon__aBP3k {
+  width: 32px;
+}
+.nav-menu-list_down__BOgKR {
+  transform: rotate(90deg);
+  background: #5a66f9;
+}
+.nav-menu-list_menuItemWithIcon__5Jbzs {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.nav-menu-list_menuItemWithIcon__5Jbzs .nav-menu-list_titleText__1nHAw {
+  margin-left: 24px;
+}
+.nav-menu-list_menuItemWithIcon__5Jbzs:hover {
+  transition: all 0.2s;
+  color: #5a66f9;
+  background-color: #f2f3ff;
+}
+.nav-menu-list_menuItemWithIcon__5Jbzs:hover svg path {
+  fill: #9da5ff;
+}
+.nav-menu-list_menuItemWithIcon__5Jbzs:hover .nav-menu-list_icon__aBP3k path {
+  fill: #5a66f9;
+}
+.user-info_login__1Njzb {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  cursor: pointer;
+}
+.user-info_loginArea__2PawP {
+  width: 100%;
+}
+.user-info_selectOptions__2w1dq {
+  left: -48px !important;
+  margin-top: 4px;
+}
+.user-info_loading__2bMRH {
+  width: 56px;
+  margin-left: 16px;
+}
+.user-info_avatarImg__1SnAh {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  cursor: pointer;
+}
+.user-info_icon__1YZU5 {
+  cursor: pointer;
+}
+.user-info_optionList__3jGf0 {
+  background: #fff;
+  box-shadow: 0 4px 8px hsla(0, 0%, 87.8%, 0.4);
+  border-radius: 14px;
+  padding-top: 0 !important;
+  font-family: unset;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  margin-top: 8px;
+}
+.user-info_option__2iUhs {
+  width: 232px;
+  height: 80px;
+  padding: 0 32px;
+  line-height: 80px;
+  text-align: left;
+  font-weight: 500;
+  font-size: 28px;
+  color: #828282;
+  cursor: pointer;
+  border-radius: 14px;
+}
+.user-info_option__2iUhs:hover {
+  background-color: #f2f3ff;
+  color: #333;
+}
+.header_headerContainer__3949t {
+  height: 114px;
+  justify-content: center;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  box-shadow: 0 4px 8px hsla(0, 0%, 87.8%, 0.4);
+}
+.header_header__3pW7m,
+.header_headerContainer__3949t {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #fff;
+}
+.header_header__3pW7m {
+  height: 100%;
+  padding: 0 32px;
+  justify-content: flex-start;
+}
+.header_vectorMenu__17CtN {
+  display: block;
+  width: 28px;
+  cursor: pointer;
+  height: 28px;
+  margin-right: 52px;
+  transition: all 0.3s;
+}
+.header_logo__3-zkb {
+  width: 194px;
+  height: 54px;
+  margin-right: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.header_logo__3-zkb svg {
+  width: 194px;
+}
+.header_navItem__15Uf5 {
+  padding: 0 19px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+}
+.header_activeItem__474sd,
+.header_navItem__15Uf5:hover {
+  color: #5a66f9;
+}
+.header_input__zg1TA {
+  position: relative;
+}
+.header_searchInput__3BboG {
+  width: 280px;
+}
+.header_searchInput__3BboG:-ms-input-placeholder {
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 20px;
+  color: #aaa;
+}
+.header_searchInput__3BboG::placeholder {
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 20px;
+  color: #aaa;
+}
+.header_searchArea__1lZK4 {
+  position: fixed;
+  left: 0;
+  top: 4px;
+  z-index: 101;
+}
+.header_userInfo__23Pjo {
+  font-weight: 500;
+  font-size: 24px;
+  display: flex;
+  justify-content: flex-end;
+}
+.subscribe_subscribe__1iKBv {
+  width: 100%;
+  height: 128px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px hsla(0, 0%, 87.8%, 0.4);
+  border-radius: 14px;
+  align-items: center;
+  padding: 0 35px;
+}
+.subscribe_subscribeTitle__3nbvw {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 24px;
+  color: #424242;
+  margin-bottom: 8px;
+}
+.subscribe_subscribeContent__xTF3q {
+  font-size: 14px;
+  line-height: 24px;
+  color: #858585;
+}
+.subscribe_email__304PE {
+  width: 308px;
+  padding-left: 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin-right: 12px;
+  border: 2px solid #5a66f9;
+  border-radius: 8px;
+  font-size: 14px;
+  line-height: 22px;
+  color: #424242;
+}
+.subscribe_subscribeButton__3ohW_ {
+  width: 136px;
+  height: 44px;
+  border: none;
+  color: #fff;
+  background: #5a66f9;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.subscribe_loading__2FUoI {
+  background-color: #a7adff;
+  cursor: not-allowed;
+}
+@media screen and (max-width: 1263px) {
+  .footer_footerContainer__38pnr {
+    width: 100%;
+    min-width: 960px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(1turn, #fff, #f2f2f2), #fff;
+  }
+  .footer_footer__2Hf8y {
+    width: 960px;
+    max-width: 960px;
+    padding: 40px 0 68px;
+  }
+}
+@media screen and (min-width: 1264px) {
+  .footer_footerContainer__38pnr {
+    width: 100%;
+    min-width: 1264px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(1turn, #fff, #f2f2f2), #fff;
+  }
+  .footer_footer__2Hf8y {
+    width: 1264px;
+    max-width: 1264px;
+    padding: 40px 28px;
+  }
+}
+.footer_footerInfo__1BAG9 {
+  margin-top: 32px;
+}
+.footer_linkAndLogo__1ieLE {
+  width: 455px;
+  font-size: 14px;
+  line-height: 22px;
+  color: #858585;
+}
+.footer_logo__1EC3j {
+  width: 100%;
+  height: 24px;
+  margin-bottom: 28px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer_line__3vHyp {
+  width: 40px;
+  height: 4px;
+  border-radius: 2px;
+  background: #d9d9d9;
+}
+.footer_linkList__3sJij {
+  flex-wrap: wrap;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  margin-bottom: 40px;
+}
+.footer_link__3lrF_ {
+  width: 50%;
+  margin-top: 10px;
+  height: 24px;
+}
+.footer_link__3lrF_ a {
+  color: #5a66f9;
+}
+.footer_copyright__1fU1H {
+  margin-top: 28px;
+  font-size: 14px;
+  line-height: 16px;
+  color: #858585;
+}
+.footer_mediaSlogan__1ZbwH {
+  width: 260px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 34px;
+  color: #424242;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+.footer_media__3_Vkr {
+  justify-content: flex-start;
+}
+.footer_media__3_Vkr a {
+  margin-right: 32px;
+  margin-bottom: 12px;
+}
+.footer_mediaLogo__V5zcX path {
+  fill: #828282;
+}
+.footer_qrcode___B-7- {
+  width: 140px;
+  height: 140px;
+  border-radius: 14px;
+  background-image: url(/_next/static/media/QRcode.15126c51f986d0d1646f866fe6268942.png);
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: 100% 100%;
+}
+.time-span_lineNumber__2U9T8 {
+  height: 40px;
+  width: 80px;
+  font-size: 14px;
+  line-height: 22px;
+  color: #333;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  box-sizing: border-box;
+  box-shadow: 0 4px 4px hsla(0, 0%, 87.8%, 0.04);
+  border-radius: 12px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.time-span_lineNumber__2U9T8:hover {
+  background: #f9f9f9;
+}
+.time-span_lineNumber__2U9T8 .time-span_timespan__2FyTn {
+  flex: 1 1;
+  text-align: center;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+.time-span_lineNumber__2U9T8 span {
+  width: 38px;
+  text-align: center;
+  font-family: unset;
+  font-size: 14px;
+  line-height: 36px;
+  color: #202020;
+}
+.time-span_lineNumberItem__XA0kG {
+  height: 40px;
+  width: 80px;
+  padding: 0 16px;
+  font-size: 14px;
+  line-height: 22px;
+  color: #333;
+  background: #fff;
+  border-radius: 14px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.time-span_lineNumberItem__XA0kG span {
+  font-family: unset;
+  margin-right: 8px;
+  font-size: 14px;
+  line-height: 36px;
+}
+.time-span_lineNumberItem__XA0kG:hover {
+  background-color: #f2f3ff;
+}
+.time-span_Triangle__10Ym9 {
+  width: 13px;
+  height: 8;
+  transition: all 0.3s;
+}
+.time-span_openTriangle__1GsGj {
+  transform: rotate(180deg);
+}
+.time-span_itemArea__2Rgt4 {
+  background-color: #fff;
+  border-radius: 14px;
+  font-weight: 500;
+  box-shadow: 0 4px 8px hsla(0, 0%, 87.8%, 0.4);
+}
+.rank-head-content_container__3BOop {
+  width: 100%;
+  height: 100%;
+}
+.rank-head-content_headContent__2vVek {
+  height: 100%;
+}
+.rank-head-content_content__1J_yq {
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+}
+.rank-head-content_underLine__7THed {
+  width: 100%;
+  height: 4px;
+  background: #5a66f9;
+  border-radius: 14px;
+}
+.rank-head-content_left__1Ew5j {
+  justify-content: flex-start;
+}
+.rank-head-content_center__2wZFv {
+  justify-content: center;
+}
+.rank-head-content_right__3rAeh {
+  justify-content: flex-end;
+}
+.rank-pagination_pagination__2o4YT {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.rank-pagination_rankArrow__1KAuw,
+.rank-pagination_rankArrowRight__SIVen {
+  margin: 12px;
+  width: 24px;
+  height: 24px;
+  stroke: #5a66f9;
+  cursor: pointer;
+}
+.rank-pagination_rankArrowRight__SIVen {
+  transform: rotate(180deg);
+}
+.rank-pagination_rankPaginationNumber__1t1Pc {
+  width: 34px;
+  height: 34px;
+  margin: 12px;
+  border-radius: 12px;
+  color: #202020;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.rank-pagination_rankPaginationNumber__1t1Pc.rank-pagination_active__3E9Tk {
+  color: #fff;
+  background-color: #5a66f9;
+  box-shadow: 0 7px 16px rgba(90, 102, 249, 0.14);
+}
+.rank-pagination_small__1lCkg {
+  margin: 8px;
+}
+.subscribe_subscribe__2U1TQ {
+  width: 100%;
+  height: 230px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px hsla(0, 0%, 87.8%, 0.4);
+  border-radius: 14px;
+  align-items: flex-start;
+  padding: 42px 36px 42px 32px;
+}
+.subscribe_subscribeTitle__unSif {
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 24px;
+  color: #333;
+  margin-bottom: 16px;
+}
+.subscribe_subscribeContent__1VN_4 {
+  font-size: 22px;
+  line-height: 24px;
+  color: grey;
+}
+.subscribe_email__3wUSY {
+  width: 446px;
+  padding-left: 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin-right: 24px;
+  border: 2px solid #5a66f9;
+  border-radius: 8px;
+  font-size: 22px;
+  line-height: 22px;
+  color: #424242;
+}
+.subscribe_subscribeButton__2_xxT {
+  width: 212px;
+  height: 64px;
+  border: none;
+  color: #fff;
+  background: #5a66f9;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 34px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.subscribe_loading__2vob_ {
+  background-color: #a7adff;
+  cursor: not-allowed;
+}
+.login-modal_loginModal__QaYI4 {
+  width: 575px;
+  height: 450px;
+  padding: 50px 62px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.login-modal_mask__3HQIF {
+  background-color: rgba(0, 0, 0, 0.15);
+}
+.login-modal_title__1YgqV {
+  font-family: unset;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 36px;
+  height: 36px;
+  color: #202020;
+  margin-bottom: 56px;
+}
+.login-modal_head__33WVt {
+  width: 452px;
+  border-bottom: 1px solid #c4c4c4;
+  height: 39px;
+  margin-top: 23px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.login-modal_tag__3Gn0g {
+  width: 226px;
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: 1px;
+  color: #a5a5a5;
+  cursor: pointer;
+  text-align: center;
+  height: 39px;
+  line-height: 25px;
+}
+.login-modal_activeTag__FHcew {
+  border-bottom: 4px solid #5a66f9;
+  color: #5a66f9;
+}
+.asset-owner-modal_mask__1BSva {
+  background-color: rgba(0, 0, 0, 0.15);
+}
+.asset-owner-modal_modal__TCqKP {
+  width: 479px;
+  height: 556px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px hsla(0, 0%, 87.8%, 0.4);
+  border-radius: 14px;
+  padding-bottom: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.asset-owner-modal_title__3M29Y {
+  height: 80px;
+  width: 100%;
+  font-weight: 600;
+  font-size: 24px;
+  padding: 0 18px;
+  color: #202020;
+  border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.asset-owner-modal_title__3M29Y .asset-owner-modal_icon__3Z4By {
+  margin-right: 8px;
+}
+.asset-owner-modal_addressList__2hHlS {
+  width: 100%;
+  height: 448px;
+  max-height: 448px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+}
+.asset-owner-modal_addressList__2hHlS::-webkit-scrollbar {
+  width: 4px;
+}
+.asset-owner-modal_addressList__2hHlS::-webkit-scrollbar-button {
+  height: 0;
+}
+.asset-owner-modal_addressList__2hHlS::-webkit-scrollbar-thumb {
+  background: #c4c4c4;
+  border-radius: 20px;
+}
+.asset-owner-modal_addressList__2hHlS .asset-owner-modal_item__2J6uM {
+  height: 64px;
+  padding: 0 30px;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 1px;
+  color: #333;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.asset-owner-modal_addressList__2hHlS .asset-owner-modal_item__2J6uM:hover {
+  cursor: pointer;
+  background-color: #f9f9f9;
+}
+.asset-owner-modal_info__1sYd_ {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.asset-owner-modal_avatar__3hqNx {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-image: url(/_next/static/media/avatar.e2df85156c50b5beddaf9dc5e4c0635f.svg);
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-right: 16px;
+}
+@keyframes nft-intro_rotate__14ZoM {
+  0% {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
+@media screen and (max-width: 1263px) {
+  .nft-intro_nftIntro__7Vqfw {
+    margin-top: 32px;
+    margin-bottom: 24px;
+    width: 649px;
+    height: 326px;
+    background-color: #fff;
+    border-radius: 14px;
+    padding: 23px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    box-shadow: 0 4px 8px hsla(0, 0%, 87.8%, 0.4);
+  }
+  .nft-intro_textIntro__22mLh {
+    margin-top: 21px;
+    font-size: 14px;
+    line-height: 22px;
+    width: 368px;
+    height: 66px;
+    color: #828282;
+    overflow: hidden;
+  }
+  .nft-intro_nftInfo__ria4K {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 368px;
+  }
+}
+@media screen and (min-width: 1264px) {
+  .nft-intro_nftIntro__7Vqfw {
+    margin-top: 32px;
+    margin-bottom: 24px;
+    width: 792px;
+    height: 326px;
+    background-color: #fff;
+    border-radius: 14px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    box-shadow: 0 4px 8px hsla(0, 0%, 87.8%, 0.4);
+  }
+  .nft-intro_textIntro__22mLh {
+    margin-top: 24px;
+    font-size: 14px;
+    line-height: 22px;
+    width: 500px;
+    height: 66px;
+    color: #828282;
+    overflow: hidden;
+  }
+  .nft-intro_nftInfo__ria4K {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+}
+.nft-intro_head__2AnSm {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.nft-intro_title__3us83 {
+  width: 100%;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 34px;
+  color: #000;
+}
+.nft-intro_otherInfo__2BXcW {
+  flex: 1 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+.nft-intro_titleButtonGroup__2ecNU {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.nft-intro_titleButtonGroup__2ecNU .nft-intro_shareButton__12Sp6 {
+  margin-right: 27px;
+}
+.nft-intro_titleButtonGroup__2ecNU
+  .nft-intro_shareButton__12Sp6
+  .nft-intro_titleButton__h82Ut:hover {
+  color: #5a66f9;
+}
+.nft-intro_titleButtonGroup__2ecNU
+  .nft-intro_shareButton__12Sp6
+  .nft-intro_titleButton__h82Ut:hover
+  path {
+  fill: #5a66f9;
+}
+.nft-intro_shareIcon__twitter__3xBn7 {
+  width: 26px;
+  height: 26px;
+  margin-right: 14px;
+}
+.nft-intro_shareIcon__twitter__3xBn7 path {
+  fill: #66a9ec;
+}
+.nft-intro_shareIcon__copy__3CCB4 {
+  width: 26px;
+  height: 26px;
+  margin-right: 14px;
+  background-image: url(/_next/static/media/logo-icon.def1801796a93ad6a3fe404da5d001ac.svg);
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.nft-intro_optionArea__3btKb {
+  background: #fff;
+  box-shadow: 0 4px 8px hsla(0, 0%, 87.8%, 0.4);
+  border-radius: 14px;
+}
+.nft-intro_optionArea__3btKb .nft-intro_shareOption__1l9TN {
+  border-radius: 14px;
+  width: 183px;
+  height: 48px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 14px;
+  color: #000;
+  padding: 0 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.nft-intro_optionArea__3btKb .nft-intro_shareOption__1l9TN:hover {
+  background-color: #f2f3ff;
+}
+.nft-intro_titleButton__h82Ut {
+  width: 26px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  margin-right: 27px;
+  font-size: 10px;
+  line-height: 18px;
+  color: #828282;
+}
+.nft-intro_titleButton__h82Ut:last-child {
+  margin-right: 0;
+}
+.nft-intro_titleButtonIcon__x0-VW {
+  width: 24px;
+  height: 24px;
+  fill: #828282;
+}
+.nft-intro_infoRow__2q_1D {
+  font-size: 14px;
+  line-height: 22px;
+  color: #828282;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin-top: -12px;
+}
+.nft-intro_infoRow__2q_1D,
+.nft-intro_row__2bjKs {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.nft-intro_row__2bjKs {
+  justify-content: center;
+  margin-right: 56px;
+  margin-top: 12px;
+}
+.nft-intro_owner__1JVj_ {
+  margin-right: 0;
+  cursor: pointer;
+}
+.nft-intro_owner__1JVj_ a {
+  color: #818181 !important;
+}
+.nft-intro_collection__ruyYO {
+  cursor: pointer;
+}
+.nft-intro_platform__2e_JB,
+.nft-intro_project__15E_A {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  margin-right: 9px;
+}
+.nft-intro_userIcon__TnRuU {
+  margin-right: 9px;
+  height: 16px;
+}
+.nft-intro_textIntro__22mLh:before {
+  content: '';
+  float: right;
+  height: 44px;
+}
+.nft-intro_viewAll__79qDF {
+  float: right;
+  clear: both;
+  cursor: pointer;
+  color: #5a66f9;
+  position: relative;
+  margin-left: 20px;
+}
+.nft-intro_viewAll__79qDF:before {
+  content: '...';
+  position: absolute;
+  left: -10px;
+  color: #828282;
+  transform: translateX(-100%);
+}
+.nft-intro_curSale__3YRs6 {
+  font-size: 14px;
+  line-height: 36px;
+  color: #828282;
+}
+.nft-intro_curSaleNumber__38t83 {
+  font-size: 24px;
+  line-height: 36px;
+  font-weight: 700;
+  color: #202020;
+}
+.nft-intro_curSaleUSD__TiD2N {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 36px;
+  color: #333;
+  font-family: unset;
+}
+.nft-intro_nftData__O_cg8 {
+  width: 100%;
+  flex: 1 1;
+}
+.nft-intro_nftButtonGroup__3kvJe {
+  margin-top: 38px;
+  justify-content: flex-end;
+}
+.nft-intro_nftButton__70gTh {
+  border-radius: 8px;
+  width: 156px;
+  height: 45px;
+}
+.nft-intro_nftButton__70gTh:not(:first-child) {
+  margin-left: 16px;
+}
+.nft-intro_inftroFoot__3bA92 {
+  align-items: flex-end;
+}
+.nft-intro_metaData__36nFx {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 59px;
+  margin-left: 48px;
+}
+.nft-intro_metaData__36nFx .nft-intro_title__3us83 {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #828282;
+  display: flex;
+  align-items: center;
+  margin-right: 6px;
+}
+.nft-intro_metaData__36nFx .nft-intro_tags__2jjfW {
+  height: 32px;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0 18px;
+  font-family: Cairo;
+  line-height: 32px;
+  font-weight: 600;
+  font-size: 14px;
+  border-radius: 8px;
+  color: #333;
+  text-align: center;
+}
+.nft-intro_rank__RfweU {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 59px;
+}
+.nft-intro_rankTitle__1fBUi {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #828282;
+}
+.nft-intro_rankData__25knL {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 32px;
+  color: #202020;
+}
+.nft-intro_owners__2hUPr {
+  font-size: 14px;
+  line-height: 22px;
+  letter-spacing: 1px;
+  color: #828282;
+}
+.nft-intro_owners__2hUPr .nft-intro_ownerNum__1qvN6 {
+  color: #5a66f9;
+}
+.nft-intro_refreshing__2qV1C {
+  animation: nft-intro_rotate__14ZoM 1s ease 0s infinite;
+}
+.nft-info-card_cardContainer__HKgx- {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.nft-info-card_targetDiv__2tDUs:target {
+  height: 120px;
+  margin-top: -120px;
+}
+.nft-info-card_title__3Qm-t {
+  width: 100%;
+  height: 80px;
+  padding: 0 32px;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 34px;
+  color: #202020;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.nft-info-card_titleText__2xGKT {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.nft-info-card_content__3toJ3,
+.nft-info-card_footer__1-O3U {
+  width: 100%;
+  border-top: 1px solid #e0e0e0;
+}
+@media screen and (max-width: 1263px) {
+  .nft-graph_graphContent__3iZvJ {
+    width: 511px;
+    height: 100%;
+  }
+  .nft-graph_data__2sUTv {
+    width: 112px;
+    margin-right: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media screen and (min-width: 1264px) {
+  .nft-graph_graphContent__3iZvJ {
+    width: 616px;
+    height: 100%;
+  }
+  .nft-graph_data__2sUTv {
+    width: 112px;
+    margin-right: 64px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.nft-graph_empty__4ohJw {
+  height: 180px;
+  width: 180px;
+  background-image: url(/_next/static/media/empty.488135f58ae5a2aa8cf75f5efac16d20.svg);
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-bottom: 6px;
+}
+.nft-graph_emptyText__3nT7b {
+  font-size: 14px;
+  line-height: 22px;
+  color: #828282;
+  text-align: center;
+}
+.nft-graph_dataTitle__2YmYG {
+  width: 100%;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #828282;
+  padding-left: 20px;
+  position: relative;
+}
+.nft-graph_dataTitle__2YmYG:before {
+  content: '';
+  height: 8px;
+  width: 8px;
+  border-radius: 4px;
+  position: absolute;
+  left: 0;
+  top: calc(50% - 4px);
+}
+.nft-graph_dataTitleGreen__2UYIv:before {
+  background-color: #7bdcde;
+}
+.nft-graph_dataTitleYellow__3hk9-:before {
+  background-color: #faaa4f;
+}
+.nft-graph_dataNum__16EUt {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 36px;
+  color: #202020;
+}
+.nft-graph_divider__3BTdA {
+  background-color: #e0e0e0;
+  height: 1px;
+  width: 100%;
+  margin: 30px 0;
+}
+.nft-graph_graph__1qsqU {
+  position: relative;
+  flex-direction: row;
+}
+.nft-graph_graph__1qsqU,
+.nft-graph_graph__1qsqU .nft-graph_emptyData__2VK_P {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nft-graph_graph__1qsqU .nft-graph_emptyData__2VK_P {
+  position: absolute;
+  top: 0;
+  left: 0;
+  flex-direction: column;
+}
+.nft-trade-list_TradeList__1Rkiy {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 240px;
+  padding: 22px 0;
+  overflow-y: scroll;
+}
+.nft-trade-list_TradeList__1Rkiy::-webkit-scrollbar {
+  display: none;
+}
+.nft-trade-list_loading__2SM6l {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 240px;
+}
+.nft-trade-list_empty__2ys_T {
+  height: 180px;
+  width: 180px;
+  background-image: url(/_next/static/media/empty.488135f58ae5a2aa8cf75f5efac16d20.svg);
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-bottom: 6px;
+}
+.nft-trade-list_emptyText__qcWit {
+  font-size: 14px;
+  line-height: 22px;
+  color: #828282;
+}
+.nft-trade-list_head__20-XT {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 18px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  padding: 0 32px;
+  color: #000;
+}
+.nft-trade-list_headAddress__OKnuS {
+  width: 247px;
+}
+.nft-trade-list_headPrice__meFWP {
+  width: 198px;
+}
+.nft-trade-list_headCount__1raUH {
+  width: 149px;
+}
+.nft-trade-list_headMarket__e3MiM {
+  width: 134px;
+}
+.nft-trade-list_item__1Pz1n {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  letter-spacing: 1px;
+  padding: 0 32px;
+  color: #333;
+}
+.nft-trade-list_item__1Pz1n:hover {
+  background-color: #f9f9f9;
+}
+.nft-trade-list_itemAddress__3dC65 {
+  width: 247px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.nft-trade-list_itemPrice__26Zj3 {
+  width: 198px;
+  font-weight: 500;
+}
+.nft-trade-list_itemCount__sEnsF {
+  width: 149px;
+  font-weight: 500;
+}
+.nft-trade-list_tokenPrice__1eJm2 {
+  font-size: 12px;
+  line-height: 17px;
+  letter-spacing: 1px;
+  color: grey;
+}
+.nft-trade-list_itemMarket__1QWRg {
+  width: 134px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.nft-trade-list_itemMarket__1QWRg .nft-trade-list_buyButton__3K0pN {
+  line-height: 22px;
+  background: #fff;
+  border: 1px solid #5a66f9;
+  color: #5a66f9;
+  border-radius: 6px;
+  padding: 0 8px;
+  cursor: pointer;
+  margin-left: 12px;
+}
+.nft-trade-list_cover__qOUZ1 {
+  height: 32px;
+  width: 32px;
+  border-radius: 10px;
+  margin-right: 8px;
+}
+.nft-trade-list_content__2rQo6 {
+  max-height: 150px;
+  overflow-x: hidden;
+  overflow-y: overlay;
+  width: 100%;
+  scrollbar-width: thin;
+}
+.nft-trade-list_content__2rQo6::-webkit-scrollbar {
+  width: 4px;
+}
+.nft-trade-list_content__2rQo6::-webkit-scrollbar-button {
+  height: 0;
+}
+.nft-trade-list_content__2rQo6::-webkit-scrollbar-thumb {
+  background: #c4c4c4;
+  border-radius: 20px;
+}
+.nft-trade-list_marketPlaceLogo__2JpW1 {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}
+@media screen and (max-width: 1263px) {
+  .nft-history-list_list__21A1j {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 251px;
+    padding: 20px 0 32px;
+  }
+  .nft-history-list_head__3ZNZ- {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: #000;
+    padding: 0 18px 6px 28px;
+  }
+  .nft-history-list_headBuyer__dQ7yU {
+    width: 165px;
+  }
+  .nft-history-list_headQuantity__3-hu9 {
+    width: 153px;
+  }
+  .nft-history-list_headPrice__1XnS4 {
+    width: 195px;
+  }
+  .nft-history-list_haedTokenPrice__3MHfU {
+    width: 138px;
+  }
+  .nft-history-list_headSeller__wAV2I {
+    width: 165px;
+  }
+  .nft-history-list_headDate__3B9SR {
+    flex: 1 1;
+    text-align: right;
+  }
+  .nft-history-list_item__2p06Z {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 14px;
+    line-height: 22px;
+    padding: 0 18px 0 28px;
+    height: 54px;
+    color: #333;
+  }
+  .nft-history-list_item__2p06Z:hover {
+    background-color: #f9f9f9;
+  }
+  .nft-history-list_itemBuyer__1sffd {
+    width: 165px;
+  }
+  .nft-history-list_itemQuantity__Wyu0S {
+    width: 153px;
+    font-weight: 500;
+  }
+  .nft-history-list_itemPrice__2zhNh {
+    width: 195px;
+    font-weight: 500;
+  }
+  .nft-history-list_itemTokenPrice__1YZxZ {
+    width: 138px;
+    font-weight: 500;
+  }
+  .nft-history-list_itemSeller__1evfb {
+    width: 165px;
+  }
+  .nft-history-list_itemDate__1d-CU {
+    flex: 1 1;
+    text-align: right;
+    cursor: pointer;
+  }
+}
+@media screen and (min-width: 1264px) {
+  .nft-history-list_list__21A1j {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 251px;
+    padding: 24px 0;
+  }
+  .nft-history-list_head__3ZNZ- {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: #000;
+    margin-bottom: 18px;
+    padding: 0 48px 0 28px;
+  }
+  .nft-history-list_headBuyer__dQ7yU {
+    width: 203px;
+  }
+  .nft-history-list_headQuantity__3-hu9 {
+    width: 173px;
+  }
+  .nft-history-list_headPrice__1XnS4 {
+    width: 228px;
+  }
+  .nft-history-list_haedTokenPrice__3MHfU {
+    width: 219px;
+  }
+  .nft-history-list_headSeller__wAV2I {
+    width: 203px;
+  }
+  .nft-history-list_headDate__3B9SR {
+    flex: 1 1;
+    text-align: right;
+  }
+  .nft-history-list_item__2p06Z {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 14px;
+    line-height: 22px;
+    padding: 0 48px 0 28px;
+    height: 54px;
+    color: #333;
+  }
+  .nft-history-list_item__2p06Z:hover {
+    background-color: #f9f9f9;
+  }
+  .nft-history-list_itemBuyer__1sffd {
+    width: 203px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .nft-history-list_itemQuantity__Wyu0S {
+    width: 173px;
+    font-weight: 500;
+  }
+  .nft-history-list_itemPrice__2zhNh {
+    width: 228px;
+    font-weight: 500;
+  }
+  .nft-history-list_itemTokenPrice__1YZxZ {
+    width: 219px;
+    font-weight: 500;
+  }
+  .nft-history-list_itemSeller__1evfb {
+    width: 203px;
+  }
+  .nft-history-list_itemDate__1d-CU {
+    flex: 1 1;
+    text-align: right;
+    cursor: pointer;
+  }
+}
+.nft-history-list_empty__W5veB {
+  height: 180px;
+  width: 180px;
+  background-image: url(/_next/static/media/empty.488135f58ae5a2aa8cf75f5efac16d20.svg);
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-bottom: 6px;
+}
+.nft-history-list_emptyText__2pU1p {
+  font-size: 14px;
+  line-height: 22px;
+  color: #828282;
+}
+.nft-history-list_list__21A1j::-webkit-scrollbar {
+  display: none;
+}
+.nft-history-list_content__3kbwL {
+  max-height: 220px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  width: 100%;
+}
+.nft-history-list_content__3kbwL::-webkit-scrollbar {
+  width: 4px;
+}
+.nft-history-list_content__3kbwL::-webkit-scrollbar-button {
+  height: 0;
+}
+.nft-history-list_content__3kbwL::-webkit-scrollbar-thumb {
+  background: #c4c4c4;
+  border-radius: 20px;
+}
+.nft-history-list_cover__3dpNR {
+  height: 32px;
+  width: 32px;
+  border-radius: 10px;
+  margin-right: 8px;
+}
+.nft-history-list_loading__2RbNH {
+  height: 240px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.nft-history-list_itemDate__1d-CU a {
+  color: #5a66f9 !important;
+}
+.nft-holder-list_holderList__tje_Z {
+  width: 100%;
+  max-height: 312px;
+  padding: 18px 32px;
+  justify-content: flex-start;
+}
+.nft-holder-list_head__1b4XP {
+  margin-bottom: 8px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #000;
+}
+.nft-holder-list_content__fMJuy {
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding-right: 24px;
+  margin-right: -24px;
+}
+.nft-holder-list_content__fMJuy::-webkit-scrollbar {
+  width: 4px;
+}
+.nft-holder-list_content__fMJuy::-webkit-scrollbar-button {
+  height: 0;
+}
+.nft-holder-list_content__fMJuy::-webkit-scrollbar-thumb {
+  background: #c4c4c4;
+  border-radius: 20px;
+}
+.nft-holder-list_item__1Alnc {
+  height: 44px;
+  line-height: 44px;
+  font-size: 14px;
+  color: #818181;
+}
+.nft-holder-list_item__1Alnc a {
+  color: #818181 !important;
+}
+@media screen and (max-width: 1263px) {
+  .nft-data-card_card__sCmt3 {
+    padding: 32px 12px 32px 16px;
+  }
+}
+@media screen and (min-width: 1264px) {
+  .nft-data-card_card__sCmt3 {
+    padding: 32px;
+  }
+}
+.nft-data-card_card__sCmt3 {
+  width: 100%;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.nft-data-card_card__sCmt3,
+.nft-data-card_part__jUGuR {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.nft-data-card_part__jUGuR {
+  flex-direction: column;
+  align-items: flex-start;
+}
+.nft-data-card_Border__Mjj8- {
+  width: 60px;
+  height: 0;
+  opacity: 0.6;
+  border: 1px solid #bdbdbd;
+  transform: rotate(90deg);
+}
+.nft-data-card_data__qO5QH {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.nft-data-card_title__10P2y {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #828282;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.nft-data-card_title__10P2y .nft-data-card_infoIcon__3A34b {
+  margin-left: 8px;
+  cursor: pointer;
+}
+.nft-data-card_modalMask__1lT5t {
+  background: rgba(0, 0, 0, 0.15);
+}
+.nft-data-card_icon__5XxxV {
+  width: 26px;
+  height: 24px;
+  fill: #828282;
+  margin-right: 14px;
+}
+.nft-data-card_holderContent__PLvon {
+  width: 100%;
+  max-height: 396px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.nft-data-card_holderCount__2ktbQ {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  color: #000;
+}
+.nft-data-card_holderArea__1oaV8 {
+  width: 479px;
+  box-shadow: 0 4px 8px hsla(0, 0%, 87.8%, 0.4);
+  border-radius: 14px;
+  background-color: #fff;
+}
+.nft-data-card_content__YTO9A {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  color: #202020;
+  font-family: unset;
+}
+.nft-data-card_pastOwners__3553X {
+  color: #5a66f9;
+  cursor: pointer;
+}
+.nft-info_nftInfo__31YNN {
+  width: 100%;
+  padding: 30px 24px 20px;
+}
+.nft-info_valueRate__vW81q {
+  height: 22px;
+  font-weight: 500 !important;
+  font-size: 14px !important;
+}
+.nft-info_titleInfo__3bFbj {
+  align-items: center;
+}
+.nft-info_cover__fUBOo {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  margin-right: 12px;
+  cursor: pointer;
+}
+.nft-info_title__2zlit {
+  flex: 1 1;
+  font-size: 14px;
+  line-height: 22px;
+  color: #333;
+  cursor: pointer;
+}
+.nft-info_value__1PlXn {
+  align-items: flex-end;
+}
+.nft-info_valueTitle__3_rwi {
+  font-size: 12px;
+  line-height: 18px;
+  color: #818181;
+}
+.nft-info_valueNumber__a0TJY {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 34px;
+  color: #333;
+  font-family: unset;
+}
+.nft-info_valueDown__eYdu2 {
+  color: #eb5757;
+}
+.nft-info_content__3J5LE {
+  height: 56px;
+  overflow: hidden;
+}
+.nft-info_content__3J5LE,
+.nft-info_expand__F2qdK {
+  font-size: 14px;
+  margin-top: 8px;
+  line-height: 28px;
+  color: #818181;
+}
+.nft-info_content__3J5LE:before {
+  content: '';
+  float: right;
+  height: calc(100% - 28px);
+}
+.nft-info_viewAll__3UlGg {
+  float: right;
+  clear: both;
+  cursor: pointer;
+  color: #5a66f9;
+  position: relative;
+  margin-left: 20px;
+}
+.nft-info_viewAll__3UlGg:before {
+  content: '...';
+  position: absolute;
+  left: -10px;
+  color: #828282;
+  transform: translateX(-100%);
+}
+.nft-info_nftInfoAddress__2qDLG {
+  width: 100%;
+  padding: 0 24px;
+  height: 108px;
+}
+.nft-info_infoTitle__3dpRG {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #202020;
+}
+.nft-info_infoContent__tGsSX {
+  font-size: 14px;
+  line-height: 22px;
+  color: #828282;
+}
+.nft-info_tagArea__3Nwcq {
+  flex: 1 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-top: -12px;
+}
+.nft-info_tag__Bav2x {
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 26px;
+  padding: 0 14px;
+  margin-right: 16px;
+  text-transform: capitalize;
+  margin-top: 12px;
+}
+.nft-info_tag__Bav2x:last-child {
+  margin-right: 0;
+}
+.nft-info_rankArea__1uVpZ {
+  display: flex;
+  line-height: 36px;
+}
+.nft-info_rankTitle__9xSFp {
+  font-weight: 500;
+  font-size: 12px;
+  color: #828282;
+}
+.nft-info_rankData__3OHFJ {
+  font-weight: 600;
+  font-size: 14px;
+  color: #202020;
+  margin-left: 8px;
+}
+.property-card-item_item__22Dl9 {
+  width: 100%;
+  height: 44px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 8px;
+  padding: 0 12px;
+}
+.property-card-item_item0__nfTDc {
+  background-color: #f2f3ff;
+}
+.property-card-item_item1__2k5Xk {
+  background-color: #e7feff;
+}
+.property-card-item_item2__Fa7iA {
+  background-color: #fbf2ff;
+}
+.property-card-item_item3__2xb2q {
+  background-color: #fff5e9;
+}
+.property-card-item_title__Xl7rT {
+  font-family: unset;
+  font-weight: 500;
+  font-size: 14px;
+  color: #333;
+}
+.property-card-item_value__27xI6 {
+  font-family: unset;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  color: #333;
+}
+.property-card-item_rank__2Edaw {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.property-card-item_iconWrapper__3zDDK {
+  position: relative;
+  margin-right: 8px;
+  height: 20px;
+  width: 16px;
+}
+.property-card-item_number__2FeHK {
+  position: absolute;
+  font-family: unset;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  width: 16px;
+  text-align: center;
+  color: #fff;
+  top: 2px;
+}
+.property-card-item_icon0__2M3jt path:nth-child(2) {
+  fill: #838cff;
+}
+.property-card-item_icon0__2M3jt path:first-child {
+  fill: #b9beff;
+}
+.property-card-item_icon1__3BsDL path:nth-child(2) {
+  fill: #7ad9da;
+}
+.property-card-item_icon1__3BsDL path:first-child {
+  fill: #aef0f3;
+}
+.property-card-item_icon2__1_M0h path:nth-child(2) {
+  fill: #b191ff;
+}
+.property-card-item_icon2__1_M0h path:first-child {
+  fill: #d7c7ff;
+}
+.property-card-item_icon3__1x3AK path:nth-child(2) {
+  fill: #ffc47c;
+}
+.property-card-item_icon3__1x3AK path:first-child {
+  fill: #ffdeb6;
+}
+@media screen and (max-width: 1263px) {
+  .nft-card_card__GfDUz {
+    width: 179px;
+    height: 251px;
+    background-color: #fff;
+    border-radius: 14px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px hsla(0, 0%, 87.8%, 0.4);
+    transition: box-shadow 0.3s;
+  }
+  .nft-card_card__GfDUz:hover {
+    box-shadow: 0 10px 24px hsla(0, 0%, 87.8%, 0.6);
+  }
+  .nft-card_image__3loFx {
+    width: 179px;
+    height: 179px;
+    border-radius: 14px 14px 0 0;
+    object-fit: contain;
+    object-position: center center;
+  }
+}
+@media screen and (min-width: 1264px) {
+  .nft-card_card__GfDUz {
+    width: 188px;
+    height: 263px;
+    background-color: #fff;
+    border-radius: 14px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px hsla(0, 0%, 87.8%, 0.4);
+    transition: box-shadow 0.3s;
+  }
+  .nft-card_card__GfDUz:hover {
+    box-shadow: 0 10px 24px hsla(0, 0%, 87.8%, 0.6);
+  }
+  .nft-card_image__3loFx {
+    width: 188px;
+    height: 188px;
+    border-radius: 14px 14px 0 0;
+    object-fit: contain;
+    object-position: center center;
+  }
+}
+.nft-card_content__3meN5 {
+  padding: 12px;
+  width: 100%;
+}
+.nft-card_name__3pO-P {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 1px;
+  color: #424242;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  word-break: break-all;
+  margin-bottom: 8px;
+}
+.nft-card_info__39sxY {
+  width: 100%;
+  justify-content: space-between;
+}
+.nft-card_info__39sxY,
+.nft-card_logoGroup__xsaDg {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.nft-card_logoGroup__xsaDg {
+  justify-content: center;
+}
+.nft-card_logoGroup__xsaDg .nft-card_collectionLogo__3LjTT {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  margin-right: 12px;
+}
+.nft-card_logoGroup__xsaDg .nft-card_blockchainLogo__3RiEx {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+}
+.nft-card_price__3jUl4 {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  color: #202020;
+}
+.desc-modal_mask__3EKiT {
+  background-color: rgba(0, 0, 0, 0.15);
+}
+.desc-modal_modal__1OwMw {
+  width: 595px;
+  padding: 40px 30px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.desc-modal_image__1DpR- {
+  width: 130px;
+  height: 130px;
+  border-radius: 14px;
+  margin-bottom: 24px;
+}
+.desc-modal_name__201k4 {
+  text-align: center;
+  font-weight: 600;
+  font-size: 32px;
+  letter-spacing: 1px;
+  color: #333;
+  margin-bottom: 32px;
+}
+.desc-modal_closeIcon__1Qwfh {
+  right: 27px;
+  top: 27px;
+  position: absolute;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url(/_next/static/media/close-gray.cae1a30f80f6d23f5bc0a8d34b22e352.svg);
+}
+.desc-modal_desc__34C0G {
+  width: 100%;
+  font-size: 26px;
+  line-height: 44px;
+  align-items: center;
+  letter-spacing: 1px;
+  color: grey;
+  max-height: 289px;
+  overflow-y: overlay;
+  overflow-x: overlay;
+  scrollbar-width: thin;
+}
+.desc-modal_desc__34C0G::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+.desc-modal_desc__34C0G::-webkit-scrollbar-button {
+  height: 0;
+}
+.desc-modal_desc__34C0G::-webkit-scrollbar-thumb {
+  background: #c4c4c4;
+  border-radius: 20px;
+}
+.asset-modal_mask__1uNRd {
+  background-color: rgba(0, 0, 0, 0.15);
+}
+.asset-modal_modal__1HwON {
+  width: 595px;
+  padding-bottom: 38px;
+}
+.asset-modal_head__1Zxlp {
+  height: 94px;
+  padding: 0 32px;
+  border-bottom: 1px solid #e0e0e0;
+}
+.asset-modal_head__1Zxlp,
+.asset-modal_head__1Zxlp .asset-modal_title__PP6a4 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.asset-modal_head__1Zxlp .asset-modal_title__PP6a4 {
+  font-weight: 600;
+  font-size: 32px;
+  color: #333;
+}
+.asset-modal_head__1Zxlp .asset-modal_icon__3U2Lp {
+  margin-right: 26px;
+}
+.asset-modal_head__1Zxlp .asset-modal_closeIcon__2DUts {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url(/_next/static/media/close-gray.cae1a30f80f6d23f5bc0a8d34b22e352.svg);
+}
+.asset-modal_list__2-Blc {
+  width: 100%;
+  height: 504px;
+  overflow-y: overlay;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+}
+.asset-modal_list__2-Blc::-webkit-scrollbar {
+  width: 4px;
+}
+.asset-modal_list__2-Blc::-webkit-scrollbar-button {
+  height: 0;
+}
+.asset-modal_list__2-Blc::-webkit-scrollbar-thumb {
+  background: #c4c4c4;
+  border-radius: 20px;
+}
+.asset-modal_item__2M0e8 {
+  height: 84px;
+}
+.asset-modal_item__2M0e8,
+.asset-modal_listTitle__kBB8j {
+  padding: 0 46px 0 28px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 26px;
+  letter-spacing: 1px;
+  color: #333;
+}
+.asset-modal_listTitle__kBB8j {
+  height: 71px;
+  font-weight: 500;
+}
+.asset-modal_info__2eebg {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.asset-modal_avatar__2Li1c {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  margin-right: 22px;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url(/_next/static/media/avatar.e2df85156c50b5beddaf9dc5e4c0635f.svg);
+}
+@keyframes nft-intro_rotate__2xprd {
+  0% {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
+.nft-intro_nftIntro__MhTg2 {
+  width: 100%;
+  background-color: #fff;
+  border-radius: 14px;
+  padding: 0 25px;
+  box-shadow: 0 4px 8px hsla(0, 0%, 87.8%, 0.4);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.nft-intro_info__3PeYy {
+  width: 100%;
+  height: 284px;
+  padding: 24px 0;
+  border-bottom: 1px solid #bdbdbd;
+}
+.nft-intro_info__3PeYy .nft-intro_head__3nISM {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 40px;
+}
+.nft-intro_info__3PeYy .nft-intro_head__3nISM .nft-intro_title__2dWdL {
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 50px;
+  letter-spacing: 1px;
+  color: #000;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  word-break: break-all;
+}
+.nft-intro_info__3PeYy
+  .nft-intro_head__3nISM
+  .nft-intro_titleButtonGroup__3P1mn {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.nft-intro_info__3PeYy
+  .nft-intro_head__3nISM
+  .nft-intro_titleButtonGroup__3P1mn
+  .nft-intro_titleButton__3N7QH {
+  height: 70px;
+  font-size: 22px;
+  letter-spacing: 1px;
+  line-height: 18px;
+  color: grey;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.nft-intro_info__3PeYy
+  .nft-intro_head__3nISM
+  .nft-intro_titleButtonGroup__3P1mn
+  .nft-intro_shareButton__a98D7,
+.nft-intro_info__3PeYy
+  .nft-intro_head__3nISM
+  .nft-intro_titleButtonGroup__3P1mn
+  .nft-intro_titleButton__3N7QH:not(:first-child) {
+  margin-left: 45px;
+}
+.nft-intro_info__3PeYy
+  .nft-intro_head__3nISM
+  .nft-intro_titleButtonGroup__3P1mn
+  .nft-intro_shareButton__a98D7:hover {
+  color: #5a66f9;
+}
+.nft-intro_info__3PeYy
+  .nft-intro_head__3nISM
+  .nft-intro_titleButtonGroup__3P1mn
+  .nft-intro_shareButton__a98D7:hover
+  path {
+  fill: #5a66f9;
+}
+.nft-intro_info__3PeYy .nft-intro_refreshing__2sbbJ {
+  animation: nft-intro_rotate__2xprd 1s ease 0s infinite;
+}
+.nft-intro_info__3PeYy .nft-intro_collectionInfo__3Mvdd {
+  margin-bottom: 32px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.nft-intro_info__3PeYy
+  .nft-intro_collectionInfo__3Mvdd
+  .nft-intro_infoItem__akxX- {
+  flex: 1 1;
+  min-width: 0;
+  font-size: 24px;
+  letter-spacing: 1px;
+  color: grey;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.nft-intro_info__3PeYy
+  .nft-intro_collectionInfo__3Mvdd
+  .nft-intro_infoItem__akxX-
+  .nft-intro_infoTitle__2j34k {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  word-break: break-all;
+}
+.nft-intro_info__3PeYy
+  .nft-intro_collectionInfo__3Mvdd
+  .nft-intro_infoItem__akxX-:first-child {
+  margin-right: 100px;
+}
+.nft-intro_info__3PeYy .nft-intro_collectionInfo__3Mvdd .nft-intro_logo__2ydtp {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+.nft-intro_descArea__GBLLO {
+  width: 100%;
+  border-bottom: 1px solid #bdbdbd;
+  padding: 32px 0 40px;
+}
+.nft-intro_descArea__GBLLO .nft-intro_rankArea__18McV {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.nft-intro_descArea__GBLLO .nft-intro_rankArea__18McV .nft-intro_item__31Wa7 {
+  flex: 1 1;
+}
+.nft-intro_descArea__GBLLO
+  .nft-intro_rankArea__18McV
+  .nft-intro_item__31Wa7:first-child {
+  margin-right: 100px;
+}
+.nft-intro_descArea__GBLLO .nft-intro_rankArea__18McV .nft-intro_rank__1gJOs {
+  font-weight: 600;
+  font-size: 28px;
+  color: #202020;
+}
+.nft-intro_descArea__GBLLO .nft-intro_rankArea__18McV .nft-intro_tag__1jWiT {
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 48px;
+  padding: 0 12px;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 45px;
+  color: #333;
+  border-radius: 8px;
+}
+.nft-intro_descArea__GBLLO
+  .nft-intro_rankArea__18McV
+  .nft-intro_mutable__20nbI {
+  background-color: rgba(90, 102, 249, 0.19);
+}
+.nft-intro_descArea__GBLLO
+  .nft-intro_rankArea__18McV
+  .nft-intro_immutable__3MGyy {
+  background-color: #ccf1f2;
+}
+.nft-intro_descArea__GBLLO .nft-intro_title__2dWdL {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 34px;
+  letter-spacing: 1px;
+  color: #828282;
+  margin-bottom: 12px;
+}
+.nft-intro_descArea__GBLLO .nft-intro_desc__2SS0i {
+  line-height: 34px;
+  height: 102px;
+  width: 100%;
+  overflow: hidden;
+  font-size: 24px;
+  letter-spacing: 1px;
+  color: grey;
+  margin-bottom: 38px;
+}
+.nft-intro_descArea__GBLLO .nft-intro_desc__2SS0i:before {
+  content: '';
+  float: right;
+  height: 68px;
+}
+.nft-intro_descArea__GBLLO .nft-intro_viewAll__ZdlVo {
+  float: right;
+  clear: both;
+  cursor: pointer;
+  color: #5a66f9;
+  position: relative;
+  margin-left: 20px;
+}
+.nft-intro_descArea__GBLLO .nft-intro_viewAll__ZdlVo:before {
+  content: '...';
+  position: absolute;
+  left: -10px;
+  color: #828282;
+  transform: translateX(-100%);
+}
+.nft-intro_priceArea__1KhjG {
+  width: 100%;
+  padding: 40px 0;
+}
+.nft-intro_priceArea__1KhjG .nft-intro_title__2dWdL {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 34px;
+  color: #333;
+}
+.nft-intro_priceArea__1KhjG .nft-intro_tokenPrice__3PhCv {
+  font-weight: 600;
+  font-size: 44px;
+  color: #333;
+}
+.nft-intro_priceArea__1KhjG .nft-intro_usdPrice__1zUrJ {
+  font-size: 24px;
+  letter-spacing: 1px;
+  color: #333;
+}
+.nft-intro_priceArea__1KhjG .nft-intro_buttonGroup__2wGni {
+  margin-top: 32px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.nft-intro_priceArea__1KhjG
+  .nft-intro_buttonGroup__2wGni
+  .nft-intro_makeoffer__3oncF {
+  flex: 1 1;
+  height: 72px;
+  margin-right: 32px;
+  background-color: #fff;
+  border: 2px solid #5a66f9;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 24px;
+  letter-spacing: 1px;
+  color: #5a66f9;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.nft-intro_priceArea__1KhjG
+  .nft-intro_buttonGroup__2wGni
+  .nft-intro_buttonContainer__3bwuT {
+  flex: 1 1;
+}
+.nft-intro_priceArea__1KhjG
+  .nft-intro_buttonGroup__2wGni
+  .nft-intro_buy__Xm3xK {
+  height: 72px;
+  background: #5a66f9;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 24px;
+  letter-spacing: 1px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.nft-intro_owner__87o02 {
+  font-size: 26px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.nft-intro_owner__87o02 a {
+  color: grey !important;
+}
+.nft-intro_owner__87o02 .nft-intro_owners__3FvMc {
+  color: #5a66f9;
+}
+.nft-intro_owner__87o02 .nft-intro_userIcon__3tYKo {
+  margin-right: 14px;
+}
+.nft-intro_optionArea__Ifm5U {
+  background: #fff;
+  box-shadow: 0 4px 8px hsla(0, 0%, 87.8%, 0.4);
+  border-radius: 14px;
+}
+.nft-intro_optionArea__Ifm5U .nft-intro_shareOption__2-bJU {
+  border-radius: 14px;
+  width: 280px;
+  height: 72px;
+  padding-left: 24px;
+  font-size: 22px;
+  color: #000;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.nft-intro_optionArea__Ifm5U .nft-intro_shareOption__2-bJU:hover {
+  background-color: #f2f3ff;
+}
+.nft-intro_optionArea__Ifm5U .nft-intro_nftgoIcon__6TK4J {
+  width: 40px;
+  height: 40px;
+  margin-right: 16px;
+  background-image: url(/_next/static/media/logo-icon.def1801796a93ad6a3fe404da5d001ac.svg);
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.nft-intro_optionArea__Ifm5U .nft-intro_twitterIcon__6vcqF {
+  margin-right: 16px;
+}
+.nft-data-card_container__1TfhJ {
+  width: 100%;
+  height: 252px;
+  background-color: #fff;
+  border-radius: 14px;
+  padding: 32px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 8px hsla(0, 0%, 87.8%, 0.4);
+}
+.nft-data-card_row__TlokI {
+  height: 100%;
+  flex: 1 1;
+  padding-left: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.nft-data-card_divider__1-kEE {
+  height: 142px;
+  border-right: 1px solid #e0e0e0;
+}
+.nft-data-card_title__3C2-E {
+  font-weight: 500;
+  font-size: 22px;
+  letter-spacing: 1px;
+  color: #828282;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.nft-data-card_value__1-CM0 {
+  font-weight: 600;
+  font-size: 30px;
+  color: #202020;
+}
+.nft-data-card_multiOwners__Bejrj {
+  color: #5a66f9;
+}
+.nft-data-card_infoIcon__3d0sS {
+  margin-left: 8px;
+}
+.nft-info-card_cardContainer__2eOSk {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.nft-info-card_targetDiv__3sAEI:target {
+  height: 120px;
+  margin-top: -120px;
+}
+.nft-info-card_title__1QB1B {
+  width: 100%;
+  height: 94px;
+  padding: 0 24px;
+  font-weight: 600;
+  font-size: 32px;
+  color: #333;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.nft-info-card_titleText__3MI3R {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.nft-info-card_content__tK7QU,
+.nft-info-card_footer__2jjtc {
+  width: 100%;
+  border-top: 1px solid #e0e0e0;
+}
+.nft-info-card_titleEnd__2N_lt {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.nft-info_nftInfo__2fqhA {
+  width: 100%;
+  padding: 24px 24px 48px;
+  min-height: 369px;
+}
+.nft-info_titleInfo__O3r6T {
+  align-items: center;
+  margin-bottom: 10px;
+}
+.nft-info_titleInfo__O3r6T .nft-info_cover__2_iD4 {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  margin-right: 16px;
+}
+.nft-info_titleInfo__O3r6T .nft-info_title__3STM5 {
+  flex: 1 1;
+  font-size: 28px;
+  letter-spacing: 1px;
+  color: #333;
+}
+.nft-info_value__1gWXB {
+  align-items: flex-end;
+}
+.nft-info_value__1gWXB .nft-info_valueTitle__JoTDr {
+  font-size: 24px;
+  letter-spacing: 1px;
+  color: grey;
+  margin-bottom: 4px;
+}
+.nft-info_value__1gWXB .nft-info_valueNumber__Vix5D {
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 34px;
+  color: #333;
+  margin-bottom: 4px;
+}
+.nft-info_value__1gWXB .nft-info_valueRate__3wIUq {
+  font-weight: 500;
+  font-size: 24px;
+  letter-spacing: 1px;
+  color: #38e25d;
+}
+.nft-info_rankArea__M6bII {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.nft-info_rankArea__M6bII .nft-info_rankTitle__3IpbR {
+  font-size: 22px;
+  letter-spacing: 1px;
+  color: grey;
+}
+.nft-info_rankArea__M6bII .nft-info_rankData__1CoJk {
+  font-weight: 600;
+  font-size: 28px;
+  color: #333;
+  margin-left: 10px;
+}
+.nft-info_tagArea__2Ccbv {
+  flex: 1 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-top: -12px;
+}
+.nft-info_tagArea__2Ccbv .nft-info_tag__1mBpD {
+  margin-top: 12px;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0 10px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 32px;
+}
+.nft-info_tagArea__2Ccbv .nft-info_tag__1mBpD:not(:first-child) {
+  margin-left: 20px;
+}
+.nft-info_content__ks_rD {
+  margin-top: 12px;
+  font-size: 24px;
+  line-height: 36px;
+  height: 72px;
+  letter-spacing: 1px;
+  color: grey;
+  overflow: hidden;
+}
+.nft-info_content__ks_rD:before {
+  content: '';
+  float: right;
+  height: calc(100% - 36px);
+}
+.nft-info_content__ks_rD .nft-info_viewAll__1ruYX {
+  float: right;
+  clear: both;
+  cursor: pointer;
+  color: #5a66f9;
+  position: relative;
+  margin-left: 20px;
+}
+.nft-info_content__ks_rD .nft-info_viewAll__1ruYX:before {
+  content: '...';
+  position: absolute;
+  left: -10px;
+  color: #828282;
+  transform: translateX(-100%);
+}
+.nft-info_expand__qLyyO {
+  margin-top: 12px;
+  font-size: 24px;
+  line-height: 36px;
+  letter-spacing: 1px;
+  color: grey;
+}
+.nft-info_nftInfoAddress__16D57 {
+  width: 100%;
+  padding: 14px 24px 0;
+}
+.nft-info_nftInfoAddress__16D57 .nft-info_infoItem__2ggO6 {
+  height: 84px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.nft-info_nftInfoAddress__16D57 .nft-info_infoTitle__2-QkU {
+  font-weight: 500;
+  font-size: 26px;
+  letter-spacing: 1px;
+  color: #333;
+}
+.nft-info_nftInfoAddress__16D57 .nft-info_infoContent__2szrk {
+  font-size: 26px;
+  letter-spacing: 1px;
+  color: grey;
+}
+.nft-traits_container__12pO7 {
+  width: 100%;
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.nft-traits_list__1rQ0u {
+  width: 100%;
+  height: 370px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+}
+.nft-traits_list__1rQ0u::-webkit-scrollbar {
+  width: 4px;
+}
+.nft-traits_list__1rQ0u::-webkit-scrollbar-button {
+  height: 0;
+}
+.nft-traits_list__1rQ0u::-webkit-scrollbar-thumb {
+  background: #c4c4c4;
+  border-radius: 20px;
+}
+.nft-traits_item__1gYdJ {
+  width: 100%;
+  height: 72px;
+  padding: 0 16px 0 22px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.nft-traits_item__1gYdJ:not(:first-child) {
+  margin-top: 24px;
+}
+.nft-traits_item0__1fSrF {
+  background-color: #f2f3ff;
+}
+.nft-traits_item0__1fSrF path:nth-child(2) {
+  fill: #838cff;
+}
+.nft-traits_item0__1fSrF path:first-child {
+  fill: #b9beff;
+}
+.nft-traits_item1__2K0vO {
+  background-color: #e7feff;
+}
+.nft-traits_item1__2K0vO path:nth-child(2) {
+  fill: #7ad9da;
+}
+.nft-traits_item1__2K0vO path:first-child {
+  fill: #aef0f3;
+}
+.nft-traits_item2__2r-_4 {
+  background-color: #fbf2ff;
+}
+.nft-traits_item2__2r-_4 path:nth-child(2) {
+  fill: #b191ff;
+}
+.nft-traits_item2__2r-_4 path:first-child {
+  fill: #d7c7ff;
+}
+.nft-traits_item3__3fMoc {
+  background-color: #fff5e9;
+}
+.nft-traits_item3__3fMoc path:nth-child(2) {
+  fill: #ffc47c;
+}
+.nft-traits_item3__3fMoc path:first-child {
+  fill: #ffdeb6;
+}
+.nft-traits_num__20L7V {
+  margin-right: 20px;
+}
+.nft-traits_num__20L7V,
+.nft-traits_num__20L7V .nft-traits_rank__gEvjY {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.nft-traits_num__20L7V .nft-traits_rank__gEvjY {
+  position: relative;
+  margin-right: 14px;
+}
+.nft-traits_num__20L7V .nft-traits_number__2br_I {
+  font-weight: 500;
+  font-size: 24px;
+  color: #fff;
+  position: absolute;
+  width: 30px;
+  top: 0;
+  text-align: center;
+}
+.nft-traits_title__1B40I {
+  font-weight: 500;
+  font-size: 26px;
+  color: #333;
+}
+.nft-traits_value__gTpjv {
+  font-size: 24px;
+  color: #333;
+}
+.nft-listing_container__W0z_V {
+  width: 100%;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+.nft-listing_container__W0z_V::-webkit-scrollbar {
+  height: 4px;
+}
+.nft-listing_container__W0z_V::-webkit-scrollbar-button {
+  height: 0;
+}
+.nft-listing_container__W0z_V::-webkit-scrollbar-thumb {
+  background: #c4c4c4;
+  border-radius: 20px;
+}
+.nft-listing_head__1FD3s {
+  width: -moz-fit-content;
+  width: fit-content;
+  font-weight: 500;
+  font-size: 26px;
+  letter-spacing: 1px;
+  color: #333;
+  padding-left: 25px;
+  height: 72px;
+  border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.nft-listing_head__1FD3s .nft-listing_address__8ty9W {
+  width: 300px;
+}
+.nft-listing_head__1FD3s .nft-listing_price__2q3-w {
+  width: 217px;
+}
+.nft-listing_head__1FD3s .nft-listing_quantity__36Twd {
+  width: 197px;
+}
+.nft-listing_head__1FD3s .nft-listing_market__qjLIR {
+  width: 172px;
+}
+.nft-listing_list__2Xw0X {
+  min-height: 252px;
+}
+.nft-listing_item__2pivp {
+  height: 84px;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding-left: 25px;
+  font-size: 24px;
+  letter-spacing: 1px;
+  color: #333;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.nft-listing_item__2pivp .nft-listing_address__8ty9W {
+  width: 300px;
+  font-size: 26px;
+  letter-spacing: 1px;
+}
+.nft-listing_item__2pivp .nft-listing_price__2q3-w {
+  width: 217px;
+}
+.nft-listing_item__2pivp
+  .nft-listing_price__2q3-w
+  .nft-listing_usdPrice__fkCMB {
+  font-weight: 500;
+  font-size: 24px;
+  letter-spacing: 1px;
+}
+.nft-listing_item__2pivp
+  .nft-listing_price__2q3-w
+  .nft-listing_tokenPrice__2Hr8g {
+  font-size: 24px;
+  letter-spacing: 1px;
+  color: grey;
+}
+.nft-listing_item__2pivp .nft-listing_quantity__36Twd {
+  width: 197px;
+  color: #333;
+  font-weight: 500;
+}
+.nft-listing_item__2pivp .nft-listing_market__qjLIR {
+  width: 172px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.nft-listing_item__2pivp
+  .nft-listing_market__qjLIR
+  .nft-listing_marketPlaceLogo__tjfoT {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  margin-right: 18px;
+}
+.nft-listing_item__2pivp
+  .nft-listing_market__qjLIR
+  .nft-listing_buyButton__2MljC {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 34px;
+  color: #5a66f9;
+  border-radius: 6px;
+  border: 1px solid #5a66f9;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0 10px;
+}
+.nft-listing_empty__3YN-g,
+.nft-listing_loading__3TwZ2 {
+  height: 329px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.nft-listing_empty__3YN-g .nft-listing_emptyImg__2lDS7 {
+  width: 200px;
+  height: 200px;
+  background-image: url(/_next/static/media/empty.488135f58ae5a2aa8cf75f5efac16d20.svg);
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.nft-sale-history_listing__PVZWc {
+  width: 100%;
+}
+.nft-sale-history_container__1W5eF {
+  width: 100%;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+.nft-sale-history_container__1W5eF::-webkit-scrollbar {
+  height: 4px;
+}
+.nft-sale-history_container__1W5eF::-webkit-scrollbar-button {
+  height: 0;
+}
+.nft-sale-history_container__1W5eF::-webkit-scrollbar-thumb {
+  background: #c4c4c4;
+  border-radius: 20px;
+}
+.nft-sale-history_head__2AUfq {
+  width: -moz-fit-content;
+  width: fit-content;
+  font-weight: 500;
+  font-size: 26px;
+  letter-spacing: 1px;
+  color: #333;
+  padding: 0 25px;
+  height: 72px;
+  border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.nft-sale-history_head__2AUfq .nft-sale-history_buyer__v1IDN {
+  width: 247px;
+}
+.nft-sale-history_head__2AUfq .nft-sale-history_quantity__2OCNB {
+  width: 195px;
+}
+.nft-sale-history_head__2AUfq .nft-sale-history_usdPrice__2LRNF {
+  width: 224px;
+}
+.nft-sale-history_head__2AUfq .nft-sale-history_tokenPrice__2-yE8 {
+  width: 245px;
+}
+.nft-sale-history_head__2AUfq .nft-sale-history_seller__2f9ew {
+  width: 247px;
+}
+.nft-sale-history_head__2AUfq .nft-sale-history_date__yaDQN {
+  width: 220px;
+  text-align: right;
+}
+.nft-sale-history_list__3rQct {
+  min-height: 252px;
+}
+.nft-sale-history_item__3brUI {
+  height: 84px;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0 25px;
+  font-size: 24px;
+  letter-spacing: 1px;
+  color: #333;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.nft-sale-history_item__3brUI .nft-sale-history_buyer__v1IDN {
+  width: 247px;
+}
+.nft-sale-history_item__3brUI .nft-sale-history_quantity__2OCNB {
+  width: 195px;
+  font-weight: 500;
+}
+.nft-sale-history_item__3brUI .nft-sale-history_usdPrice__2LRNF {
+  width: 224px;
+  font-weight: 500;
+}
+.nft-sale-history_item__3brUI .nft-sale-history_tokenPrice__2-yE8 {
+  width: 245px;
+  font-weight: 500;
+}
+.nft-sale-history_item__3brUI .nft-sale-history_seller__2f9ew {
+  width: 247px;
+}
+.nft-sale-history_item__3brUI .nft-sale-history_date__yaDQN {
+  width: 220px;
+  text-align: right;
+  font-weight: 500;
+}
+.nft-sale-history_item__3brUI .nft-sale-history_date__yaDQN a {
+  color: #5a66f9 !important;
+}
+.nft-sale-history_empty__3DPVH,
+.nft-sale-history_loading__2XsJ_ {
+  height: 329px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.nft-sale-history_empty__3DPVH .nft-sale-history_emptyImg__3jTtt {
+  width: 200px;
+  height: 200px;
+  background-image: url(/_next/static/media/empty.488135f58ae5a2aa8cf75f5efac16d20.svg);
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.nft-sale-history_footer__1IwEr {
+  margin: 30px;
+}
+.nft-graph_graph__1Xgsd {
+  min-height: 329px;
+  position: relative;
+}
+.nft-graph_emptyData__1fg0_,
+.nft-graph_graph__1Xgsd {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.nft-graph_emptyData__1fg0_ {
+  position: absolute;
+  height: 329px;
+  top: 0;
+  left: 0;
+}
+.nft-graph_emptyData__1fg0_ .nft-graph_empty__2z2GD {
+  height: 200px;
+  width: 200px;
+  background-image: url(/_next/static/media/empty.488135f58ae5a2aa8cf75f5efac16d20.svg);
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.nft-graph_graphContent__2fEcC {
+  width: 100%;
+  height: 260px;
+}
+.nft-graph_data__1McOq {
+  width: 100%;
+  height: 190px;
+  flex-direction: row;
+}
+.nft-graph_data__1McOq,
+.nft-graph_dataItem__1nHkc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nft-graph_dataItem__1nHkc {
+  flex-direction: column;
+  flex: 1 1;
+}
+.nft-graph_dataTitle__2_w9c {
+  font-weight: 500;
+  font-size: 22px;
+  letter-spacing: 1px;
+  color: grey;
+  padding-left: 20px;
+  position: relative;
+}
+.nft-graph_dataTitle__2_w9c:before {
+  content: '';
+  height: 8px;
+  width: 8px;
+  border-radius: 4px;
+  position: absolute;
+  left: 0;
+  top: calc(50% - 4px);
+}
+.nft-graph_dataTitleGreen__1MpDT:before {
+  background-color: #7bdcde;
+}
+.nft-graph_dataTitleYellow__RMTvb:before {
+  background-color: #faaa4f;
+}
+.nft-graph_dataNum__20BKD {
+  font-weight: 600;
+  font-size: 32px;
+  color: #333;
+}
+.nft-graph_divider__2RwC0 {
+  height: 65px;
+  border-right: 1px solid #e0e0e0;
+}
+@keyframes _tokenId__rotate__1W1Zl {
+  0% {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
+@media screen and (max-width: 1263px) {
+  ._tokenId__assetContent__3aRbL {
+    max-width: 960px;
+  }
+  ._tokenId__priceArea__3yAt5 {
+    width: 649px;
+    height: 184px;
+    box-shadow: 0 4px 8px hsla(0, 0%, 87.8%, 0.4);
+    border-radius: 14px;
+    background-color: #fff;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 24px;
+  }
+  ._tokenId__priceArea__3yAt5 div {
+    z-index: 2;
+  }
+  ._tokenId__infoArea__3KKDE {
+    margin-bottom: 24px;
+  }
+  ._tokenId__holderArea__2hgMb,
+  ._tokenId__infoArea__3KKDE {
+    width: 294px;
+    box-shadow: 0 4px 8px hsla(0, 0%, 87.8%, 0.4);
+    border-radius: 14px;
+    background-color: #fff;
+  }
+  ._tokenId__graphArea__3ykgg,
+  ._tokenId__saleArea__3sKmM {
+    margin-bottom: 25px;
+    width: 649px;
+    box-shadow: 0 4px 8px hsla(0, 0%, 87.8%, 0.4);
+    border-radius: 14px;
+    background-color: #fff;
+  }
+  ._tokenId__recordArea__24Aa_ {
+    margin-bottom: 24px;
+  }
+  ._tokenId__fromCollectionArea__3ap77,
+  ._tokenId__recordArea__24Aa_ {
+    width: 960px;
+    box-shadow: 0 4px 8px hsla(0, 0%, 87.8%, 0.4);
+    border-radius: 14px;
+    background-color: #fff;
+  }
+  ._tokenId__propertyInfo__3yhe6 {
+    width: 294px;
+    background-color: #fff;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 8px hsla(0, 0%, 87.8%, 0.4);
+    border-radius: 14px;
+  }
+  ._tokenId__image__3HxRU {
+    width: 294px !important;
+    min-height: 294px;
+    border-radius: 14px;
+    object-fit: contain;
+    object-position: center center;
+  }
+}
+@media screen and (min-width: 1264px) {
+  ._tokenId__assetContent__3aRbL {
+    padding: 0 0 80px;
+    max-width: 1264px;
+  }
+  ._tokenId__priceArea__3yAt5 {
+    width: 792px;
+    height: 184px;
+    box-shadow: 0 4px 8px hsla(0, 0%, 87.8%, 0.4);
+    border-radius: 14px;
+    background-color: #fff;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 24px;
+  }
+  ._tokenId__priceArea__3yAt5 div {
+    z-index: 2;
+  }
+  ._tokenId__infoArea__3KKDE {
+    margin-bottom: 24px;
+    min-height: 422px;
+  }
+  ._tokenId__holderArea__2hgMb,
+  ._tokenId__infoArea__3KKDE {
+    width: 392px;
+    box-shadow: 0 4px 8px hsla(0, 0%, 87.8%, 0.4);
+    border-radius: 14px;
+    background-color: #fff;
+  }
+  ._tokenId__graphArea__3ykgg,
+  ._tokenId__saleArea__3sKmM {
+    margin-bottom: 25px;
+    width: 792px;
+    box-shadow: 0 4px 8px hsla(0, 0%, 87.8%, 0.4);
+    border-radius: 14px;
+    background-color: #fff;
+  }
+  ._tokenId__recordArea__24Aa_ {
+    margin-bottom: 24px;
+  }
+  ._tokenId__fromCollectionArea__3ap77,
+  ._tokenId__recordArea__24Aa_ {
+    width: 1208px;
+    box-shadow: 0 4px 8px hsla(0, 0%, 87.8%, 0.4);
+    border-radius: 14px;
+    background-color: #fff;
+  }
+  ._tokenId__propertyInfo__3yhe6 {
+    width: 392px;
+    background-color: #fff;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 8px hsla(0, 0%, 87.8%, 0.4);
+    border-radius: 14px;
+  }
+  ._tokenId__image__3HxRU {
+    width: 392px !important;
+    min-height: 392px;
+    border-radius: 14px;
+    object-fit: contain;
+    object-position: center center;
+  }
+}
+._tokenId__priceAreaImage__2hVs3 {
+  position: absolute;
+  right: -15px;
+  top: 45px;
+  width: 143px;
+  height: 99px;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url(/_next/static/media/nft-image.beb4332d87fa3ab1afaba0b75ebfa411.svg);
+  z-index: 1;
+}
+._tokenId__fromCollectionContent__3viV7 {
+  height: 305px;
+  padding-left: 32px;
+  overflow-x: scroll;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+._tokenId__fromCollectionContent__3viV7 a {
+  margin-right: 16px;
+  box-shadow: 0 4px 8px hsla(0, 0%, 87.8%, 0.4);
+}
+._tokenId__fromCollectionContent__3viV7::-webkit-scrollbar {
+  height: 4px;
+}
+._tokenId__fromCollectionContent__3viV7::-webkit-scrollbar-button {
+  height: 0;
+}
+._tokenId__fromCollectionContent__3viV7::-webkit-scrollbar-thumb {
+  background: #c4c4c4;
+  border-radius: 20px;
+}
+._tokenId__icon__AnKmb {
+  width: 26px;
+  height: 24px;
+  fill: #828282;
+  margin-right: 14px;
+}
+._tokenId__graphContent__1Wzd9 {
+  height: 290px;
+  width: 100%;
+}
+._tokenId__graphContent__1Wzd9,
+._tokenId__reFetch__3Q3pt {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+._tokenId__reFetch__3Q3pt {
+  cursor: pointer;
+  font-size: 12px;
+  line-height: 18px;
+  color: #828282;
+}
+._tokenId__reFetchIcon__20Qpz {
+  width: 14px;
+  height: 14px;
+  margin-right: 4px;
+  fill: #828282;
+}
+._tokenId__loading__3qkH9 {
+  animation: _tokenId__rotate__1W1Zl 1s ease 0s infinite;
+}
+._tokenId__infoContent__YhprK,
+._tokenId__recordContent__1_ieC,
+._tokenId__saleContent__2vawt {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+._tokenId__infoContent__YhprK {
+  min-height: 184px;
+}
+._tokenId__infoFooter__1i1Ts {
+  height: 164px;
+}
+._tokenId__holderContent__16mx_,
+._tokenId__infoFooter__1i1Ts {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+._tokenId__holderContent__16mx_ {
+  max-height: 312px;
+}
+._tokenId__holderCount__bD5T_ {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  color: #000;
+}
+._tokenId__selectHead__1Fgf2 {
+  height: 48px;
+  border-radius: 10px;
+  border: 1px solid hsla(0, 0%, 64.7%, 0.7);
+  color: #000;
+}
+._tokenId__selectHead__1Fgf2,
+._tokenId__selectItem__32jrz {
+  width: 140px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 22px;
+  cursor: pointer;
+}
+._tokenId__selectItem__32jrz {
+  height: 40px;
+  color: #828282;
+  background-color: #fff;
+}
+._tokenId__selectItem__32jrz:hover {
+  background: #f2f3ff;
+}
+._tokenId__selectArea__3Q-bJ {
+  box-shadow: 0 4px 8px hsla(0, 0%, 87.8%, 0.4);
+  border-radius: 14px;
+}
+._tokenId__columnArea__2tqxH {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+._tokenId__columnArea__2tqxH:nth-child(2n) {
+  margin-left: 24px;
+}
+._tokenId__Triangle__1Rczb {
+  width: 13px;
+  height: 8px;
+  transition: all 0.3s;
+  margin-left: 4px;
+}
+._tokenId__openTriangle__2kudv {
+  transform: rotate(180deg);
+}
+._tokenId__propertyList__2f_bo {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 16px 16px 5px;
+  height: 245px;
+  overflow-y: scroll;
+}
+._tokenId__propertyList__2f_bo::-webkit-scrollbar {
+  display: none;
+}
+._tokenId__propertyItem__2idz9 {
+  margin-bottom: 12px;
+  height: 44px;
+  flex-shrink: 0;
+}
+._tokenId__noProperty__yIb6d {
+  height: 245px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+._tokenId__noPropertyImage__3bsnY {
+  height: 180px;
+  width: 180px;
+  background-image: url(/_next/static/media/empty.488135f58ae5a2aa8cf75f5efac16d20.svg);
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+._tokenId__noPropertyText__2z-X4 {
+  font-size: 14px;
+  line-height: 22px;
+  height: 22px;
+  letter-spacing: 1px;
+  color: #828282;
+  margin-top: 8px;
+}
+._tokenId__nftImage__20ddO {
+  margin: 32px 0;
+}
+._tokenId__mobileAssetPage__V9qlL {
+  width: 100%;
+  padding: 32px 20px 108px;
+}
+._tokenId__mobileImage__3q7VH {
+  width: 100%;
+  min-height: 660px;
+  max-height: 660px;
+  border-radius: 14px;
+  background-color: #fff;
+  object-fit: contain;
+  object-position: center center;
+}
+._tokenId__mobileIntro__29MBH {
+  margin-top: 32px;
+}
+._tokenId__mobileDataCard__222zf {
+  margin-top: 24px;
+}
+._tokenId__mobileInfoArea__2o_B3 {
+  width: 100%;
+  margin-top: 32px;
+  box-shadow: 0 4px 8px hsla(0, 0%, 87.8%, 0.4);
+  border-radius: 14px;
+  background-color: #fff;
+}
+._tokenId__mobileIcon__1MtpU {
+  margin-right: 14px;
+}
+._tokenId__mobileFromCollection__2EiA6 {
+  padding: 32px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+._tokenId__mobileFromCollection__2EiA6 a {
+  border: none;
+  box-shadow: 0 4px 8px hsla(0, 0%, 87.8%, 0.4);
+}
+._tokenId__mobileFromCollection__2EiA6 a:not(:first-child) {
+  margin-left: 25px;
+}
+._tokenId__mobileFromCollection__2EiA6::-webkit-scrollbar {
+  height: 4px;
+}
+._tokenId__mobileFromCollection__2EiA6::-webkit-scrollbar-button {
+  height: 0;
+}
+._tokenId__mobileFromCollection__2EiA6::-webkit-scrollbar-thumb {
+  background: #c4c4c4;
+  border-radius: 20px;
+}
+._tokenId__mobileSelectHead__1TeFv {
+  color: #333;
+  padding: 0 18px;
+  border: 1px solid #e0e0e0;
+  box-sizing: border-box;
+  border-radius: 14px;
+}
+._tokenId__mobileSelectHead__1TeFv,
+._tokenId__mobileSelectItem__3vku- {
+  height: 48px;
+  font-weight: 700;
+  font-size: 22px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+}
+._tokenId__mobileSelectItem__3vku- {
+  width: 200px;
+  color: #828282;
+  cursor: pointer;
+}
+._tokenId__mobileSelectItem__3vku-:hover {
+  background: #f2f3ff;
+}
+._tokenId__mobileTriangle__28wez {
+  margin-left: 8px;
+}
+._tokenId__selectItemActive__27Zj1 {
+  color: #333;
+}
+@media screen and (max-width: 1263px) {
+  .rank-project-head_rankHeadMarketCap24H__2uTIf {
+    cursor: pointer;
+    width: 80px;
+  }
+  .rank-project-head_rankHeadLiquidity__juT1n {
+    cursor: pointer;
+    width: 204px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-start;
+  }
+}
+@media screen and (min-width: 1264px) {
+  .rank-project-head_rankHeadMarketCap24H__2uTIf {
+    cursor: pointer;
+    width: 124px;
+  }
+  .rank-project-head_rankHeadLiquidity__juT1n {
+    cursor: pointer;
+    width: 160px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-start;
+  }
+}
+.rank-project-head_rankHead__2KrEY {
+  height: 36px;
+  padding: 0 30px;
+  text-align: right;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #000;
+  border-bottom: 1px solid #c2c2c2;
+}
+.rank-project-head_rankHeadHash__eE3Nk {
+  width: 90px;
+  text-align: center;
+}
+.rank-project-head_rankHeadProj__38d6g {
+  width: 180px;
+  text-align: left;
+}
+.rank-project-head_rankHeadHolders__1ckym {
+  width: 120px;
+  cursor: pointer;
+  text-align: right;
+}
+.rank-project-head_rankHeadMarketCap__3nDKt {
+  cursor: pointer;
+  width: 170px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+.rank-project-head_rankHeadActiveUser24H__1R2qb {
+  cursor: pointer;
+  width: 147px;
+}
+.rank-project-head_rankHeadVolume24H__8LX48 {
+  cursor: pointer;
+  width: 160px;
+}
+.rank-project-head_icon__3-0tG {
+  margin: 0 4px 2px 0;
+  transition: all 0.3s;
+}
+.rank-project-head_active__3M8Ne .rank-project-head_icon__3-0tG path {
+  fill: #5a66f9;
+}
+.rank-project-head_active__3M8Ne .rank-project-head_ascending__1p6v- {
+  transform: rotate(180deg);
+}
+.rank-project-head_infoIcon__1xL3z {
+  cursor: pointer;
+}
+.rank-project-head_infoTitle__3aZaF {
+  margin-right: 8px;
+}
+.rank-project-head_infoContent__1kljm {
+  width: 390px;
+  font-family: unset;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 1px;
+}
+.rank-project-head_liquidityInfo__XzPkK {
+  width: 520px;
+  font-family: unset;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 1px;
+}
+.rank-project-head_liquidityInfoIcon__eCea2 {
+  cursor: pointer;
+  margin-left: 8px;
+}
+.footer_footerContainer__3Y8le {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(1turn, #fff, #f2f2f2), #fff;
+}
+.footer_footer__3PyUi {
+  width: 100%;
+}
+.footer_footerInfo__Yd42Y {
+  margin: 32px 32px 87px;
+}
+.footer_linkAndLogo__vWkQJ {
+  font-size: 20px;
+  line-height: 22px;
+  color: #858585;
+}
+.footer_logo__3rdaK {
+  width: 100%;
+  height: 24px;
+  margin-bottom: 28px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer_line__1mzHK {
+  width: 40px;
+  height: 4px;
+  border-radius: 2px;
+  background: #d9d9d9;
+}
+.footer_linkList__34j1m {
+  flex-wrap: wrap;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  margin-bottom: 40px;
+}
+.footer_link__39DGU {
+  width: 50%;
+  margin-top: 10px;
+  height: 24px;
+}
+.footer_link__39DGU a {
+  color: #5a66f9;
+}
+.footer_copyright__2X7rx {
+  margin-top: 28px;
+  font-size: 20px;
+  line-height: 16px;
+  color: #858585;
+}
+.footer_mediaSlogan__oEbc5 {
+  width: 260px;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 34px;
+  color: #424242;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+.footer_media__22jjG {
+  justify-content: flex-start;
+}
+.footer_media__22jjG a {
+  margin-right: 32px;
+  margin-bottom: 12px;
+}
+.footer_mediaLogo__8dLC9 path {
+  fill: #828282;
+}
+.footer_qrcode__3Kduw {
+  width: 140px;
+  height: 140px;
+  border-radius: 14px;
+  background-image: url(/_next/static/media/QRcode.15126c51f986d0d1646f866fe6268942.png);
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: 100% 100%;
+}
