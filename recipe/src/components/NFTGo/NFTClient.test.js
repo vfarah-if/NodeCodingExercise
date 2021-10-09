@@ -33,7 +33,7 @@ describe('NFTClient Integration Tests', () => {
       const { errorCode, data } = collectionData;
       expect(errorCode).toBe(0);
       expect(data).toBeDefined();
-      expect(data.length).toBe(10);
+      expect(data.length).toBeGreaterThan(0);
       data.forEach((item) => {
         const { id, name } = item;
         expect(id).toBeDefined();
@@ -98,7 +98,7 @@ describe('NFTClient Integration Tests', () => {
       const { errorCode, data } = collectionData;
       expect(errorCode).toBe(0);
       expect(data).toBeDefined();
-      expect(data.length).toBe(10);
+      expect(data.length).toBeGreaterThan(0);
       data.forEach((topSale) => {
         const {
           id,

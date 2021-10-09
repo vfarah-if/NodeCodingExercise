@@ -1,2 +1,3 @@
 ✔ Create four most important API calls @critical @done(21-10-09 14:12)
+✔ Refactor API calls reducing duplication @low @done(21-10-09 18:39)
 ☐ Create a react component to represent this data and usage @high
