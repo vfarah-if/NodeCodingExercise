@@ -333,17 +333,6 @@ code {
 }
 /* End Generic above */
 
-.head_rankHeadHoldingValue__2NXVy {
-  height: 100%;
-}
-.head_rankHeadHoldingValue__2NXVy .head_holdValue__AVJcR {
-  height: 100%;
-  width: 100%;
-}
-.head_infoIcon__1NiQI,
-.head_rankHeadHoldingValue__2NXVy .head_infoIcon__1NiQI {
-  cursor: pointer;
-}
 .rank-head-content_container__3BOop {
   width: 100%;
   height: 100%;
@@ -628,18 +617,6 @@ code {
   align-items: center;
   justify-content: center;
 }
-.flex-box_flexBoxRow__2sC4D {
-  flex-direction: row;
-}
-.flex-box_flexBoxColumn__3RsOR,
-.flex-box_flexBoxRow__2sC4D {
-  display: flex;
-  justify-content: space-between;
-  align-items: space-between;
-}
-.flex-box_flexBoxColumn__3RsOR {
-  flex-direction: column;
-}
 @media screen and (max-width: 1263px) {
   .head_rankHead__3S8tb {
     height: 36px;
@@ -768,7 +745,6 @@ code {
     width: 490px;
     height: 396px;
   }
-
   .head_rankHead__3S8tb {
     height: 36px;
     font-weight: 500;
