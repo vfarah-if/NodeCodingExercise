@@ -54,9 +54,8 @@ describe('NFTClient Integration Tests', () => {
       }
     });
 
-    test('should get data response', () => {
-      expect(actualResponse).toBeDefined();
-      expect(actualResponse.status).toBe(200);
+    test('should get success data response', () => {
+      assertResponseSucceeded(actualResponse);
     });
 
     test('should get blockchains', async () => {
@@ -88,7 +87,7 @@ describe('NFTClient Integration Tests', () => {
       }
     });
 
-    test('should get data response', () => {
+    test('should get success data response', () => {
       expect(actualResponse).toBeDefined();
       expect(actualResponse.status).toBe(200);
     });
@@ -135,9 +134,8 @@ describe('NFTClient Integration Tests', () => {
       }
     });
 
-    test('should get data response', () => {
-      expect(actualResponse).toBeDefined();
-      expect(actualResponse.status).toBe(200);
+    test('should get success data response', () => {
+      assertResponseSucceeded(actualResponse);
     });
 
     test('should get assets', async () => {
@@ -183,9 +181,8 @@ describe('NFTClient Integration Tests', () => {
       }
     });
 
-    test('should get data response', () => {
-      expect(actualResponse).toBeDefined();
-      expect(actualResponse.status).toBe(200);
+    test('should get success data response', () => {
+      assertResponseSucceeded(actualResponse);
     });
 
     test('should get assets', async () => {
@@ -231,9 +228,8 @@ describe('NFTClient Integration Tests', () => {
       }
     });
 
-    test('should get data response', () => {
-      expect(actualResponse).toBeDefined();
-      expect(actualResponse.status).toBe(200);
+    test('should get success data response', () => {
+      assertResponseSucceeded(actualResponse);
     });
 
     test('should get deals', async () => {
@@ -282,9 +278,8 @@ describe('NFTClient Integration Tests', () => {
       }
     });
 
-    test('should get data response', () => {
-      expect(actualResponse).toBeDefined();
-      expect(actualResponse.status).toBe(200);
+    test('should get success data response', () => {
+      assertResponseSucceeded(actualResponse);
     });
 
     test('should get holder list', async () => {
@@ -325,3 +320,8 @@ describe('NFTClient Integration Tests', () => {
     });
   });
 });
+
+function assertResponseSucceeded(actualResponse) {
+  expect(actualResponse).toBeDefined();
+  expect(actualResponse.status).toBe(200);
+}
