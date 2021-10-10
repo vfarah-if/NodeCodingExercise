@@ -618,6 +618,26 @@ code {
   justify-content: center;
 }
 @media screen and (max-width: 1263px) {
+  .collection-whale_graphArea__2R41b {
+    width: 960px;
+    background: #fff;
+    box-shadow: 0 4px 8px hsla(0, 0%, 87.8%, 0.4);
+    border-radius: 14px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 30px;
+  }
+  .collection-whale_tableArea__3fC_D {
+    width: 960px;
+    margin-top: 32px;
+  }
+  .collection-whale_leftGragh__1zKow,
+  .collection-whale_rightGraph__3bDDz {
+    width: 450px;
+    height: 396px;
+  }
   .head_rankHead__3S8tb {
     height: 36px;
     font-weight: 500;

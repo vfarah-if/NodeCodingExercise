@@ -1,11 +1,10 @@
-
-import React, {Fragment} from 'react';
+import React, { Fragment } from 'react';
 import SalesHistory from './SalesHistory';
 
-export default {title: 'Component|SalesHistory'};
+export default { title: 'Component/NFTGo/SalesHistory' };
 
 export const SalesHistoryExample = () => (
-    <Fragment>
-        <SalesHistory />
-    </Fragment>
+  <Fragment>
+    <SalesHistory />
+  </Fragment>
 );
