@@ -6,9 +6,22 @@ import {
   getRecentlyCreated,
   getTradingHistory,
   getTopHolders,
+  getOverview,
 } from './NFTClient';
 
 describe('NFTClient Integration Tests', () => {
+  let actualResponse;
+
+  describe('getOverview', () => {
+    beforeAll(async () => {
+      actualResponse = await getOverview();
+    });
+
+    test('should return a 200 response', () => {
+      expect(actualResponse).toBeDefined();
+    });
+  });
+
   describe('getHotCollection', () => {
     let actualResponse;
 

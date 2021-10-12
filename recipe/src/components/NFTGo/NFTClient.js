@@ -8,11 +8,18 @@ const RECENTLY_CREATED_URL = `${NFTGO_API_V1_URL}/assets/recently-created`;
 const TRADING_HISTORY_URL = `${NFTGO_API_V1_URL}/asset/trading-history`;
 const TOP_HOLDERS_URL = `${NFTGO_API_V1_URL}/ranking/coll-holder`;
 
+const OVERVIEW_URL =
+  'https://nftgo.io/_next/data/HhENpH67Yx24ny6vZd5fF/en/collection/my-curio-cards/overview.json?slug=my-curio-cards&tab=overview';
+
 const DEFAULT_LIMIT = 20;
 const DEFAULT_OFFSET = 0;
 const DEFAULT_PAGINATION_OPTIONS = {
   limit: DEFAULT_LIMIT,
   offset: DEFAULT_OFFSET,
+};
+
+export const getOverview = () => {
+  return fetch(OVERVIEW_URL);
 };
 
 const getPaginatedData = (url, paginationOptions, paginationOnly = false) => {
