@@ -7,9 +7,7 @@ const LATEST_DEAL_URL = `${NFTGO_API_V1_URL}/asset/latestdeal`;
 const RECENTLY_CREATED_URL = `${NFTGO_API_V1_URL}/assets/recently-created`;
 const TRADING_HISTORY_URL = `${NFTGO_API_V1_URL}/asset/trading-history`;
 const TOP_HOLDERS_URL = `${NFTGO_API_V1_URL}/ranking/coll-holder`;
-
-const OVERVIEW_URL =
-  'https://nftgo.io/_next/data/HhENpH67Yx24ny6vZd5fF/en/collection/my-curio-cards/overview.json?slug=my-curio-cards&tab=overview';
+const OVERVIEW_URL = `${NFTGO_API_V1_URL}/data/overview`;
 
 const DEFAULT_LIMIT = 20;
 const DEFAULT_OFFSET = 0;

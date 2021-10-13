@@ -10,15 +10,37 @@ import {
 } from './NFTClient';
 
 describe('NFTClient Integration Tests', () => {
-  let actualResponse;
-
   describe('getOverview', () => {
+    let actualResponse;
+
     beforeAll(async () => {
-      actualResponse = await getOverview();
+      try {
+        actualResponse = await getOverview();
+      } catch (error) {
+        console.error(error);
+        actualResponse = undefined;
+      }
     });
 
-    test('should return a 200 response', () => {
+    test('should get status 200', () => {
+      // console.debug(actualResponse);
+
       expect(actualResponse).toBeDefined();
+      expect(actualResponse.status).toBe(200);
+    });
+
+    test('should get data', async () => {
+      const collectionData = await actualResponse.json();
+      const { errorCode, data } = collectionData;
+      expect(errorCode).toBe(0);
+      expect(data).toBeDefined();
+      const { marketCap, volume, txVolume, holderNum } = data;
+      expect(marketCap).toBeDefined();
+      expect(volume).toBeDefined();
+      expect(txVolume).toBeDefined();
+      expect(holderNum).toBeDefined();
+      // Others
+      // console.debug(item);
     });
   });
 
@@ -36,7 +58,6 @@ describe('NFTClient Integration Tests', () => {
 
     test('should get status 200', () => {
       // console.debug(actualResponse);
-
       expect(actualResponse).toBeDefined();
       expect(actualResponse.status).toBe(200);
     });
