@@ -103,3 +103,4 @@ dist
 # Distributed files generated
 dist-server/
 recipe-ts/storybook-static/
+recipe-ts/.yarn/*
