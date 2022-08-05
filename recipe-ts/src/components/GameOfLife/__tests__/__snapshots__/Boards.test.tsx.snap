@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Board should output a board of simpl items as children 1`] = `
+exports[`Board should output a board of items as children 1`] = `
 <div>
   <div
     class="grid"
