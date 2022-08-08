@@ -1,46 +1,47 @@
-import { Story, Meta } from '@storybook/react/types-6-0';
-import React, { Fragment } from 'react';
-import AlertStatus, { AlertStatusProps } from './AlertStatus';
+import { Story, Meta } from '@storybook/react/types-6-0'
+import React from 'react'
+import AlertStatus, { AlertStatusProps } from './AlertStatus'
 
 export default {
-	title: 'Component/AlertStatus',
-	component: AlertStatus,
-} as Meta;
+  title: 'Component/AlertStatus',
+  component: AlertStatus,
+} as Meta
 
-const AlertStatusTemplate: Story<AlertStatusProps> = (args) => (
-	<Fragment>
-		<AlertStatus {...args} />
-	</Fragment>
-);
+const AlertStatusTemplate: Story<AlertStatusProps> = args => (
+  <>
+    <AlertStatus {...args} />
+  </>
+)
 
-export const InvisibleAlert = AlertStatusTemplate.bind({});
+export const InvisibleAlert = AlertStatusTemplate.bind({})
 InvisibleAlert.args = {}
 
-const error = new Error('Error Message');
-export const AlertDefaultWithMessage = AlertStatusTemplate.bind({});
+const error = new Error('Error Message')
+export const AlertDefaultWithMessage = AlertStatusTemplate.bind({})
 AlertDefaultWithMessage.args = {
-    message: error.message}
+  message: error.message,
+}
 
-export const AlertError = AlertStatusTemplate.bind({});
+export const AlertError = AlertStatusTemplate.bind({})
 AlertError.args = {
-    alertType: 'error',
-    message: 'Error Message'
+  alertType: 'error',
+  message: 'Error Message',
 }
 
-export const AlertSuccess = AlertStatusTemplate.bind({});
+export const AlertSuccess = AlertStatusTemplate.bind({})
 AlertSuccess.args = {
-    alertType: 'success',
-    message: 'Success messsage'
+  alertType: 'success',
+  message: 'Success messsage',
 }
 
-export const AlertInfo = AlertStatusTemplate.bind({});
+export const AlertInfo = AlertStatusTemplate.bind({})
 AlertInfo.args = {
-    alertType: 'info',
-    message: 'Info messsage'
+  alertType: 'info',
+  message: 'Info messsage',
 }
 
-export const AlertWarning = AlertStatusTemplate.bind({});
+export const AlertWarning = AlertStatusTemplate.bind({})
 AlertWarning.args = {
-    alertType: 'warning',
-    message: 'Warning messsage'
+  alertType: 'warning',
+  message: 'Warning messsage',
 }
