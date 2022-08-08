@@ -1,29 +1,69 @@
+import React from 'react'
+import styled, { css } from 'styled-components'
 
-import React from 'react';
-import './style/index.css';
+type AlertTypes = 'error' | 'success' | 'info' | 'warning'
 
 export interface AlertStatusProps {
-    alertType?: 'error'|'success'|'info'|'warning', 
-    message?: string | null
+  alertType?: AlertTypes
+  message?: string | null
 }
 
-const AlertStatus: React.FC<AlertStatusProps> = ({alertType = 'error', message = ''}) => {
-    // TODO: Try investigate how this can be fixed
-    // const handleHideErrorAlert = (event:  React.MouseEvent<HTMLSpanElement, MouseEvent>) => {
-    const handleHideErrorAlert = (event:  any) => {  
-		const divElement = event.target.parentElement as HTMLDivElement;
-		divElement.style.opacity = '0';
-		setTimeout(() => (divElement.style.display = 'none'), 600);
-	};
-
-	return message ? (
-		<div className={['alert', alertType].join(' ')}>
-			<span className="closebtn" onClick={handleHideErrorAlert}>
-				&times;
-			</span>
-			{message}
-		</div>
-	) : null;
+const backgroundColorMapping = {
+  error: css`
+    background-color: #f44336;
+  `,
+  success: css`
+    background-color: #4caf50;
+  `,
+  info: css`
+    background-color: #2196f3;
+  `,
+  warning: css`
+    background-color: #ff9800;
+  `,
 }
 
-export default AlertStatus;
+const Alert = styled.div`
+  padding: 20px;
+  background-color: #f44336;
+  color: white;
+  opacity: 1;
+  transition: opacity 0.6s;
+  margin-bottom: 15px;
+  ${(props: AlertStatusProps) =>
+    props.alertType && backgroundColorMapping[props.alertType]}
+`
+
+const CloseButton = styled.span`
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+  &: hover {
+    color: black;
+  }
+`
+
+const AlertStatus: React.FC<AlertStatusProps> = ({
+  alertType = 'error',
+  message = '',
+}) => {
+  const handleHideErrorAlert = (event: any) => {
+    const divElement = event.target.parentElement as HTMLDivElement
+    divElement.style.opacity = '0'
+    setTimeout(() => (divElement.style.display = 'none'), 600)
+  }
+
+  return message ? (
+    <Alert alertType={alertType}>
+      <CloseButton onClick={handleHideErrorAlert}>&times;</CloseButton>
+      {message}
+    </Alert>
+  ) : null
+}
+
+export default AlertStatus
