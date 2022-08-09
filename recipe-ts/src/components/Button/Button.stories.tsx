@@ -1,41 +1,48 @@
-import React from 'react';
+import React from 'react'
 // also exported from '@storybook/react' if you can deal with breaking changes in 6.1
-import { Story, Meta } from '@storybook/react/types-6-0';
-
-import { Button, ButtonProps } from './Button';
+import { Story, Meta } from '@storybook/react/types-6-0'
+import { Button, ButtonProps } from './Button'
 
 export default {
-	title: 'Component/Button',
-	component: Button,
-	argTypes: {
-		backgroundColor: { control: 'color' },
-	},
-} as Meta;
+  title: 'Component/Button',
+  component: Button,
+  argTypes: {
+    backgroundColor: { control: 'color' },
+  },
+} as Meta
 
-const Template: Story<ButtonProps> = (args) => <Button {...args} />;
+const Template: Story<ButtonProps> = args => <Button {...args} />
 
-export const PrimaryButton = Template.bind({});
+export const PrimaryButton = Template.bind({})
 PrimaryButton.args = {
-	primary: true,
-	label: 'Button',
-};
+  primary: true,
+  label: 'Button',
+}
 
-export const SecondaryButton = Template.bind({});
+export const SecondaryButton = Template.bind({})
 SecondaryButton.args = {
-	label: 'Button',
-};
+  label: 'Button',
+}
 
-export const LargeButton = Template.bind({});
+export const LargeButton = Template.bind({})
 LargeButton.args = {
-	size: 'large',
-	label: 'Button',
-};
+  size: 'large',
+  label: 'Button',
+}
 
-export const SmallButton = Template.bind({});
+export const SmallButton = Template.bind({})
 SmallButton.args = {
-	size: 'small',
-	label: 'Button',
-};
+  size: 'small',
+  label: 'Button',
+}
 
-export const LabellessButton = Template.bind({});
-LabellessButton.args = {};
+export const LabellessButton = Template.bind({})
+LabellessButton.args = {}
+
+export const GreenBackgroundButton = Template.bind({})
+GreenBackgroundButton.args = {
+  primary: true,
+  size: 'small',
+  label: 'Custom background',
+  backgroundColor: 'green',
+}

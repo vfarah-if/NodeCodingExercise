@@ -2,8 +2,8 @@
 
 exports[`Button should create a default medium secondry button 1`] = `
 <button
-  class="storybook-button storybook-button--medium storybook-button--secondary"
-  type="button"
+  class="sc-bczRLJ jGJCSX"
+  label="Button"
 >
   Button
 </button>
@@ -11,8 +11,8 @@ exports[`Button should create a default medium secondry button 1`] = `
 
 exports[`Button should create a large secondry button 1`] = `
 <button
-  class="storybook-button storybook-button--large storybook-button--secondary"
-  type="button"
+  class="sc-bczRLJ cGAcOK"
+  label="Button"
 >
   Button
 </button>
@@ -20,8 +20,8 @@ exports[`Button should create a large secondry button 1`] = `
 
 exports[`Button should create a primary button 1`] = `
 <button
-  class="storybook-button storybook-button--medium storybook-button--primary"
-  type="button"
+  class="sc-bczRLJ hKYNbp"
+  label="Button"
 >
   Button
 </button>
@@ -29,8 +29,8 @@ exports[`Button should create a primary button 1`] = `
 
 exports[`Button should create a small secondry button 1`] = `
 <button
-  class="storybook-button storybook-button--small storybook-button--secondary"
-  type="button"
+  class="sc-bczRLJ jcxdVN"
+  label="Button"
 >
   Button
 </button>
@@ -38,8 +38,8 @@ exports[`Button should create a small secondry button 1`] = `
 
 exports[`Button should create a yellow labeless button 1`] = `
 <button
-  class="storybook-button storybook-button--medium storybook-button--secondary"
+  class="sc-bczRLJ jGJCSX"
+  label=""
   style="background-color: yellow;"
-  type="button"
 />
 `;

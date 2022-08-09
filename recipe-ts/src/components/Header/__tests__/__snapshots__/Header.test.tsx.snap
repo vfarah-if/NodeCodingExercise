@@ -36,14 +36,14 @@ exports[`Header should create a logged out header component 1`] = `
     </div>
     <div>
       <button
-        class="storybook-button storybook-button--small storybook-button--secondary"
-        type="button"
+        class="sc-bczRLJ jcxdVN"
+        label="Log in"
       >
         Log in
       </button>
       <button
-        class="storybook-button storybook-button--small storybook-button--primary"
-        type="button"
+        class="sc-bczRLJ sCDMP"
+        label="Sign up"
       >
         Sign up
       </button>
@@ -88,8 +88,8 @@ exports[`Header should create a logged user header component 1`] = `
     </div>
     <div>
       <button
-        class="storybook-button storybook-button--small storybook-button--secondary"
-        type="button"
+        class="sc-bczRLJ jcxdVN"
+        label="Log out"
       >
         Log out
       </button>

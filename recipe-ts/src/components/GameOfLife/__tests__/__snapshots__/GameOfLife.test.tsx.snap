@@ -130,26 +130,26 @@ exports[`GameOfLife given a default or configured board should configure a five 
         </div>
         <div>
           <button
-            class="storybook-button storybook-button--small storybook-button--primary"
-            type="button"
+            class="sc-bczRLJ sCDMP"
+            label="Generate"
           >
             Generate
           </button>
           <button
-            class="storybook-button storybook-button--small storybook-button--primary"
-            type="button"
+            class="sc-bczRLJ sCDMP"
+            label="Start Simulation"
           >
             Start Simulation
           </button>
           <button
-            class="storybook-button storybook-button--small storybook-button--primary"
-            type="button"
+            class="sc-bczRLJ sCDMP"
+            label="Randomise"
           >
             Randomise
           </button>
           <button
-            class="storybook-button storybook-button--small storybook-button--primary"
-            type="button"
+            class="sc-bczRLJ sCDMP"
+            label="Clear"
           >
             Clear
           </button>
@@ -395,26 +395,26 @@ exports[`GameOfLife given a default or configured board should create a default 
         </div>
         <div>
           <button
-            class="storybook-button storybook-button--small storybook-button--primary"
-            type="button"
+            class="sc-bczRLJ sCDMP"
+            label="Generate"
           >
             Generate
           </button>
           <button
-            class="storybook-button storybook-button--small storybook-button--primary"
-            type="button"
+            class="sc-bczRLJ sCDMP"
+            label="Start Simulation"
           >
             Start Simulation
           </button>
           <button
-            class="storybook-button storybook-button--small storybook-button--primary"
-            type="button"
+            class="sc-bczRLJ sCDMP"
+            label="Randomise"
           >
             Randomise
           </button>
           <button
-            class="storybook-button storybook-button--small storybook-button--primary"
-            type="button"
+            class="sc-bczRLJ sCDMP"
+            label="Clear"
           >
             Clear
           </button>
@@ -960,26 +960,26 @@ exports[`GameOfLife given a default or configured board should seed all cells as
         </div>
         <div>
           <button
-            class="storybook-button storybook-button--small storybook-button--primary"
-            type="button"
+            class="sc-bczRLJ sCDMP"
+            label="Generate"
           >
             Generate
           </button>
           <button
-            class="storybook-button storybook-button--small storybook-button--primary"
-            type="button"
+            class="sc-bczRLJ sCDMP"
+            label="Start Simulation"
           >
             Start Simulation
           </button>
           <button
-            class="storybook-button storybook-button--small storybook-button--primary"
-            type="button"
+            class="sc-bczRLJ sCDMP"
+            label="Randomise"
           >
             Randomise
           </button>
           <button
-            class="storybook-button storybook-button--small storybook-button--primary"
-            type="button"
+            class="sc-bczRLJ sCDMP"
+            label="Clear"
           >
             Clear
           </button>

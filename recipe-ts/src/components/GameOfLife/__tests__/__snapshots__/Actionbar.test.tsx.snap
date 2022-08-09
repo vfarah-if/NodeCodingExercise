@@ -127,26 +127,26 @@ exports[`Actionbar should customise action bar settings 1`] = `
       </div>
       <div>
         <button
-          class="storybook-button storybook-button--small storybook-button--primary"
-          type="button"
+          class="sc-bczRLJ sCDMP"
+          label="Make it so"
         >
           Make it so
         </button>
         <button
-          class="storybook-button storybook-button--small storybook-button--primary"
-          type="button"
+          class="sc-bczRLJ sCDMP"
+          label="Animate"
         >
           Animate
         </button>
         <button
-          class="storybook-button storybook-button--small storybook-button--primary"
-          type="button"
+          class="sc-bczRLJ sCDMP"
+          label="Shuffle it"
         >
           Shuffle it
         </button>
         <button
-          class="storybook-button storybook-button--small storybook-button--primary"
-          type="button"
+          class="sc-bczRLJ sCDMP"
+          label="Erase"
         >
           Erase
         </button>
@@ -283,26 +283,26 @@ exports[`Actionbar should default expected action settings 1`] = `
       </div>
       <div>
         <button
-          class="storybook-button storybook-button--small storybook-button--primary"
-          type="button"
+          class="sc-bczRLJ sCDMP"
+          label="Generate"
         >
           Generate
         </button>
         <button
-          class="storybook-button storybook-button--small storybook-button--primary"
-          type="button"
+          class="sc-bczRLJ sCDMP"
+          label="Simulate"
         >
           Simulate
         </button>
         <button
-          class="storybook-button storybook-button--small storybook-button--primary"
-          type="button"
+          class="sc-bczRLJ sCDMP"
+          label="Randomise"
         >
           Randomise
         </button>
         <button
-          class="storybook-button storybook-button--small storybook-button--primary"
-          type="button"
+          class="sc-bczRLJ sCDMP"
+          label="Clear"
         >
           Clear
         </button>
