@@ -1,6 +1,6 @@
-import { Meta, Story } from '@storybook/react/types-6-0';
-import React from 'react';
-import GameOfLife, { GameOfLifeProps } from './GameOfLife';
+import React from 'react'
+import { Meta, Story } from '@storybook/react/types-6-0'
+import GameOfLife, { GameOfLifeProps } from './GameOfLife'
 
 export default {
   title: 'Component/GameOfLife',
@@ -10,27 +10,27 @@ export default {
     activeColor: { control: 'color' },
     backgroundColor: { control: 'color' },
   },
-} as Meta;
+} as Meta
 
-const GameOfLifeTemplate: Story<GameOfLifeProps> = (args) => (
+const GameOfLifeTemplate: Story<GameOfLifeProps> = args => (
   <>
     <GameOfLife {...args} />
   </>
-);
+)
 
-export const DefaultBoardOfEmptyCells = GameOfLifeTemplate.bind({});
-DefaultBoardOfEmptyCells.args = {};
+export const DefaultBoardOfEmptyCells = GameOfLifeTemplate.bind({})
+DefaultBoardOfEmptyCells.args = {}
 
-export const CreateFiveByFiveBoardOfEmptyCells = GameOfLifeTemplate.bind({});
+export const CreateFiveByFiveBoardOfEmptyCells = GameOfLifeTemplate.bind({})
 CreateFiveByFiveBoardOfEmptyCells.args = {
   boardSize: 5,
   cellSize: 50,
   gridColor: 'orange',
   activeColor: 'green',
   backgroundColor: 'white',
-};
+}
 
-export const SeedAllTwoByTwoWithActiveCells = GameOfLifeTemplate.bind({});
+export const SeedAllTwoByTwoWithActiveCells = GameOfLifeTemplate.bind({})
 SeedAllTwoByTwoWithActiveCells.args = {
   boardSize: 2,
   cellSize: 50,
@@ -43,9 +43,9 @@ SeedAllTwoByTwoWithActiveCells.args = {
     { x: 1, y: 1 },
   ],
   backgroundColor: 'white',
-};
+}
 
-export const SeedBlinkerOscillator = GameOfLifeTemplate.bind({});
+export const SeedBlinkerOscillator = GameOfLifeTemplate.bind({})
 SeedBlinkerOscillator.args = {
   boardSize: 3,
   cellSize: 50,
@@ -56,9 +56,9 @@ SeedBlinkerOscillator.args = {
   ],
   showCellInfo: true,
   backgroundColor: 'white',
-};
+}
 
-export const ToadOscillator = GameOfLifeTemplate.bind({});
+export const ToadOscillator = GameOfLifeTemplate.bind({})
 ToadOscillator.args = {
   boardSize: 6,
   cellSize: 50,
@@ -74,9 +74,9 @@ ToadOscillator.args = {
   ],
   showCellInfo: true,
   backgroundColor: 'white',
-};
+}
 
-export const BeaconOscillator = GameOfLifeTemplate.bind({});
+export const BeaconOscillator = GameOfLifeTemplate.bind({})
 BeaconOscillator.args = {
   boardSize: 6,
   cellSize: 50,
@@ -95,9 +95,9 @@ BeaconOscillator.args = {
   ],
   showCellInfo: true,
   backgroundColor: 'white',
-};
+}
 
-export const PentaDecathlon = GameOfLifeTemplate.bind({});
+export const PentaDecathlon = GameOfLifeTemplate.bind({})
 PentaDecathlon.args = {
   boardSize: 20,
   cellSize: 43,
@@ -126,9 +126,9 @@ PentaDecathlon.args = {
   ],
   showCellInfo: true,
   backgroundColor: 'white',
-};
+}
 
-export const Glider = GameOfLifeTemplate.bind({});
+export const Glider = GameOfLifeTemplate.bind({})
 Glider.args = {
   boardSize: 20,
   cellSize: 43,
@@ -143,9 +143,9 @@ Glider.args = {
   ],
   showCellInfo: true,
   backgroundColor: 'white',
-};
+}
 
-export const DieHard = GameOfLifeTemplate.bind({});
+export const DieHard = GameOfLifeTemplate.bind({})
 DieHard.args = {
   boardSize: 15,
   cellSize: 50,
@@ -164,9 +164,9 @@ DieHard.args = {
   ],
   showCellInfo: false,
   backgroundColor: 'lightskyblue',
-};
+}
 
-export const RPentiminoWithCellInformation = GameOfLifeTemplate.bind({});
+export const RPentiminoWithCellInformation = GameOfLifeTemplate.bind({})
 RPentiminoWithCellInformation.args = {
   boardSize: 5,
   cellSize: 50,
@@ -183,9 +183,9 @@ RPentiminoWithCellInformation.args = {
     { x: 2, y: 3 },
   ],
   backgroundColor: 'white',
-};
+}
 
-export const SquareFlower = GameOfLifeTemplate.bind({});
+export const SquareFlower = GameOfLifeTemplate.bind({})
 SquareFlower.args = {
   boardSize: 10,
   cellSize: 50,
@@ -232,9 +232,9 @@ SquareFlower.args = {
     { x: 9, y: 7 },
     { x: 9, y: 8 },
   ],
-};
+}
 
-export const GosperGliderGun = GameOfLifeTemplate.bind({});
+export const GosperGliderGun = GameOfLifeTemplate.bind({})
 GosperGliderGun.args = {
   boardSize: 35,
   cellSize: 24,
@@ -288,4 +288,4 @@ GosperGliderGun.args = {
     { x: 24, y: 21 },
   ],
   backgroundColor: 'black',
-};
+}
