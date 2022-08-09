@@ -1,12 +1,12 @@
-import { Meta, Story } from '@storybook/react/types-6-0';
-import Board, { BoardProps } from './Board';
+import { Meta, Story } from '@storybook/react/types-6-0'
+import Board, { BoardProps } from './Board'
 
 export default {
   title: 'Component/GameOfLife/Board',
   component: Board,
-} as Meta;
+} as Meta
 
-const BoardTemplate: Story<BoardProps> = (args) => (
+const BoardTemplate: Story<BoardProps> = args => (
   <>
     <Board {...args}>
       <div>1</div>
@@ -15,7 +15,7 @@ const BoardTemplate: Story<BoardProps> = (args) => (
       <div>4</div>
     </Board>
   </>
-);
+)
 
-export const SimpleBoard = BoardTemplate.bind({});
-SimpleBoard.args = { boardSize: 2, cellSize: 40 };
+export const SimpleBoard = BoardTemplate.bind({})
+SimpleBoard.args = { boardSize: 2, cellSize: 40 }

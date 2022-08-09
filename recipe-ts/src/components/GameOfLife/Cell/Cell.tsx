@@ -1,15 +1,15 @@
-import React, { MouseEventHandler } from 'react';
-import './style/index.css';
+import React, { MouseEventHandler } from 'react'
+import './style/index.css'
 
 export interface CellProps {
-  cellSize?: number;
-  cellBorderColor?: string;
-  cellBackgroundColor?: string;
-  cellActiveColor?: string;
-  displayText?: string;
-  isActive?: boolean;
+  cellSize?: number
+  cellBorderColor?: string
+  cellBackgroundColor?: string
+  cellActiveColor?: string
+  displayText?: string
+  isActive?: boolean
 
-  onCellClick?: MouseEventHandler;
+  onCellClick?: MouseEventHandler
 }
 
 const Cell: React.FC<CellProps> = ({
@@ -34,7 +34,7 @@ const Cell: React.FC<CellProps> = ({
     >
       {displayText}
     </div>
-  );
-};
+  )
+}
 
-export default Cell;
+export default Cell

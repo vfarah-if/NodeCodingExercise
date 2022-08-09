@@ -1,17 +1,17 @@
-import React from 'react';
-import Button from '../../Button';
-import './style/index.css';
+import React from 'react'
+import Button from '../../Button'
+import './style/index.css'
 
 export interface ActionbarProps {
-  title?: string;
-  generateDisplay?: string;
-  simulateDisplay?: string;
-  randomiseDisplay?: string;
-  clearDisplay?: string;
-  onGenerate: () => void;
-  onSimulate: () => void;
-  onRandomise: () => void;
-  onClear: () => void;
+  title?: string
+  generateDisplay?: string
+  simulateDisplay?: string
+  randomiseDisplay?: string
+  clearDisplay?: string
+  onGenerate: () => void
+  onSimulate: () => void
+  onRandomise: () => void
+  onClear: () => void
 }
 
 const Actionbar: React.FC<ActionbarProps> = ({
@@ -116,7 +116,7 @@ const Actionbar: React.FC<ActionbarProps> = ({
         </div>
       </div>
     </header>
-  );
-};
+  )
+}
 
-export default Actionbar;
+export default Actionbar

@@ -1,3 +1,2 @@
-
-import Cell from './Cell';
-export default Cell;    
+import Cell from './Cell'
+export default Cell

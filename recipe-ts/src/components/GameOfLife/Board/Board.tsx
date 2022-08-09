@@ -1,10 +1,10 @@
-import React from 'react';
-import './style/index.css';
+import React from 'react'
+import './style/index.css'
 
 export interface BoardProps {
-  boardSize?: number;
-  cellSize?: number;
-  children?: React.ReactNode;
+  boardSize?: number
+  cellSize?: number
+  children?: React.ReactNode
 }
 
 const Board: React.FC<BoardProps> = ({
@@ -23,7 +23,7 @@ const Board: React.FC<BoardProps> = ({
     >
       {children}
     </div>
-  );
-};
+  )
+}
 
-export default Board;
+export default Board

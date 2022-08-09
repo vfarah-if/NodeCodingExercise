@@ -1,3 +1,2 @@
-
-import GameOfLife from './GameOfLife';
-export default GameOfLife;    
+import GameOfLife from './GameOfLife'
+export default GameOfLife

@@ -1,6 +1,6 @@
-import { action } from '@storybook/addon-actions';
-import { Meta, Story } from '@storybook/react/types-6-0';
-import Cell, { CellProps } from './Cell';
+import { action } from '@storybook/addon-actions'
+import { Meta, Story } from '@storybook/react/types-6-0'
+import Cell, { CellProps } from './Cell'
 
 export default {
   title: 'Component/GameOfLife/Cell',
@@ -10,18 +10,18 @@ export default {
     cellBackgroundColor: { control: 'color' },
     cellActiveColor: { control: 'color' },
   },
-} as Meta;
+} as Meta
 
-const CellTemplate: Story<CellProps> = (args) => (
+const CellTemplate: Story<CellProps> = args => (
   <>
     <Cell {...args} onCellClick={action('onCellClicked...')} />
   </>
-);
+)
 
-export const DefaultCell = CellTemplate.bind({});
-DefaultCell.args = {};
+export const DefaultCell = CellTemplate.bind({})
+DefaultCell.args = {}
 
-export const BrightHappyCell = CellTemplate.bind({});
+export const BrightHappyCell = CellTemplate.bind({})
 BrightHappyCell.args = {
   cellSize: 50,
   cellBorderColor: 'orange',
@@ -29,4 +29,4 @@ BrightHappyCell.args = {
   cellActiveColor: 'blue',
   displayText: '(ツ)',
   isActive: false,
-};
+}

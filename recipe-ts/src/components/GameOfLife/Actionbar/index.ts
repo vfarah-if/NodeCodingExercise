@@ -1,3 +1,2 @@
-
-import Actionbar from './ActionBar';
-export default Actionbar;    
+import Actionbar from './ActionBar'
+export default Actionbar
