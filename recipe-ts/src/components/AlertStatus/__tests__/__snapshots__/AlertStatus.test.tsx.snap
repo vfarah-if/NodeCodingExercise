@@ -3,10 +3,10 @@
 exports[`AlertStatus should create a default error alert with message 1`] = `
 <div>
   <div
-    class="sc-bczRLJ iCnwms"
+    class="sc-bcXHqe kTeOcJ"
   >
     <span
-      class="sc-gsnTZi uwVHT"
+      class="sc-gswNZR gHqGzw"
     >
       ×
     </span>
@@ -18,10 +18,10 @@ exports[`AlertStatus should create a default error alert with message 1`] = `
 exports[`AlertStatus should create an alert error 1`] = `
 <div>
   <div
-    class="sc-bczRLJ iCnwms"
+    class="sc-bcXHqe kTeOcJ"
   >
     <span
-      class="sc-gsnTZi uwVHT"
+      class="sc-gswNZR gHqGzw"
     >
       ×
     </span>
@@ -33,10 +33,10 @@ exports[`AlertStatus should create an alert error 1`] = `
 exports[`AlertStatus should create an alert info 1`] = `
 <div>
   <div
-    class="sc-bczRLJ kjDySB"
+    class="sc-bcXHqe fbdirU"
   >
     <span
-      class="sc-gsnTZi uwVHT"
+      class="sc-gswNZR gHqGzw"
     >
       ×
     </span>
@@ -48,10 +48,10 @@ exports[`AlertStatus should create an alert info 1`] = `
 exports[`AlertStatus should create an alert success 1`] = `
 <div>
   <div
-    class="sc-bczRLJ cIHGbZ"
+    class="sc-bcXHqe eaNCao"
   >
     <span
-      class="sc-gsnTZi uwVHT"
+      class="sc-gswNZR gHqGzw"
     >
       ×
     </span>
@@ -63,10 +63,10 @@ exports[`AlertStatus should create an alert success 1`] = `
 exports[`AlertStatus should create an alert warning 1`] = `
 <div>
   <div
-    class="sc-bczRLJ bQrCLp"
+    class="sc-bcXHqe gOgURE"
   >
     <span
-      class="sc-gsnTZi uwVHT"
+      class="sc-gswNZR gHqGzw"
     >
       ×
     </span>

@@ -130,25 +130,25 @@ exports[`GameOfLife given a default or configured board should configure a five 
         </div>
         <div>
           <button
-            class="sc-bczRLJ sCDMP"
+            class="sc-bcXHqe dkxJLe"
             label="Generate"
           >
             Generate
           </button>
           <button
-            class="sc-bczRLJ sCDMP"
+            class="sc-bcXHqe dkxJLe"
             label="Start Simulation"
           >
             Start Simulation
           </button>
           <button
-            class="sc-bczRLJ sCDMP"
+            class="sc-bcXHqe dkxJLe"
             label="Randomise"
           >
             Randomise
           </button>
           <button
-            class="sc-bczRLJ sCDMP"
+            class="sc-bcXHqe dkxJLe"
             label="Clear"
           >
             Clear
@@ -395,25 +395,25 @@ exports[`GameOfLife given a default or configured board should create a default 
         </div>
         <div>
           <button
-            class="sc-bczRLJ sCDMP"
+            class="sc-bcXHqe dkxJLe"
             label="Generate"
           >
             Generate
           </button>
           <button
-            class="sc-bczRLJ sCDMP"
+            class="sc-bcXHqe dkxJLe"
             label="Start Simulation"
           >
             Start Simulation
           </button>
           <button
-            class="sc-bczRLJ sCDMP"
+            class="sc-bcXHqe dkxJLe"
             label="Randomise"
           >
             Randomise
           </button>
           <button
-            class="sc-bczRLJ sCDMP"
+            class="sc-bcXHqe dkxJLe"
             label="Clear"
           >
             Clear
@@ -960,25 +960,25 @@ exports[`GameOfLife given a default or configured board should seed all cells as
         </div>
         <div>
           <button
-            class="sc-bczRLJ sCDMP"
+            class="sc-bcXHqe dkxJLe"
             label="Generate"
           >
             Generate
           </button>
           <button
-            class="sc-bczRLJ sCDMP"
+            class="sc-bcXHqe dkxJLe"
             label="Start Simulation"
           >
             Start Simulation
           </button>
           <button
-            class="sc-bczRLJ sCDMP"
+            class="sc-bcXHqe dkxJLe"
             label="Randomise"
           >
             Randomise
           </button>
           <button
-            class="sc-bczRLJ sCDMP"
+            class="sc-bcXHqe dkxJLe"
             label="Clear"
           >
             Clear

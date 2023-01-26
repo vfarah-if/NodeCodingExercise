@@ -121,10 +121,10 @@ exports[`MarsRoverImages When retrieving an full response should show one cardsl
 
 exports[`MarsRoverImages When retrieving an full response should show success alert with zero images loaded 1`] = `
 <div
-  class="sc-bczRLJ cIHGbZ"
+  class="sc-bcXHqe eaNCao"
 >
   <span
-    class="sc-gsnTZi uwVHT"
+    class="sc-gswNZR gHqGzw"
   >
     ×
   </span>

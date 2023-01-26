@@ -127,25 +127,25 @@ exports[`Actionbar should customise action bar settings 1`] = `
       </div>
       <div>
         <button
-          class="sc-bczRLJ sCDMP"
+          class="sc-bcXHqe dkxJLe"
           label="Make it so"
         >
           Make it so
         </button>
         <button
-          class="sc-bczRLJ sCDMP"
+          class="sc-bcXHqe dkxJLe"
           label="Animate"
         >
           Animate
         </button>
         <button
-          class="sc-bczRLJ sCDMP"
+          class="sc-bcXHqe dkxJLe"
           label="Shuffle it"
         >
           Shuffle it
         </button>
         <button
-          class="sc-bczRLJ sCDMP"
+          class="sc-bcXHqe dkxJLe"
           label="Erase"
         >
           Erase
@@ -283,25 +283,25 @@ exports[`Actionbar should default expected action settings 1`] = `
       </div>
       <div>
         <button
-          class="sc-bczRLJ sCDMP"
+          class="sc-bcXHqe dkxJLe"
           label="Generate"
         >
           Generate
         </button>
         <button
-          class="sc-bczRLJ sCDMP"
+          class="sc-bcXHqe dkxJLe"
           label="Simulate"
         >
           Simulate
         </button>
         <button
-          class="sc-bczRLJ sCDMP"
+          class="sc-bcXHqe dkxJLe"
           label="Randomise"
         >
           Randomise
         </button>
         <button
-          class="sc-bczRLJ sCDMP"
+          class="sc-bcXHqe dkxJLe"
           label="Clear"
         >
           Clear
