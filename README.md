@@ -30,7 +30,7 @@ At the time of setting this up I was using
 
 6. **[Test-init-babel](./test-init-babel)** is a simple node application for simply testing anything using the [EC6](https://medium.com/the-node-js-collection/an-update-on-es6-modules-in-node-js-42c958b890c)+ syntax. Check [README](test-init-babel/README.md) for more information
 
-7. As a developer who has worked mainly with `yarn` and `npm`, I thought I would skill up and use `PNPM` for a change. Why?
+7. As a developer who has worked mainly with `yarn` and `npm`, I thought I would skill up and use `pnpm` for a change. Why?
 
    - `pnpm` is fast and disk-efficient
 
@@ -51,3 +51,33 @@ At the time of setting this up I was using
        ❯ node -v
        v22.14.0
        ```
+     
+     - Initialise a new project using `pnpm`:
+     
+       ```bash
+       mkdir test-pnpm && cd test-pnpm
+       pnpm init
+       ```
+     
+     - Install dev dependencies
+     
+       ```bash
+       # Install jest and tyescript as this will always be my base from here on
+       pnpm add -D jest ts-jest @types/jest typescript
+       ```
+     
+     - Initialise the `ts-jest` config:
+     
+       ```
+       ❯ npx ts-jest config:init
+       ❯ pnpm add -D jest @types/jest
+       ❯ npx jest --init
+       ```
+     
+     - Create the sum kata to setup the environment ready to start:
+     
+       ```bash
+       
+       ```
+     
+     - 
