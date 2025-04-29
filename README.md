@@ -77,7 +77,22 @@ At the time of setting this up I was using
      - Create the sum kata to setup the environment ready to start:
      
        ```bash
+       ❯ pnpm test
+       ❯ pnpm watch
+        PASS  sum/sum.test.ts
+         sum
+           ✓ should sum two numbers (1 ms)
+           ✓ should sum two numbers with negative
+           ✓ should sum two numbers with zero
+           ✓ should sum two numbers with decimal
        
+       Test Suites: 1 passed, 1 total
+       Tests:       4 passed, 4 total
+       Snapshots:   0 total
+       Time:        0.554 s
+       Ran all test suites.
+       
+       Watch Usage: Press w to show more.
        ```
      
      - 
