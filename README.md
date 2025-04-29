@@ -30,5 +30,24 @@ At the time of setting this up I was using
 
 6. **[Test-init-babel](./test-init-babel)** is a simple node application for simply testing anything using the [EC6](https://medium.com/the-node-js-collection/an-update-on-es6-modules-in-node-js-42c958b890c)+ syntax. Check [README](test-init-babel/README.md) for more information
 
+7. As a developer who has worked mainly with `yarn` and `npm`, I thought I would skill up and use `PNPM` for a change. Why?
 
+   - `pnpm` is fast and disk-efficient
 
+   - What do I need to get it working?
+
+     - Install the latest node using nvm
+
+     - Install via `corepack` (Recommended for Node.js ≥16.13)
+
+       ```bash
+       ❯ corepack enable
+       ❯ corepack prepare pnpm@latest --activate
+       Preparing pnpm@latest for immediate activation...
+       ❯ pnpm --version
+       10.10.0
+       ❯ node --v
+       node: bad option: --v
+       ❯ node -v
+       v22.14.0
+       ```
