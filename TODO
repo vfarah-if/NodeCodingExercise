@@ -3,5 +3,6 @@
 ☐ Create a TODO to define the goals of what we will do @critical
     ✔ Create a TODO to define the goals of what we will not do @done(25-04-29 12:34)
     ✔ Initialise a new project @done(25-04-29 12:34)
-    Initialise 
+    ☐ Create linting and formatting to keep my testing and code consistent @high
+
 ☐ Come up with an idea for a simple to complex kata @today
