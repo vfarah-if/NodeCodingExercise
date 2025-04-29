@@ -113,14 +113,13 @@ At the time of setting this up I was using
        ❯ pnpm add -D eslint-config-prettier eslint-plugin-prettier
        ```
      
-     - Add Husky + Lint-Staged:
+     - Format Prettier on save via vscode settings for the moment:
      
+       ```json
+       {
+         "editor.defaultFormatter": "esbenp.prettier-vscode",
+         "editor.formatOnSave": true
+       }
        ```
-       ❯ pnpm add -D husky lint-staged
-       ❯ npx husky install
-       
-       ```
      
        
-     
-     - 
