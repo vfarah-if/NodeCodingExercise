@@ -95,4 +95,32 @@ At the time of setting this up I was using
        Watch Usage: Press w to show more.
        ```
      
+     - Install ESLint and Prettier:
+     
+       ```bash
+       ❯ pnpm add -D eslint prettier
+       ```
+     
+     - Initialise ESLint for TypeScript:
+     
+       ```bash
+       ❯ pnpx eslint --init
+       ```
+     
+     - Add Prettier Compatibility:
+     
+       ```bash
+       ❯ pnpm add -D eslint-config-prettier eslint-plugin-prettier
+       ```
+     
+     - Add Husky + Lint-Staged:
+     
+       ```
+       ❯ pnpm add -D husky lint-staged
+       ❯ npx husky install
+       
+       ```
+     
+       
+     
      - 
