@@ -6,7 +6,21 @@ export class MorningRoutineResolver {
     if (this.isTimeToReadAndStudy(dateTime)) {
       return 'Read and study';
     }
+    if (this.isTimeToHaveBreakfast(dateTime)) {
+      return 'Have breakfast';
+    }
     return 'No activity';
+  }
+
+  private isTimeToHaveBreakfast(dateTime: Date) {
+    if (this.isBreakfastHour(dateTime)) {
+      return true;
+    }
+    return false;
+  }
+
+  private isBreakfastHour(dateTime: Date) {
+    return dateTime.getHours() === 8;
   }
 
   private isTimeToReadAndStudy(dateTime: Date) {
