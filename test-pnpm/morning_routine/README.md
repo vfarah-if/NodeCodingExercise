@@ -19,13 +19,21 @@ This kata could be done with two approaches:
 
 #### User Story:
 
-`As a forgetful person,` `I want a program that reminds me of my morning routine,` `So that I can stay on track with my activities.`  Scenario 1: Display "Do exercise" between 06:00 and 06:59
+`As a forgetful person,` `I want a program that reminds me of my morning routine,` `So that I can stay on track with my activities.`  
 
-`Given the current time is between 06:00 and 06:59` `When I request the routine activity` `Then the system should display "Do exercise"`  Scenario 2: Display "Read and study" between 07:00 and 07:59
+**Scenario 1**: Display "Do exercise" between 06:00 and 06:59 **(Done)**
 
-`Given the current time is between 07:00 and 07:59` `When I request the routine activity` `Then the system should display "Read and study"`  Scenario 3: Display "Have breakfast" between 08:00 and 08:59
+`Given the current time is between 06:00 and 06:59` `When I request the routine activity` `Then the system should display "Do exercise"`  
 
-`Given the current time is between 08:00 and 08:59` `When I request the routine activity` `Then the system should display "Have breakfast"`  Scenario 4: Display "No activity" outside the defined time range
+**Scenario 2**: Display "Read and study" between 07:00 and 07:59 **(In progress)**
+
+`Given the current time is between 07:00 and 07:59` `When I request the routine activity` `Then the system should display "Read and study"` 
+
+**Scenario 3**: Display "Have breakfast" between 08:00 and 08:59
+
+`Given the current time is between 08:00 and 08:59` `When I request the routine activity` `Then the system should display "Have breakfast"`  
+
+**Scenario 4**: Display "No activity" outside the defined time range
 
 ```
 Given the current time is before 05:59 or after 09:00
@@ -38,7 +46,7 @@ Then the system should display "No activity"
 Now I'd like to be able to add things to do, that take less than an Hour as well as update the list of things to do for example:
 
 ```
-From 06:00 to 06:59 - Do exercise (Done)
+From 06:00 to 06:59 - Do exercise
 From 07:00 to 07:29 - Read
 From 07:30 to 07:59 - Study
 From 08:00 to 08:59 - Have breakfast
