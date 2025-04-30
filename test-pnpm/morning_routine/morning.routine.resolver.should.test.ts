@@ -7,7 +7,7 @@ describe('MorningRoutineResolver should', () => {
     const ukTimeBST = '2023-06-01T06:30:00+01:00';
     const expected = 'Do exercise';
 
-    const result = sut.remindMeTo(new Date(ukTimeBST));
+    const result = sut.remindMeAt(new Date(ukTimeBST));
 
     expect(result).toBe(expected);
   });
@@ -16,7 +16,7 @@ describe('MorningRoutineResolver should', () => {
     const ukTimeBST = '2023-06-01T05:30:00+01:00';
     const notExpected = 'Do exercise';
 
-    const result = sut.remindMeTo(new Date(ukTimeBST));
+    const result = sut.remindMeAt(new Date(ukTimeBST));
 
     expect(result).not.toBe(notExpected);
   });
@@ -25,7 +25,7 @@ describe('MorningRoutineResolver should', () => {
     const ukTimeBST = '2023-06-01T07:30:00+01:00';
     const expected = 'Read and study';
 
-    const result = sut.remindMeTo(new Date(ukTimeBST));
+    const result = sut.remindMeAt(new Date(ukTimeBST));
 
     expect(result).toBe(expected);
   });
