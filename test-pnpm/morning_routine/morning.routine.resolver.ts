@@ -2,9 +2,18 @@ export class MorningRoutineResolver {
   public remindMeTo(dateTime: Date): string {
     if (this.isTimeToDoExercise(dateTime)) {
       return 'Do exercise';
-    } else {
-      return 'No activity';
     }
+    if (this.isTimeToReadAndStudy(dateTime)) {
+      return 'Read and study';
+    }
+    return 'No activity';
+  }
+
+  isTimeToReadAndStudy(dateTime: Date) {
+    if (this.isReadAndStudyHour(dateTime)) {
+      return true;
+    }
+    return false;
   }
 
   isTimeToDoExercise(dateTime: Date) {
@@ -12,6 +21,10 @@ export class MorningRoutineResolver {
       return true;
     }
     return false;
+  }
+
+  private isReadAndStudyHour(dateTime: Date) {
+    return dateTime.getHours() === 7 && dateTime.getMinutes() >= 0 && dateTime.getMinutes() <= 59;
   }
 
   private isExerciseHour(dateTime: Date) {
