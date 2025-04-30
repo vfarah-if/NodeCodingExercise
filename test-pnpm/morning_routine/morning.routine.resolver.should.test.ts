@@ -48,12 +48,11 @@ describe('MorningRoutineResolver should', () => {
     expect(result).toBe(expected);
   });
 
-  test('remind me to not have breakfast not between 8.00 and 8:59', () => {
-    const ukTimeBST = '2023-06-01T05:30:00+01:00';
-    const expected = 'Have breakfast';
-
-    const result = sut.remindMeAt(new Date(ukTimeBST));
-
-    expect(result).not.toBe(expected);
+  test.each([
+    { value: '2023-06-01T05:59:00+01:00', expected: 'No activity' },
+    { value: '2023-06-01T09:00:00+01:00', expected: 'No activity' },
+  ])('remind $value to equal $expected', ({ value, expected }) => {
+    const actual = sut.remindMeAt(new Date(value));
+    expect(actual).toBe(expected);
   });
 });

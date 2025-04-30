@@ -56,3 +56,32 @@ From 07:00 to 07:29 - Read
 From 07:30 to 07:59 - Study
 From 08:00 to 09:00 - Have breakfast
 ```
+
+## Conclusion
+
+Thank you to ***Emmanuel Valverde*** from *Codurance*. This is really nice kata, not hard but made me think about dates and timezones, something all developers will face at some time of their careers. It is very simple to get started, will include a way of reducing the if or switch patterns for more interesting tuples, not tricky and easy to show very simple TDD paterns. Easy to do in any language and easy to simplify. So for **iteration 2**, I would probably use a functional style, rather than class and get more specific on the minutes with the tuple so will talk it through in theory but not do. Thanks Codurance and Emmanuel for a gem.
+
+```javascript
+export function remindMeAt(dateTime: Date): string {
+  const activities: [string, (dateTime: Date) => boolean][] = [
+    ['Read', isReadTime],
+    // ... others here
+  ];
+
+  for (const [activity, condition] of activities) {
+    if (condition(dateTime)) {
+      return activity;
+    }
+  }
+
+  return 'No activity';
+}
+
+function isReadTime(dateTime: Date): boolean {
+  return dateTime.getHours() === 6 && dateTime.getMinutes() >== 0 && dateTime.getMinutes() <== 29);
+}
+// ... others here
+```
+
+
+
