@@ -78,7 +78,7 @@ export function remindMeAt(dateTime: Date): string {
 }
 
 function isReadTime(dateTime: Date): boolean {
-  return dateTime.getHours() === 6 && dateTime.getMinutes() >== 0 && dateTime.getMinutes() <== 29);
+  return dateTime.getHours() === 6 && dateTime.getMinutes() >= 0 && dateTime.getMinutes() <= 29;
 }
 // ... others here
 ```
