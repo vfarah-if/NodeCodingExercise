@@ -25,7 +25,7 @@ This kata could be done with two approaches:
 
 `Given the current time is between 06:00 and 06:59` `When I request the routine activity` `Then the system should display "Do exercise"`  
 
-**Scenario 2**: Display "Read and study" between 07:00 and 07:59 **(In progress)**
+**Scenario 2**: Display "Read and study" between 07:00 and 07:59 **(Done)**
 
 `Given the current time is between 07:00 and 07:59` `When I request the routine activity` `Then the system should display "Read and study"` 
 

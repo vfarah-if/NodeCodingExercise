@@ -29,4 +29,13 @@ describe('MorningRoutineResolver should', () => {
 
     expect(result).toBe(expected);
   });
+
+  test('remind me not to read and study not between 7.00 and 7:59', () => {
+    const ukTimeBST = '2023-06-01T05:30:00+01:00';
+    const expected = 'Read and study';
+
+    const result = sut.remindMeAt(new Date(ukTimeBST));
+
+    expect(result).not.toBe(expected);
+  });
 });
