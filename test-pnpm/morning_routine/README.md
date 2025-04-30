@@ -33,7 +33,7 @@ This kata could be done with two approaches:
 
 `Given the current time is between 08:00 and 08:59` `When I request the routine activity` `Then the system should display "Have breakfast"`  
 
-**Scenario 4**: Display "No activity" outside the defined time range
+**Scenario 4**: Display "No activity" outside the defined time range **(Done)**
 
 ```
 Given the current time is before 05:59 or after 09:00
