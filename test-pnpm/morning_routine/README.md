@@ -29,7 +29,7 @@ This kata could be done with two approaches:
 
 `Given the current time is between 07:00 and 07:59` `When I request the routine activity` `Then the system should display "Read and study"` 
 
-**Scenario 3**: Display "Have breakfast" between 08:00 and 08:59 **(Inprog)**
+**Scenario 3**: Display "Have breakfast" between 08:00 and 08:59 **(Done)**
 
 `Given the current time is between 08:00 and 08:59` `When I request the routine activity` `Then the system should display "Have breakfast"`  
 
