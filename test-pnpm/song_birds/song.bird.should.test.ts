@@ -6,4 +6,11 @@ describe('song bird should', () => {
 
     expect(actual).toBe(0);
   });
+
+  it('returns 3 if only one bird is singing', () => {
+    const actual = countSingingSongs(['A']);
+
+    // One bird can perch on 3 branches
+    expect(actual).toBe(3);
+  });
 });
