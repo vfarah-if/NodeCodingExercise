@@ -39,3 +39,15 @@ i.e. 3 branches and 4 birds, 4 branches and 2 birds, 5 branches and 5 birds
 | 3    | Two birds returns 18         | First generalised combination logic |
 | 4    | Three birds returns 36       | Full generalisation                 |
 | 5    | Total (1-3 birds) returns 57 | Safety regression                   |
+
+### Helper which I needed
+
+My math needed more math - https://en.wikipedia.org/wiki/Factorial inorder to get a helper function half way through this articleor using [recursion](https://en.wikipedia.org/wiki/Recursion_(computer_science))[[78\]](https://en.wikipedia.org/wiki/Factorial#cite_note-78) based on its recurrence relation as
+
+```
+define factorial(n):
+  if (n = 0) return 1
+  return n * factorial(n − 1)
+```
+
+So the refactoring step was tricky for me because I don't do enough math, making this tricky but interesting
