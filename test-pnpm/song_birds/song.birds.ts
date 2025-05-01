@@ -1,4 +1,4 @@
-export function countSingingSongs(birds: Array<string>): number {
+export function countUniqueSongs(birds: Array<string>): number {
   if (!birds || birds.length === 0) return 0;
   if (birds.length === 1) {
     const birdCombos = [['A']]; // 1 bird
