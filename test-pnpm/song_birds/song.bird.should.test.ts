@@ -20,4 +20,11 @@ describe('song bird should', () => {
     // 3 branches, choose 2, assign 2 birds => 3 * 2! = 6
     expect(actual).toBe(18);
   });
+
+  it('returns 36 if all three birds are singing', () => {
+    const actual = countSingingSongs(['A', 'B', 'C']);
+
+    // 1 way to choose all branches, 3! assignments
+    expect(actual).toBe(36);
+  });
 });
