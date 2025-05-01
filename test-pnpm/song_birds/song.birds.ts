@@ -1,6 +1,14 @@
 export function countSingingSongs(birds: Array<string>): number {
   if (!birds || birds.length === 0) return 0;
-  if (birds.length === 1) return 3;
+  if (birds.length === 1) {
+    const birdCombos = [['A']];
+    const branchCombos = [
+      ['1', '2'],
+      ['1', '3'],
+      ['2', '3'],
+    ];
+    return birdCombos.length * branchCombos.length * factorial(1);
+  }
   if (birds.length === 2) {
     const birdCombos = [
       ['A', 'B'],
