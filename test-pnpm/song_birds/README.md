@@ -103,3 +103,9 @@ function factorial(n: number): number {
 }
 ```
 
+1. **Strategy Pattern**: Used a strategy object (`songCalculator`) to map the number of birds to their respective calculation functions.
+2. **Code Organisation**: Each calculation is encapsulated in its own function, making the code more readable.
+3. **Explicit Constants**: Added the `BRANCH_COUNT` constant to make the code more maintainable.
+4. **Removed Hardcoded Arrays**: Instead of hardcoding the arrays of combinations and permutations, the code now calculates the number of combinations and permutations directly.
+5. **Added Documentation**: Each calculation includes comments explaining the logic behind it.
+6. **Consistent Return**: The function always returns 0 for invalid bird counts (greater than 3 or less than 0).
