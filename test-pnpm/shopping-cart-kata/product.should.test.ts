@@ -39,4 +39,9 @@ describe('Product should', () => {
       expect(product.pricePerUnit).toBe(expected);
     },
   );
+
+  it('calculate the final price with VAT rounded up', () => {
+    const product = new Product('Iceberg 🥬', 1.55, 0.15, TaxRate.Normal);
+    expect(product.finalPrice).toBe(2.17);
+  });
 });
