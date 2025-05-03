@@ -41,13 +41,47 @@ describe('Product should', () => {
     },
   );
 
-  it('calculate Iceberg 🥬 final price with normal vat rounded up', () => {
-    const product = new Product('Iceberg 🥬', 1.55, 0.15, TaxRate.Normal);
-    expect(product.finalPrice).toBe(2.17);
-  });
-
-  it('calculate Bread 🍞 final price with first necessity vat rounded up', () => {
-    const product = new Product('Bread 🍞', 0.71, 0.12, TaxRate.FirstNecessity);
-    expect(product.finalPrice).toBe(0.89);
-  });
+  test.each([
+    {
+      name: 'Iceberg 🥬',
+      cost: 1.55,
+      revenueMargin: 0.15,
+      taxRate: TaxRate.Normal,
+      expected: 2.17,
+    },
+    {
+      name: 'Tomato 🍅',
+      cost: 0.52,
+      revenueMargin: 0.15,
+      taxRate: TaxRate.Normal,
+      expected: 0.73,
+    },
+    {
+      name: 'Chicken 🍗',
+      cost: 1.34,
+      revenueMargin: 0.12,
+      taxRate: TaxRate.Normal,
+      expected: 1.83,
+    },
+    {
+      name: 'Bread 🍞',
+      cost: 0.71,
+      revenueMargin: 0.12,
+      taxRate: TaxRate.FirstNecessity,
+      expected: 0.89,
+    },
+    {
+      name: 'Corn 🌽',
+      cost: 1.21,
+      revenueMargin: 0.12,
+      taxRate: TaxRate.FirstNecessity,
+      expected: 1.5,
+    },
+  ])(
+    'calculate final price unit for $name to be $expected for vat rate @ $taxRate',
+    ({ name, cost, revenueMargin, taxRate, expected }) => {
+      const product = new Product(name, cost, revenueMargin, taxRate);
+      expect(product.finalPrice).toBe(expected);
+    },
+  );
 });
