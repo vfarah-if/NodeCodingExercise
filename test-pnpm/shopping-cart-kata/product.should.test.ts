@@ -1,4 +1,5 @@
 import { Product } from './product';
+import { TaxRate } from './TaxRate';
 
 describe('Product should', () => {
   test.each([
@@ -40,7 +41,7 @@ describe('Product should', () => {
     },
   );
 
-  it('calculate the final price with VAT rounded up', () => {
+  it('calculate the final price with normal tax rounded up', () => {
     const product = new Product('Iceberg 🥬', 1.55, 0.15, TaxRate.Normal);
     expect(product.finalPrice).toBe(2.17);
   });
