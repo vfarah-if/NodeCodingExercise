@@ -41,8 +41,13 @@ describe('Product should', () => {
     },
   );
 
-  it('calculate the final price with normal tax rounded up', () => {
+  it('calculate Iceberg 🥬 final price with normal vat rounded up', () => {
     const product = new Product('Iceberg 🥬', 1.55, 0.15, TaxRate.Normal);
     expect(product.finalPrice).toBe(2.17);
+  });
+
+  it('calculate Bread 🍞 final price with first necessity vat rounded up', () => {
+    const product = new Product('Bread 🍞', 0.71, 0.12, TaxRate.FirstNecessity);
+    expect(product.finalPrice).toBe(0.89);
   });
 });
