@@ -1,8 +1,24 @@
 import { Product } from './product';
 
 describe('Product should', () => {
-  it('calculate price per unit with revenue and rounding', () => {
-    const product = new Product('Iceberg 🥬', 1.55, 0.15);
-    expect(product.pricePerUnit).toBe(1.79);
-  });
+  test.each([
+    {
+      name: 'Iceberg 🥬',
+      cost: 1.55,
+      revenueMargin: 0.15,
+      expected: 1.79,
+    },
+    {
+      name: 'Tomato 🍅',
+      cost: 2.5,
+      revenueMargin: 0.2,
+      expected: 3,
+    },
+  ])(
+    'calculate price per unit for $name to be $expected',
+    ({ name, cost, revenueMargin, expected }) => {
+      const product = new Product(name, cost, revenueMargin);
+      expect(product.pricePerUnit).toBe(expected);
+    },
+  );
 });
