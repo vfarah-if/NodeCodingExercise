@@ -1,3 +1,4 @@
+import { CartItem } from './cartItem';
 import { Product } from './product';
 import { TaxRate } from './TaxRate';
 
