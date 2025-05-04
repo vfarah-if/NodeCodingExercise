@@ -10,6 +10,7 @@ describe('Discount should', () => {
 
   it('return null for an unknown code', () => {
     const discount = Discount.fromCode('INVALID');
+
     expect(discount).toBeNull();
   });
 });

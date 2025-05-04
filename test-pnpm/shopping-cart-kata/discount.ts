@@ -12,6 +12,6 @@ export class Discount {
       PROMO_5: 0.05,
     };
     const value = map[code];
-    return new Discount(code, value);
+    return value ? new Discount(code, value) : null;
   }
 }
