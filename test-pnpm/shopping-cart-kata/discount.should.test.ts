@@ -7,4 +7,9 @@ describe('Discount should', () => {
     expect(discount.code).toBe('PROMO_5');
     expect(discount.percentage).toBe(0.05);
   });
+
+  it('return null for an unknown code', () => {
+    const discount = Discount.fromCode('INVALID');
+    expect(discount).toBeNull();
+  });
 });
