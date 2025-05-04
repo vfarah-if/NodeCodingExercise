@@ -1,5 +1,5 @@
 import { Product } from './product';
-import { TaxRate } from './TaxRate';
+import { TaxRate } from './taxRates';
 
 describe('Product should', () => {
   test.each([

@@ -1,6 +1,6 @@
 import { CartItem } from './cartItem';
 import { Product } from './product';
-import { TaxRate } from './TaxRate';
+import { TaxRate } from './taxRates';
 
 describe('Adding Cart items should', () => {
   let product = new Product('Iceberg 🥬', 1.55, 0.15, TaxRate.Normal);

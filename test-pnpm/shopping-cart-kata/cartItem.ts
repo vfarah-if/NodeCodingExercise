@@ -1,4 +1,5 @@
 import { Product } from './product';
+import { roundUp } from './utility';
 
 export class CartItem {
   constructor(
@@ -8,10 +9,6 @@ export class CartItem {
 
   get LineTotal(): number {
     const price = this.product.finalPrice * this.quantity;
-    return this.roundUp(price);
-  }
-
-  private roundUp(value: number): number {
-    return Math.ceil(value * 100) / 100;
+    return roundUp(price);
   }
 }
