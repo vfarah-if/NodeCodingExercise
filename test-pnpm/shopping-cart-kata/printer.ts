@@ -1,9 +1,12 @@
 import { CartItem } from './cartItem';
+import { Discount } from './discount';
 
 export interface TablePrinter {
   printHeader(): string;
   printCartItem(item: CartItem): string;
+  printPromotion(discount: Discount | null): string;
   printLineSeparator(): string;
+  printHeaderFooter(): string;
 }
 
 export class InMemoryTablePrinter implements TablePrinter {
@@ -13,6 +16,10 @@ export class InMemoryTablePrinter implements TablePrinter {
       '| Product name | Price with VAT | Quantity |',
       '| ------------ | -------------- | -------- |',
     ].join('\n');
+  }
+
+  printHeaderFooter(): string {
+    return '|------------------------------------------|';
   }
 
   printCartItem(item: CartItem): string {
@@ -25,5 +32,14 @@ export class InMemoryTablePrinter implements TablePrinter {
 
   printLineSeparator(): string {
     return '--------------------------------------------';
+  }
+
+  printPromotion(discount: Discount | null): string {
+    const promotionCode = discount?.code ?? '';
+    const promotionDescription =
+      discount != null
+        ? `Promotion: ${discount?.percentage * 100}% off with code ${promotionCode}`
+        : 'Promotion:';
+    return [this.printHeaderFooter(), `| ${promotionDescription.padEnd(40)} |`].join('\n');
   }
 }

@@ -23,8 +23,10 @@ export class InMemoryShoppingCart implements ShoppingCart {
     this.logger.log(this.printer.printCartItem(cartItem));
   }
 
-  applyDiscount(discount: Discount): void {
-    throw new Error('Method not implemented.');
+  applyDiscount(discount: Discount | null): void {
+    this.discounts.push(discount);
+    this.logger.log(this.printer.printPromotion(discount));
+    this.logger.log(this.printer.printLineSeparator());
   }
   printShoppingCart(): void {
     throw new Error('Method not implemented.');
