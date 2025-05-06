@@ -145,20 +145,7 @@ We are building a shopping cart for an online grocery shop. The idea of this kat
 
 ### Possible API for the ShoppingCart
 
-You could change this API, this is only for example purposes.
-
 **Approach 1 passing objects as arguments could be DTO**
-
-```javascript
-export interface ShoppingCart {
-  addItem(product: Product): void;
-  deleteItem(product: Product): void;
-  applyDiscount(discount: Discount): void;
-  printShoppingCart(): void;
-}
-```
-
-**Approach 2 passing primitives as arguments**
 
 ```javascript
 export interface ShoppingCart {
@@ -166,14 +153,6 @@ export interface ShoppingCart {
   deleteItem(cartItem: CartItem): void;
   applyDiscount(discount: Discount): void;
   printShoppingCart(): void;
-}
-
-Approach 3 passing primitives as arguments and returning a DTO
-public interface ShoppingCart {
-    public void addItem(String productName);
-    public void deleteItem(String productName);
-    public void applyDiscount(Double discount)
-    public ShoppingCartList getShoppingCart();
 }
 ```
 

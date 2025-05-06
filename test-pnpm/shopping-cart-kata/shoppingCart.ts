@@ -14,21 +14,39 @@ export class InMemoryShoppingCart implements ShoppingCart {
   private discounts: Discount[] = [];
   private printer: TablePrinter = new InMemoryTablePrinter();
 
-  constructor(private logger: Logger) {
-    this.logger.log(this.printer.printHeader());
-  }
+  constructor(private logger: Logger) {}
 
   addItem(cartItem: CartItem): void {
     this.items.push(cartItem);
-    this.logger.log(this.printer.printCartItem(cartItem));
   }
 
   applyDiscount(discount: Discount | null): void {
-    this.discounts.push(discount);
-    this.logger.log(this.printer.printPromotion(discount));
-    this.logger.log(this.printer.printLineSeparator());
+    if (discount) {
+      this.discounts.push(discount);
+    }
   }
+
   printShoppingCart(): void {
-    throw new Error('Method not implemented.');
+    this.logger.clear();
+    this.printCartItems();
+    this.printDiscounts();
+  }
+
+  private printCartItems(): void {
+    this.logger.log(this.printer.printHeader());
+    this.items.forEach((cartItem) => {
+      this.logger.log(this.printer.printCartItem(cartItem));
+    });
+  }
+
+  private printDiscounts(): void {
+    if (this.discounts.length > 0) {
+      this.discounts.forEach((discount) => {
+        this.logger.log(this.printer.printPromotion(discount));
+      });
+    } else {
+      this.logger.log(this.printer.printPromotion(null));
+    }
+    this.logger.log(this.printer.printLineSeparator());
   }
 }

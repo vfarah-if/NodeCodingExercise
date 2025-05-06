@@ -36,6 +36,7 @@ describe('As a customer', () => {
 
     addItemsToCart(cart);
 
+    cart.printShoppingCart();
     expect(logger.print()).toContain(expectedOutput);
   });
 
@@ -49,7 +50,7 @@ describe('As a customer', () => {
       '--------------------------------------------',
     ].join('\n');
 
-    cart.applyDiscount(null);
+    cart.printShoppingCart();
 
     expect(logger.print()).toContain(expectedOutput);
   });
@@ -65,6 +66,7 @@ describe('As a customer', () => {
     ].join('\n');
 
     cart.applyDiscount(Discount.fromCode('PROMO_10'));
+    cart.printShoppingCart();
 
     expect(logger.print()).toContain(expectedOutput);
   });
