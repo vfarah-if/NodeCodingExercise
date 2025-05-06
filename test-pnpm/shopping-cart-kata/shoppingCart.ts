@@ -1,7 +1,7 @@
 import { CartItem } from './cartItem';
 import { Discount } from './discount';
 import { Logger } from './logger';
-import { InMemoryTablePrinter, TablePrinter } from './printer';
+import { DefaultTablePrinter, TablePrinter } from './printer';
 
 export interface ShoppingCart {
   addItem(cartItem: CartItem): void;
@@ -12,7 +12,7 @@ export interface ShoppingCart {
 export class InMemoryShoppingCart implements ShoppingCart {
   private items: CartItem[] = [];
   private discounts: Discount[] = [];
-  private printer: TablePrinter = new InMemoryTablePrinter();
+  private printer: TablePrinter = new DefaultTablePrinter();
 
   constructor(private logger: Logger) {}
 

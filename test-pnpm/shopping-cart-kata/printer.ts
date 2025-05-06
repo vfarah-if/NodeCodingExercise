@@ -1,4 +1,5 @@
 import { CartItem } from './cartItem';
+import { TABLE_CONSTANTS } from './constants';
 import { Discount } from './discount';
 
 export interface TablePrinter {
@@ -11,49 +12,73 @@ export interface TablePrinter {
   printHeaderFooter(): string;
 }
 
-export class InMemoryTablePrinter implements TablePrinter {
+export class DefaultTablePrinter implements TablePrinter {
   printHeader(): string {
     return [
-      '--------------------------------------------',
-      '| Product name | Price with VAT | Quantity |',
-      '| ------------ | -------------- | -------- |',
+      this.printLineSeparator(),
+      `${TABLE_CONSTANTS.SEPARATORS.VERTICAL} Product name ${TABLE_CONSTANTS.SEPARATORS.VERTICAL} Price with VAT ${TABLE_CONSTANTS.SEPARATORS.VERTICAL} Quantity ${TABLE_CONSTANTS.SEPARATORS.VERTICAL}`,
+      `${TABLE_CONSTANTS.SEPARATORS.VERTICAL} ${'-'.repeat(TABLE_CONSTANTS.COLUMN_WIDTHS.NAME)} ${TABLE_CONSTANTS.SEPARATORS.VERTICAL} ${'-'.repeat(TABLE_CONSTANTS.COLUMN_WIDTHS.PRICE)} ${TABLE_CONSTANTS.SEPARATORS.VERTICAL} ${'-'.repeat(TABLE_CONSTANTS.COLUMN_WIDTHS.QUANTITY)} ${TABLE_CONSTANTS.SEPARATORS.VERTICAL}`,
     ].join('\n');
   }
 
   printHeaderFooter(): string {
-    return '|------------------------------------------|';
+    return `${TABLE_CONSTANTS.SEPARATORS.VERTICAL}${'-'.repeat(TABLE_CONSTANTS.LINE_WIDTH - 2)}${TABLE_CONSTANTS.SEPARATORS.VERTICAL}`;
   }
 
   printCartItem(item: CartItem): string {
-    const name = item.product.name.padEnd(12);
-    const priceWithVat = `${item.product.finalPrice.toFixed(2)} €`.padEnd(14);
-    const quantity = item.quantity.toString().padEnd(8);
+    const name = item.product.name.padEnd(TABLE_CONSTANTS.COLUMN_WIDTHS.NAME);
+    const priceWithVat =
+      `${this.formatPrice(item.product.finalPrice)} ${TABLE_CONSTANTS.CURRENCY}`.padEnd(
+        TABLE_CONSTANTS.COLUMN_WIDTHS.PRICE,
+      );
+    const quantity = item.quantity.toString().padEnd(TABLE_CONSTANTS.COLUMN_WIDTHS.QUANTITY);
 
-    return `| ${name} | ${priceWithVat} | ${quantity} |`;
+    return `${TABLE_CONSTANTS.SEPARATORS.VERTICAL} ${name} ${TABLE_CONSTANTS.SEPARATORS.VERTICAL} ${priceWithVat} ${TABLE_CONSTANTS.SEPARATORS.VERTICAL} ${quantity} ${TABLE_CONSTANTS.SEPARATORS.VERTICAL}`;
   }
 
   printLineSeparator(): string {
-    return '--------------------------------------------';
+    return TABLE_CONSTANTS.SEPARATORS.HORIZONTAL.repeat(TABLE_CONSTANTS.LINE_WIDTH);
   }
 
   printPromotion(discount: Discount | null): string {
-    const promotionCode = discount?.code ?? '';
-    const promotionDescription =
-      discount != null
-        ? `Promotion: ${discount?.percentage * 100}% off with code ${promotionCode}`
-        : 'Promotion:';
-    return [this.printHeaderFooter(), `| ${promotionDescription.padEnd(40)} |`].join('\n');
+    const promotionDescription = this.formatPromotionDescription(discount);
+    return [
+      this.printHeaderFooter(),
+      `${TABLE_CONSTANTS.SEPARATORS.VERTICAL} ${promotionDescription.padEnd(TABLE_CONSTANTS.PADDING_WIDTH)} ${TABLE_CONSTANTS.SEPARATORS.VERTICAL}`,
+    ].join('\n');
   }
 
   printProductCount(items: CartItem[]): string {
-    const totalItems = items.reduce((total, item) => total + item.quantity, 0);
-    return `| Total products: ${totalItems.toString().padEnd(24)} |`;
+    const totalItems = this.calculateTotalItems(items);
+    return `${TABLE_CONSTANTS.SEPARATORS.VERTICAL} Total products: ${totalItems.toString().padEnd(24)} ${TABLE_CONSTANTS.SEPARATORS.VERTICAL}`;
   }
 
   printTotalPrice(items: CartItem[], discount: Discount | null): string {
-    const totalPrice = items.reduce((total, item) => total + item.LineTotal, 0);
+    const totalPrice = this.calculateTotalPrice(items);
     const discountedAmount = discount ? discount.applyTo(totalPrice) : totalPrice;
-    const description = `Total price: ${discountedAmount.toFixed(2)} €`;
-    return `| ${description.padEnd(40)} |`;
+    const description = `Total price: ${this.formatPrice(discountedAmount)} ${TABLE_CONSTANTS.CURRENCY}`;
+
+    return `${TABLE_CONSTANTS.SEPARATORS.VERTICAL} ${description.padEnd(TABLE_CONSTANTS.PADDING_WIDTH)} ${TABLE_CONSTANTS.SEPARATORS.VERTICAL}`;
+  }
+
+  private formatPromotionDescription(discount: Discount | null): string {
+    if (discount == null) {
+      return 'Promotion:';
+    }
+
+    const percentage = Math.round(discount.percentage * 100);
+    return `Promotion: ${percentage}% off with code ${discount.code}`;
+  }
+
+  private calculateTotalItems(items: CartItem[]): number {
+    return items.reduce((total, item) => total + item.quantity, 0);
+  }
+
+  private calculateTotalPrice(items: CartItem[]): number {
+    return items.reduce((total, item) => total + item.LineTotal, 0);
+  }
+
+  private formatPrice(price: number): string {
+    return price.toFixed(2);
   }
 }

@@ -14,7 +14,7 @@ describe('Discount should', () => {
     expect(discount).toBeNull();
   });
 
-  it('alculate a discount from a price', () => {
+  it('calculate a discount from a price', () => {
     const discount = Discount.fromCode('PROMO_10')!;
     expect(discount.applyTo(100)).toBe(90);
   });

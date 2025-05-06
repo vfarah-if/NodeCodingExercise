@@ -199,3 +199,7 @@ You could start Outside-In **only** if:
 - You're willing to mock deeper domain types (`Product`, `CartItem`, etc.)
 
 But in this kata, that’s harder to justify because the logic in the "leaf" types is richer and more test-worthy than in the orchestration layer.
+
+### Summary
+
+Thnanks Emmanuael Valverde, for your cool takle on this [kata](https://www.codurance.com/katas/shopping-cart-kata). There were a few sneaky catches with the pricing. I have done this kata before using simple types and I found myself producing more code this time. I also did outside in, before, mocking and faking bits until I had the final design. I think breaking this up into  the seperate phases made it easier to get my head around each concept, so I am glad I did it this way. The thing didn't like is it forced me into a solution by virtue of what I simplified. It may be a good or bad thing, no idea. 
