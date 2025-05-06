@@ -2,7 +2,7 @@ import { CartItem } from './cartItem';
 import { Discount } from './discount';
 
 export interface TablePrinter {
-  printTotalPrice(items: CartItem[]): string;
+  printTotalPrice(items: CartItem[], discount: Discount | null): string;
   printProductCount(items: CartItem[]): string;
   printHeader(): string;
   printCartItem(item: CartItem): string;
@@ -50,9 +50,10 @@ export class InMemoryTablePrinter implements TablePrinter {
     return `| Total products: ${totalItems.toString().padEnd(24)} |`;
   }
 
-  printTotalPrice(items: CartItem[]): string {
+  printTotalPrice(items: CartItem[], discount: Discount | null): string {
     const totalPrice = items.reduce((total, item) => total + item.LineTotal, 0);
-    const description = `Total price: ${totalPrice.toFixed(2)} €`;
+    const discountedAmount = discount ? discount.applyTo(totalPrice) : totalPrice;
+    const description = `Total price: ${discountedAmount.toFixed(2)} €`;
     return `| ${description.padEnd(40)} |`;
   }
 }

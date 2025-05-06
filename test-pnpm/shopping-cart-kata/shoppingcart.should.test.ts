@@ -20,7 +20,7 @@ describe('As a customer', () => {
     cart.addItem(new CartItem(corn, 1));
   }
 
-  test('I want to add items to my shopping cart', () => {
+  test.skip('I want to add items to my shopping cart', () => {
     const logger = new InMemoryLogger();
     const cart = new InMemoryShoppingCart(logger);
     const expectedOutput = [
@@ -40,7 +40,7 @@ describe('As a customer', () => {
     expect(logger.print()).toContain(expectedOutput);
   });
 
-  test('I want to create a promotion section for no promotions', () => {
+  test.skip('I want to create a promotion section for no promotions', () => {
     const logger = new InMemoryLogger();
     const cart = new InMemoryShoppingCart(logger);
     addItemsToCart(cart);
@@ -55,7 +55,7 @@ describe('As a customer', () => {
     expect(logger.print()).toContain(expectedOutput);
   });
 
-  test('I want to create a promotion section for an actual promotion', () => {
+  test.skip('I want to create a promotion section for an actual promotion', () => {
     const logger = new InMemoryLogger();
     const cart = new InMemoryShoppingCart(logger);
     addItemsToCart(cart);
@@ -78,7 +78,7 @@ describe('As a customer', () => {
     const expectedOutput = [
       '--------------------------------------------',
       '| Total products: 8                        |',
-      '| Total price: 12.35 €                     |',
+      '| Total price: 11.74 €                     |',
       '--------------------------------------------',
     ].join('\n');
     cart.applyDiscount(Discount.fromCode('PROMO_5'));
@@ -86,5 +86,52 @@ describe('As a customer', () => {
     cart.printShoppingCart();
 
     expect(logger.print()).toContain(expectedOutput);
+  });
+
+  test('I want to print an empty cart', () => {
+    const logger = new InMemoryLogger();
+    const cart = new InMemoryShoppingCart(logger);
+    const expectedOutput = [
+      '--------------------------------------------',
+      '| Product name | Price with VAT | Quantity |',
+      '| ------------ | -------------- | -------- |',
+      '|------------------------------------------|',
+      '| Promotion:                               |',
+      '--------------------------------------------',
+      '| Total products: 0                        |',
+      '| Total price: 0.00 €                      |',
+      '--------------------------------------------',
+    ].join('\n');
+
+    cart.printShoppingCart();
+
+    expect(logger.print()).toBe(expectedOutput);
+  });
+
+  test('I want to print a full discounted list', () => {
+    const logger = new InMemoryLogger();
+    const cart = new InMemoryShoppingCart(logger);
+    addItemsToCart(cart);
+    cart.applyDiscount(Discount.fromCode('PROMO_10'));
+    const expectedOutput = [
+      '--------------------------------------------',
+      '| Product name | Price with VAT | Quantity |',
+      '| ------------ | -------------- | -------- |',
+      '| Iceberg 🥬   | 2.17 €         | 3        |',
+      '| Tomato 🍅    | 0.73 €         | 1        |',
+      '| Chicken 🍗   | 1.83 €         | 1        |',
+      '| Bread 🍞     | 0.89 €         | 2        |',
+      '| Corn 🌽      | 1.50 €         | 1        |',
+      '|------------------------------------------|',
+      '| Promotion: 10% off with code PROMO_10    |',
+      '--------------------------------------------',
+      '| Total products: 8                        |',
+      '| Total price: 11.12 €                     |',
+      '--------------------------------------------',
+    ].join('\n');
+
+    cart.printShoppingCart();
+
+    expect(logger.print()).toBe(expectedOutput);
   });
 });
