@@ -30,6 +30,13 @@ export class InMemoryShoppingCart implements ShoppingCart {
     this.logger.clear();
     this.printCartItems();
     this.printDiscounts();
+    this.printTotals();
+  }
+
+  private printTotals() {
+    this.logger.log(this.printer.printProductCount(this.items));
+    this.logger.log(this.printer.printTotalPrice(this.items));
+    this.logger.log(this.printer.printLineSeparator());
   }
 
   private printCartItems(): void {

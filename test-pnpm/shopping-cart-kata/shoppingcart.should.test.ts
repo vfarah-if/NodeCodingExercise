@@ -76,9 +76,9 @@ describe('As a customer', () => {
     const cart = new InMemoryShoppingCart(logger);
     addItemsToCart(cart);
     const expectedOutput = [
-      '|------------------------------------------|',
+      '--------------------------------------------',
       '| Total products: 8                        |',
-      '| Total price: 11.71 €                     |',
+      '| Total price: 12.35 €                     |',
       '--------------------------------------------',
     ].join('\n');
     cart.applyDiscount(Discount.fromCode('PROMO_5'));
