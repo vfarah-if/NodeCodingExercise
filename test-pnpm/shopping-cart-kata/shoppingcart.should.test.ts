@@ -70,4 +70,21 @@ describe('As a customer', () => {
 
     expect(logger.print()).toContain(expectedOutput);
   });
+
+  test('I want a product count with final price', () => {
+    const logger = new InMemoryLogger();
+    const cart = new InMemoryShoppingCart(logger);
+    addItemsToCart(cart);
+    const expectedOutput = [
+      '|------------------------------------------|',
+      '| Total products: 8                        |',
+      '| Total price: 11.71 €                     |',
+      '--------------------------------------------',
+    ].join('\n');
+    cart.applyDiscount(Discount.fromCode('PROMO_5'));
+
+    cart.printShoppingCart();
+
+    expect(logger.print()).toContain(expectedOutput);
+  });
 });
