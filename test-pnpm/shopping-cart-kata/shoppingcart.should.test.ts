@@ -1,4 +1,5 @@
 import { CartItem } from './cartItem';
+import { Discount } from './discount';
 import { InMemoryLogger } from './logger';
 import { Product } from './product';
 import { InMemoryShoppingCart } from './shoppingCart';
@@ -22,8 +23,6 @@ describe('As a customer', () => {
   test('I want to add items to my shopping cart', () => {
     const logger = new InMemoryLogger();
     const cart = new InMemoryShoppingCart(logger);
-    addItemsToCart(cart);
-
     const expectedOutput = [
       '--------------------------------------------',
       '| Product name | Price with VAT | Quantity |',
@@ -34,6 +33,38 @@ describe('As a customer', () => {
       '| Bread 🍞     | 0.89 €         | 2        |',
       '| Corn 🌽      | 1.50 €         | 1        |',
     ].join('\n');
+
+    addItemsToCart(cart);
+
+    expect(logger.print()).toContain(expectedOutput);
+  });
+
+  test('I want to create a promotion section for no promotions', () => {
+    const logger = new InMemoryLogger();
+    const cart = new InMemoryShoppingCart(logger);
+    addItemsToCart(cart);
+    const expectedOutput = [
+      '|------------------------------------------|',
+      '| Promotion:                               |',
+      '--------------------------------------------',
+    ].join('\n');
+
+    cart.applyDiscount(null);
+
+    expect(logger.print()).toContain(expectedOutput);
+  });
+
+  test('I want to create a promotion section for an actual promotion', () => {
+    const logger = new InMemoryLogger();
+    const cart = new InMemoryShoppingCart(logger);
+    addItemsToCart(cart);
+    const expectedOutput = [
+      '|------------------------------------------|',
+      '| Promotion: 10% off with code PROMO_10    |',
+      '--------------------------------------------',
+    ].join('\n');
+
+    cart.applyDiscount(Discount.fromCode('PROMO_10'));
 
     expect(logger.print()).toContain(expectedOutput);
   });

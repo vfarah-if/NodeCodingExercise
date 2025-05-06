@@ -145,7 +145,7 @@ We are building a shopping cart for an online grocery shop. The idea of this kat
 
 ### Possible API for the ShoppingCart
 
-You could change this API this is only for example purposes.
+You could change this API, this is only for example purposes.
 
 **Approach 1 passing objects as arguments could be DTO**
 
