@@ -11,13 +11,13 @@ We are building a shopping cart for an online grocery shop. The idea of this kat
 
 ### List of products
 
-| **Name**      | **Cost** | **% Revenue** | **Price per unit** | **Tax**                 | **Final price** |
-| ------------- | -------- | ------------- | ------------------ | ----------------------- | --------------- |
-| **Iceberg 🥬** | *1.55 €* | *15 %*        | 1,79 €             | *Normal (21%)*          | 2.17 €          |
-| **Tomato 🍅**  | *0.52 €* | *15 %*        | 0.60 €             | *Normal (21%)*          | 0.73 €          |
-| **Chicken 🍗** | *1.34 €* | *12 %*        | 1.51 €             | *Normal (21%)*          | 1.83 €          |
-| **Bread 🍞**   | *0.71 €* | *12 %*        | 0.80 €             | *First necessity (10%)* | 0.89 €          |
-| **Corn 🌽**    | *1.21 €* | *12 %*        | 1.36 €             | *First necessity (10%)* | 1.50 €          |
+| **Name**       | **Cost** | **% Revenue** | **Price per unit** | **Tax**                 | **Final price** |
+| -------------- | -------- | ------------- | ------------------ | ----------------------- | --------------- |
+| **Iceberg 🥬** | _1.55 €_ | _15 %_        | 1,79 €             | _Normal (21%)_          | 2.17 €          |
+| **Tomato 🍅**  | _0.52 €_ | _15 %_        | 0.60 €             | _Normal (21%)_          | 0.73 €          |
+| **Chicken 🍗** | _1.34 €_ | _12 %_        | 1.51 €             | _Normal (21%)_          | 1.83 €          |
+| **Bread 🍞**   | _0.71 €_ | _12 %_        | 0.80 €             | _First necessity (10%)_ | 0.89 €          |
+| **Corn 🌽**    | _1.21 €_ | _12 %_        | 1.36 €             | _First necessity (10%)_ | 1.50 €          |
 
 ### List of discounts
 
@@ -150,9 +150,12 @@ We are building a shopping cart for an online grocery shop. The idea of this kat
 ```javascript
 export interface ShoppingCart {
   addItem(cartItem: CartItem): void;
-  deleteItem(cartItem: CartItem): void;
   applyDiscount(discount: Discount): void;
   printShoppingCart(): void;
+  // TODO
+  removeItem(name: string): void;
+  updateItemQuantity(name: string, quantity: number): void;
+  getItems(): ReadonlyArray<CartItem>;
 }
 ```
 
@@ -162,15 +165,18 @@ export interface ShoppingCart {
 
 ##### Suggested Inside-Out Iterations (with TDD focus)
 
-| Iteration | Focus                                    | Why Start Here?                              |
-| --------- | ---------------------------------------- | -------------------------------------------- |
-| 1         | `Product` - price per unit and VAT logic | Small, atomic, pure — perfect TDD start      |
-| 2         | `CartItem` - quantity & total price      | Introduces aggregation, still isolated logic |
-| 3         | `Discount` - percentage logic            | Stateless, predictable, complements pricing  |
-| 4         | `ShoppingCart` - add/remove items        | Start using composition of domain elements   |
-| 5         | `ShoppingCart` - apply discount          | Introduces first mutation to cart state      |
-| 6         | `ShoppingCart` - total price & print     | Drives end-to-end expectation-based testing  |
-| 7         | `ProductCatalogue` or Registry           | Encapsulate product lookup and validation    |
+| Iteration | Focus                                    | Why Start Here?                                              |
+| --------- | ---------------------------------------- | ------------------------------------------------------------ |
+| 1         | `Product` - price per unit and VAT logic | Small, atomic, pure — perfect TDD start                      |
+| 2         | `CartItem` - quantity & total price      | Introduces aggregation, still isolated logic                 |
+| 3         | `Discount` - percentage logic            | Stateless, predictable, complements pricing                  |
+| 4         | `ShoppingCart` - add items               | Start using composition of domain elements                   |
+| 5         | `ShoppingCart` - apply discount          | Introduces first mutation to cart state                      |
+| 6         | `ShoppingCart` - total price & print     | Drives end-to-end expectation-based testing                  |
+| 7         | `ProductCatalogue` or Registry           | Encapsulate product lookup and validation                    |
+| 8         | `ShoppingCart` - delete items            | TODO - Drive removing Items from the cart                    |
+| 9         | `ShoppingCart` - updateItemQuantity      | TODO - Drive changing the quantity                           |
+| 10        | `ShoppingCart` - getItems                | TODO - Drive getting the items to be more inline with a cart |
 
 ### Evolution Flow Summary
 
@@ -191,7 +197,7 @@ export interface ShoppingCart {
 - `print()` or `toString()` as test-driving format rendering
 - Possibly inject or access product catalogue here
 
-### When to Consider *Outside-In*
+### When to Consider _Outside-In_
 
 You could start Outside-In **only** if:
 
@@ -202,4 +208,4 @@ But in this kata, that’s harder to justify because the logic in the "leaf" typ
 
 ### Summary
 
-Thnanks Emmanuael Valverde, for your cool takle on this [kata](https://www.codurance.com/katas/shopping-cart-kata). There were a few sneaky catches with the pricing. I have done this kata before using simple types and I found myself producing more code this time. I also did outside in, before, mocking and faking bits until I had the final design. I think breaking this up into  the seperate phases made it easier to get my head around each concept, so I am glad I did it this way. The thing didn't like is it forced me into a solution by virtue of what I simplified. It may be a good or bad thing, no idea. 
+Thanks Emmanuael Valverde, for your cool take on this [kata](https://www.codurance.com/katas/shopping-cart-kata). There were a few sneaky catches with the pricing. I have done this kata before using simple types and I found myself producing more code this time. I also did outside in, before, mocking and faking bits until I had the final design. I think breaking this up into the seperate phases made it easier to get my head around each concept, so I am glad I did it this way. The thing didn't like is it forced me into a solution by virtue of what I simplified. It may be a good or bad thing, no idea.
