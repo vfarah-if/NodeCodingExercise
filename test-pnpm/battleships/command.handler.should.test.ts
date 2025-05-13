@@ -4,9 +4,10 @@ import { GameService } from './game.service';
 describe('CommandHandler should', () => {
   test('add a player when given the addPlayer command', () => {
     const outputStrings = new Array<string>();
-    const gameService: GameService = {
+    const gameService = {
       addPlayer: jest.fn(),
-    };
+      hasPlayer: jest.fn(),
+    } as unknown as GameService;
     const handler = new CommandHandler((line) => outputStrings.push(line), gameService);
 
     handler.execute('addPlayer Player1');
