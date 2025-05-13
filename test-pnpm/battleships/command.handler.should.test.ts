@@ -66,6 +66,21 @@ describe('CommandHandler should', () => {
     ]);
   });
 
+  test('delegate a valid start game command with one player and a gunship', () => {
+    handler = new CommandHandler((line) => outputStrings.push(line), gameService);
+    handler.execute('addPlayer Player1');
+
+    handler.execute('start Player1 g:2,2');
+
+    expect(gameService.hasPlayer).toHaveBeenCalledWith('Player1');
+    expect(gameService.startGame).toHaveBeenCalledWith('Player1', [
+      {
+        type: 'g',
+        coordinates: [{ x: 2, y: 2 }],
+      },
+    ]);
+  });
+
   test('print the board for a player', () => {
     handler = new CommandHandler((line) => outputStrings.push(line), gameService);
 
