@@ -8,6 +8,7 @@ describe('CommandHandler should', () => {
     hasPlayer: jest.fn().mockReturnValue(true),
     startGame: jest.fn(),
     printBoard: jest.fn().mockReturnValue('mock board output'),
+    fire: jest.fn().mockReturnValue({ hit: true, message: 'Hit!' }),
   } as unknown as GameService;
 
   let handler: CommandHandler;
@@ -135,5 +136,32 @@ describe('CommandHandler should', () => {
     handler = new CommandHandler((line) => outputStrings.push(line), gameService);
 
     expect(() => handler.execute('unknown')).toThrow('Unknown command: unknown');
+  });
+
+  test('fire at coordinates', () => {
+    handler = new CommandHandler((line) => outputStrings.push(line), gameService);
+    handler.execute('addPlayer Player1');
+    handler.execute('start Player1 g:2,2');
+
+    handler.execute('fire Player1 2,2');
+
+    expect(gameService.fire).toHaveBeenCalledWith('Player1', { x: 2, y: 2 });
+    expect(outputStrings).toContain('Hit!');
+  });
+
+  test('throw error for invalid fire command format', () => {
+    handler = new CommandHandler((line) => outputStrings.push(line), gameService);
+    handler.execute('addPlayer Player1');
+
+    expect(() => handler.execute('fire Player1 invalid')).toThrow(
+      'Invalid coordinates format: invalid',
+    );
+  });
+
+  test('throw error for unknown player in fire command', () => {
+    handler = new CommandHandler((line) => outputStrings.push(line), gameService);
+    (gameService.hasPlayer as jest.Mock).mockReturnValue(false);
+
+    expect(() => handler.execute('fire Player1 2,2')).toThrow('Unknown player: Player1');
   });
 });
