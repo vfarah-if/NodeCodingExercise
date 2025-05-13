@@ -1,5 +1,5 @@
 import { CommandHandler } from './command.handler';
-import { GameService, ShipType } from './game.service';
+import { GameService } from './game.service';
 
 describe('CommandHandler should', () => {
   const gameService = {
@@ -42,6 +42,25 @@ describe('CommandHandler should', () => {
           { x: 8, y: 5 },
           { x: 8, y: 6 },
           { x: 8, y: 7 },
+        ],
+      },
+    ]);
+  });
+
+  test('delegate a valid start game command with one player and a destroyer ship', () => {
+    handler = new CommandHandler((line) => outputStrings.push(line), gameService);
+    handler.execute('addPlayer Player1');
+
+    handler.execute('start Player1 d:2,3:3,3:4,3');
+
+    expect(gameService.hasPlayer).toHaveBeenCalledWith('Player1');
+    expect(gameService.startGame).toHaveBeenCalledWith('Player1', [
+      {
+        type: 'd',
+        coordinates: [
+          { x: 2, y: 3 },
+          { x: 3, y: 3 },
+          { x: 4, y: 3 },
         ],
       },
     ]);
