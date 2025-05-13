@@ -2,13 +2,15 @@ import { CommandHandler } from './command.handler';
 import { GameService } from './game.service';
 
 describe('CommandHandler should', () => {
+  const gameService = {
+    addPlayer: jest.fn(),
+    hasPlayer: jest.fn(),
+  } as unknown as GameService;
+  let handler: CommandHandler;
+  const outputStrings = new Array<string>();
+
   test('add a player when given the addPlayer command', () => {
-    const outputStrings = new Array<string>();
-    const gameService = {
-      addPlayer: jest.fn(),
-      hasPlayer: jest.fn(),
-    } as unknown as GameService;
-    const handler = new CommandHandler((line) => outputStrings.push(line), gameService);
+    handler = new CommandHandler((line) => outputStrings.push(line), gameService);
 
     handler.execute('addPlayer Player1');
 
