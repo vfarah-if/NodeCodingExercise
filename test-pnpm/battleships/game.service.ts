@@ -1,5 +1,5 @@
-import { DEFAULT_BOARD_SIZE, BLANK_BOARD_CELL } from './constants';
-import { Ship, Coordinate } from './game.types';
+import { DEFAULT_BOARD_SIZE } from './constants';
+import { Ship, Coordinate, CellState, ShotResult } from './game.types';
 import { EOL } from 'os';
 
 export interface IGameService {
@@ -8,6 +8,7 @@ export interface IGameService {
   startGame(playerName: string, ships: Ship[]): void;
   printBoard(playerName: string): string;
   getBoardSize(): number;
+  fire(playerName: string, target: Coordinate): ShotResult;
 }
 
 export class GameService implements IGameService {
@@ -35,7 +36,7 @@ export class GameService implements IGameService {
       for (const coord of ship.coordinates) {
         this.ensureWithinBoard(coord);
         this.ensureNoShipOverlap(board, coord);
-        board[coord.y][coord.x] = ship.type;
+        board[coord.y][coord.x] = CellState.Ship;
       }
     }
 
@@ -62,6 +63,32 @@ export class GameService implements IGameService {
     return lines.join(EOL);
   }
 
+  fire(playerName: string, target: Coordinate): ShotResult {
+    this.ensurePlayerExists(playerName);
+    this.ensureWithinBoard(target);
+
+    const board = this._boards.get(playerName);
+    if (!board) {
+      throw new Error(`No board found for player: ${playerName}`);
+    }
+
+    const currentState = board[target.y][target.x];
+    if (currentState === CellState.Hit || currentState === CellState.Miss) {
+      return {
+        hit: false,
+        message: `Already fired at (${target.x}, ${target.y})`,
+      };
+    }
+
+    const hit = currentState === CellState.Ship;
+    board[target.y][target.x] = hit ? CellState.Hit : CellState.Miss;
+
+    return {
+      hit,
+      message: hit ? 'Hit!' : 'Miss!',
+    };
+  }
+
   private ensureNoShipOverlap(board: string[][], coord: Coordinate) {
     if (this.checkForShipOverlap(board, coord)) {
       throw new Error(`Ship overlap at (${coord.x}, ${coord.y})`);
@@ -81,13 +108,13 @@ export class GameService implements IGameService {
   }
 
   private checkForShipOverlap(board: string[][], coord: Coordinate): boolean {
-    return board[coord.y][coord.x] !== BLANK_BOARD_CELL;
+    return board[coord.y][coord.x] !== CellState.Empty;
   }
 
   private createEmptyBoard(): string[][] {
     return Array(this._boardSize)
       .fill(null)
-      .map(() => Array(this._boardSize).fill(' '));
+      .map(() => Array(this._boardSize).fill(CellState.Empty));
   }
 
   private outsideBoard(coord: Coordinate) {
