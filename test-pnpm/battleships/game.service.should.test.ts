@@ -1,4 +1,5 @@
 import { GameService } from './game.service';
+import { ShipType } from './game.types';
 
 describe('GameService should', () => {
   let gameService: GameService;
@@ -32,7 +33,7 @@ describe('GameService should', () => {
     expect(() => {
       gameService.startGame('Player1', [
         {
-          type: 'c',
+          type: ShipType.Carrier,
           coordinates: [
             { x: 8, y: 4 },
             { x: 8, y: 5 },
@@ -46,7 +47,7 @@ describe('GameService should', () => {
     expect(() => {
       gameService.startGame('Player1', [
         {
-          type: 'c',
+          type: ShipType.Carrier,
           coordinates: [
             { x: 8, y: 4 },
             { x: 8, y: 5 },
@@ -60,7 +61,7 @@ describe('GameService should', () => {
     expect(() => {
       gameService.startGame('Player1', [
         {
-          type: 'c',
+          type: ShipType.Carrier,
           coordinates: [
             { x: -1, y: 4 }, // Out of bounds
             { x: 8, y: 5 },
@@ -78,7 +79,7 @@ describe('GameService should', () => {
     expect(() => {
       gameService.startGame('Player1', [
         {
-          type: 'c',
+          type: ShipType.Carrier,
           coordinates: [
             { x: 8, y: 4 },
             { x: 8, y: 5 },
@@ -87,7 +88,7 @@ describe('GameService should', () => {
           ],
         },
         {
-          type: 'd',
+          type: ShipType.Destroyer,
           coordinates: [
             { x: 8, y: 6 }, // Overlaps with carrier
             { x: 8, y: 7 },
@@ -104,7 +105,7 @@ describe('GameService should', () => {
     expect(() => {
       gameService.startGame('Player1', [
         {
-          type: 'c',
+          type: ShipType.Carrier,
           coordinates: [
             { x: 8, y: 4 },
             { x: 8, y: 5 },
@@ -113,7 +114,7 @@ describe('GameService should', () => {
           ],
         },
         {
-          type: 'd',
+          type: ShipType.Destroyer,
           coordinates: [
             { x: 2, y: 3 },
             { x: 3, y: 3 },
@@ -121,7 +122,7 @@ describe('GameService should', () => {
           ],
         },
         {
-          type: 'g',
+          type: ShipType.Gunship,
           coordinates: [{ x: 2, y: 2 }],
         },
       ]);
@@ -133,7 +134,7 @@ describe('GameService should', () => {
     customSizeGame.addPlayer('Player1');
     customSizeGame.startGame('Player1', [
       {
-        type: 'g',
+        type: ShipType.Gunship,
         coordinates: [{ x: 2, y: 2 }],
       },
     ]);

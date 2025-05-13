@@ -1,17 +1,6 @@
-export enum ShipType {
-  Carrier = 'c',
-  Destroyer = 'd',
-  Gunship = 'g',
-}
-export interface Ship {
-  type: 'c' | 'd' | 'g';
-  coordinates: Coordinate[];
-}
-
-export interface Coordinate {
-  x: number;
-  y: number;
-}
+import { DEFAULT_BOARD_SIZE, BLANK_BOARD_CELL } from './constants';
+import { Ship, Coordinate } from './game.types';
+import { EOL } from 'os';
 
 export interface IGameService {
   addPlayer(name: string): void;
@@ -21,13 +10,12 @@ export interface IGameService {
   getBoardSize(): number;
 }
 
-const lineSeparator = '\n';
 export class GameService implements IGameService {
   private readonly _players: Set<string>;
   private readonly _boards: Map<string, string[][]>;
   private readonly _boardSize: number;
 
-  constructor(boardSize: number = 10) {
+  constructor(boardSize: number = DEFAULT_BOARD_SIZE) {
     if (boardSize <= 1) {
       throw new Error('Board size must be at least 1');
     }
@@ -54,6 +42,26 @@ export class GameService implements IGameService {
     this._boards.set(playerName, board);
   }
 
+  addPlayer(name: string): void {
+    this._players.add(name);
+  }
+
+  hasPlayer(name: string): boolean {
+    return this._players.has(name);
+  }
+
+  printBoard(playerName: string): string {
+    const board = this._boards.get(playerName);
+    if (!board) {
+      throw new Error(`No board found for player: ${playerName}`);
+    }
+
+    const lines: string[] = [];
+    this.printHeader(lines);
+    this.printContent(board, lines);
+    return lines.join(EOL);
+  }
+
   private ensureNoShipOverlap(board: string[][], coord: Coordinate) {
     if (this.checkForShipOverlap(board, coord)) {
       throw new Error(`Ship overlap at (${coord.x}, ${coord.y})`);
@@ -72,28 +80,8 @@ export class GameService implements IGameService {
     }
   }
 
-  addPlayer(name: string): void {
-    this._players.add(name);
-  }
-
-  hasPlayer(name: string): boolean {
-    return this._players.has(name);
-  }
-
-  printBoard(playerName: string): string {
-    const board = this._boards.get(playerName);
-    if (!board) {
-      throw new Error(`No board found for player: ${playerName}`);
-    }
-
-    const lines: string[] = [];
-    this.printHeader(lines);
-    this.printContent(board, lines);
-    return lines.join(lineSeparator);
-  }
-
   private checkForShipOverlap(board: string[][], coord: Coordinate): boolean {
-    return board[coord.y][coord.x] !== ' ';
+    return board[coord.y][coord.x] !== BLANK_BOARD_CELL;
   }
 
   private createEmptyBoard(): string[][] {

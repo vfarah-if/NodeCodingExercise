@@ -1,5 +1,6 @@
 import { CommandHandler } from './command.handler';
 import { GameService } from './game.service';
+import { ShipType } from './game.types';
 
 describe('CommandHandler should', () => {
   const gameService = {
@@ -36,7 +37,7 @@ describe('CommandHandler should', () => {
     expect(gameService.hasPlayer).toHaveBeenCalledWith('Player1');
     expect(gameService.startGame).toHaveBeenCalledWith('Player1', [
       {
-        type: 'c',
+        type: ShipType.Carrier,
         coordinates: [
           { x: 8, y: 4 },
           { x: 8, y: 5 },
@@ -56,7 +57,7 @@ describe('CommandHandler should', () => {
     expect(gameService.hasPlayer).toHaveBeenCalledWith('Player1');
     expect(gameService.startGame).toHaveBeenCalledWith('Player1', [
       {
-        type: 'd',
+        type: ShipType.Destroyer,
         coordinates: [
           { x: 2, y: 3 },
           { x: 3, y: 3 },
@@ -75,7 +76,7 @@ describe('CommandHandler should', () => {
     expect(gameService.hasPlayer).toHaveBeenCalledWith('Player1');
     expect(gameService.startGame).toHaveBeenCalledWith('Player1', [
       {
-        type: 'g',
+        type: ShipType.Gunship,
         coordinates: [{ x: 2, y: 2 }],
       },
     ]);
@@ -90,7 +91,7 @@ describe('CommandHandler should', () => {
     expect(gameService.hasPlayer).toHaveBeenCalledWith('Player1');
     expect(gameService.startGame).toHaveBeenCalledWith('Player1', [
       {
-        type: 'c',
+        type: ShipType.Carrier,
         coordinates: [
           { x: 8, y: 4 },
           { x: 8, y: 5 },
@@ -99,7 +100,7 @@ describe('CommandHandler should', () => {
         ],
       },
       {
-        type: 'd',
+        type: ShipType.Destroyer,
         coordinates: [
           { x: 2, y: 3 },
           { x: 3, y: 3 },
@@ -107,7 +108,7 @@ describe('CommandHandler should', () => {
         ],
       },
       {
-        type: 'g',
+        type: ShipType.Gunship,
         coordinates: [{ x: 2, y: 2 }],
       },
     ]);
