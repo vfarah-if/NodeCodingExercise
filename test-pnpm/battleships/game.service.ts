@@ -23,6 +23,7 @@ export interface IGameService {
 export class GameService implements IGameService {
   private readonly _players: Set<string>;
   private readonly _boards: Map<string, string[][]>;
+  private readonly BOARD_SIZE = 10;
 
   constructor() {
     this._players = new Set<string>();
@@ -34,15 +35,22 @@ export class GameService implements IGameService {
       throw new Error(`Unknown player: ${playerName}`);
     }
 
-    const board = Array(10)
+    // Initialize empty board
+    const board = Array(this.BOARD_SIZE)
       .fill(null)
-      .map(() => Array(10).fill(' '));
+      .map(() => Array(this.BOARD_SIZE).fill(' '));
 
     for (const ship of ships) {
       for (const coord of ship.coordinates) {
-        if (coord.x < 0 || coord.x >= 10 || coord.y < 0 || coord.y >= 10) {
+        if (
+          coord.x < 0 ||
+          coord.x >= this.BOARD_SIZE ||
+          coord.y < 0 ||
+          coord.y >= this.BOARD_SIZE
+        ) {
           throw new Error(`Ship placement out of bounds: (${coord.x}, ${coord.y})`);
         }
+        // Check overlap
         if (board[coord.y][coord.x] !== ' ') {
           throw new Error(`Ship overlap at (${coord.x}, ${coord.y})`);
         }
@@ -69,9 +77,9 @@ export class GameService implements IGameService {
 
     let output = '    | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |\n';
 
-    for (let y = 0; y < 10; y++) {
+    for (let y = 0; y < this.BOARD_SIZE; y++) {
       output += `  ${y}|`;
-      for (let x = 0; x < 10; x++) {
+      for (let x = 0; x < this.BOARD_SIZE; x++) {
         output += ` ${board[y][x]} |`;
       }
       output += '\n';
