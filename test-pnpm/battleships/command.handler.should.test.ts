@@ -27,7 +27,7 @@ describe('CommandHandler should', () => {
     expect(gameService.addPlayer).toHaveBeenCalledWith('Player1');
   });
 
-  test('delegate a valid start game command with one player and a carrier ship', () => {
+  test.skip('delegate a valid start game command with one player and a carrier ship', () => {
     handler = new CommandHandler((line) => outputStrings.push(line), gameService);
     handler.execute('addPlayer Player1');
 
@@ -47,7 +47,7 @@ describe('CommandHandler should', () => {
     ]);
   });
 
-  test('delegate a valid start game command with one player and a destroyer ship', () => {
+  test.skip('delegate a valid start game command with one player and a destroyer ship', () => {
     handler = new CommandHandler((line) => outputStrings.push(line), gameService);
     handler.execute('addPlayer Player1');
 
@@ -66,7 +66,7 @@ describe('CommandHandler should', () => {
     ]);
   });
 
-  test('delegate a valid start game command with one player and a gunship', () => {
+  test.skip('delegate a valid start game command with one player and a gunship', () => {
     handler = new CommandHandler((line) => outputStrings.push(line), gameService);
     handler.execute('addPlayer Player1');
 
@@ -74,6 +74,38 @@ describe('CommandHandler should', () => {
 
     expect(gameService.hasPlayer).toHaveBeenCalledWith('Player1');
     expect(gameService.startGame).toHaveBeenCalledWith('Player1', [
+      {
+        type: 'g',
+        coordinates: [{ x: 2, y: 2 }],
+      },
+    ]);
+  });
+
+  test('delegate a valid start game command with all ship types', () => {
+    handler = new CommandHandler((line) => outputStrings.push(line), gameService);
+    handler.execute('addPlayer Player1');
+
+    handler.execute('start Player1 c:8,4:8,5:8,6:8,7 d:2,3:3,3:4,3 g:2,2');
+
+    expect(gameService.hasPlayer).toHaveBeenCalledWith('Player1');
+    expect(gameService.startGame).toHaveBeenCalledWith('Player1', [
+      {
+        type: 'c',
+        coordinates: [
+          { x: 8, y: 4 },
+          { x: 8, y: 5 },
+          { x: 8, y: 6 },
+          { x: 8, y: 7 },
+        ],
+      },
+      {
+        type: 'd',
+        coordinates: [
+          { x: 2, y: 3 },
+          { x: 3, y: 3 },
+          { x: 4, y: 3 },
+        ],
+      },
       {
         type: 'g',
         coordinates: [{ x: 2, y: 2 }],

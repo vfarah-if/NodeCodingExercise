@@ -22,19 +22,19 @@ export class CommandHandler {
           throw new Error(`Unknown player: ${playerName}`);
         }
 
-        const shipPart = args.slice(1).join(' ');
-        const [type, ...coords] = shipPart.split(':');
-        const coordinates = coords.map((coord) => {
-          const [x, y] = coord.split(',').map(Number);
-          return { x, y };
-        });
-
-        this.gameService.startGame(playerName, [
-          {
+        const ships = args.slice(1).map((shipPart) => {
+          const [type, ...coords] = shipPart.split(':');
+          const coordinates = coords.map((coord) => {
+            const [x, y] = coord.split(',').map(Number);
+            return { x, y };
+          });
+          return {
             type: type as 'c' | 'd' | 'g',
             coordinates,
-          },
-        ]);
+          };
+        });
+
+        this.gameService.startGame(playerName, ships);
         break;
       }
       case 'print': {
