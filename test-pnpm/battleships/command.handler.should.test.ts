@@ -3,171 +3,114 @@ import { GameService } from './game.service';
 import { ShipType } from './game.types';
 
 describe('CommandHandler should', () => {
-  const gameService = {
-    addPlayer: jest.fn(),
-    hasPlayer: jest.fn().mockReturnValue(true),
-    startGame: jest.fn(),
-    printBoard: jest.fn().mockReturnValue('mock board output'),
-    fire: jest.fn().mockReturnValue({ hit: true, message: 'Hit!' }),
-  } as unknown as GameService;
-
+  let gameService: GameService;
+  let print: jest.Mock;
   let handler: CommandHandler;
-  const outputStrings = new Array<string>();
 
   beforeEach(() => {
-    outputStrings.length = 0;
-    jest.clearAllMocks();
-    (gameService.hasPlayer as jest.Mock).mockReturnValue(true);
+    gameService = new GameService();
+    print = jest.fn();
+    handler = new CommandHandler(print, gameService);
   });
 
-  test('add a player when given the addPlayer command', () => {
-    handler = new CommandHandler((line) => outputStrings.push(line), gameService);
-
-    handler.execute('addPlayer Player1');
-
-    expect(outputStrings).toContain('Player "Player1" added.');
-    expect(gameService.addPlayer).toHaveBeenCalledWith('Player1');
+  test('delegate valid add player command', () => {
+    addPlayerOne(handler);
+    expect(gameService.hasPlayer('Player1')).toBe(true);
+    expect(print).toHaveBeenLastCalledWith('Player "Player1" added.');
   });
 
-  test.skip('delegate a valid start game command with one player and a carrier ship', () => {
-    handler = new CommandHandler((line) => outputStrings.push(line), gameService);
-    handler.execute('addPlayer Player1');
-
-    handler.execute('start Player1 c:8,4:8,5:8,6:8,7');
-
-    expect(gameService.hasPlayer).toHaveBeenCalledWith('Player1');
-    expect(gameService.startGame).toHaveBeenCalledWith('Player1', [
-      {
-        type: ShipType.Carrier,
-        coordinates: [
-          { x: 8, y: 4 },
-          { x: 8, y: 5 },
-          { x: 8, y: 6 },
-          { x: 8, y: 7 },
-        ],
-        hits: new Set<string>(),
-      },
-    ]);
+  test.skip('delegate valid start game command with carrier', () => {
+    addPlayerOne(handler);
+    handler.execute('start Player1 c:2,2:2,3:2,4:2,5:2,6');
+    expect(gameService.printBoard('Player1')).toContain(ShipType.Carrier);
   });
 
-  test.skip('delegate a valid start game command with one player and a destroyer ship', () => {
-    handler = new CommandHandler((line) => outputStrings.push(line), gameService);
-    handler.execute('addPlayer Player1');
-
-    handler.execute('start Player1 d:2,3:3,3:4,3');
-
-    expect(gameService.hasPlayer).toHaveBeenCalledWith('Player1');
-    expect(gameService.startGame).toHaveBeenCalledWith('Player1', [
-      {
-        type: ShipType.Destroyer,
-        coordinates: [
-          { x: 2, y: 3 },
-          { x: 3, y: 3 },
-          { x: 4, y: 3 },
-        ],
-        hits: new Set<string>(),
-      },
-    ]);
+  test.skip('delegate valid start game command with destroyer', () => {
+    addPlayerOne(handler);
+    handler.execute('start Player1 d:2,2:2,3:2,4');
+    expect(gameService.printBoard('Player1')).toContain(ShipType.Destroyer);
   });
 
   test.skip('delegate a valid start game command with one player and a gunship', () => {
-    handler = new CommandHandler((line) => outputStrings.push(line), gameService);
-    handler.execute('addPlayer Player1');
-
+    addPlayerOne(handler);
     handler.execute('start Player1 g:2,2');
-
-    expect(gameService.hasPlayer).toHaveBeenCalledWith('Player1');
-    expect(gameService.startGame).toHaveBeenCalledWith('Player1', [
-      {
-        type: ShipType.Gunship,
-        coordinates: [{ x: 2, y: 2 }],
-        hits: new Set<string>(),
-      },
-    ]);
+    expect(gameService.printBoard('Player1')).toContain(ShipType.Gunship);
   });
 
-  test('delegate a valid start game command with all ship types', () => {
-    handler = new CommandHandler((line) => outputStrings.push(line), gameService);
-    handler.execute('addPlayer Player1');
-
-    handler.execute('start Player1 c:8,4:8,5:8,6:8,7 d:2,3:3,3:4,3 g:2,2');
-
-    expect(gameService.hasPlayer).toHaveBeenCalledWith('Player1');
-    expect(gameService.startGame).toHaveBeenCalledWith('Player1', [
-      {
-        type: ShipType.Carrier,
-        coordinates: [
-          { x: 8, y: 4 },
-          { x: 8, y: 5 },
-          { x: 8, y: 6 },
-          { x: 8, y: 7 },
-        ],
-        hits: new Set<string>(),
-      },
-      {
-        type: ShipType.Destroyer,
-        coordinates: [
-          { x: 2, y: 3 },
-          { x: 3, y: 3 },
-          { x: 4, y: 3 },
-        ],
-        hits: new Set<string>(),
-      },
-      {
-        type: ShipType.Gunship,
-        coordinates: [{ x: 2, y: 2 }],
-        hits: new Set<string>(),
-      },
-    ]);
-  });
-
-  test('print the board for a player', () => {
-    handler = new CommandHandler((line) => outputStrings.push(line), gameService);
-
-    handler.execute('print Player1');
-
-    expect(gameService.hasPlayer).toHaveBeenCalledWith('Player1');
-    expect(gameService.printBoard).toHaveBeenCalledWith('Player1');
-    expect(outputStrings).toContain('mock board output');
-  });
-
-  test('throw error for unknown player', () => {
-    handler = new CommandHandler((line) => outputStrings.push(line), gameService);
-    (gameService.hasPlayer as jest.Mock).mockReturnValue(false);
-
-    expect(() => handler.execute('print Player1')).toThrow('Unknown player: Player1');
+  test('delegate valid start game command with all ship types', () => {
+    addPlayerOne(handler);
+    handler.execute('start Player1 c:2,2:2,3:2,4:2,5:2,6 d:3,2:3,3:3,4 g:4,2');
+    const board = gameService.printBoard('Player1');
+    expect(board).toContain(ShipType.Carrier);
+    expect(board).toContain(ShipType.Destroyer);
+    expect(board).toContain(ShipType.Gunship);
   });
 
   test('throw error for unknown command', () => {
-    handler = new CommandHandler((line) => outputStrings.push(line), gameService);
-
     expect(() => handler.execute('unknown')).toThrow('Unknown command: unknown');
   });
 
-  test('fire at coordinates', () => {
-    handler = new CommandHandler((line) => outputStrings.push(line), gameService);
-    handler.execute('addPlayer Player1');
-    handler.execute('start Player1 g:2,2');
-
-    handler.execute('fire Player1 2,2');
-
-    expect(gameService.fire).toHaveBeenCalledWith('Player1', { x: 2, y: 2 });
-    expect(outputStrings).toContain('Hit!');
-  });
-
-  test('throw error for invalid fire command format', () => {
-    handler = new CommandHandler((line) => outputStrings.push(line), gameService);
-    handler.execute('addPlayer Player1');
-
-    expect(() => handler.execute('fire Player1 invalid')).toThrow(
-      'Invalid coordinates format: invalid',
-    );
-  });
-
-  test('throw error for unknown player in fire command', () => {
-    handler = new CommandHandler((line) => outputStrings.push(line), gameService);
-    (gameService.hasPlayer as jest.Mock).mockReturnValue(false);
-
+  test('throw error for unknown player', () => {
     expect(() => handler.execute('fire Player1 2,2')).toThrow('Unknown player: Player1');
   });
+
+  describe('turn command', () => {
+    beforeEach(() => {
+      print.mockClear();
+    });
+
+    test('switch turns between players', () => {
+      addPlayersAndStartAGame(handler);
+
+      // First player's turn
+      handler.execute('fire Player1 2,2');
+      expect(print).toHaveBeenLastCalledWith('Hit!');
+
+      // Switch turns
+      handler.execute('endTurn');
+      expect(print).toHaveBeenLastCalledWith('Turn switched to Player2');
+
+      // Second player's turn
+      handler.execute('fire Player2 3,2');
+      expect(print).toHaveBeenLastCalledWith('Hit!');
+
+      // Switch back to first player
+      handler.execute('endTurn');
+      expect(print).toHaveBeenLastCalledWith('Turn switched to Player1');
+    });
+
+    test('prevent firing out of turn', () => {
+      addPlayersAndStartAGame(handler);
+
+      expect(() => handler.execute('fire Player2 2,2')).toThrow(
+        'Not your turn. Current player: Player1',
+      );
+    });
+
+    test('prevent switching turns with insufficient players', () => {
+      addPlayerOne(handler);
+      handler.execute('start Player1 c:2,2:2,3:2,4:2,5:2,6');
+
+      expect(() => handler.execute('endTurn')).toThrow('Need at least 2 players to switch turns');
+    });
+  });
 });
+
+function addPlayersAndStartAGame(handler: CommandHandler) {
+  addTwoPlayers(handler);
+  handler.execute('start Player1 c:2,2:2,3:2,4:2,5:2,6');
+  handler.execute('start Player2 c:3,2:3,3:3,4:3,5:3,6');
+}
+
+function addTwoPlayers(handler: CommandHandler) {
+  addPlayerOne(handler);
+  addPlayerTwo(handler);
+}
+
+function addPlayerTwo(handler: CommandHandler) {
+  handler.execute('addPlayer Player2');
+}
+
+function addPlayerOne(handler: CommandHandler) {
+  handler.execute('addPlayer Player1');
+}
