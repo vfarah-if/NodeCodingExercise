@@ -154,7 +154,7 @@ describe('GameService should', () => {
       '   | 0 | 1 | 2 | 3 | 4 |',
       '  0|   |   |   |   |   |',
       '  1|   |   |   |   |   |',
-      '  2|   |   | s |   |   |',
+      '  2|   |   | g |   |   |',
       '  3|   |   |   |   |   |',
       '  4|   |   |   |   |   |',
     ]);
@@ -309,6 +309,99 @@ describe('GameService should', () => {
 
       gameService.fire('Player1', { x: 2, y: 2 });
       expect(gameService.getWinner('Player1')).toBe('Player1');
+    });
+  });
+
+  describe('turn-based gameplay', () => {
+    test('track current player', () => {
+      const gameService = new GameService();
+      gameService.addPlayer('Player1');
+      gameService.addPlayer('Player2');
+      gameService.startGame('Player1', [
+        {
+          type: ShipType.Gunship,
+          coordinates: [{ x: 2, y: 2 }],
+          hits: new Set<string>(),
+        },
+      ]);
+      gameService.startGame('Player2', [
+        {
+          type: ShipType.Gunship,
+          coordinates: [{ x: 3, y: 3 }],
+          hits: new Set<string>(),
+        },
+      ]);
+
+      expect(gameService.getCurrentPlayer()).toBe('Player1');
+    });
+
+    test('switch turns between players', () => {
+      const gameService = new GameService();
+      gameService.addPlayer('Player1');
+      gameService.addPlayer('Player2');
+      gameService.startGame('Player1', [
+        {
+          type: ShipType.Gunship,
+          coordinates: [{ x: 2, y: 2 }],
+          hits: new Set<string>(),
+        },
+      ]);
+      gameService.startGame('Player2', [
+        {
+          type: ShipType.Gunship,
+          coordinates: [{ x: 3, y: 3 }],
+          hits: new Set<string>(),
+        },
+      ]);
+
+      expect(gameService.getCurrentPlayer()).toBe('Player1');
+      expect(gameService.switchTurn()).toBe('Player2');
+      expect(gameService.getCurrentPlayer()).toBe('Player2');
+      expect(gameService.switchTurn()).toBe('Player1');
+      expect(gameService.getCurrentPlayer()).toBe('Player1');
+    });
+
+    test('throw error when switching turns with less than 2 players', () => {
+      const gameService = new GameService();
+      gameService.addPlayer('Player1');
+      gameService.startGame('Player1', [
+        {
+          type: ShipType.Gunship,
+          coordinates: [{ x: 2, y: 2 }],
+          hits: new Set<string>(),
+        },
+      ]);
+
+      expect(() => gameService.switchTurn()).toThrow('Need at least 2 players to switch turns');
+    });
+
+    test('only allow current player to fire', () => {
+      const gameService = new GameService();
+      gameService.addPlayer('Player1');
+      gameService.addPlayer('Player2');
+      gameService.startGame('Player1', [
+        {
+          type: ShipType.Gunship,
+          coordinates: [{ x: 2, y: 2 }],
+          hits: new Set<string>(),
+        },
+      ]);
+      gameService.startGame('Player2', [
+        {
+          type: ShipType.Gunship,
+          coordinates: [{ x: 3, y: 3 }],
+          hits: new Set<string>(),
+        },
+      ]);
+
+      expect(() => gameService.fire('Player2', { x: 2, y: 2 })).toThrow(
+        'Not your turn. Current player: Player1',
+      );
+
+      gameService.switchTurn();
+      expect(() => gameService.fire('Player1', { x: 3, y: 3 })).toThrow(
+        'Not your turn. Current player: Player2',
+      );
     });
   });
 });

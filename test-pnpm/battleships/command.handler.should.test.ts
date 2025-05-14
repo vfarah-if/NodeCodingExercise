@@ -1,3 +1,4 @@
+import { EOL } from 'os';
 import { CommandHandler } from './command.handler';
 import { GameService } from './game.service';
 import { ShipType } from './game.types';
@@ -19,24 +20,6 @@ describe('CommandHandler should', () => {
     expect(print).toHaveBeenLastCalledWith('Player "Player1" added.');
   });
 
-  test.skip('delegate valid start game command with carrier', () => {
-    addPlayerOne(handler);
-    handler.execute('start Player1 c:2,2:2,3:2,4:2,5:2,6');
-    expect(gameService.printBoard('Player1')).toContain(ShipType.Carrier);
-  });
-
-  test.skip('delegate valid start game command with destroyer', () => {
-    addPlayerOne(handler);
-    handler.execute('start Player1 d:2,2:2,3:2,4');
-    expect(gameService.printBoard('Player1')).toContain(ShipType.Destroyer);
-  });
-
-  test.skip('delegate a valid start game command with one player and a gunship', () => {
-    addPlayerOne(handler);
-    handler.execute('start Player1 g:2,2');
-    expect(gameService.printBoard('Player1')).toContain(ShipType.Gunship);
-  });
-
   test('delegate valid start game command with all ship types', () => {
     addPlayerOne(handler);
     handler.execute('start Player1 c:2,2:2,3:2,4:2,5:2,6 d:3,2:3,3:3,4 g:4,2');
@@ -44,6 +27,19 @@ describe('CommandHandler should', () => {
     expect(board).toContain(ShipType.Carrier);
     expect(board).toContain(ShipType.Destroyer);
     expect(board).toContain(ShipType.Gunship);
+    expect(board.split(EOL)).toEqual([
+      '   | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |',
+      '  0|   |   |   |   |   |   |   |   |   |   |',
+      '  1|   |   |   |   |   |   |   |   |   |   |',
+      '  2|   |   | c | d | g |   |   |   |   |   |',
+      '  3|   |   | c | d |   |   |   |   |   |   |',
+      '  4|   |   | c | d |   |   |   |   |   |   |',
+      '  5|   |   | c |   |   |   |   |   |   |   |',
+      '  6|   |   | c |   |   |   |   |   |   |   |',
+      '  7|   |   |   |   |   |   |   |   |   |   |',
+      '  8|   |   |   |   |   |   |   |   |   |   |',
+      '  9|   |   |   |   |   |   |   |   |   |   |',
+    ]);
   });
 
   test('throw error for unknown command', () => {

@@ -15,6 +15,7 @@ export class CommandHandler {
       start: (args) => this.startGameForPlayer(args),
       print: (args) => this.printPlayerBoard(args),
       fire: (args) => this.processFireCommand(args),
+      endTurn: () => this.processTurnCommand(),
     };
 
     const handler = commands[command];
@@ -45,6 +46,11 @@ export class CommandHandler {
     }
 
     this.print(message);
+  }
+
+  private processTurnCommand() {
+    const nextPlayer = this.gameService.switchTurn();
+    this.print(`Turn switched to ${nextPlayer}`);
   }
 
   private printPlayerBoard(args: string[]) {

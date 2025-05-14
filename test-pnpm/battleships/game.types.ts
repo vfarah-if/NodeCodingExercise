@@ -6,7 +6,6 @@ export enum ShipType {
 
 export enum CellState {
   Empty = ' ',
-  Ship = 's',
   Hit = 'x',
   Miss = 'o',
 }
@@ -33,4 +32,10 @@ export interface GameState {
   ships: Ship[];
   board: string[][];
   winner: string | null;
+}
+
+export interface Game {
+  players: string[];
+  currentPlayerIndex: number;
+  states: Map<string, GameState>;
 }
