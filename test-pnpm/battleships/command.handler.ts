@@ -35,7 +35,16 @@ export class CommandHandler {
     const { playerName, target } = this.parseForFireArguments(args);
     this.ensurePlayerExists(playerName);
     const result = this.gameService.fire(playerName, target);
-    this.print(result.message);
+
+    let message = result.message;
+    if (result.shipDestroyed) {
+      message += ' All ships destroyed!';
+    }
+    if (result.gameWon) {
+      message += ' Game over!';
+    }
+
+    this.print(message);
   }
 
   private printPlayerBoard(args: string[]) {
@@ -62,6 +71,7 @@ export class CommandHandler {
       return {
         type: type as ShipType.Carrier | ShipType.Destroyer | ShipType.Gunship,
         coordinates,
+        hits: new Set<string>(),
       };
     });
     return { playerName, ships };

@@ -45,6 +45,7 @@ describe('CommandHandler should', () => {
           { x: 8, y: 6 },
           { x: 8, y: 7 },
         ],
+        hits: new Set<string>(),
       },
     ]);
   });
@@ -64,6 +65,7 @@ describe('CommandHandler should', () => {
           { x: 3, y: 3 },
           { x: 4, y: 3 },
         ],
+        hits: new Set<string>(),
       },
     ]);
   });
@@ -79,6 +81,7 @@ describe('CommandHandler should', () => {
       {
         type: ShipType.Gunship,
         coordinates: [{ x: 2, y: 2 }],
+        hits: new Set<string>(),
       },
     ]);
   });
@@ -99,6 +102,7 @@ describe('CommandHandler should', () => {
           { x: 8, y: 6 },
           { x: 8, y: 7 },
         ],
+        hits: new Set<string>(),
       },
       {
         type: ShipType.Destroyer,
@@ -107,10 +111,12 @@ describe('CommandHandler should', () => {
           { x: 3, y: 3 },
           { x: 4, y: 3 },
         ],
+        hits: new Set<string>(),
       },
       {
         type: ShipType.Gunship,
         coordinates: [{ x: 2, y: 2 }],
+        hits: new Set<string>(),
       },
     ]);
   });
