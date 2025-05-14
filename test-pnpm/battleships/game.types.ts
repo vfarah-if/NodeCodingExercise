@@ -14,6 +14,7 @@ export enum CellState {
 export interface Ship {
   type: ShipType.Carrier | ShipType.Destroyer | ShipType.Gunship;
   coordinates: Coordinate[];
+  hits: Set<string>;
 }
 
 export interface Coordinate {
@@ -24,4 +25,12 @@ export interface Coordinate {
 export interface ShotResult {
   hit: boolean;
   message: string;
+  shipDestroyed?: boolean;
+  gameWon?: boolean;
+}
+
+export interface GameState {
+  ships: Ship[];
+  board: string[][];
+  winner: string | null;
 }

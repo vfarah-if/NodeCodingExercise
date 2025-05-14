@@ -1,5 +1,5 @@
 import { DEFAULT_BOARD_SIZE } from './constants';
-import { Ship, Coordinate, CellState, ShotResult } from './game.types';
+import { Ship, Coordinate, CellState, ShotResult, GameState } from './game.types';
 import { EOL } from 'os';
 
 export interface IGameService {
@@ -9,11 +9,12 @@ export interface IGameService {
   printBoard(playerName: string): string;
   getBoardSize(): number;
   fire(playerName: string, target: Coordinate): ShotResult;
+  getWinner(playerName: string): string | null;
 }
 
 export class GameService implements IGameService {
   private readonly _players: Set<string>;
-  private readonly _boards: Map<string, string[][]>;
+  private readonly _gameStates: Map<string, GameState>;
   private readonly _boardSize: number;
 
   constructor(boardSize: number = DEFAULT_BOARD_SIZE) {
@@ -22,7 +23,7 @@ export class GameService implements IGameService {
     }
     this._boardSize = boardSize;
     this._players = new Set<string>();
-    this._boards = new Map<string, string[][]>();
+    this._gameStates = new Map<string, GameState>();
   }
 
   getBoardSize(): number {
@@ -32,7 +33,13 @@ export class GameService implements IGameService {
   startGame(playerName: string, ships: Ship[]): void {
     this.ensurePlayerExists(playerName);
     const board = this.createEmptyBoard();
-    for (const ship of ships) {
+
+    const shipsWithHits = ships.map((ship) => ({
+      ...ship,
+      hits: new Set<string>(),
+    }));
+
+    for (const ship of shipsWithHits) {
       for (const coord of ship.coordinates) {
         this.ensureWithinBoard(coord);
         this.ensureNoShipOverlap(board, coord);
@@ -40,7 +47,11 @@ export class GameService implements IGameService {
       }
     }
 
-    this._boards.set(playerName, board);
+    this._gameStates.set(playerName, {
+      ships: shipsWithHits,
+      board,
+      winner: null,
+    });
   }
 
   addPlayer(name: string): void {
@@ -52,7 +63,7 @@ export class GameService implements IGameService {
   }
 
   printBoard(playerName: string): string {
-    const board = this._boards.get(playerName);
+    const board = this._gameStates.get(playerName)?.board;
     if (!board) {
       throw new Error(`No board found for player: ${playerName}`);
     }
@@ -67,12 +78,12 @@ export class GameService implements IGameService {
     this.ensurePlayerExists(playerName);
     this.ensureWithinBoard(target);
 
-    const board = this._boards.get(playerName);
-    if (!board) {
+    const gameState = this._gameStates.get(playerName);
+    if (!gameState) {
       throw new Error(`No board found for player: ${playerName}`);
     }
 
-    const currentState = board[target.y][target.x];
+    const currentState = gameState.board[target.y][target.x];
     if (currentState === CellState.Hit || currentState === CellState.Miss) {
       return {
         hit: false,
@@ -81,12 +92,38 @@ export class GameService implements IGameService {
     }
 
     const hit = currentState === CellState.Ship;
-    board[target.y][target.x] = hit ? CellState.Hit : CellState.Miss;
+    gameState.board[target.y][target.x] = hit ? CellState.Hit : CellState.Miss;
+
+    if (hit) {
+      const coordString = `${target.x},${target.y}`;
+      const ship = this.findShipAtCoordinate(gameState.ships, target);
+      if (ship) {
+        ship.hits.add(coordString);
+        const shipDestroyed = this.isShipDestroyed(ship);
+        const gameWon = this.checkForWin(gameState.ships);
+
+        if (gameWon) {
+          gameState.winner = playerName;
+        }
+
+        return {
+          hit: true,
+          message: shipDestroyed ? 'Ship destroyed!' : 'Hit!',
+          shipDestroyed,
+          gameWon,
+        };
+      }
+    }
 
     return {
-      hit,
-      message: hit ? 'Hit!' : 'Miss!',
+      hit: false,
+      message: 'Miss!',
     };
+  }
+
+  getWinner(playerName: string): string | null {
+    const gameState = this._gameStates.get(playerName);
+    return gameState?.winner ?? null;
   }
 
   private ensureNoShipOverlap(board: string[][], coord: Coordinate) {
@@ -111,12 +148,6 @@ export class GameService implements IGameService {
     return board[coord.y][coord.x] !== CellState.Empty;
   }
 
-  private createEmptyBoard(): string[][] {
-    return Array(this._boardSize)
-      .fill(null)
-      .map(() => Array(this._boardSize).fill(CellState.Empty));
-  }
-
   private outsideBoard(coord: Coordinate) {
     return coord.x < 0 || coord.x >= this._boardSize || coord.y < 0 || coord.y >= this._boardSize;
   }
@@ -137,5 +168,25 @@ export class GameService implements IGameService {
       header += ` ${x} |`;
     }
     lines.push(header);
+  }
+
+  private findShipAtCoordinate(ships: Ship[], target: Coordinate): Ship | undefined {
+    return ships.find((ship) =>
+      ship.coordinates.some((coord) => coord.x === target.x && coord.y === target.y),
+    );
+  }
+
+  private isShipDestroyed(ship: Ship): boolean {
+    return ship.coordinates.every((coord) => ship.hits.has(`${coord.x},${coord.y}`));
+  }
+
+  private checkForWin(ships: Ship[]): boolean {
+    return ships.every((ship) => this.isShipDestroyed(ship));
+  }
+
+  private createEmptyBoard(): string[][] {
+    return Array(this._boardSize)
+      .fill(null)
+      .map(() => Array(this._boardSize).fill(CellState.Empty));
   }
 }
