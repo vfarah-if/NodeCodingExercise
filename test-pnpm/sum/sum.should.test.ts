@@ -36,6 +36,7 @@ describe('sum should', () => {
     { values: [-1, 2, -3, 4, -5], expected: -3 },
   ])('sum $values to equal $expected', ({ values, expected }) => {
     const actual = sum(...values);
+
     expect(actual).toBe(expected);
   });
 });
