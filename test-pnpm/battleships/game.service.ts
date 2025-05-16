@@ -1,5 +1,5 @@
-import { DEFAULT_BOARD_SIZE } from './constants';
-import { Ship, Coordinate, CellState, ShotResult, GameState, Game } from './game.types';
+import { DEFAULT_BOARD_SIZE, NO_HIT } from './constants';
+import { Ship, Coordinate, CellState, ShotResult, GameState, Game, ShipType } from './game.types';
 import { EOL } from 'os';
 
 export interface IGameService {
@@ -20,16 +20,10 @@ export class GameService implements IGameService {
   private readonly _boardSize: number;
 
   constructor(boardSize: number = DEFAULT_BOARD_SIZE) {
-    if (boardSize <= 1) {
-      throw new Error('Board size must be at least 1');
-    }
+    this.ensureBoardSizeGreaterThanZero(boardSize);
     this._boardSize = boardSize;
     this._players = new Set<string>();
-    this._game = {
-      players: [],
-      currentPlayerIndex: 0,
-      states: new Map<string, GameState>(),
-    };
+    this._game = this.createNewGame();
   }
 
   getBoardSize(): number {
@@ -45,13 +39,7 @@ export class GameService implements IGameService {
       hits: new Set<string>(),
     }));
 
-    for (const ship of shipsWithNoHits) {
-      for (const coord of ship.coordinates) {
-        this.ensureWithinBoard(coord);
-        this.ensureNoShipOverlap(board, coord);
-        board[coord.y][coord.x] = ship.type;
-      }
-    }
+    this.placeAndValidateShipsOnBoard(shipsWithNoHits, board);
 
     const gameState = this._game.states.get(playerName) || {
       ships: shipsWithNoHits,
@@ -69,48 +57,12 @@ export class GameService implements IGameService {
     this.ensurePlayerExists(playerName);
     this.ensureWithinBoard(target);
     this.ensurePlayerTurn(playerName);
-
-    const gameState = this._game.states.get(playerName);
-    if (!gameState) {
-      throw new Error(`No board found for player: ${playerName}`);
-    }
-
-    const currentState = gameState.board[target.y][target.x];
-    if (currentState === CellState.Hit || currentState === CellState.Miss) {
-      return {
-        hit: false,
-        message: `Already fired at (${target.x}, ${target.y})`,
-      };
-    }
-
+    const game = this.fetchGame(playerName);
+    const currentState = game.board[target.y][target.x];
+    this.ensureCellNotAlreadyUsed(currentState, target);
     const hit = currentState !== CellState.Empty;
-    gameState.board[target.y][target.x] = hit ? CellState.Hit : CellState.Miss;
-
-    if (hit) {
-      const coordString = `${target.x},${target.y}`;
-      const ship = this.findShipAtCoordinate(gameState.ships, target);
-      if (ship) {
-        ship.hits.add(coordString);
-        const shipDestroyed = this.isShipDestroyed(ship);
-        const gameWon = this.checkForWin(gameState.ships);
-
-        if (gameWon) {
-          gameState.winner = playerName;
-        }
-
-        return {
-          hit: true,
-          message: shipDestroyed ? 'Ship destroyed!' : 'Hit!',
-          shipDestroyed,
-          gameWon,
-        };
-      }
-    }
-
-    return {
-      hit: false,
-      message: 'Miss!',
-    };
+    game.board[target.y][target.x] = hit ? CellState.Hit : CellState.Miss;
+    return hit ? this.getShotResult(target, game, playerName) : NO_HIT;
   }
 
   getWinner(playerName: string): string | null {
@@ -123,9 +75,7 @@ export class GameService implements IGameService {
   }
 
   switchTurn(): string {
-    if (this._game.players.length < 2) {
-      throw new Error('Need at least 2 players to switch turns');
-    }
+    this.ensureMoreThanOnePlayerExists();
     this._game.currentPlayerIndex = (this._game.currentPlayerIndex + 1) % this._game.players.length;
     return this.getCurrentPlayer()!;
   }
@@ -140,36 +90,108 @@ export class GameService implements IGameService {
 
   printBoard(playerName: string): string {
     const gameState = this._game.states.get(playerName);
-    if (!gameState) {
-      throw new Error(`No board found for player: ${playerName}`);
-    }
-
+    this.ensureGameState(gameState, playerName);
     const lines: string[] = [];
-    this.printHeader(lines);
-    this.printContent(gameState.board, lines);
+    this.addHeader(lines);
+    this.addContent(gameState.board, lines);
     return lines.join(EOL);
   }
 
-  private ensurePlayerTurn(playerName: string) {
+  private ensureGameState(gameState: GameState, playerName: string) {
+    if (!gameState) {
+      throw new Error(`No board found for player: ${playerName}`);
+    }
+  }
+
+  private placeAndValidateShipsOnBoard(ships: Array<Ship>, board: string[][]) {
+    for (const ship of ships) {
+      for (const coord of ship.coordinates) {
+        this.ensureWithinBoard(coord);
+        this.ensureNoShipOverlap(board, coord);
+        board[coord.y][coord.x] = ship.type;
+      }
+    }
+  }
+
+  private createNewGame(): Game {
+    return {
+      players: [],
+      currentPlayerIndex: 0,
+      states: new Map<string, GameState>(),
+    } as Game;
+  }
+
+  private ensureBoardSizeGreaterThanZero(boardSize: number) {
+    if (boardSize <= 1) {
+      throw new Error('Board size must be at least 1');
+    }
+  }
+
+  private ensureMoreThanOnePlayerExists() {
+    if (this._game.players.length < 2) {
+      throw new Error('Need at least 2 players to switch turns');
+    }
+  }
+
+  private ensureCellNotAlreadyUsed(currentState: string, target: Coordinate): void {
+    if (this.isCellAlreadyFired(currentState)) {
+      throw new Error(`Already fired at (${target.x}, ${target.y})`);
+    }
+  }
+
+  private getShotResult(target: Coordinate, game: GameState, playerName: string): ShotResult {
+    const ship = this.findShipAtCoordinate(game.ships, target);
+    ship.hits.add(`${target.x},${target.y}`);
+    const shipDestroyed = this.isShipDestroyed(ship);
+    const isWinner = this.checkForWin(game.ships);
+    if (isWinner) {
+      game.winner = playerName;
+    }
+
+    return {
+      hit: true,
+      message: shipDestroyed ? 'Ship destroyed!' : 'Hit!',
+      shipDestroyed,
+      gameWon: isWinner,
+    };
+  }
+
+  private isCellAlreadyFired(currentState: string): boolean {
+    return currentState === CellState.Hit || currentState === CellState.Miss;
+  }
+
+  private fetchGame(playerName: string): GameState {
+    const gameState = this._game.states.get(playerName);
+    this.ensureGameExists(gameState, playerName);
+    return gameState;
+  }
+
+  private ensureGameExists(gameState: GameState, playerName: string): void {
+    if (!gameState) {
+      throw new Error(`No board found for player: ${playerName}`);
+    }
+  }
+
+  private ensurePlayerTurn(playerName: string): void {
     const currentPlayer = this.getCurrentPlayer();
     if (currentPlayer !== playerName) {
       throw new Error(`Not your turn. Current player: ${currentPlayer}`);
     }
   }
 
-  private ensureNoShipOverlap(board: string[][], coord: Coordinate) {
+  private ensureNoShipOverlap(board: string[][], coord: Coordinate): void {
     if (this.checkForShipOverlap(board, coord)) {
       throw new Error(`Ship overlap at (${coord.x}, ${coord.y})`);
     }
   }
 
-  private ensureWithinBoard(coord: Coordinate) {
-    if (this.outsideBoard(coord)) {
+  private ensureWithinBoard(coord: Coordinate): void {
+    if (this.isOutsideBoard(coord)) {
       throw new Error(`Ship placement out of bounds: (${coord.x}, ${coord.y})`);
     }
   }
 
-  private ensurePlayerExists(playerName: string) {
+  private ensurePlayerExists(playerName: string): void {
     if (!this.hasPlayer(playerName)) {
       throw new Error(`Unknown player: ${playerName}`);
     }
@@ -199,11 +221,11 @@ export class GameService implements IGameService {
     return board[coord.y][coord.x] !== CellState.Empty;
   }
 
-  private outsideBoard(coord: Coordinate) {
+  private isOutsideBoard(coord: Coordinate): boolean {
     return coord.x < 0 || coord.x >= this._boardSize || coord.y < 0 || coord.y >= this._boardSize;
   }
 
-  private printContent(board: string[][], lines: string[]) {
+  private addContent(board: string[][], lines: string[]): void {
     for (let y = 0; y < this._boardSize; y++) {
       let row = `  ${y}|`;
       for (let x = 0; x < this._boardSize; x++) {
@@ -213,7 +235,7 @@ export class GameService implements IGameService {
     }
   }
 
-  private printHeader(lines: string[]) {
+  private addHeader(lines: string[]): void {
     let header = '   |';
     for (let x = 0; x < this._boardSize; x++) {
       header += ` ${x} |`;

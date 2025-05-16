@@ -211,9 +211,7 @@ describe('GameService should', () => {
       ]);
 
       gameService.fire('Player1', { x: 2, y: 2 });
-      const result = gameService.fire('Player1', { x: 2, y: 2 });
-      expect(result.hit).toBe(false);
-      expect(result.message).toBe('Already fired at (2, 2)');
+      expect(() => gameService.fire('Player1', { x: 2, y: 2 })).toThrow('Already fired at (2, 2)');
     });
 
     test('throw error when firing out of bounds', () => {
