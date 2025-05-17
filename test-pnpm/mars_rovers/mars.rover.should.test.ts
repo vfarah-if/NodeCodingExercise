@@ -18,4 +18,10 @@ describe('mars rover should', () => {
 
     expect(actual).toBe('0:1:N');
   });
+
+  test('turn right facing east', () => {
+    const actual = marsRover.execute('R');
+
+    expect(actual).toBe('0:0:E');
+  });
 });
