@@ -17,7 +17,6 @@ enum CommandType {
 }
 
 export class MarsRover {
-  private _direction: Direction = DirectionType.North;
   private _directions: Direction[] = new Array<Direction>(
     DirectionType.North,
     DirectionType.East,
