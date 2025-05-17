@@ -19,6 +19,7 @@ describe('mars rover should', () => {
     ['move forward facing east', 'RM', '1:0:E'],
     ['move forward facing west', 'RMLLM', '0:0:W'],
     ['wrap around north edge to bottom', 'MMMMMMMMMM', '0:0:N'],
+    ['wrap around south edge to top', 'RRMMMMMMMMMM', '0:0:S'],
   ])('%s', (_, input, expected) => {
     const actual = marsRover.execute(input);
 
