@@ -14,6 +14,7 @@ enum CompassDirection {
 enum CommandType {
   Move = 'M',
   TurnRight = 'R',
+  TurnLeft = 'L',
 }
 
 export class MarsRover {
@@ -29,16 +30,30 @@ export class MarsRover {
 
   execute(commands: string): string {
     for (const command of commands) {
-      if (command === CommandType.Move) {
-        this.moveForward();
-      }
-
-      if (command === CommandType.TurnRight) {
-        this.moveRight();
+      switch (command) {
+        case CommandType.Move:
+          this.moveForward();
+          break;
+        case CommandType.TurnRight:
+          this.moveRight();
+          break;
+        case CommandType.TurnLeft:
+          this.moveLeft();
+          break;
       }
     }
 
-    return `${this._x}:${this._y}:${this._directions[this._directionIndex]}`;
+    return `${this._x}:${this._y}:${this.currentDirection()}`;
+  }
+
+  private currentDirection(): Direction {
+    return this._directions[this._directionIndex];
+  }
+
+  private moveLeft() {
+    // subtract 1 but wrap around if < 0
+    this._directionIndex =
+      (this._directionIndex - 1 + this._directions.length) % this._directions.length;
   }
 
   private moveRight() {
