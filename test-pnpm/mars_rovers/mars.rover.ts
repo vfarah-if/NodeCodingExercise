@@ -3,12 +3,14 @@ export class MarsRover {
   private _x: number = 0;
   private _y: number = 0;
 
-  execute(command: string): string {
-    if (command === 'M') {
-      return `${this._x}:${this._y + 1}:${this._direction}`;
-    }
-    if (command === 'R') {
-      return `${this._x}:${this._y}:E`;
+  execute(commands: string): string {
+    for (const command of commands) {
+      if (command === 'M') {
+        this._y = this._y + 1;
+      }
+      if (command === 'R') {
+        this._direction = 'E';
+      }
     }
     return `${this._x}:${this._y}:${this._direction}`;
   }
