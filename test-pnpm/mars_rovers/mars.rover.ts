@@ -11,20 +11,15 @@ export class MarsRover {
   private _position = new Position(0, 0);
   private _direction = new Direction(CompassDirection.North);
   private _gridSize = 10;
+  private readonly commandHandlers: Record<CommandType, () => void> = {
+    [CommandType.Move]: () => this.moveForward(),
+    [CommandType.TurnRight]: () => this.moveRight(),
+    [CommandType.TurnLeft]: () => this.moveLeft(),
+  };
 
   execute(commands: string): string {
     for (const command of commands) {
-      switch (command) {
-        case CommandType.Move:
-          this.moveForward();
-          break;
-        case CommandType.TurnRight:
-          this.moveRight();
-          break;
-        case CommandType.TurnLeft:
-          this.moveLeft();
-          break;
-      }
+      this.commandHandlers[command]();
     }
 
     return `${this._position.toString()}:${this.currentDirection()}`;
@@ -43,12 +38,6 @@ export class MarsRover {
   }
 
   private moveForward(): void {
-    const positionMap: Record<CompassDirection, () => Position> = {
-      [CompassDirection.North]: () => this._position.moveNorth(this._gridSize),
-      [CompassDirection.South]: () => this._position.moveSouth(this._gridSize),
-      [CompassDirection.East]: () => this._position.moveEast(this._gridSize),
-      [CompassDirection.West]: () => this._position.moveWest(this._gridSize),
-    };
-    this._position = positionMap[this.currentDirection()]();
+    this._position = this._position.move(this.currentDirection(), this._gridSize);
   }
 }

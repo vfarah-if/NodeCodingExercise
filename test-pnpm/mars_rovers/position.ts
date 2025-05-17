@@ -1,22 +1,37 @@
+import { CompassDirection } from './direction';
+
 export class Position {
   constructor(
     public readonly x: number,
     public readonly y: number,
   ) {}
 
-  moveNorth(gridSize: number): Position {
+  move(direction: CompassDirection, gridSize: number): Position {
+    switch (direction) {
+      case CompassDirection.North:
+        return this.moveNorth(gridSize);
+      case CompassDirection.South:
+        return this.moveSouth(gridSize);
+      case CompassDirection.East:
+        return this.moveEast(gridSize);
+      case CompassDirection.West:
+        return this.moveWest(gridSize);
+    }
+  }
+
+  private moveNorth(gridSize: number): Position {
     return new Position(this.x, (this.y + 1) % gridSize);
   }
 
-  moveSouth(gridSize: number): Position {
+  private moveSouth(gridSize: number): Position {
     return new Position(this.x, (this.y - 1) % gridSize);
   }
 
-  moveEast(gridSize: number): Position {
+  private moveEast(gridSize: number): Position {
     return new Position((this.x + 1) % gridSize, this.y);
   }
 
-  moveWest(gridSize: number): Position {
+  private moveWest(gridSize: number): Position {
     return new Position((this.x - 1) % gridSize, this.y);
   }
 
