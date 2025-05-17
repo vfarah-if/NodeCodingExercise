@@ -19,4 +19,8 @@ export class Position {
   moveWest(gridSize: number): Position {
     return new Position((this.x - 1) % gridSize, this.y);
   }
+
+  toString(): string {
+    return `${this.x}:${this.y}`;
+  }
 }

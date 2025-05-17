@@ -45,7 +45,7 @@ export class MarsRover {
       }
     }
 
-    return `${this._position.x}:${this._position.y}:${this.currentDirection()}`;
+    return `${this._position.toString()}:${this.currentDirection()}`;
   }
 
   private currentDirection(): Direction {
