@@ -122,3 +122,7 @@ Sunk ships have all their coordinates marked with an uppercase X and hit cells h
 
 1. ✅ Ensure the `print` command reflects in-progress state correctly.
 2. ✅ Ship symbols (`x`, `o`, `X`) match game state expectations.
+
+# Summary
+
+Thanks [*Mark Gray*](https://www.codurance.com/katas/battleships), I enjoyed this kata as a more interesting "outside in" kata, with mocking and all sorts of interesting kata practises to explore. I found myself working on this kata the way I would in real life, using outside in, *faking* it until I make it, generating some stuff and then continuing inside out. I left an audit trail around how I broke it up in the commits, sometimes found myself vetting concepts and and then rewinding ideas. I left it in draft as I only got up to Phase4 and then stopped as all the most interesting things had been explored and documented.
