@@ -3,6 +3,9 @@ export class MarsRover {
     if (command === 'M') {
       return '0:1:N';
     }
+    if (command === 'R') {
+      return '0:0:E';
+    }
     return '0:0:N';
   }
 }
