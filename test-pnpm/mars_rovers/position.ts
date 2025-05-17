@@ -11,4 +11,8 @@ export class Position {
   moveSouth(gridSize: number): Position {
     return new Position(this.x, (this.y - 1) % gridSize);
   }
+
+  moveEast(gridSize: number): Position {
+    return new Position((this.x + 1) % gridSize, this.y);
+  }
 }
