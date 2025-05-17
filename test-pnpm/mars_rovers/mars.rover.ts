@@ -63,23 +63,12 @@ export class MarsRover {
   }
 
   private moveForward(): void {
-    switch (this.currentDirection()) {
-      case CompassDirection.North: {
-        this._position = this._position.moveNorth(this._gridSize);
-        break;
-      }
-      case CompassDirection.South: {
-        this._position = this._position.moveSouth(this._gridSize);
-        break;
-      }
-      case CompassDirection.East: {
-        this._position = this._position.moveEast(this._gridSize);
-        break;
-      }
-      case CompassDirection.West: {
-        this._position = this._position.moveWest(this._gridSize);
-        break;
-      }
-    }
+    const positionMap: Record<CompassDirection, () => Position> = {
+      [CompassDirection.North]: () => this._position.moveNorth(this._gridSize),
+      [CompassDirection.South]: () => this._position.moveSouth(this._gridSize),
+      [CompassDirection.East]: () => this._position.moveEast(this._gridSize),
+      [CompassDirection.West]: () => this._position.moveWest(this._gridSize),
+    };
+    this._position = positionMap[this.currentDirection()]();
   }
 }
