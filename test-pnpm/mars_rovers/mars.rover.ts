@@ -77,7 +77,7 @@ export class MarsRover {
         break;
       }
       case CompassDirection.West: {
-        this._position.x = (this._position.x - 1) % this._gridSize;
+        this._position = this._position.moveWest(this._gridSize);
         break;
       }
     }

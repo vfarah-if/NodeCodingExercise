@@ -1,7 +1,7 @@
 export class Position {
   constructor(
-    public x: number,
-    public y: number,
+    public readonly x: number,
+    public readonly y: number,
   ) {}
 
   moveNorth(gridSize: number): Position {
@@ -14,5 +14,9 @@ export class Position {
 
   moveEast(gridSize: number): Position {
     return new Position((this.x + 1) % gridSize, this.y);
+  }
+
+  moveWest(gridSize: number): Position {
+    return new Position((this.x - 1) % gridSize, this.y);
   }
 }
