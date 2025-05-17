@@ -65,7 +65,7 @@ export class MarsRover {
   private moveForward(): void {
     switch (this.currentDirection()) {
       case CompassDirection.North: {
-        this._position.y = (this._position.y + 1) % this._gridSize;
+        this._position = this._position.moveNorth(this._gridSize);
         break;
       }
       case CompassDirection.South: {
