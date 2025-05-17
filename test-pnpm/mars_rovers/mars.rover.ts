@@ -1,17 +1,5 @@
+import { CompassDirection, Direction } from './direction';
 import { Position } from './position';
-
-type Direction =
-  | CompassDirection.North
-  | CompassDirection.East
-  | CompassDirection.South
-  | CompassDirection.West;
-
-enum CompassDirection {
-  North = 'N',
-  East = 'E',
-  South = 'S',
-  West = 'W',
-}
 
 enum CommandType {
   Move = 'M',
@@ -21,13 +9,7 @@ enum CommandType {
 
 export class MarsRover {
   private _position = new Position(0, 0);
-  private _directions: Direction[] = new Array<Direction>(
-    CompassDirection.North,
-    CompassDirection.East,
-    CompassDirection.South,
-    CompassDirection.West,
-  );
-  private _directionIndex = 0;
+  private _direction = new Direction(CompassDirection.North);
   private _gridSize = 10;
 
   execute(commands: string): string {
@@ -48,18 +30,16 @@ export class MarsRover {
     return `${this._position.toString()}:${this.currentDirection()}`;
   }
 
-  private currentDirection(): Direction {
-    return this._directions[this._directionIndex];
+  private currentDirection(): CompassDirection {
+    return this._direction.value;
   }
 
   private moveLeft(): void {
-    // subtract 1 but wrap around if < 0
-    this._directionIndex =
-      (this._directionIndex - 1 + this._directions.length) % this._directions.length;
+    this._direction = this._direction.rotateLeft();
   }
 
   private moveRight(): void {
-    this._directionIndex = (this._directionIndex + 1) % this._directions.length;
+    this._direction = this._direction.rotateRight();
   }
 
   private moveForward(): void {
