@@ -27,6 +27,7 @@ export class MarsRover {
   private _directionIndex = 0;
   private _x: number = 0;
   private _y: number = 0;
+  private _gridSize = 10;
 
   execute(commands: string): string {
     for (const command of commands) {
@@ -63,7 +64,7 @@ export class MarsRover {
   private moveForward(): void {
     switch (this.currentDirection()) {
       case CompassDirection.North: {
-        this._y = this._y + 1;
+        this._y = (this._y + 1) % this._gridSize;
         break;
       }
       case CompassDirection.South: {
