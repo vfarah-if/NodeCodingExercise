@@ -25,7 +25,10 @@ describe('mars rover should', () => {
     ['wrap around south edge to top', 'RRMMMMMMMMMM', '0:0:S'],
     ['wrap around east edge to the left', 'RMMMMMMMMMM', '0:0:E'],
     ['wrap around west edge to the right', 'LMMMMMMMMMM', '0:0:W'],
-  ])('%s', (_, input, expected) => {
+
+    ['given a grid with no obstacles', 'MMRMMLM', '2:3:N'],
+    ['given a grid with no obstacles', 'MMMMMMMMMM', '0:0:N'],
+  ])('%s with input %s outputs %s', (_, input, expected) => {
     const actual = marsRover.execute(input);
 
     expect(actual).toBe(expected);
