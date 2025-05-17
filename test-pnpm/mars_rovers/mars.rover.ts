@@ -50,17 +50,22 @@ export class MarsRover {
     return this._directions[this._directionIndex];
   }
 
-  private moveLeft() {
+  private moveLeft(): void {
     // subtract 1 but wrap around if < 0
     this._directionIndex =
       (this._directionIndex - 1 + this._directions.length) % this._directions.length;
   }
 
-  private moveRight() {
+  private moveRight(): void {
     this._directionIndex = (this._directionIndex + 1) % this._directions.length;
   }
 
-  private moveForward() {
-    this._y = this._y + 1;
+  private moveForward(): void {
+    if (this.currentDirection() === CompassDirection.North) {
+      this._y = this._y + 1;
+    }
+    if (this.currentDirection() === CompassDirection.South) {
+      this._y = this._y - 1;
+    }
   }
 }
