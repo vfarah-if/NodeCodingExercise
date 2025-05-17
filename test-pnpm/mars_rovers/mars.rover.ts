@@ -1,3 +1,5 @@
+import { Position } from './position';
+
 type Direction =
   | CompassDirection.North
   | CompassDirection.East
@@ -18,6 +20,7 @@ enum CommandType {
 }
 
 export class MarsRover {
+  private _position = new Position(0, 0);
   private _directions: Direction[] = new Array<Direction>(
     CompassDirection.North,
     CompassDirection.East,
@@ -25,8 +28,6 @@ export class MarsRover {
     CompassDirection.West,
   );
   private _directionIndex = 0;
-  private _x: number = 0;
-  private _y: number = 0;
   private _gridSize = 10;
 
   execute(commands: string): string {
@@ -44,7 +45,7 @@ export class MarsRover {
       }
     }
 
-    return `${this._x}:${this._y}:${this.currentDirection()}`;
+    return `${this._position.x}:${this._position.y}:${this.currentDirection()}`;
   }
 
   private currentDirection(): Direction {
@@ -64,19 +65,19 @@ export class MarsRover {
   private moveForward(): void {
     switch (this.currentDirection()) {
       case CompassDirection.North: {
-        this._y = (this._y + 1) % this._gridSize;
+        this._position.y = (this._position.y + 1) % this._gridSize;
         break;
       }
       case CompassDirection.South: {
-        this._y = (this._y - 1) % this._gridSize;
+        this._position.y = (this._position.y - 1) % this._gridSize;
         break;
       }
       case CompassDirection.East: {
-        this._x = (this._x + 1) % this._gridSize;
+        this._position.x = (this._position.x + 1) % this._gridSize;
         break;
       }
       case CompassDirection.West: {
-        this._x = (this._x - 1) % this._gridSize;
+        this._position.x = (this._position.x - 1) % this._gridSize;
         break;
       }
     }
