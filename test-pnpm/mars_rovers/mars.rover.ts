@@ -8,21 +8,29 @@ enum CommandType {
 }
 
 export class MarsRover {
-  private _position = new Position(0, 0);
-  private _direction = new Direction(CompassDirection.North);
-  private _gridSize = 10;
-  private readonly commandHandlers: Record<CommandType, () => void> = {
-    [CommandType.Move]: () => this.moveForward(),
-    [CommandType.TurnRight]: () => this.moveRight(),
-    [CommandType.TurnLeft]: () => this.moveLeft(),
-  };
+  private _position: Position;
+  private _direction: Direction;
+  private readonly commandHandlers: Record<CommandType, () => void>;
+
+  constructor(
+    obstacles: Array<Position> | null = null,
+    private readonly _gridSize = 10,
+  ) {
+    this._position = new Position(0, 0, obstacles);
+    this._direction = new Direction(CompassDirection.North);
+    this.commandHandlers = {
+      [CommandType.Move]: () => this.moveForward(),
+      [CommandType.TurnRight]: () => this.moveRight(),
+      [CommandType.TurnLeft]: () => this.moveLeft(),
+    };
+  }
 
   execute(commands: string): string {
     for (const command of commands) {
       this.commandHandlers[command]();
     }
 
-    return `${this._position.toString()}:${this.currentDirection()}`;
+    return `${this._position.toString(this.currentDirection(), this._gridSize)}`;
   }
 
   private currentDirection(): CompassDirection {
@@ -38,6 +46,9 @@ export class MarsRover {
   }
 
   private moveForward(): void {
-    this._position = this._position.move(this.currentDirection(), this._gridSize);
+    const nextPosition = this._position.move(this.currentDirection(), this._gridSize);
+    if (!nextPosition.hasObstacle()) {
+      this._position = nextPosition;
+    }
   }
 }
