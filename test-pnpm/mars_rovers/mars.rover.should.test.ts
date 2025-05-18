@@ -1,4 +1,5 @@
 import { Grid } from './grid';
+import { GridBuilder } from './grid.builder';
 import { MarsRover } from './mars.rover';
 import { Position } from './position';
 
@@ -7,7 +8,7 @@ describe('mars rover should', () => {
   let marsRover: MarsRover;
 
   beforeEach(() => {
-    grid = new Grid();
+    grid = new GridBuilder().withSize(10).buid();
     marsRover = new MarsRover(grid);
   });
 
@@ -40,8 +41,7 @@ describe('mars rover should', () => {
 
   describe('when given obstacles should', () => {
     test('navigate up to the obstacle and no further', () => {
-      var obstacle = new Position(0, 3);
-      grid = new Grid([obstacle]);
+      grid = new GridBuilder().withSize(10).withObstacles(new Position(0, 3)).buid();
       marsRover = new MarsRover(grid);
 
       var actual = marsRover.execute('MMMM');

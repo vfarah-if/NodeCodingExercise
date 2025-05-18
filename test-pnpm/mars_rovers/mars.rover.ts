@@ -27,7 +27,7 @@ export class MarsRover {
     for (const command of commands) {
       this.commandHandlers[command]();
     }
-C    const next = this._position.move(this.currentDirection(), this._grid);
+    const next = this._position.move(this.currentDirection(), this._grid);
     const prefix = this._grid.hasObstacle(next.x, next.y) ? 'O:' : '';
     return `${prefix}${this._position.toString()}:${this._direction.value}`;
   }
