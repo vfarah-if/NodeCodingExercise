@@ -1,4 +1,5 @@
 import { MarsRover } from './mars.rover';
+import { Position } from './position';
 
 describe('mars rover should', () => {
   let marsRover: MarsRover;
@@ -32,5 +33,16 @@ describe('mars rover should', () => {
     const actual = marsRover.execute(input);
 
     expect(actual).toBe(expected);
+  });
+
+  describe('when given obstacles should', () => {
+    test('navigate up to the obstacle and no further', () => {
+      var obstacle = new Position(0, 3);
+      marsRover = new MarsRover([obstacle]);
+
+      var actual = marsRover.execute('MMMM');
+
+      expect(actual).toBe('O:0:2:N');
+    });
   });
 });
