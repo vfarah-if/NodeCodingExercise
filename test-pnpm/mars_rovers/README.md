@@ -156,4 +156,42 @@ Add scenario-based tests:
 - Extract reusable logic (e.g. `rotate`, `nextPosition`)
 - Add immutability if you favour a purer style
 - Optionally expose state inspection for diagnostics/logging
+- Create a functional approach to the same Kata
 
+### Summary
+
+Thanks *Danil Suits* for your lovely kata. I put a lot of empasis on dicipline with RED, GREEN, REFACTOR pattern of TDD * INFINITY. I also tried harder than usual to identify the natural anti-patterns I was creating by keeping things small and simple, adding a reference to [refactoring smells](https://refactoring.guru/refactoring/smells) so you can see the anti patterns I added and tried to fix. Keep timing tight, which I didn't inbetween doing stuff and other unrelated activities. https://cuckoo.team/ is a great tool for that. If you are going to pair with someone, make sure you discuss some [principles and etiquette](https://www.thoughtworks.com/insights/blog/seven-principles-pair-programming-etiquette) around  what you need to do. Two controversial  points with my solution. One is *Typescript* and the other is *functional* vs *class*. I personally use both when appropriate and am not a real javascript purest or functional purest. Functional approaches shine when the state transitions are stateless and I want to you want to compose behaviour easily. Class-based approach shines when encapsulation of state and behaviour and *Object-Orientation* Models the domain well. I also find as I am in C# these days, it  just feels more natural to use and swap between it. 
+
+Verdict
+
+> **Your class-based approach is very clean and modular — not worse than functional, just different. You're modelling the domain responsibly.**
+
+A little bit of a break down into how you can prevent boiling the ocean :)
+
+The hard part was breaking it up to not do too much at a time, so lots of small tests driving small changes and requirments to introduce stuff.
+
+`''` → `0:0:N` ✅
+
+`'M'` → `0:1:N` ✅
+
+`'MM'` → `0:2:N` ✅
+
+`'R'` → `0:0:E` ✅
+
+Directional requirments seemed easier to expand by
+
+| Input  | Expected Output | Notes                                |
+| ------ | --------------- | ------------------------------------ |
+| `R`    | `0:0:E`         | North → East                         |
+| `RR`   | `0:0:S`         | East → South                         |
+| `RRR`  | `0:0:W`         | South → West                         |
+| `RRRR` | `0:0:N`         | Wrap-around to North (full rotation) |
+
+const directions = ['N', 'E', 'S', 'W']; // indices: 0, 1, 2, 3
+
+| Current index | +1   | Mod 4 (`% 4`) | New Direction |
+| ------------- | ---- | ------------- | ------------- |
+| 0 (N)         | 1    | 1             | E             |
+| 1 (E)         | 2    | 2             | S             |
+| 2 (S)         | 3    | 3             | W             |
+| 3 (W)         | 4    | 0             | N (wrap)      |
