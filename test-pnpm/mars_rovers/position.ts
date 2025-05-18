@@ -7,16 +7,12 @@ export class Position {
   ) {}
 
   move(direction: CompassDirection, gridSize: number): Position {
-    switch (direction) {
-      case CompassDirection.North:
-        return this.moveNorth(gridSize);
-      case CompassDirection.South:
-        return this.moveSouth(gridSize);
-      case CompassDirection.East:
-        return this.moveEast(gridSize);
-      case CompassDirection.West:
-        return this.moveWest(gridSize);
-    }
+    return {
+      [CompassDirection.North]: () => this.moveNorth(gridSize),
+      [CompassDirection.East]: () => this.moveEast(gridSize),
+      [CompassDirection.South]: () => this.moveSouth(gridSize),
+      [CompassDirection.West]: () => this.moveWest(gridSize),
+    }[direction]();
   }
 
   private moveNorth(gridSize: number): Position {
