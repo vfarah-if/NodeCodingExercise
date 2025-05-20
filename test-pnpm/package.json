@@ -8,6 +8,9 @@
     "lint": "eslint '*/**/*.{ts,tsx}' --quiet",
     "format": "prettier --write '*/**/*.{ts,tsx,js,json,md}'"
   },
+  "bin": {
+    "uswitch": "./uswitch/uswitch.ts"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
