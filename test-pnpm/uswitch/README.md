@@ -1,12 +1,14 @@
-# nuSwitch Energy Comparison
+# 🧾 **Objective**
+
+[TOC]
 
 Your **task** is to help make the customer’s decision easier by writing a program that prices plans on the marketaccording to how much energy is consumed.
 
-Please write your solution in a language you feel confident in. Your program should both produce the expected output and be well written.
+Please write your solution in a laagptnguage you feel confident in. Your program should both produce the expected output and be well written.
 
-**Please do not publish your solution**, for example on your blog or source control site.
+------
 
-## Step 1: Pricing a plan
+## 🧮 **Pricing Logic Details**
 
 The data in an **energy plan** looks like this:
 
@@ -39,9 +41,20 @@ const energyPlan = {
 
 For the first part of this exercise, we would like you to write a function that takes in a plan and an annual usage amount (in kWh) and returns what a customer would be charged annually (in pounds, including VAT). (`calculateAnnualCost(energyPlan, 1000`)
 
-For the example plan above, when a consumer uses 1000 kWH your function should return 146.16. (`expect(calculateAnnualCost(energyPlan, 1000)).toBe(146.16)`)
+For the example plan above, when a consumer uses 1000 kWH your function should return 146.16. 
 
-## Step 2: Output
+For `1000 kWh` of usage:
+
+- First 150 kWh @ 13.5p = 2025p `calculateUsingThreshold`
+- Next 100 kWh @ 11.1p = 1110p 
+- Remaining 750 kWh @ 10p = 7500p
+- Standing charge = 9p/day × 365 = 3285p `calculateStandingChargeWithNoThreshold`
+- Subtotal (before VAT) = 2025 + 1110 + 7500 + 3285 = 13,920p `calculateVat`
+- VAT @ 5% = 696p → Total = 146.16 **pounds** `convertPenceToPounds()`
+
+(`expect(calculateAnnualCost(energyPlan, 1000)).toBe(146.16)`)
+
+## 🧾 Output
 
 In the next stages of this exercise, we’ll be handling **multiple plans**, and **multiple diﬀerent usage amounts**.
 
@@ -53,7 +66,7 @@ For the example plan above, when a consumer uses 1000 kWH your program should lo
 
 **Note** that all rounding should be natural (i.e. 1.045 rounded to 2 decimal places is 1.05).
 
-## Step 3: Load plans from a file
+## 📁 **File-Based Input**
 
 Energy providers send new plans to us on a regular basis. In this step, we would like you to extend your program to load plans from a file. 
 
@@ -75,7 +88,7 @@ For example, I should be able to run
 sse,standard,146.16
 ```
 
-## Step 4: Take input from stdin
+## 🖥️ **Interactive Mode (stdin CLI)**
 
 Diﬀerent customers use diﬀerent amounts of energy - we need to be able to tell the customer the price of each plan according to their own usage. In this step we would like you to extend your program to take input from **stdin**. It should accept **two commands**:
 
@@ -96,10 +109,10 @@ exit
 
 # ✅ Summary of features now complete
 
-| Feature                                | Status |
-| -------------------------------------- | ------ |
-| Step 1: Compute cost of plan           | ✅      |
-| Step 2: Format as SUPPLIER,PLAN,COST   | ✅      |
-| Step 3: Load plans from file           | ✅      |
-| Step 4: CLI with price + exit commands | ✅      |
-| Tests (unit + integration)             | ✅      |
+| Feature                               | Description                                                  |
+| ------------------------------------- | ------------------------------------------------------------ |
+| **Step 1: Compute cost of a plan**    | Calculates the total annual cost (in pounds, inc. 5% VAT) for a plan based on usage in kWh. |
+| **Step 2: Output formatting**         | Outputs results in the format: `SUPPLIER,PLAN,TOTAL_COST` with 2 decimal rounding. |
+| **Step 3: Load plans from file**      | Reads a JSON file of energy plans, computes cost for fixed usage (default: 1000kWh). |
+| **Step 4: Interactive CLI via stdin** | Accepts user commands: `price USAGE` to show all plan prices sorted by cost, and `exit` to quit. |
+| **Tests (unit + integration)**        | All major features are covered by tests for correctness and integration. |

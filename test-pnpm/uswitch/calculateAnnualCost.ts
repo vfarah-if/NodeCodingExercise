@@ -23,7 +23,7 @@ export function calculateAnnualCost(plan: EnergyPlan, usage: number): number {
   const totalInPence = cost + annualStandingCharge;
   const totalWithVAT = applyVAT(totalInPence, VAT_RATE);
   return convertPenceToPounds(totalWithVAT);
-  // Fake it until you make it
+  // Fake it until you make it (if you don't want to do the maths in the beginning)
   // if (usage === 1000) {
   //   return 146.16;
   // }

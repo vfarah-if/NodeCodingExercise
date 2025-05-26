@@ -10,7 +10,7 @@ export function commandHandler(
     const price = priceArray[1];
     const usage = Number.parseInt(price);
     return plans.map((plan) => formatPlanPrice(plan, usage));
-    // fake it untill you make it :)
+    // fake it until you make it :)
     // if (price === '1000') return ['sse,standard,146.16'];
     // if (price === '1200') return ['sse,standard,167.16'];
   }

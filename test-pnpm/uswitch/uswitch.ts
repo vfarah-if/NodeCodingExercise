@@ -34,14 +34,15 @@ function promptUserForPrices(rl: readline.Interface, plans: EnergyPlan[]): void 
     const responses = commandHandler(line, plans);
     if (!responses) {
       rl.close();
+    } else {
+      for (const response of responses) {
+        console.log(response);
+      }
+      rl.prompt(true);
     }
-    for (const response of responses) {
-      console.log(response);
-    }
-    rl.prompt();
   });
 
   rl.on('close', () => {
-    console.debug('You have succeeded in faking it all the way dude!');
+    console.debug('Well done!');
   });
 }
