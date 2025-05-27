@@ -3,7 +3,7 @@ import { commandHandler } from './commandHandler';
 import { readPlansFromFile } from './readPlansFromFile';
 import readline from 'readline/promises';
 
-async function main() {
+export async function main() {
   const file = process.argv[2];
   if (!file) {
     console.error('Usage: uswitch plans.json');
@@ -26,7 +26,10 @@ async function main() {
   // }
 }
 
-main();
+// Only run main if this file is being run directly
+if (require.main === module) {
+  main();
+}
 
 function promptUserForPrices(rl: readline.Interface, plans: EnergyPlan[]): void {
   rl.prompt();

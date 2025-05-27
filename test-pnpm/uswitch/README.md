@@ -4,8 +4,6 @@
 
 Your **task** is to help make the customer’s decision easier by writing a program that prices plans on the marketaccording to how much energy is consumed.
 
-Please write your solution in a laagptnguage you feel confident in. Your program should both produce the expected output and be well written.
-
 ------
 
 ## 🧮 **Pricing Logic Details**
@@ -49,7 +47,7 @@ For `1000 kWh` of usage:
 - Next 100 kWh @ 11.1p = 1110p 
 - Remaining 750 kWh @ 10p = 7500p
 - Standing charge = 9p/day × 365 = 3285p `calculateStandingChargeWithNoThreshold`
-- Subtotal (before VAT) = 2025 + 1110 + 7500 + 3285 = 13,920p `calculateVat`
+- Subtotal (before VAT) = 2025 + 1110 + 7500 + 3285 = 13,920p `calculateOrApplyVat`
 - VAT @ 5% = 696p → Total = 146.16 **pounds** `convertPenceToPounds()`
 
 (`expect(calculateAnnualCost(energyPlan, 1000)).toBe(146.16)`)
