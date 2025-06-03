@@ -10,14 +10,14 @@ export async function main() {
     process.exit(1);
   }
 
-  const rl = readline.createInterface({
+  const terminal = readline.createInterface({
     input: process.stdin,
     output: process.stdout,
   });
 
   const plans = await readPlansFromFile(file);
 
-  promptUserForPrices(rl, plans);
+  promptUserForPrices(terminal, plans);
 
   // Fake it until you make it
   // const usage = 1000;
@@ -31,21 +31,22 @@ if (require.main === module) {
   main();
 }
 
-function promptUserForPrices(rl: readline.Interface, plans: EnergyPlan[]): void {
-  rl.prompt();
-  rl.on('line', (line) => {
+function promptUserForPrices(terminal: readline.Interface, plans: EnergyPlan[]): void {
+  terminal.prompt();
+  
+  terminal.on('line', (line) => {
     const responses = commandHandler(line, plans);
     if (!responses) {
-      rl.close();
+      terminal.close();
     } else {
       for (const response of responses) {
         console.log(response);
       }
-      rl.prompt(true);
+      terminal.prompt(true);
     }
   });
 
-  rl.on('close', () => {
+  terminal.on('close', () => {
     console.debug('Well done!');
   });
 }
